@@ -16,9 +16,9 @@ entity mario is
 		clk : in std_logic;
 		pressedKey : in std_logic_vector(8 downto 0);
 		iHit : in std_logic ; -- tells if mario hits somthing
-		iHitObj : in std_logic_vector(2 downto 0);  -- describing what mario hit
+		iHitObj : in std_logic;  -- describing what mario hit
 		imake : in std_logic;
-		
+		ibreak : in std_logic;
 		X: out std_logic_vector(31 downto 0) ; 
 		Y: out std_logic_vector(31 downto 0)	
 		);

@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C35F672C6
-set_global_assignment -name TOP_LEVEL_ENTITY sound
+set_global_assignment -name TOP_LEVEL_ENTITY obstacles
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:51:27  AUGUST 28, 2017"
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
@@ -66,6 +66,7 @@ set_global_assignment -name VHDL_FILE ThemeSong.vhd
 set_global_assignment -name VHDL_FILE MUX.vhd
 set_global_assignment -name BDF_FILE SuperMario.bdf
 set_global_assignment -name BDF_FILE SIFTAH_SUPER_MARIO.bdf
+set_global_assignment -name VHDL_FILE gold_bomb_draw.vhd
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top

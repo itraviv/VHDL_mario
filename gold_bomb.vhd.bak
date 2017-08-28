@@ -22,10 +22,9 @@ entity gold_bomb is
 		randY: in std_logic_vector(31 downto 0) ;
 		speed : in std_logic_vector(2 downto 0) ;
 		
+		oisGold : out std_logic; -- '1' if gold, else bomb
 		X: out std_logic_vector(31 downto 0) ; 
-		Y: out std_logic_vector(31 downto 0) ;
-		oisGold : out std_logic -- '1' if gold, else bomb
-
+		Y: out std_logic_vector(31 downto 0) 
 		);
 end entity;
 

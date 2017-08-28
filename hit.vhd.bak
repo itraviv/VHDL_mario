@@ -19,7 +19,7 @@ entity hit is
 		idrawReqObscl : in std_logic;
 		
 		oHitMario : out std_logic ; -- tells if mario hits somthing
-		oHitObj : out std_logic_vector(2 downto 0);  -- describing what mario hit , relevant if hit=1
+		oHitObj : out std_logic  -- describing what mario hit , relevant if hit=1
 		);
 end entity;
 

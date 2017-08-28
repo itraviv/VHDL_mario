@@ -15,7 +15,7 @@ entity sound is
 		resetN : in std_logic;
 		clk : in std_logic;
 		iHitMario : in std_logic ; -- tells if mario hits somthing
-		iHitObj : in std_logic_vector(2 downto 0);  -- describing what mario hit , relevant if hit=1
+		iHitObj : in std_logic;  -- describing what mario hit , relevant if hit=1
 		soundType : out std_logic_vector(2 downto 0)  -- describing sound type to play
 		);
 end entity;
