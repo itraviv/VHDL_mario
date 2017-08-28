@@ -1,0 +1,477 @@
+Classic Timing Analyzer report for KBD
+Mon Aug 28 23:21:30 2017
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                  ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------------+----------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                 ; To                               ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------------+----------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 1.406 ns                         ; resetN                               ; bitrec:inst2|shift_reg[9]        ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 8.101 ns                         ; byterec:inst1|present_state.new_make ; make                             ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 0.478 ns                         ; KBD_CLK                              ; lpf:cleaner|shiftreg[0]          ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 241.43 MHz ( period = 4.142 ns ) ; bitrec:inst2|dout[7]                 ; byterec:inst1|present_state.idle ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                      ;                                  ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------------+----------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C35F672C6       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                                  ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------+--------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                       ; To                                         ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------+--------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 241.43 MHz ( period = 4.142 ns )                    ; bitrec:inst2|dout[7]                       ; byterec:inst1|present_state.idle           ; clk        ; clk      ; None                        ; None                      ; 3.928 ns                ;
+; N/A                                     ; 269.61 MHz ( period = 3.709 ns )                    ; bitrec:inst2|dout[6]                       ; byterec:inst1|present_state.idle           ; clk        ; clk      ; None                        ; None                      ; 3.495 ns                ;
+; N/A                                     ; 270.49 MHz ( period = 3.697 ns )                    ; bitrec:inst2|dout[0]                       ; byterec:inst1|present_state.idle           ; clk        ; clk      ; None                        ; None                      ; 3.483 ns                ;
+; N/A                                     ; 272.85 MHz ( period = 3.665 ns )                    ; bitrec:inst2|dout[2]                       ; byterec:inst1|present_state.idle           ; clk        ; clk      ; None                        ; None                      ; 3.451 ns                ;
+; N/A                                     ; 281.06 MHz ( period = 3.558 ns )                    ; bitrec:inst2|dout[3]                       ; byterec:inst1|present_state.idle           ; clk        ; clk      ; None                        ; None                      ; 3.344 ns                ;
+; N/A                                     ; 291.04 MHz ( period = 3.436 ns )                    ; bitrec:inst2|dout[1]                       ; byterec:inst1|present_state.idle           ; clk        ; clk      ; None                        ; None                      ; 3.222 ns                ;
+; N/A                                     ; 304.41 MHz ( period = 3.285 ns )                    ; bitrec:inst2|shift_reg[1]                  ; bitrec:inst2|dout[4]                       ; clk        ; clk      ; None                        ; None                      ; 3.073 ns                ;
+; N/A                                     ; 304.41 MHz ( period = 3.285 ns )                    ; bitrec:inst2|shift_reg[1]                  ; bitrec:inst2|dout[7]                       ; clk        ; clk      ; None                        ; None                      ; 3.073 ns                ;
+; N/A                                     ; 304.41 MHz ( period = 3.285 ns )                    ; bitrec:inst2|shift_reg[1]                  ; bitrec:inst2|dout[5]                       ; clk        ; clk      ; None                        ; None                      ; 3.073 ns                ;
+; N/A                                     ; 304.41 MHz ( period = 3.285 ns )                    ; bitrec:inst2|shift_reg[1]                  ; bitrec:inst2|dout[2]                       ; clk        ; clk      ; None                        ; None                      ; 3.073 ns                ;
+; N/A                                     ; 304.41 MHz ( period = 3.285 ns )                    ; bitrec:inst2|shift_reg[1]                  ; bitrec:inst2|dout[6]                       ; clk        ; clk      ; None                        ; None                      ; 3.073 ns                ;
+; N/A                                     ; 304.41 MHz ( period = 3.285 ns )                    ; bitrec:inst2|shift_reg[1]                  ; bitrec:inst2|dout[3]                       ; clk        ; clk      ; None                        ; None                      ; 3.073 ns                ;
+; N/A                                     ; 304.41 MHz ( period = 3.285 ns )                    ; bitrec:inst2|shift_reg[1]                  ; bitrec:inst2|dout[0]                       ; clk        ; clk      ; None                        ; None                      ; 3.073 ns                ;
+; N/A                                     ; 304.41 MHz ( period = 3.285 ns )                    ; bitrec:inst2|shift_reg[1]                  ; bitrec:inst2|dout[1]                       ; clk        ; clk      ; None                        ; None                      ; 3.073 ns                ;
+; N/A                                     ; 318.88 MHz ( period = 3.136 ns )                    ; bitrec:inst2|shift_reg[7]                  ; bitrec:inst2|dout[4]                       ; clk        ; clk      ; None                        ; None                      ; 2.924 ns                ;
+; N/A                                     ; 318.88 MHz ( period = 3.136 ns )                    ; bitrec:inst2|shift_reg[7]                  ; bitrec:inst2|dout[7]                       ; clk        ; clk      ; None                        ; None                      ; 2.924 ns                ;
+; N/A                                     ; 318.88 MHz ( period = 3.136 ns )                    ; bitrec:inst2|shift_reg[7]                  ; bitrec:inst2|dout[5]                       ; clk        ; clk      ; None                        ; None                      ; 2.924 ns                ;
+; N/A                                     ; 318.88 MHz ( period = 3.136 ns )                    ; bitrec:inst2|shift_reg[7]                  ; bitrec:inst2|dout[2]                       ; clk        ; clk      ; None                        ; None                      ; 2.924 ns                ;
+; N/A                                     ; 318.88 MHz ( period = 3.136 ns )                    ; bitrec:inst2|shift_reg[7]                  ; bitrec:inst2|dout[6]                       ; clk        ; clk      ; None                        ; None                      ; 2.924 ns                ;
+; N/A                                     ; 318.88 MHz ( period = 3.136 ns )                    ; bitrec:inst2|shift_reg[7]                  ; bitrec:inst2|dout[3]                       ; clk        ; clk      ; None                        ; None                      ; 2.924 ns                ;
+; N/A                                     ; 318.88 MHz ( period = 3.136 ns )                    ; bitrec:inst2|shift_reg[7]                  ; bitrec:inst2|dout[0]                       ; clk        ; clk      ; None                        ; None                      ; 2.924 ns                ;
+; N/A                                     ; 318.88 MHz ( period = 3.136 ns )                    ; bitrec:inst2|shift_reg[7]                  ; bitrec:inst2|dout[1]                       ; clk        ; clk      ; None                        ; None                      ; 2.924 ns                ;
+; N/A                                     ; 321.75 MHz ( period = 3.108 ns )                    ; bitrec:inst2|shift_reg[3]                  ; bitrec:inst2|dout[4]                       ; clk        ; clk      ; None                        ; None                      ; 2.896 ns                ;
+; N/A                                     ; 321.75 MHz ( period = 3.108 ns )                    ; bitrec:inst2|shift_reg[3]                  ; bitrec:inst2|dout[7]                       ; clk        ; clk      ; None                        ; None                      ; 2.896 ns                ;
+; N/A                                     ; 321.75 MHz ( period = 3.108 ns )                    ; bitrec:inst2|shift_reg[3]                  ; bitrec:inst2|dout[5]                       ; clk        ; clk      ; None                        ; None                      ; 2.896 ns                ;
+; N/A                                     ; 321.75 MHz ( period = 3.108 ns )                    ; bitrec:inst2|shift_reg[3]                  ; bitrec:inst2|dout[2]                       ; clk        ; clk      ; None                        ; None                      ; 2.896 ns                ;
+; N/A                                     ; 321.75 MHz ( period = 3.108 ns )                    ; bitrec:inst2|shift_reg[3]                  ; bitrec:inst2|dout[6]                       ; clk        ; clk      ; None                        ; None                      ; 2.896 ns                ;
+; N/A                                     ; 321.75 MHz ( period = 3.108 ns )                    ; bitrec:inst2|shift_reg[3]                  ; bitrec:inst2|dout[3]                       ; clk        ; clk      ; None                        ; None                      ; 2.896 ns                ;
+; N/A                                     ; 321.75 MHz ( period = 3.108 ns )                    ; bitrec:inst2|shift_reg[3]                  ; bitrec:inst2|dout[0]                       ; clk        ; clk      ; None                        ; None                      ; 2.896 ns                ;
+; N/A                                     ; 321.75 MHz ( period = 3.108 ns )                    ; bitrec:inst2|shift_reg[3]                  ; bitrec:inst2|dout[1]                       ; clk        ; clk      ; None                        ; None                      ; 2.896 ns                ;
+; N/A                                     ; 321.96 MHz ( period = 3.106 ns )                    ; bitrec:inst2|shift_reg[6]                  ; bitrec:inst2|dout[4]                       ; clk        ; clk      ; None                        ; None                      ; 2.894 ns                ;
+; N/A                                     ; 321.96 MHz ( period = 3.106 ns )                    ; bitrec:inst2|shift_reg[6]                  ; bitrec:inst2|dout[7]                       ; clk        ; clk      ; None                        ; None                      ; 2.894 ns                ;
+; N/A                                     ; 321.96 MHz ( period = 3.106 ns )                    ; bitrec:inst2|shift_reg[6]                  ; bitrec:inst2|dout[5]                       ; clk        ; clk      ; None                        ; None                      ; 2.894 ns                ;
+; N/A                                     ; 321.96 MHz ( period = 3.106 ns )                    ; bitrec:inst2|shift_reg[6]                  ; bitrec:inst2|dout[2]                       ; clk        ; clk      ; None                        ; None                      ; 2.894 ns                ;
+; N/A                                     ; 321.96 MHz ( period = 3.106 ns )                    ; bitrec:inst2|shift_reg[6]                  ; bitrec:inst2|dout[6]                       ; clk        ; clk      ; None                        ; None                      ; 2.894 ns                ;
+; N/A                                     ; 321.96 MHz ( period = 3.106 ns )                    ; bitrec:inst2|shift_reg[6]                  ; bitrec:inst2|dout[3]                       ; clk        ; clk      ; None                        ; None                      ; 2.894 ns                ;
+; N/A                                     ; 321.96 MHz ( period = 3.106 ns )                    ; bitrec:inst2|shift_reg[6]                  ; bitrec:inst2|dout[0]                       ; clk        ; clk      ; None                        ; None                      ; 2.894 ns                ;
+; N/A                                     ; 321.96 MHz ( period = 3.106 ns )                    ; bitrec:inst2|shift_reg[6]                  ; bitrec:inst2|dout[1]                       ; clk        ; clk      ; None                        ; None                      ; 2.894 ns                ;
+; N/A                                     ; 325.63 MHz ( period = 3.071 ns )                    ; bitrec:inst2|dout[4]                       ; byterec:inst1|present_state.idle           ; clk        ; clk      ; None                        ; None                      ; 2.857 ns                ;
+; N/A                                     ; 335.46 MHz ( period = 2.981 ns )                    ; bitrec:inst2|dout[4]                       ; byterec:inst1|present_state.wait_rel       ; clk        ; clk      ; None                        ; None                      ; 2.767 ns                ;
+; N/A                                     ; 335.46 MHz ( period = 2.981 ns )                    ; bitrec:inst2|dout[4]                       ; byterec:inst1|present_state.wait_ext_rel   ; clk        ; clk      ; None                        ; None                      ; 2.767 ns                ;
+; N/A                                     ; 335.80 MHz ( period = 2.978 ns )                    ; bitrec:inst2|dout[4]                       ; byterec:inst1|present_state.wait_ext       ; clk        ; clk      ; None                        ; None                      ; 2.764 ns                ;
+; N/A                                     ; 337.95 MHz ( period = 2.959 ns )                    ; bitrec:inst2|shift_reg[4]                  ; bitrec:inst2|dout[4]                       ; clk        ; clk      ; None                        ; None                      ; 2.747 ns                ;
+; N/A                                     ; 337.95 MHz ( period = 2.959 ns )                    ; bitrec:inst2|shift_reg[4]                  ; bitrec:inst2|dout[7]                       ; clk        ; clk      ; None                        ; None                      ; 2.747 ns                ;
+; N/A                                     ; 337.95 MHz ( period = 2.959 ns )                    ; bitrec:inst2|shift_reg[4]                  ; bitrec:inst2|dout[5]                       ; clk        ; clk      ; None                        ; None                      ; 2.747 ns                ;
+; N/A                                     ; 337.95 MHz ( period = 2.959 ns )                    ; bitrec:inst2|shift_reg[4]                  ; bitrec:inst2|dout[2]                       ; clk        ; clk      ; None                        ; None                      ; 2.747 ns                ;
+; N/A                                     ; 337.95 MHz ( period = 2.959 ns )                    ; bitrec:inst2|shift_reg[4]                  ; bitrec:inst2|dout[6]                       ; clk        ; clk      ; None                        ; None                      ; 2.747 ns                ;
+; N/A                                     ; 337.95 MHz ( period = 2.959 ns )                    ; bitrec:inst2|shift_reg[4]                  ; bitrec:inst2|dout[3]                       ; clk        ; clk      ; None                        ; None                      ; 2.747 ns                ;
+; N/A                                     ; 337.95 MHz ( period = 2.959 ns )                    ; bitrec:inst2|shift_reg[4]                  ; bitrec:inst2|dout[0]                       ; clk        ; clk      ; None                        ; None                      ; 2.747 ns                ;
+; N/A                                     ; 337.95 MHz ( period = 2.959 ns )                    ; bitrec:inst2|shift_reg[4]                  ; bitrec:inst2|dout[1]                       ; clk        ; clk      ; None                        ; None                      ; 2.747 ns                ;
+; N/A                                     ; 338.07 MHz ( period = 2.958 ns )                    ; bitrec:inst2|shift_reg[8]                  ; bitrec:inst2|dout[4]                       ; clk        ; clk      ; None                        ; None                      ; 2.746 ns                ;
+; N/A                                     ; 338.07 MHz ( period = 2.958 ns )                    ; bitrec:inst2|shift_reg[8]                  ; bitrec:inst2|dout[7]                       ; clk        ; clk      ; None                        ; None                      ; 2.746 ns                ;
+; N/A                                     ; 338.07 MHz ( period = 2.958 ns )                    ; bitrec:inst2|shift_reg[8]                  ; bitrec:inst2|dout[5]                       ; clk        ; clk      ; None                        ; None                      ; 2.746 ns                ;
+; N/A                                     ; 338.07 MHz ( period = 2.958 ns )                    ; bitrec:inst2|shift_reg[8]                  ; bitrec:inst2|dout[2]                       ; clk        ; clk      ; None                        ; None                      ; 2.746 ns                ;
+; N/A                                     ; 338.07 MHz ( period = 2.958 ns )                    ; bitrec:inst2|shift_reg[8]                  ; bitrec:inst2|dout[6]                       ; clk        ; clk      ; None                        ; None                      ; 2.746 ns                ;
+; N/A                                     ; 338.07 MHz ( period = 2.958 ns )                    ; bitrec:inst2|shift_reg[8]                  ; bitrec:inst2|dout[3]                       ; clk        ; clk      ; None                        ; None                      ; 2.746 ns                ;
+; N/A                                     ; 338.07 MHz ( period = 2.958 ns )                    ; bitrec:inst2|shift_reg[8]                  ; bitrec:inst2|dout[0]                       ; clk        ; clk      ; None                        ; None                      ; 2.746 ns                ;
+; N/A                                     ; 338.07 MHz ( period = 2.958 ns )                    ; bitrec:inst2|shift_reg[8]                  ; bitrec:inst2|dout[1]                       ; clk        ; clk      ; None                        ; None                      ; 2.746 ns                ;
+; N/A                                     ; 345.18 MHz ( period = 2.897 ns )                    ; bitrec:inst2|dout[4]                       ; byterec:inst1|present_state.sample_nor     ; clk        ; clk      ; None                        ; None                      ; 2.683 ns                ;
+; N/A                                     ; 346.98 MHz ( period = 2.882 ns )                    ; bitrec:inst2|dout[5]                       ; byterec:inst1|present_state.idle           ; clk        ; clk      ; None                        ; None                      ; 2.668 ns                ;
+; N/A                                     ; 347.95 MHz ( period = 2.874 ns )                    ; bitrec:inst2|dout[4]                       ; byterec:inst1|present_state.sample_ext     ; clk        ; clk      ; None                        ; None                      ; 2.660 ns                ;
+; N/A                                     ; 348.43 MHz ( period = 2.870 ns )                    ; bitrec:inst2|dout[4]                       ; byterec:inst1|present_state.sample_ext_rel ; clk        ; clk      ; None                        ; None                      ; 2.656 ns                ;
+; N/A                                     ; 354.11 MHz ( period = 2.824 ns )                    ; bitrec:inst2|shift_reg[5]                  ; bitrec:inst2|dout[4]                       ; clk        ; clk      ; None                        ; None                      ; 2.612 ns                ;
+; N/A                                     ; 354.11 MHz ( period = 2.824 ns )                    ; bitrec:inst2|shift_reg[5]                  ; bitrec:inst2|dout[7]                       ; clk        ; clk      ; None                        ; None                      ; 2.612 ns                ;
+; N/A                                     ; 354.11 MHz ( period = 2.824 ns )                    ; bitrec:inst2|shift_reg[5]                  ; bitrec:inst2|dout[5]                       ; clk        ; clk      ; None                        ; None                      ; 2.612 ns                ;
+; N/A                                     ; 354.11 MHz ( period = 2.824 ns )                    ; bitrec:inst2|shift_reg[5]                  ; bitrec:inst2|dout[2]                       ; clk        ; clk      ; None                        ; None                      ; 2.612 ns                ;
+; N/A                                     ; 354.11 MHz ( period = 2.824 ns )                    ; bitrec:inst2|shift_reg[5]                  ; bitrec:inst2|dout[6]                       ; clk        ; clk      ; None                        ; None                      ; 2.612 ns                ;
+; N/A                                     ; 354.11 MHz ( period = 2.824 ns )                    ; bitrec:inst2|shift_reg[5]                  ; bitrec:inst2|dout[3]                       ; clk        ; clk      ; None                        ; None                      ; 2.612 ns                ;
+; N/A                                     ; 354.11 MHz ( period = 2.824 ns )                    ; bitrec:inst2|shift_reg[5]                  ; bitrec:inst2|dout[0]                       ; clk        ; clk      ; None                        ; None                      ; 2.612 ns                ;
+; N/A                                     ; 354.11 MHz ( period = 2.824 ns )                    ; bitrec:inst2|shift_reg[5]                  ; bitrec:inst2|dout[1]                       ; clk        ; clk      ; None                        ; None                      ; 2.612 ns                ;
+; N/A                                     ; 354.99 MHz ( period = 2.817 ns )                    ; bitrec:inst2|shift_reg[2]                  ; bitrec:inst2|dout[4]                       ; clk        ; clk      ; None                        ; None                      ; 2.605 ns                ;
+; N/A                                     ; 354.99 MHz ( period = 2.817 ns )                    ; bitrec:inst2|shift_reg[2]                  ; bitrec:inst2|dout[7]                       ; clk        ; clk      ; None                        ; None                      ; 2.605 ns                ;
+; N/A                                     ; 354.99 MHz ( period = 2.817 ns )                    ; bitrec:inst2|shift_reg[2]                  ; bitrec:inst2|dout[5]                       ; clk        ; clk      ; None                        ; None                      ; 2.605 ns                ;
+; N/A                                     ; 354.99 MHz ( period = 2.817 ns )                    ; bitrec:inst2|shift_reg[2]                  ; bitrec:inst2|dout[2]                       ; clk        ; clk      ; None                        ; None                      ; 2.605 ns                ;
+; N/A                                     ; 354.99 MHz ( period = 2.817 ns )                    ; bitrec:inst2|shift_reg[2]                  ; bitrec:inst2|dout[6]                       ; clk        ; clk      ; None                        ; None                      ; 2.605 ns                ;
+; N/A                                     ; 354.99 MHz ( period = 2.817 ns )                    ; bitrec:inst2|shift_reg[2]                  ; bitrec:inst2|dout[3]                       ; clk        ; clk      ; None                        ; None                      ; 2.605 ns                ;
+; N/A                                     ; 354.99 MHz ( period = 2.817 ns )                    ; bitrec:inst2|shift_reg[2]                  ; bitrec:inst2|dout[0]                       ; clk        ; clk      ; None                        ; None                      ; 2.605 ns                ;
+; N/A                                     ; 354.99 MHz ( period = 2.817 ns )                    ; bitrec:inst2|shift_reg[2]                  ; bitrec:inst2|dout[1]                       ; clk        ; clk      ; None                        ; None                      ; 2.605 ns                ;
+; N/A                                     ; 358.81 MHz ( period = 2.787 ns )                    ; byterec:inst1|present_state.wait_ext       ; byterec:inst1|present_state.idle           ; clk        ; clk      ; None                        ; None                      ; 2.573 ns                ;
+; N/A                                     ; 362.58 MHz ( period = 2.758 ns )                    ; bitrec:inst2|dout[7]                       ; byterec:inst1|present_state.wait_rel       ; clk        ; clk      ; None                        ; None                      ; 2.544 ns                ;
+; N/A                                     ; 362.84 MHz ( period = 2.756 ns )                    ; bitrec:inst2|dout[7]                       ; byterec:inst1|present_state.wait_ext       ; clk        ; clk      ; None                        ; None                      ; 2.542 ns                ;
+; N/A                                     ; 364.56 MHz ( period = 2.743 ns )                    ; bitrec:inst2|shift_reg[0]                  ; bitrec:inst2|dout[4]                       ; clk        ; clk      ; None                        ; None                      ; 2.531 ns                ;
+; N/A                                     ; 364.56 MHz ( period = 2.743 ns )                    ; bitrec:inst2|shift_reg[0]                  ; bitrec:inst2|dout[7]                       ; clk        ; clk      ; None                        ; None                      ; 2.531 ns                ;
+; N/A                                     ; 364.56 MHz ( period = 2.743 ns )                    ; bitrec:inst2|shift_reg[0]                  ; bitrec:inst2|dout[5]                       ; clk        ; clk      ; None                        ; None                      ; 2.531 ns                ;
+; N/A                                     ; 364.56 MHz ( period = 2.743 ns )                    ; bitrec:inst2|shift_reg[0]                  ; bitrec:inst2|dout[2]                       ; clk        ; clk      ; None                        ; None                      ; 2.531 ns                ;
+; N/A                                     ; 364.56 MHz ( period = 2.743 ns )                    ; bitrec:inst2|shift_reg[0]                  ; bitrec:inst2|dout[6]                       ; clk        ; clk      ; None                        ; None                      ; 2.531 ns                ;
+; N/A                                     ; 364.56 MHz ( period = 2.743 ns )                    ; bitrec:inst2|shift_reg[0]                  ; bitrec:inst2|dout[3]                       ; clk        ; clk      ; None                        ; None                      ; 2.531 ns                ;
+; N/A                                     ; 364.56 MHz ( period = 2.743 ns )                    ; bitrec:inst2|shift_reg[0]                  ; bitrec:inst2|dout[0]                       ; clk        ; clk      ; None                        ; None                      ; 2.531 ns                ;
+; N/A                                     ; 364.56 MHz ( period = 2.743 ns )                    ; bitrec:inst2|shift_reg[0]                  ; bitrec:inst2|dout[1]                       ; clk        ; clk      ; None                        ; None                      ; 2.531 ns                ;
+; N/A                                     ; 366.84 MHz ( period = 2.726 ns )                    ; bitrec:inst2|dout[7]                       ; byterec:inst1|present_state.wait_ext_rel   ; clk        ; clk      ; None                        ; None                      ; 2.512 ns                ;
+; N/A                                     ; 367.51 MHz ( period = 2.721 ns )                    ; byterec:inst1|present_state.wait_rel       ; byterec:inst1|present_state.idle           ; clk        ; clk      ; None                        ; None                      ; 2.507 ns                ;
+; N/A                                     ; 367.92 MHz ( period = 2.718 ns )                    ; bitrec:inst2|dout[5]                       ; byterec:inst1|present_state.wait_rel       ; clk        ; clk      ; None                        ; None                      ; 2.504 ns                ;
+; N/A                                     ; 367.92 MHz ( period = 2.718 ns )                    ; bitrec:inst2|dout[5]                       ; byterec:inst1|present_state.wait_ext_rel   ; clk        ; clk      ; None                        ; None                      ; 2.504 ns                ;
+; N/A                                     ; 368.32 MHz ( period = 2.715 ns )                    ; bitrec:inst2|dout[5]                       ; byterec:inst1|present_state.wait_ext       ; clk        ; clk      ; None                        ; None                      ; 2.501 ns                ;
+; N/A                                     ; 372.02 MHz ( period = 2.688 ns )                    ; bitrec:inst2|dout[2]                       ; byterec:inst1|present_state.wait_rel       ; clk        ; clk      ; None                        ; None                      ; 2.474 ns                ;
+; N/A                                     ; 372.02 MHz ( period = 2.688 ns )                    ; bitrec:inst2|dout[2]                       ; byterec:inst1|present_state.wait_ext_rel   ; clk        ; clk      ; None                        ; None                      ; 2.474 ns                ;
+; N/A                                     ; 372.44 MHz ( period = 2.685 ns )                    ; bitrec:inst2|dout[2]                       ; byterec:inst1|present_state.wait_ext       ; clk        ; clk      ; None                        ; None                      ; 2.471 ns                ;
+; N/A                                     ; 377.64 MHz ( period = 2.648 ns )                    ; bitrec:inst2|dout[3]                       ; byterec:inst1|present_state.wait_rel       ; clk        ; clk      ; None                        ; None                      ; 2.434 ns                ;
+; N/A                                     ; 377.64 MHz ( period = 2.648 ns )                    ; bitrec:inst2|dout[3]                       ; byterec:inst1|present_state.wait_ext_rel   ; clk        ; clk      ; None                        ; None                      ; 2.434 ns                ;
+; N/A                                     ; 378.07 MHz ( period = 2.645 ns )                    ; bitrec:inst2|dout[3]                       ; byterec:inst1|present_state.wait_ext       ; clk        ; clk      ; None                        ; None                      ; 2.431 ns                ;
+; N/A                                     ; 379.65 MHz ( period = 2.634 ns )                    ; bitrec:inst2|dout[5]                       ; byterec:inst1|present_state.sample_nor     ; clk        ; clk      ; None                        ; None                      ; 2.420 ns                ;
+; N/A                                     ; 383.00 MHz ( period = 2.611 ns )                    ; bitrec:inst2|dout[5]                       ; byterec:inst1|present_state.sample_ext     ; clk        ; clk      ; None                        ; None                      ; 2.397 ns                ;
+; N/A                                     ; 383.58 MHz ( period = 2.607 ns )                    ; bitrec:inst2|dout[5]                       ; byterec:inst1|present_state.sample_ext_rel ; clk        ; clk      ; None                        ; None                      ; 2.393 ns                ;
+; N/A                                     ; 384.02 MHz ( period = 2.604 ns )                    ; bitrec:inst2|dout[2]                       ; byterec:inst1|present_state.sample_nor     ; clk        ; clk      ; None                        ; None                      ; 2.390 ns                ;
+; N/A                                     ; 385.06 MHz ( period = 2.597 ns )                    ; bitrec:inst2|dout[4]                       ; byterec:inst1|present_state.sample_rel     ; clk        ; clk      ; None                        ; None                      ; 2.383 ns                ;
+; N/A                                     ; 387.45 MHz ( period = 2.581 ns )                    ; bitrec:inst2|dout[2]                       ; byterec:inst1|present_state.sample_ext     ; clk        ; clk      ; None                        ; None                      ; 2.367 ns                ;
+; N/A                                     ; 388.05 MHz ( period = 2.577 ns )                    ; bitrec:inst2|dout[2]                       ; byterec:inst1|present_state.sample_ext_rel ; clk        ; clk      ; None                        ; None                      ; 2.363 ns                ;
+; N/A                                     ; 390.02 MHz ( period = 2.564 ns )                    ; bitrec:inst2|dout[3]                       ; byterec:inst1|present_state.sample_nor     ; clk        ; clk      ; None                        ; None                      ; 2.350 ns                ;
+; N/A                                     ; 393.55 MHz ( period = 2.541 ns )                    ; bitrec:inst2|dout[3]                       ; byterec:inst1|present_state.sample_ext     ; clk        ; clk      ; None                        ; None                      ; 2.327 ns                ;
+; N/A                                     ; 394.17 MHz ( period = 2.537 ns )                    ; bitrec:inst2|dout[3]                       ; byterec:inst1|present_state.sample_ext_rel ; clk        ; clk      ; None                        ; None                      ; 2.323 ns                ;
+; N/A                                     ; 396.67 MHz ( period = 2.521 ns )                    ; bitrec:inst2|present_state.ChkData         ; bitrec:inst2|dout[4]                       ; clk        ; clk      ; None                        ; None                      ; 2.309 ns                ;
+; N/A                                     ; 396.67 MHz ( period = 2.521 ns )                    ; bitrec:inst2|present_state.ChkData         ; bitrec:inst2|dout[7]                       ; clk        ; clk      ; None                        ; None                      ; 2.309 ns                ;
+; N/A                                     ; 396.67 MHz ( period = 2.521 ns )                    ; bitrec:inst2|present_state.ChkData         ; bitrec:inst2|dout[5]                       ; clk        ; clk      ; None                        ; None                      ; 2.309 ns                ;
+; N/A                                     ; 396.67 MHz ( period = 2.521 ns )                    ; bitrec:inst2|present_state.ChkData         ; bitrec:inst2|dout[2]                       ; clk        ; clk      ; None                        ; None                      ; 2.309 ns                ;
+; N/A                                     ; 396.67 MHz ( period = 2.521 ns )                    ; bitrec:inst2|present_state.ChkData         ; bitrec:inst2|dout[6]                       ; clk        ; clk      ; None                        ; None                      ; 2.309 ns                ;
+; N/A                                     ; 396.67 MHz ( period = 2.521 ns )                    ; bitrec:inst2|present_state.ChkData         ; bitrec:inst2|dout[3]                       ; clk        ; clk      ; None                        ; None                      ; 2.309 ns                ;
+; N/A                                     ; 396.67 MHz ( period = 2.521 ns )                    ; bitrec:inst2|present_state.ChkData         ; bitrec:inst2|dout[0]                       ; clk        ; clk      ; None                        ; None                      ; 2.309 ns                ;
+; N/A                                     ; 396.67 MHz ( period = 2.521 ns )                    ; bitrec:inst2|present_state.ChkData         ; bitrec:inst2|dout[1]                       ; clk        ; clk      ; None                        ; None                      ; 2.309 ns                ;
+; N/A                                     ; 402.90 MHz ( period = 2.482 ns )                    ; bitrec:inst2|shift_reg[1]                  ; bitrec:inst2|present_state.idle            ; clk        ; clk      ; None                        ; None                      ; 2.270 ns                ;
+; N/A                                     ; 407.33 MHz ( period = 2.455 ns )                    ; byterec:inst1|present_state.wait_ext_rel   ; byterec:inst1|present_state.idle           ; clk        ; clk      ; None                        ; None                      ; 2.241 ns                ;
+; N/A                                     ; 410.85 MHz ( period = 2.434 ns )                    ; bitrec:inst2|present_state.LowClk          ; bitrec:inst2|shift_reg[4]                  ; clk        ; clk      ; None                        ; None                      ; 2.220 ns                ;
+; N/A                                     ; 410.85 MHz ( period = 2.434 ns )                    ; bitrec:inst2|present_state.LowClk          ; bitrec:inst2|shift_reg[7]                  ; clk        ; clk      ; None                        ; None                      ; 2.220 ns                ;
+; N/A                                     ; 410.85 MHz ( period = 2.434 ns )                    ; bitrec:inst2|present_state.LowClk          ; bitrec:inst2|shift_reg[5]                  ; clk        ; clk      ; None                        ; None                      ; 2.220 ns                ;
+; N/A                                     ; 410.85 MHz ( period = 2.434 ns )                    ; bitrec:inst2|present_state.LowClk          ; bitrec:inst2|shift_reg[2]                  ; clk        ; clk      ; None                        ; None                      ; 2.220 ns                ;
+; N/A                                     ; 410.85 MHz ( period = 2.434 ns )                    ; bitrec:inst2|present_state.LowClk          ; bitrec:inst2|shift_reg[6]                  ; clk        ; clk      ; None                        ; None                      ; 2.220 ns                ;
+; N/A                                     ; 410.85 MHz ( period = 2.434 ns )                    ; bitrec:inst2|present_state.LowClk          ; bitrec:inst2|shift_reg[8]                  ; clk        ; clk      ; None                        ; None                      ; 2.220 ns                ;
+; N/A                                     ; 410.85 MHz ( period = 2.434 ns )                    ; bitrec:inst2|present_state.LowClk          ; bitrec:inst2|shift_reg[0]                  ; clk        ; clk      ; None                        ; None                      ; 2.220 ns                ;
+; N/A                                     ; 410.85 MHz ( period = 2.434 ns )                    ; bitrec:inst2|present_state.LowClk          ; bitrec:inst2|shift_reg[1]                  ; clk        ; clk      ; None                        ; None                      ; 2.220 ns                ;
+; N/A                                     ; 410.85 MHz ( period = 2.434 ns )                    ; bitrec:inst2|present_state.LowClk          ; bitrec:inst2|shift_reg[3]                  ; clk        ; clk      ; None                        ; None                      ; 2.220 ns                ;
+; N/A                                     ; 410.85 MHz ( period = 2.434 ns )                    ; bitrec:inst2|present_state.LowClk          ; bitrec:inst2|shift_reg[9]                  ; clk        ; clk      ; None                        ; None                      ; 2.220 ns                ;
+; N/A                                     ; 411.18 MHz ( period = 2.432 ns )                    ; byterec:inst1|present_state.idle           ; byterec:inst1|present_state.idle           ; clk        ; clk      ; None                        ; None                      ; 2.218 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[1]                       ; byterec:inst1|present_state.wait_rel       ; clk        ; clk      ; None                        ; None                      ; 2.149 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[1]                       ; byterec:inst1|present_state.wait_ext_rel   ; clk        ; clk      ; None                        ; None                      ; 2.149 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[1]                       ; byterec:inst1|present_state.wait_ext       ; clk        ; clk      ; None                        ; None                      ; 2.146 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.new_break      ; byterec:inst1|present_state.idle           ; clk        ; clk      ; None                        ; None                      ; 2.145 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[5]                       ; byterec:inst1|present_state.sample_rel     ; clk        ; clk      ; None                        ; None                      ; 2.120 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|shift_reg[7]                  ; bitrec:inst2|present_state.idle            ; clk        ; clk      ; None                        ; None                      ; 2.121 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[6]                       ; byterec:inst1|present_state.wait_rel       ; clk        ; clk      ; None                        ; None                      ; 2.111 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[6]                       ; byterec:inst1|present_state.wait_ext       ; clk        ; clk      ; None                        ; None                      ; 2.109 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[0]                       ; byterec:inst1|present_state.wait_rel       ; clk        ; clk      ; None                        ; None                      ; 2.099 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[0]                       ; byterec:inst1|present_state.wait_ext       ; clk        ; clk      ; None                        ; None                      ; 2.097 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[6]                       ; byterec:inst1|present_state.wait_ext_rel   ; clk        ; clk      ; None                        ; None                      ; 2.097 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|shift_reg[3]                  ; bitrec:inst2|present_state.idle            ; clk        ; clk      ; None                        ; None                      ; 2.093 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[2]                       ; byterec:inst1|present_state.sample_rel     ; clk        ; clk      ; None                        ; None                      ; 2.090 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|shift_reg[6]                  ; bitrec:inst2|present_state.idle            ; clk        ; clk      ; None                        ; None                      ; 2.091 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|present_state.idle            ; bitrec:inst2|count[1]                      ; clk        ; clk      ; None                        ; None                      ; 2.072 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|present_state.idle            ; bitrec:inst2|count[3]                      ; clk        ; clk      ; None                        ; None                      ; 2.072 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|present_state.idle            ; bitrec:inst2|count[2]                      ; clk        ; clk      ; None                        ; None                      ; 2.072 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[0]                       ; byterec:inst1|present_state.wait_ext_rel   ; clk        ; clk      ; None                        ; None                      ; 2.067 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[1]                       ; byterec:inst1|present_state.sample_nor     ; clk        ; clk      ; None                        ; None                      ; 2.065 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_ext_rel ; byterec:inst1|dout[8]                      ; clk        ; clk      ; None                        ; None                      ; 2.063 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_ext_rel ; byterec:inst1|dout[7]                      ; clk        ; clk      ; None                        ; None                      ; 2.063 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_ext_rel ; byterec:inst1|dout[6]                      ; clk        ; clk      ; None                        ; None                      ; 2.063 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_ext_rel ; byterec:inst1|dout[5]                      ; clk        ; clk      ; None                        ; None                      ; 2.063 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_ext_rel ; byterec:inst1|dout[4]                      ; clk        ; clk      ; None                        ; None                      ; 2.063 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_ext_rel ; byterec:inst1|dout[3]                      ; clk        ; clk      ; None                        ; None                      ; 2.063 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_ext_rel ; byterec:inst1|dout[2]                      ; clk        ; clk      ; None                        ; None                      ; 2.063 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_ext_rel ; byterec:inst1|dout[1]                      ; clk        ; clk      ; None                        ; None                      ; 2.063 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_ext_rel ; byterec:inst1|dout[0]                      ; clk        ; clk      ; None                        ; None                      ; 2.063 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[3]                       ; byterec:inst1|present_state.sample_rel     ; clk        ; clk      ; None                        ; None                      ; 2.050 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[1]                       ; byterec:inst1|present_state.sample_ext     ; clk        ; clk      ; None                        ; None                      ; 2.042 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[1]                       ; byterec:inst1|present_state.sample_ext_rel ; clk        ; clk      ; None                        ; None                      ; 2.038 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_nor     ; byterec:inst1|dout[8]                      ; clk        ; clk      ; None                        ; None                      ; 2.026 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_nor     ; byterec:inst1|dout[7]                      ; clk        ; clk      ; None                        ; None                      ; 2.026 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_nor     ; byterec:inst1|dout[6]                      ; clk        ; clk      ; None                        ; None                      ; 2.026 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_nor     ; byterec:inst1|dout[5]                      ; clk        ; clk      ; None                        ; None                      ; 2.026 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_nor     ; byterec:inst1|dout[4]                      ; clk        ; clk      ; None                        ; None                      ; 2.026 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_nor     ; byterec:inst1|dout[3]                      ; clk        ; clk      ; None                        ; None                      ; 2.026 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_nor     ; byterec:inst1|dout[2]                      ; clk        ; clk      ; None                        ; None                      ; 2.026 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_nor     ; byterec:inst1|dout[1]                      ; clk        ; clk      ; None                        ; None                      ; 2.026 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; byterec:inst1|present_state.sample_nor     ; byterec:inst1|dout[0]                      ; clk        ; clk      ; None                        ; None                      ; 2.026 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|present_state.ChkData         ; bitrec:inst2|present_state.HighClk         ; clk        ; clk      ; None                        ; None                      ; 2.014 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[6]                       ; byterec:inst1|present_state.sample_nor     ; clk        ; clk      ; None                        ; None                      ; 2.013 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|present_state.NewData         ; bitrec:inst2|present_state.HighClk         ; clk        ; clk      ; None                        ; None                      ; 2.011 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|present_state.ChkData         ; bitrec:inst2|present_state.ChkData         ; clk        ; clk      ; None                        ; None                      ; 2.011 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|present_state.NewData         ; bitrec:inst2|present_state.ChkData         ; clk        ; clk      ; None                        ; None                      ; 2.008 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[6]                       ; byterec:inst1|present_state.sample_ext     ; clk        ; clk      ; None                        ; None                      ; 1.990 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[6]                       ; byterec:inst1|present_state.sample_ext_rel ; clk        ; clk      ; None                        ; None                      ; 1.986 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; lpf:cleaner|dout                           ; bitrec:inst2|present_state.HighClk         ; clk        ; clk      ; None                        ; None                      ; 1.981 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; lpf:cleaner|dout                           ; bitrec:inst2|shift_reg[4]                  ; clk        ; clk      ; None                        ; None                      ; 1.975 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; lpf:cleaner|dout                           ; bitrec:inst2|shift_reg[7]                  ; clk        ; clk      ; None                        ; None                      ; 1.975 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; lpf:cleaner|dout                           ; bitrec:inst2|shift_reg[5]                  ; clk        ; clk      ; None                        ; None                      ; 1.975 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; lpf:cleaner|dout                           ; bitrec:inst2|shift_reg[2]                  ; clk        ; clk      ; None                        ; None                      ; 1.975 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; lpf:cleaner|dout                           ; bitrec:inst2|shift_reg[6]                  ; clk        ; clk      ; None                        ; None                      ; 1.975 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; lpf:cleaner|dout                           ; bitrec:inst2|shift_reg[8]                  ; clk        ; clk      ; None                        ; None                      ; 1.975 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; lpf:cleaner|dout                           ; bitrec:inst2|shift_reg[0]                  ; clk        ; clk      ; None                        ; None                      ; 1.975 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; lpf:cleaner|dout                           ; bitrec:inst2|shift_reg[1]                  ; clk        ; clk      ; None                        ; None                      ; 1.975 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; lpf:cleaner|dout                           ; bitrec:inst2|shift_reg[3]                  ; clk        ; clk      ; None                        ; None                      ; 1.975 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; lpf:cleaner|dout                           ; bitrec:inst2|shift_reg[9]                  ; clk        ; clk      ; None                        ; None                      ; 1.975 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|present_state.ChkData         ; bitrec:inst2|present_state.idle            ; clk        ; clk      ; None                        ; None                      ; 1.963 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|shift_reg[4]                  ; bitrec:inst2|present_state.idle            ; clk        ; clk      ; None                        ; None                      ; 1.944 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|shift_reg[8]                  ; bitrec:inst2|present_state.idle            ; clk        ; clk      ; None                        ; None                      ; 1.943 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|present_state.LowClk          ; bitrec:inst2|present_state.LowClk          ; clk        ; clk      ; None                        ; None                      ; 1.927 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[0]                       ; byterec:inst1|present_state.sample_nor     ; clk        ; clk      ; None                        ; None                      ; 1.919 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|count[2]                      ; bitrec:inst2|count[3]                      ; clk        ; clk      ; None                        ; None                      ; 1.914 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|count[3]                      ; bitrec:inst2|present_state.HighClk         ; clk        ; clk      ; None                        ; None                      ; 1.903 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[0]                       ; byterec:inst1|present_state.sample_ext     ; clk        ; clk      ; None                        ; None                      ; 1.896 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; bitrec:inst2|dout[0]                       ; byterec:inst1|present_state.sample_ext_rel ; clk        ; clk      ; None                        ; None                      ; 1.892 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; lpf:cleaner|dout                           ; bitrec:inst2|count[1]                      ; clk        ; clk      ; None                        ; None                      ; 1.876 ns                ;
+; N/A                                     ; Restricted to 420.17 MHz ( period = 2.380 ns )      ; lpf:cleaner|dout                           ; bitrec:inst2|count[3]                      ; clk        ; clk      ; None                        ; None                      ; 1.876 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                            ;                                            ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------+--------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; tsu                                                                                        ;
++-------+--------------+------------+---------+-----------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From    ; To                                ; To Clock ;
++-------+--------------+------------+---------+-----------------------------------+----------+
+; N/A   ; None         ; 1.406 ns   ; resetN  ; bitrec:inst2|shift_reg[4]         ; clk      ;
+; N/A   ; None         ; 1.406 ns   ; resetN  ; bitrec:inst2|shift_reg[7]         ; clk      ;
+; N/A   ; None         ; 1.406 ns   ; resetN  ; bitrec:inst2|shift_reg[5]         ; clk      ;
+; N/A   ; None         ; 1.406 ns   ; resetN  ; bitrec:inst2|shift_reg[2]         ; clk      ;
+; N/A   ; None         ; 1.406 ns   ; resetN  ; bitrec:inst2|shift_reg[6]         ; clk      ;
+; N/A   ; None         ; 1.406 ns   ; resetN  ; bitrec:inst2|shift_reg[8]         ; clk      ;
+; N/A   ; None         ; 1.406 ns   ; resetN  ; bitrec:inst2|shift_reg[0]         ; clk      ;
+; N/A   ; None         ; 1.406 ns   ; resetN  ; bitrec:inst2|shift_reg[1]         ; clk      ;
+; N/A   ; None         ; 1.406 ns   ; resetN  ; bitrec:inst2|shift_reg[3]         ; clk      ;
+; N/A   ; None         ; 1.406 ns   ; resetN  ; bitrec:inst2|shift_reg[9]         ; clk      ;
+; N/A   ; None         ; 1.214 ns   ; KBD_DAT ; bitrec:inst2|present_state.idle   ; clk      ;
+; N/A   ; None         ; 0.954 ns   ; resetN  ; bitrec:inst2|dout[4]              ; clk      ;
+; N/A   ; None         ; 0.954 ns   ; resetN  ; bitrec:inst2|dout[7]              ; clk      ;
+; N/A   ; None         ; 0.954 ns   ; resetN  ; bitrec:inst2|dout[5]              ; clk      ;
+; N/A   ; None         ; 0.954 ns   ; resetN  ; bitrec:inst2|dout[2]              ; clk      ;
+; N/A   ; None         ; 0.954 ns   ; resetN  ; bitrec:inst2|dout[6]              ; clk      ;
+; N/A   ; None         ; 0.954 ns   ; resetN  ; bitrec:inst2|dout[3]              ; clk      ;
+; N/A   ; None         ; 0.954 ns   ; resetN  ; bitrec:inst2|dout[0]              ; clk      ;
+; N/A   ; None         ; 0.954 ns   ; resetN  ; bitrec:inst2|dout[1]              ; clk      ;
+; N/A   ; None         ; 0.692 ns   ; KBD_DAT ; bitrec:inst2|present_state.LowClk ; clk      ;
+; N/A   ; None         ; 0.102 ns   ; KBD_DAT ; bitrec:inst2|shift_reg[9]         ; clk      ;
+; N/A   ; None         ; -0.248 ns  ; KBD_CLK ; lpf:cleaner|shiftreg[0]           ; clk      ;
++-------+--------------+------------+---------+-----------------------------------+----------+
+
+
++--------------------------------------------------------------------------------------------------+
+; tco                                                                                              ;
++-------+--------------+------------+---------------------------------------+---------+------------+
+; Slack ; Required tco ; Actual tco ; From                                  ; To      ; From Clock ;
++-------+--------------+------------+---------------------------------------+---------+------------+
+; N/A   ; None         ; 8.101 ns   ; byterec:inst1|present_state.new_make  ; make    ; clk        ;
+; N/A   ; None         ; 7.891 ns   ; byterec:inst1|dout[0]                 ; dout[0] ; clk        ;
+; N/A   ; None         ; 7.859 ns   ; byterec:inst1|present_state.new_break ; break   ; clk        ;
+; N/A   ; None         ; 7.844 ns   ; byterec:inst1|dout[1]                 ; dout[1] ; clk        ;
+; N/A   ; None         ; 7.844 ns   ; byterec:inst1|dout[5]                 ; dout[5] ; clk        ;
+; N/A   ; None         ; 7.837 ns   ; byterec:inst1|dout[2]                 ; dout[2] ; clk        ;
+; N/A   ; None         ; 7.756 ns   ; byterec:inst1|dout[6]                 ; dout[6] ; clk        ;
+; N/A   ; None         ; 7.631 ns   ; byterec:inst1|dout[7]                 ; dout[7] ; clk        ;
+; N/A   ; None         ; 7.626 ns   ; byterec:inst1|dout[8]                 ; dout[8] ; clk        ;
+; N/A   ; None         ; 7.523 ns   ; byterec:inst1|dout[3]                 ; dout[3] ; clk        ;
+; N/A   ; None         ; 7.231 ns   ; byterec:inst1|dout[4]                 ; dout[4] ; clk        ;
++-------+--------------+------------+---------------------------------------+---------+------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; th                                                                                               ;
++---------------+-------------+-----------+---------+-----------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From    ; To                                ; To Clock ;
++---------------+-------------+-----------+---------+-----------------------------------+----------+
+; N/A           ; None        ; 0.478 ns  ; KBD_CLK ; lpf:cleaner|shiftreg[0]           ; clk      ;
+; N/A           ; None        ; 0.128 ns  ; KBD_DAT ; bitrec:inst2|shift_reg[9]         ; clk      ;
+; N/A           ; None        ; -0.462 ns ; KBD_DAT ; bitrec:inst2|present_state.LowClk ; clk      ;
+; N/A           ; None        ; -0.724 ns ; resetN  ; bitrec:inst2|dout[4]              ; clk      ;
+; N/A           ; None        ; -0.724 ns ; resetN  ; bitrec:inst2|dout[7]              ; clk      ;
+; N/A           ; None        ; -0.724 ns ; resetN  ; bitrec:inst2|dout[5]              ; clk      ;
+; N/A           ; None        ; -0.724 ns ; resetN  ; bitrec:inst2|dout[2]              ; clk      ;
+; N/A           ; None        ; -0.724 ns ; resetN  ; bitrec:inst2|dout[6]              ; clk      ;
+; N/A           ; None        ; -0.724 ns ; resetN  ; bitrec:inst2|dout[3]              ; clk      ;
+; N/A           ; None        ; -0.724 ns ; resetN  ; bitrec:inst2|dout[0]              ; clk      ;
+; N/A           ; None        ; -0.724 ns ; resetN  ; bitrec:inst2|dout[1]              ; clk      ;
+; N/A           ; None        ; -0.984 ns ; KBD_DAT ; bitrec:inst2|present_state.idle   ; clk      ;
+; N/A           ; None        ; -1.176 ns ; resetN  ; bitrec:inst2|shift_reg[4]         ; clk      ;
+; N/A           ; None        ; -1.176 ns ; resetN  ; bitrec:inst2|shift_reg[7]         ; clk      ;
+; N/A           ; None        ; -1.176 ns ; resetN  ; bitrec:inst2|shift_reg[5]         ; clk      ;
+; N/A           ; None        ; -1.176 ns ; resetN  ; bitrec:inst2|shift_reg[2]         ; clk      ;
+; N/A           ; None        ; -1.176 ns ; resetN  ; bitrec:inst2|shift_reg[6]         ; clk      ;
+; N/A           ; None        ; -1.176 ns ; resetN  ; bitrec:inst2|shift_reg[8]         ; clk      ;
+; N/A           ; None        ; -1.176 ns ; resetN  ; bitrec:inst2|shift_reg[0]         ; clk      ;
+; N/A           ; None        ; -1.176 ns ; resetN  ; bitrec:inst2|shift_reg[1]         ; clk      ;
+; N/A           ; None        ; -1.176 ns ; resetN  ; bitrec:inst2|shift_reg[3]         ; clk      ;
+; N/A           ; None        ; -1.176 ns ; resetN  ; bitrec:inst2|shift_reg[9]         ; clk      ;
++---------------+-------------+-----------+---------+-----------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon Aug 28 23:21:30 2017
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off KBD -c KBD --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 241.43 MHz between source register "bitrec:inst2|dout[7]" and destination register "byterec:inst1|present_state.idle" (period= 4.142 ns)
+    Info: + Longest register to register delay is 3.928 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X30_Y18_N7; Fanout = 3; REG Node = 'bitrec:inst2|dout[7]'
+        Info: 2: + IC(1.190 ns) + CELL(0.393 ns) = 1.583 ns; Loc. = LCCOMB_X30_Y18_N24; Fanout = 4; COMB Node = 'byterec:inst1|Equal0~1'
+        Info: 3: + IC(1.134 ns) + CELL(0.150 ns) = 2.867 ns; Loc. = LCCOMB_X30_Y18_N8; Fanout = 1; COMB Node = 'byterec:inst1|Selector0~1'
+        Info: 4: + IC(0.434 ns) + CELL(0.150 ns) = 3.451 ns; Loc. = LCCOMB_X30_Y18_N10; Fanout = 1; COMB Node = 'byterec:inst1|Selector0~2'
+        Info: 5: + IC(0.243 ns) + CELL(0.150 ns) = 3.844 ns; Loc. = LCCOMB_X30_Y18_N12; Fanout = 1; COMB Node = 'byterec:inst1|Selector0~3'
+        Info: 6: + IC(0.000 ns) + CELL(0.084 ns) = 3.928 ns; Loc. = LCFF_X30_Y18_N13; Fanout = 5; REG Node = 'byterec:inst1|present_state.idle'
+        Info: Total cell delay = 0.927 ns ( 23.60 % )
+        Info: Total interconnect delay = 3.001 ns ( 76.40 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 2.697 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
+            Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 52; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(1.043 ns) + CELL(0.537 ns) = 2.697 ns; Loc. = LCFF_X30_Y18_N13; Fanout = 5; REG Node = 'byterec:inst1|present_state.idle'
+            Info: Total cell delay = 1.536 ns ( 56.95 % )
+            Info: Total interconnect delay = 1.161 ns ( 43.05 % )
+        Info: - Longest clock path from clock "clk" to source register is 2.697 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
+            Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 52; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(1.043 ns) + CELL(0.537 ns) = 2.697 ns; Loc. = LCFF_X30_Y18_N7; Fanout = 3; REG Node = 'bitrec:inst2|dout[7]'
+            Info: Total cell delay = 1.536 ns ( 56.95 % )
+            Info: Total interconnect delay = 1.161 ns ( 43.05 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Micro setup delay of destination is -0.036 ns
+Info: tsu for register "bitrec:inst2|shift_reg[4]" (data pin = "resetN", clock pin = "clk") is 1.406 ns
+    Info: + Longest pin to register delay is 4.137 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P1; Fanout = 3; PIN Node = 'resetN'
+        Info: 2: + IC(1.435 ns) + CELL(0.410 ns) = 2.844 ns; Loc. = LCCOMB_X30_Y17_N16; Fanout = 10; COMB Node = 'bitrec:inst2|shift_reg[8]~0'
+        Info: 3: + IC(0.633 ns) + CELL(0.660 ns) = 4.137 ns; Loc. = LCFF_X30_Y17_N5; Fanout = 3; REG Node = 'bitrec:inst2|shift_reg[4]'
+        Info: Total cell delay = 2.069 ns ( 50.01 % )
+        Info: Total interconnect delay = 2.068 ns ( 49.99 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 2.695 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 52; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.041 ns) + CELL(0.537 ns) = 2.695 ns; Loc. = LCFF_X30_Y17_N5; Fanout = 3; REG Node = 'bitrec:inst2|shift_reg[4]'
+        Info: Total cell delay = 1.536 ns ( 56.99 % )
+        Info: Total interconnect delay = 1.159 ns ( 43.01 % )
+Info: tco from clock "clk" to destination pin "make" through register "byterec:inst1|present_state.new_make" is 8.101 ns
+    Info: + Longest clock path from clock "clk" to source register is 2.697 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 52; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.043 ns) + CELL(0.537 ns) = 2.697 ns; Loc. = LCFF_X29_Y18_N9; Fanout = 2; REG Node = 'byterec:inst1|present_state.new_make'
+        Info: Total cell delay = 1.536 ns ( 56.95 % )
+        Info: Total interconnect delay = 1.161 ns ( 43.05 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 5.154 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X29_Y18_N9; Fanout = 2; REG Node = 'byterec:inst1|present_state.new_make'
+        Info: 2: + IC(2.366 ns) + CELL(2.788 ns) = 5.154 ns; Loc. = PIN_D10; Fanout = 0; PIN Node = 'make'
+        Info: Total cell delay = 2.788 ns ( 54.09 % )
+        Info: Total interconnect delay = 2.366 ns ( 45.91 % )
+Info: th for register "lpf:cleaner|shiftreg[0]" (data pin = "KBD_CLK", clock pin = "clk") is 0.478 ns
+    Info: + Longest clock path from clock "clk" to destination register is 2.695 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 52; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.041 ns) + CELL(0.537 ns) = 2.695 ns; Loc. = LCFF_X31_Y17_N27; Fanout = 2; REG Node = 'lpf:cleaner|shiftreg[0]'
+        Info: Total cell delay = 1.536 ns ( 56.99 % )
+        Info: Total interconnect delay = 1.159 ns ( 43.01 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+    Info: - Shortest pin to register delay is 2.483 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.979 ns) = 0.979 ns; Loc. = PIN_D13; Fanout = 1; PIN Node = 'KBD_CLK'
+        Info: 2: + IC(1.138 ns) + CELL(0.366 ns) = 2.483 ns; Loc. = LCFF_X31_Y17_N27; Fanout = 2; REG Node = 'lpf:cleaner|shiftreg[0]'
+        Info: Total cell delay = 1.345 ns ( 54.17 % )
+        Info: Total interconnect delay = 1.138 ns ( 45.83 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 193 megabytes
+    Info: Processing ended: Mon Aug 28 23:21:31 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+
