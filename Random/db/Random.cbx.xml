@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Random">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Random|MAXCOUNT:inst8|lpm_constant:lpm_constant_component" CBX_FILE_NAME="lpm_constant_6j6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Random|count8:inst2|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_sqi.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Random|detect_0:inst3|lpm_compare:lpm_compare_component" CBX_FILE_NAME="cmpr_omi.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
