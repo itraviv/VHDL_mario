@@ -1,0 +1,5 @@
+PLL_Name	misc:misc_u|VGA_Audio_PLL:p1|altpll:altpll_component|pll
+PLLJITTER	31
+PLLSPEmax	84
+PLLSPEmin	-53
+
