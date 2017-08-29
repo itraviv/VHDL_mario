@@ -32,8 +32,8 @@ entity mario is
 end entity;
 
 architecture arch_mario of mario is
-constant up_in_jump : integer := 10;
-constant x_speed_in_press : integer := 50;
+constant up_in_jump : integer := 1;
+constant x_speed_in_press : integer := 1;
 
 type Y_state_t is (idle,onObject,jump);
 
@@ -70,7 +70,7 @@ begin
 		elsif pressed='1' and ibreak='1' then
 			pressed:='0';
 		else
-			--pressed:='0';
+			pressed:='0';
 		end if;
 		
 		if pressed='1' then
@@ -123,10 +123,10 @@ begin
 				sigX <= sigX+X_speed;
 			end if;
 	
-			if((sigY+Y_speed) > 480) then
-				sigY <= 480;
-			elsif (sigY+Y_speed < 0) then 
-				sigY<=0;
+			if((sigY-Y_speed) < 0) then
+				sigY <= 0;
+			elsif (sigY+Y_speed >480) then 
+				sigY<=480;
 			else
 				sigY <= sigY+Y_speed;
 			end if;			
