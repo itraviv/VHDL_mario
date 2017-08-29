@@ -18,8 +18,8 @@ entity hit is
 		idrawReqGoldBomb : in std_logic;
 		idrawReqObscl : in std_logic;
 		
-		oHitMario : out std_logic ; -- tells if mario hits somthing
-		oHitObj : out std_logic  -- describing what mario hit , relevant if hit=1
+		oHitMario : out std_logic ; -- tells if mario hits gold/bomb
+		oHitObj : out std_logic  -- tells if mario hits obstcle
 		);
 end entity;
 
