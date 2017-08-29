@@ -116,7 +116,7 @@ begin
 			
 									--compute new X,Y
 			if((sigX+X_speed) > 640) then
-				sigX <= 480;
+				sigX <= 640;
 			elsif (sigX+X_speed < 0) then 
 				sigX<=0;
 			else
