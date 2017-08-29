@@ -7,7 +7,7 @@
 
 library ieee; 
 use ieee.std_logic_1164.all; 
---use ieee.std_logic_signed.all; 
+use ieee.std_logic_signed.all; 
 use ieee.std_logic_arith.all;
 
 entity mario is
@@ -19,15 +19,120 @@ entity mario is
 		iHitObj : in std_logic;  -- tells if mario hits obstcle
 		imake : in std_logic;
 		ibreak : in std_logic;
-		X: out std_logic_vector(31 downto 0) ; 
-		Y: out std_logic_vector(31 downto 0)	
+		X_ObjSpeed : in integer;
+		Y_ObjSpeed : in integer;
+		
+		--X: out std_logic_vector(31 downto 0) ; 
+		--Y: out std_logic_vector(31 downto 0)	
+		X: out integer ; 
+		Y: out integer ;
+		out_ledd : out std_logic
+
 		);
 end entity;
 
 architecture arch_mario of mario is
-		signal iMarioState : std_logic_vector(2 downto 0);
-begin
---TODO: 1. proccess1: compute new X,Y
---TODO: 2. proccess2: compute state
+constant up_in_jump : integer := 10;
+constant x_speed_in_press : integer := 50;
 
+type Y_state_t is (idle,onObject,jump);
+
+signal Y_state : Y_state_t;
+signal X_base_speed : integer;
+signal Y_base_speed : integer;
+signal sigX : integer;
+signal sigY : integer;
+
+signal out_led : std_logic;
+begin
+out_ledd <=out_led;
+--compute Y_state
+process(clk,resetN)
+variable X_speed : integer;
+variable Y_speed : integer;
+variable pressed : std_logic;
+begin
+	if resetN = '0' then 
+		X_base_speed <= 0;
+		Y_base_speed <= 0;
+		X_speed := 0;
+		Y_speed := 0;
+		Y_state <= idle;
+		pressed := '0';
+		sigX <= 320;
+		sigY <= 0;
+	elsif rising_edge(clk) then
+		
+		-- take care of pressed
+		
+		if pressed='0' and imake='1' then
+			pressed := '1';
+		elsif pressed='1' and ibreak='1' then
+			pressed:='0';
+		else
+			--pressed:='0';
+		end if;
+		
+		if pressed='1' then
+		case Y_state is
+			--jump
+			when jump =>
+				if pressedKey = "101101011" then --left key
+					if X_speed <= 0 then --moving left or standing
+						X_speed := X_speed - x_speed_in_press;
+					else -- moving right
+						X_speed := 0;	
+					end if;
+				elsif pressedKey = "101110100" then --right key
+					if X_speed >= 0 then --moving right or standing
+						X_speed := X_speed + x_speed_in_press;	
+					else -- moving left
+						X_speed := 0;
+					end if;
+				end if;
+			-- on object
+			when others =>
+				--if pressedKey = "101110101" then -- up key
+				if pressedKey = "101110101" then -- up key
+					Y_state <= jump;
+					Y_speed := Y_speed+up_in_jump;
+					X_base_speed <= 0;
+					Y_base_speed <= 0;
+					--handle pressed left or right while on object
+				elsif pressedKey = "101101011" then --left key
+					if X_speed = 0 then --moving left or standing
+						X_speed := X_speed - x_speed_in_press;
+					else -- moving right
+						X_speed := X_base_speed;	
+					end if;
+				elsif pressedKey = "101110100" then --right key
+					if X_speed >= 0 then --moving right or standing
+						X_speed := X_speed + x_speed_in_press;	
+					else -- moving left
+						X_speed := X_base_speed;
+					end if;				
+				end if;	
+			end case;
+			
+									--compute new X,Y
+			if((sigX+X_speed) > 640) then
+				sigX <= 480;
+			elsif (sigX+X_speed < 0) then 
+				sigX<=0;
+			else
+				sigX <= sigX+X_speed;
+			end if;
+	
+			if((sigY+Y_speed) > 480) then
+				sigY <= 480;
+			elsif (sigY+Y_speed < 0) then 
+				sigY<=0;
+			else
+				sigY <= sigY+Y_speed;
+			end if;			
+		end if;	--pressed
+		end if; --resetn
+	end process;
+	X<=sigX;
+	Y<=sigY;
 end architecture;

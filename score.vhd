@@ -20,11 +20,11 @@ entity score is
 		score_low : out std_logic_vector(3 downto 0);
 		score_high : out std_logic_vector(3 downto 0);
 
-		life : out std_logic_vector(2 downto 0) ;
+		life : out std_logic_vector(2 downto 0) 
 		);
 end entity;
 
-architecture arch_hit of hit is
+architecture arch_score of score is
 begin
 
 
