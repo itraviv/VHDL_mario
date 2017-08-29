@@ -1,8 +1,8 @@
 -------------------------
 --Module Name:
--- score
+-- hit
 --Description:
--- show score
+-- Hit detector
 --------------------------
 
 library ieee; 
@@ -14,16 +14,17 @@ entity score is
 	port( 
 		resetN : in std_logic;
 		clk : in std_logic;
-		idrawReqMario : in std_logic;
-		idrawReqGoldBomb : in std_logic;
-		idrawReqObscl : in std_logic;
+		iHitMario : in std_logic ; -- tells if mario hits gold/bomb
+		isGold : in std_logic;
 		
-		oHitMario : out std_logic ; -- tells if mario hits somthing
-		oHitObj : out std_logic_vector(2 downto 0)  -- describing what mario hit , relevant if hit=1
+		score_low : out std_logic_vector(3 downto 0);
+		score_high : out std_logic_vector(3 downto 0);
+
+		life : out Integer ;
 		);
 end entity;
 
-architecture arch_score of score is
+architecture arch_hit of hit is
 begin
 
 
