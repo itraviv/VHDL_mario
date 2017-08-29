@@ -1,12 +1,12 @@
 -------------------------
 --Module Name:
--- gold bomb draw
+-- obstablcle draw
 --Description:
--- goldbomb Draw, output to vga
+-- obstablcle Draw, output to vga
 --------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
-entity gold_bomb_draw is
+entity obstablcle_draw is
 port (	
 		--////////////////////	Clock Input	 	////////////////////	
 	   	CLK  		: in std_logic;
@@ -15,14 +15,13 @@ port (
 		oCoord_Y	: in integer;
 		ObjectStartX	: in integer;
 		ObjectStartY 	: in integer;
-		isGold : in std_logic;
 		drawing_request	: out std_logic ;
 		mVGA_RGB 	: out std_logic_vector(7 downto 0) ;
 		keepflag    : out std_logic
 	);
 end entity;
 
-architecture arch_gold_bomb_draw of gold_bomb_draw is 
+architecture arch_obstablcle_draw of obstablcle_draw is 
 
 constant object_X_size : integer := 26;
 constant object_Y_size : integer := 26;

@@ -22,7 +22,7 @@ port (
 	);
 end entity;
 
-architecture arch_mario_draw of mario_draw is 
+architecture arch_gold_bomb_draw of gold_bomb_draw is 
 
 constant object_X_size : integer := 26;
 constant object_Y_size : integer := 26;
