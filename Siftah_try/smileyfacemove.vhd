@@ -34,9 +34,18 @@ constant downBorder : integer := 450 ;
 constant Y_jump_speed : integer :=10;
 constant Y_gravity    : integer :=1;
 
+constant X_move_speed1 : integer := 1 ;
+constant X_inc_speed : integer := 1 ;
+constant X_move_speed_max : integer := 5 ;
+
+
+
 --state machine
 type Y_state_t is (idle,onObject,jump);
 signal Y_state : Y_state_t;
+
+type X_state_t is (normal,stuckAtBoarder,onObject);
+signal X_state : X_state_t;
 
 
 --speed
@@ -52,18 +61,41 @@ begin
 		  if RESETn = '0' then
 				ObjectStartX_t	<= resetObjectStartX_t;
 				X_speed <= 0;
+				X_state <= normal;
 		elsif CLK'event  and CLK = '1' then
 			if timer_done = '1' then
-				if ObjectStartX_t <= leftBorder then
+				if ObjectStartX_t <= leftBorder and (not(X_state=stuckAtBoarder)) then
 					ObjectStartX_t <= leftBorder;
-				elsif ObjectStartX_t >= rightBorder then
+					X_state <= stuckAtBoarder;
+					X_speed<=0;
+				elsif ObjectStartX_t >= rightBorder and (not(X_state=stuckAtBoarder)) then
 					ObjectStartX_t <= rightBorder;
+					X_state <= stuckAtBoarder;
+					X_speed <=0;
 				else
 				-- X sm
-				
-				
-				
+				case X_state is
+				when onObject => 
+				--todo
+				when others =>
+					if rightKeyPressed='1' then
+						if X_state=stuckAtBoarder then X_state<=normal; end if;
+						if X_speed <= 0 then
+							X_speed <= X_move_speed1;
+						elsif X_speed < X_move_speed_max then
+							X_speed <= X_speed + X_inc_speed;
+						end if;
+					elsif leftKeyPressed='1' then
+						if X_state=stuckAtBoarder then X_state<=normal; end if;
+						if X_speed >= 0 then
+							X_speed <= -X_move_speed1;
+						elsif X_speed > -X_move_speed_max then
+							X_speed <= X_speed - X_inc_speed;
+						end if;
+					end if;
+				end case;
 				--
+				ObjectStartX_t  <= ObjectStartX_t + X_speed;
 					--ObjectStartX_t  <= ObjectStartX_t - 1;					
 				end if;		
 			end if;
