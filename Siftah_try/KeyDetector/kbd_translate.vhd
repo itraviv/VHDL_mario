@@ -7,6 +7,7 @@ entity kbd_translate is
 port 	(
 		--////////////////////	Clock Input	 	////////////////////	
 		RESETn: in std_logic;
+		clk : in std_logic;
 	   dIN  : in std_logic_vector (8 downto 0);
 	   make : in std_logic ;
 	   break : in std_logic ;
@@ -26,7 +27,7 @@ if RESETn = '0' then
 left_press <= '0';
 right_press <= '0';
 up_press <= '0';
-else
+elsif clk'event and clk='1' then
 	if (dIN(7 downto 0) = x"6B" and make = '1') then
 			left_press <= '1' ;
 			right_press <= '0' ;
@@ -44,7 +45,6 @@ else
 	elsif (dIN(7 downto 0) = x"75" and break = '1') then
 		up_press <= '0';
 	end if;
-	
 end if;
 end process;
 
