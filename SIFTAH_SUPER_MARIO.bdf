@@ -795,7 +795,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 824 600 952 696)
+	(rect 720 576 848 672)
 	(text "Clk_Divider" (rect 5 0 62 12)(font "Arial" ))
 	(text "inst8" (rect 8 80 31 92)(font "Arial" ))
 	(port
@@ -827,7 +827,7 @@ applicable agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 112 80)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 952 568 1128 600))
+	(annotation_block (parameter)(rect 848 544 1024 576))
 )
 (connector
 	(pt 1360 504)
@@ -1137,26 +1137,26 @@ applicable agreement for further details.
 	(pt 696 816)
 )
 (connector
-	(text "CLOCK_27" (rect 792 616 847 628)(font "Arial" ))
-	(pt 784 632)
-	(pt 824 632)
-)
-(connector
-	(text "RESETn" (rect 792 632 833 644)(font "Arial" ))
-	(pt 792 648)
-	(pt 824 648)
-)
-(connector
-	(pt 952 632)
-	(pt 968 632)
-)
-(connector
-	(pt 968 632)
-	(pt 968 800)
-)
-(connector
 	(pt 968 800)
 	(pt 1008 800)
+)
+(connector
+	(text "CLOCK_27" (rect 688 592 743 604)(font "Arial" ))
+	(pt 680 608)
+	(pt 720 608)
+)
+(connector
+	(text "RESETn" (rect 688 608 729 620)(font "Arial" ))
+	(pt 688 624)
+	(pt 720 624)
+)
+(connector
+	(pt 968 608)
+	(pt 848 608)
+)
+(connector
+	(pt 968 800)
+	(pt 968 608)
 )
 (junction (pt 952 816))
 (junction (pt 1600 576))

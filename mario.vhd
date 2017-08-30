@@ -37,8 +37,9 @@ constant x_speed_in_press : integer := 1;
 constant gravity_const : integer :=-1;
 
 type Y_state_t is (idle,onObject,jump);
-
 signal Y_state : Y_state_t;
+
+
 signal X_base_speed : integer;
 signal Y_base_speed : integer;
 signal sigX : integer;

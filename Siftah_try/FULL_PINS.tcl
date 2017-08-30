@@ -78,16 +78,16 @@ if {[is_project_open]} {
    ;# Active High - ON wnen '1                      #
    ;#################################################
 
-   set_location_assignment PIN_AE23  -to led_check   ;# LEDR0				;#	Used for indication of slide switch #0
-   set_location_assignment PIN_AF23  -to a[0]   ;# LEDR1				;#	Used for indication of slide switch #1
-   set_location_assignment PIN_AB21  -to a[1]   ;# LEDR2				;#	Used for indication of slide switch #2
-   set_location_assignment PIN_AC22  -to a[2]   ;# LEDR3				;#	Used for indication of slide switch #3
-   set_location_assignment PIN_AD22  -to a[3]   ;# LEDR4				;#	Used for indication of slide switch #4
-   set_location_assignment PIN_AD23  -to a[4]   ;# LEDR5				;#	Used for indication of slide switch #5
-   set_location_assignment PIN_AD21  -to a[5]   ;# LEDR6				;#	Used for indication of slide switch #6
-   set_location_assignment PIN_AC21  -to a[6]   ;# LEDR7				;#	Used for indication of slide switch #7
-   set_location_assignment PIN_AA14  -to a[7]   ;# LEDR8				;#	Used for indication of slide switch #8
-   set_location_assignment PIN_Y13   -to a[8]   ;# LEDR9				;#	Used for indication of slide switch #9
+   set_location_assignment PIN_AE23  -to up   ;# LEDR0				;#	Used for indication of slide switch #0
+   set_location_assignment PIN_AF23  -to left   ;# LEDR1				;#	Used for indication of slide switch #1
+   set_location_assignment PIN_AB21  -to right   ;# LEDR2				;#	Used for indication of slide switch #2
+#   set_location_assignment PIN_AC22  -to a[2]   ;# LEDR3				;#	Used for indication of slide switch #3
+#   set_location_assignment PIN_AD22  -to a[3]   ;# LEDR4				;#	Used for indication of slide switch #4
+#   set_location_assignment PIN_AD23  -to a[4]   ;# LEDR5				;#	Used for indication of slide switch #5
+#   set_location_assignment PIN_AD21  -to a[5]   ;# LEDR6				;#	Used for indication of slide switch #6
+#   set_location_assignment PIN_AC21  -to a[6]   ;# LEDR7				;#	Used for indication of slide switch #7
+#   set_location_assignment PIN_AA14  -to a[7]   ;# LEDR8				;#	Used for indication of slide switch #8
+#   set_location_assignment PIN_Y13   -to a[8]   ;# LEDR9				;#	Used for indication of slide switch #9
 #   set_location_assignment PIN_AA13  -to c[2]  ;# LEDR10			;#	Used for indication of slide switch #10
 #   set_location_assignment PIN_AC14  -to c[3]  ;# LEDR11			;#	Used for indication of slide switch #11
 #   set_location_assignment PIN_AD15  -to LEDR[12]  ;# LEDR12			;#	Used for indication of slide switch #12

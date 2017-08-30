@@ -75,22 +75,22 @@ applicable agreement for further details.
 	(port
 		(pt 160 80)
 		(output)
-		(text "up" (rect 0 0 14 14)(font "Arial" (font_size 8)))
-		(text "up" (rect 125 75 139 89)(font "Arial" (font_size 8)))
+		(text "left" (rect 0 0 17 14)(font "Arial" (font_size 8)))
+		(text "left" (rect 122 75 139 89)(font "Arial" (font_size 8)))
 		(line (pt 160 80)(pt 144 80)(line_width 1))
 	)
 	(port
 		(pt 160 96)
 		(output)
-		(text "left" (rect 0 0 17 14)(font "Arial" (font_size 8)))
-		(text "left" (rect 122 91 139 105)(font "Arial" (font_size 8)))
+		(text "right" (rect 0 0 24 14)(font "Arial" (font_size 8)))
+		(text "right" (rect 115 91 139 105)(font "Arial" (font_size 8)))
 		(line (pt 160 96)(pt 144 96)(line_width 1))
 	)
 	(port
 		(pt 160 112)
 		(output)
-		(text "right" (rect 0 0 24 14)(font "Arial" (font_size 8)))
-		(text "right" (rect 115 107 139 121)(font "Arial" (font_size 8)))
+		(text "up" (rect 0 0 14 14)(font "Arial" (font_size 8)))
+		(text "up" (rect 125 107 139 121)(font "Arial" (font_size 8)))
 		(line (pt 160 112)(pt 144 112)(line_width 1))
 	)
 	(drawing
