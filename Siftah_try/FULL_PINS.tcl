@@ -78,9 +78,9 @@ if {[is_project_open]} {
    ;# Active High - ON wnen '1                      #
    ;#################################################
 
-   set_location_assignment PIN_AE23  -to up   ;# LEDR0				;#	Used for indication of slide switch #0
-   set_location_assignment PIN_AF23  -to left   ;# LEDR1				;#	Used for indication of slide switch #1
-   set_location_assignment PIN_AB21  -to right   ;# LEDR2				;#	Used for indication of slide switch #2
+#   set_location_assignment PIN_AE23  -to up   ;# LEDR0				;#	Used for indication of slide switch #0
+#   set_location_assignment PIN_AF23  -to left   ;# LEDR1				;#	Used for indication of slide switch #1
+#   set_location_assignment PIN_AB21  -to right   ;# LEDR2				;#	Used for indication of slide switch #2
 #   set_location_assignment PIN_AC22  -to a[2]   ;# LEDR3				;#	Used for indication of slide switch #3
 #   set_location_assignment PIN_AD22  -to a[3]   ;# LEDR4				;#	Used for indication of slide switch #4
 #   set_location_assignment PIN_AD23  -to a[4]   ;# LEDR5				;#	Used for indication of slide switch #5

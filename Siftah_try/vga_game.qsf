@@ -271,6 +271,8 @@ set_global_assignment -name SOURCE_FILE VGA_Audio_PLL.cmp
 set_global_assignment -name VHDL_FILE VGA_Audio_PLL.vhd
 set_global_assignment -name VHDL_FILE vga_game.vhd
 set_global_assignment -name SIGNALTAP_FILE stps/stp1_debbugin_jump.stp
+set_global_assignment -name VHDL_FILE obstacle_object.vhd
+set_global_assignment -name VHDL_FILE objectSM.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"

@@ -11,9 +11,16 @@ port 	(
 		b_drawing_request : in std_logic;
 		b_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	, -- b signal 
 		
+		c_drawing_request : in std_logic;
+		c_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	, -- c signal 
+		
+		
+		d_drawing_request : in std_logic;
+		d_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	, -- d signal 
+		
 		y_drawing_request : in std_logic;	
-		y_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- y signal 
-
+		y_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- y signal 		
+		
 		m_mVGA_R 	: out std_logic_vector(9 downto 0); --	,  
 		m_mVGA_G 	: out std_logic_vector(9 downto 0); --	, 
 		m_mVGA_B 	: out std_logic_vector(9 downto 0); --	, 
@@ -57,6 +64,10 @@ begin
 	elsif CLK'event and CLK='1' then
 		if (b_drawing_request = '1' ) then  
 			m_mVGA_t <= b_mVGA_RGB;
+		elsif (c_drawing_request = '1' ) then  
+			m_mVGA_t <= c_mVGA_RGB;
+		elsif (d_drawing_request = '1' ) then  
+			m_mVGA_t <= d_mVGA_RGB;				
 		else
 			m_mVGA_t <= y_mVGA_RGB ;
 		end if; 
@@ -67,6 +78,5 @@ end process ;
 m_mVGA_R	<= m_mVGA_t(7 downto 5)& "0000000"; -- expand to 10 bits 
 m_mVGA_G	<= m_mVGA_t(4 downto 2)& "0000000";
 m_mVGA_B	<= m_mVGA_t(1 downto 0)& "00000000";
-
 
 end behav;

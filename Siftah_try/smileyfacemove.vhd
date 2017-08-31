@@ -64,14 +64,14 @@ begin
 				X_state <= normal;
 		elsif CLK'event  and CLK = '1' then
 			if timer_done = '1' then
-				if ObjectStartX_t <= leftBorder and (not(X_state=stuckAtBoarder)) then
-					ObjectStartX_t <= leftBorder;
-					X_state <= stuckAtBoarder;
-					X_speed<=0;
-				elsif ObjectStartX_t >= rightBorder and (not(X_state=stuckAtBoarder)) then
-					ObjectStartX_t <= rightBorder;
-					X_state <= stuckAtBoarder;
-					X_speed <=0;
+				if ObjectStartX_t <= leftBorder then
+					if X_speed < 0 then
+						X_speed<= -X_speed ;
+					end if;
+				elsif ObjectStartX_t >= rightBorder then
+					if X_speed > 0 then
+						X_speed<= -X_speed ;
+					end if;
 				else
 				-- X sm
 				case X_state is
@@ -79,7 +79,7 @@ begin
 				--todo
 				when others =>
 					if rightKeyPressed='1' then
-						if X_state=stuckAtBoarder then X_state<=normal; end if;
+						--if X_state=stuckAtBoarder then X_state<=normal; end if;
 						if X_speed = 0 then
 							X_speed <= X_move_speed1;
 						elsif X_speed < 0 then
@@ -88,7 +88,7 @@ begin
 							X_speed <= X_speed + X_inc_speed;
 						end if;
 					elsif leftKeyPressed='1' then
-						if X_state=stuckAtBoarder then X_state<=normal; end if;
+						--if X_state=stuckAtBoarder then X_state<=normal; end if;
 						if X_speed = 0 then
 							X_speed <= -X_move_speed1;
 						elsif X_speed > 0 then
@@ -98,10 +98,10 @@ begin
 						end if;
 					end if;
 				end case;
-				--
+				
+				end if;	
 				ObjectStartX_t  <= ObjectStartX_t + X_speed;
-					--ObjectStartX_t  <= ObjectStartX_t - 1;					
-				end if;		
+
 			end if;
 		end if;
 		end process;
