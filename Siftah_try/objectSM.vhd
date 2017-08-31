@@ -11,8 +11,9 @@ port 	(
 		RESETn			: in std_logic; --			//	50 MHz
 		timer_done		: in std_logic;
 		ObjectStartX	: out integer ;
-		ObjectStartY	: out integer
-		
+		ObjectStartY	: out integer;
+		Y_speed			: out integer;
+		X_speed			: out integer
 	);
 end objectSM;
 
@@ -20,13 +21,19 @@ architecture behav of objectSM is
 
 signal ObjectStartX_t : integer range 0 to 680;
 signal ObjectStartY_t : integer range 0 to 512;
-begin
 
+
+signal Y_speed_sig : integer;
+signal X_speed_sig : integer;
+
+begin
+Y_speed<=0;
+X_speed<=0;
 
 		process ( RESETn,CLK)
 		begin
 		  if RESETn = '0' then
-				ObjectStartX_t	<= 580;
+				ObjectStartX_t	<= 500;
 				ObjectStartY_t	<= 385 ;
 		elsif CLK'event  and CLK = '1' then
 			if timer_done = '1' then
@@ -41,9 +48,9 @@ begin
 			
 		end if;
 		end process ;
-ObjectStartX	<= ObjectStartX_t;			
-ObjectStartY	<= ObjectStartY_t;	
+--ObjectStartX	<= ObjectStartX_t;			
+--ObjectStartY	<= ObjectStartY_t;	
 
---ObjectStartX	<= 100;			
---ObjectStartY	<= 100;		
+ObjectStartX	<= 300;			
+ObjectStartY	<= 420;		
 end behav;

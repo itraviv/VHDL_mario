@@ -15,6 +15,8 @@ port 	(
 		leftKeyPressed  : in std_logic;
 		rightKeyPressed : in std_logic;
 		
+		hitObj			: in std_logic;
+		
 		ObjectStartX	: out integer ;
 		ObjectStartY	: out integer
 		
@@ -44,7 +46,7 @@ constant X_move_speed_max : integer := 5 ;
 type Y_state_t is (idle,onObject,jump);
 signal Y_state : Y_state_t;
 
-type X_state_t is (normal,stuckAtBoarder,onObject);
+type X_state_t is (normal,onObject);
 signal X_state : X_state_t;
 
 
@@ -77,9 +79,8 @@ begin
 				case X_state is
 				when onObject => 
 				--todo
-				when others =>
+				when normal =>
 					if rightKeyPressed='1' then
-						--if X_state=stuckAtBoarder then X_state<=normal; end if;
 						if X_speed = 0 then
 							X_speed <= X_move_speed1;
 						elsif X_speed < 0 then
@@ -88,7 +89,6 @@ begin
 							X_speed <= X_speed + X_inc_speed;
 						end if;
 					elsif leftKeyPressed='1' then
-						--if X_state=stuckAtBoarder then X_state<=normal; end if;
 						if X_speed = 0 then
 							X_speed <= -X_move_speed1;
 						elsif X_speed > 0 then
@@ -120,7 +120,7 @@ begin
 						if Y_speed > 0 then
 							Y_speed <= -Y_speed ;
 						end if;
-					elsif ObjectStartY_t >= downBorder and Y_state=jump and Y_speed < 0 then
+					elsif ObjectStartY_t >= downBorder and Y_state=jump and Y_speed < 0 then -- comming back from a fly
 						ObjectStartY_t <= downBorder;
 						Y_state <= idle;
 						Y_speed <= 0;
