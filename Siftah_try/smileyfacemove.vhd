@@ -27,7 +27,7 @@ constant resetObjectStartX_t : integer :=512;
 constant resetObjectStartY_t : integer :=450;
 
 constant leftBorder : integer := 100;
-constant rightBorder : integer := 650;
+constant rightBorder : integer := 550;
 constant upBorder : integer := 5 ;
 constant downBorder : integer := 450 ;
 
@@ -80,15 +80,19 @@ begin
 				when others =>
 					if rightKeyPressed='1' then
 						if X_state=stuckAtBoarder then X_state<=normal; end if;
-						if X_speed <= 0 then
+						if X_speed = 0 then
 							X_speed <= X_move_speed1;
+						elsif X_speed < 0 then
+							X_speed <=0 ;
 						elsif X_speed < X_move_speed_max then
 							X_speed <= X_speed + X_inc_speed;
 						end if;
 					elsif leftKeyPressed='1' then
 						if X_state=stuckAtBoarder then X_state<=normal; end if;
-						if X_speed >= 0 then
+						if X_speed = 0 then
 							X_speed <= -X_move_speed1;
+						elsif X_speed > 0 then
+							X_speed <= 0;
 						elsif X_speed > -X_move_speed_max then
 							X_speed <= X_speed - X_inc_speed;
 						end if;
