@@ -138,6 +138,12 @@ begin
 						end if;
 						when jump =>
 							Y_speed <= Y_speed-Y_gravity;
+							if hitObjBottom='1' then
+								Y_state<=onObject;
+								Y_speed<=hitObjYspeed;
+							end if;
+							-- HEERERER
+			  
 						when onObject =>
 							if hitObjBottom='0' then
 								Y_state<=jump;
