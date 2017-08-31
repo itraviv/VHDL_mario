@@ -15,7 +15,8 @@ port 	(
 		ObjectStartX	: in integer;
 		ObjectStartY 	: in integer;
 		drawing_request	: out std_logic ;
-		mVGA_RGB 	: out std_logic_vector(7 downto 0) 
+		mVGA_RGB 	: out std_logic_vector(7 downto 0) ;
+		drawing_down_boarder : out std_logic
 	);
 end smileyface_object;
 
@@ -90,6 +91,37 @@ constant object : object_form := (
 ("00000001111100000111110000"),
 ("00000000000000000000000000"));
 
+
+constant down_mario_border : object_form := (
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000000000000000000000000"),
+("00000001111100000111110000"),
+("00000001111111111111110000"),
+("11111111111111111111111111"));
+
+
+
 signal bCoord_X : integer := 0;
 signal bCoord_Y : integer := 0;
 
@@ -103,6 +135,7 @@ signal objectXboundariesTrue : boolean;
 signal objectYboundariesTrue : boolean;
 signal ObjectStartX_d : integer;
 
+---
 begin
 
 -- Calculate object boundaries
@@ -116,6 +149,7 @@ objectSouthboundary	<= object_Y_size+ObjectStartY;
 
 	bCoord_X 	<= (oCoord_X - ObjectStartX) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
 	bCoord_Y 	<= (oCoord_Y - ObjectStartY) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
+	
 
 
 process ( RESETn, CLK)
@@ -126,14 +160,17 @@ process ( RESETn, CLK)
 	    mVGA_RGB	<=  (others => '0') ; 	
 		drawing_request	<=  '0' ;
 		ObjectStartX_d <= 0;
+		drawing_down_boarder <='0';
 
 		elsif CLK'event and CLK='1' then
 			mVGA_RGB	<=  object_colors(bCoord_Y , bCoord_X);	
 			drawing_request	<= object(bCoord_Y , bCoord_X) and drawing_X and drawing_Y ;
 			ObjectStartX_d <= ObjectStartX;
+			
+			drawing_down_boarder <= down_mario_border(bCoord_Y,bCoord_X);
 	end if;
 
-  end process;
+end process;
 
 		
 end behav;		

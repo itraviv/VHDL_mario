@@ -16,6 +16,9 @@ port 	(
 		rightKeyPressed : in std_logic;
 		
 		hitObj			: in std_logic;
+		hitObjBottom    : in std_logic;
+		hitObjYspeed    : in integer;
+		hitObjXspeed    : in integer;
 		
 		ObjectStartX	: out integer ;
 		ObjectStartY	: out integer
@@ -135,7 +138,17 @@ begin
 						end if;
 						when jump =>
 							Y_speed <= Y_speed-Y_gravity;
-						when others =>
+						when onObject =>
+							if hitObjBottom='0' then
+								Y_state<=jump;
+								Y_speed<=0;
+							else
+								Y_speed<=hitObjYspeed;
+								if upKeyPressed='1' then
+									Y_state <= jump;
+									Y_speed <= hitObjYspeed+Y_jump_speed;
+								end if;
+							end if;
 						--todo
 						end case;
 						-- 

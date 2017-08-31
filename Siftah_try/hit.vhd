@@ -16,11 +16,13 @@ entity hit is
 		clk : in std_logic;
 		idrawReqMario : in std_logic;
 		idrawReqObscl : in std_logic;
+		idraw_mario_bottom  : in std_logic;
 		
 		obj_speed_X : in integer ;
 		obj_speed_Y : in integer ;
 		
 		oHitObj : out std_logic;  -- tells if mario hits obstcle
+		hitBottom : out std_logic; --tells if the hit is in marios legs
 		speed_X : out integer ;
 		speed_Y : out integer 
 		
@@ -37,5 +39,6 @@ oHitObj <=  oHitObj_sig;
 speed_X <= obj_speed_X when oHitObj_sig='1' else 0;
 speed_Y <= obj_speed_Y when oHitObj_sig='1' else 0;
 
+hitBottom <= '1' when oHitObj_sig='1' and idraw_mario_bottom='1' else '0';
 
 end architecture;
