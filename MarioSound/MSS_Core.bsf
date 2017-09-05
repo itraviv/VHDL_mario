@@ -1,0 +1,309 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 480 528)
+	(text "MSS_Core" (rect 5 0 56 12)(font "Arial" ))
+	(text "inst" (rect 8 496 25 508)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK_IN" (rect 0 0 38 12)(font "Arial" ))
+		(text "CLK_IN" (rect 21 27 59 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "RESETn" (rect 0 0 41 12)(font "Arial" ))
+		(text "RESETn" (rect 21 43 62 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "ADC_PART_EXT_ENABLE_USER" (rect 0 0 167 12)(font "Arial" ))
+		(text "ADC_PART_EXT_ENABLE_USER" (rect 21 59 188 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "ADC_POWERDOWNn_USER" (rect 0 0 148 12)(font "Arial" ))
+		(text "ADC_POWERDOWNn_USER" (rect 21 75 169 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "ADC_DATA_CHIP[7..0]" (rect 0 0 116 12)(font "Arial" ))
+		(text "ADC_DATA_CHIP[7..0]" (rect 21 91 137 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "ADC_RESET_USER" (rect 0 0 101 12)(font "Arial" ))
+		(text "ADC_RESET_USER" (rect 21 107 122 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "ADC_DATA_ENABLE_USER" (rect 0 0 142 12)(font "Arial" ))
+		(text "ADC_DATA_ENABLE_USER" (rect 21 123 163 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "DACs_POWERDOWNn_USER" (rect 0 0 154 12)(font "Arial" ))
+		(text "DACs_POWERDOWNn_USER" (rect 21 139 175 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "PDACs_PART_EXT_ENABLE_USER" (rect 0 0 180 12)(font "Arial" ))
+		(text "PDACs_PART_EXT_ENABLE_USER" (rect 21 155 201 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 1))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "PDACs_NORMAL_ENABLE_USER" (rect 0 0 173 12)(font "Arial" ))
+		(text "PDACs_NORMAL_ENABLE_USER" (rect 21 171 194 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "PDAC_A_DATA_USER[7..0]" (rect 0 0 140 12)(font "Arial" ))
+		(text "PDAC_A_DATA_USER[7..0]" (rect 21 187 161 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 3))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "PDAC_A_RESET_USER" (rect 0 0 121 12)(font "Arial" ))
+		(text "PDAC_A_RESET_USER" (rect 21 203 142 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 1))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "PDAC_A_DATA_ENABLE_USER" (rect 0 0 162 12)(font "Arial" ))
+		(text "PDAC_A_DATA_ENABLE_USER" (rect 21 219 183 231)(font "Arial" ))
+		(line (pt 0 224)(pt 16 224)(line_width 1))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "PDAC_B_DATA_USER[7..0]" (rect 0 0 140 12)(font "Arial" ))
+		(text "PDAC_B_DATA_USER[7..0]" (rect 21 235 161 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240)(line_width 3))
+	)
+	(port
+		(pt 0 256)
+		(input)
+		(text "PDAC_B_RESET_USER" (rect 0 0 121 12)(font "Arial" ))
+		(text "PDAC_B_RESET_USER" (rect 21 251 142 263)(font "Arial" ))
+		(line (pt 0 256)(pt 16 256)(line_width 1))
+	)
+	(port
+		(pt 0 272)
+		(input)
+		(text "PDAC_B_DATA_ENABLE_USER" (rect 0 0 162 12)(font "Arial" ))
+		(text "PDAC_B_DATA_ENABLE_USER" (rect 21 267 183 279)(font "Arial" ))
+		(line (pt 0 272)(pt 16 272)(line_width 1))
+	)
+	(port
+		(pt 0 288)
+		(input)
+		(text "SDACs_PART_EXT_ENABLE_USER" (rect 0 0 180 12)(font "Arial" ))
+		(text "SDACs_PART_EXT_ENABLE_USER" (rect 21 283 201 295)(font "Arial" ))
+		(line (pt 0 288)(pt 16 288)(line_width 1))
+	)
+	(port
+		(pt 0 304)
+		(input)
+		(text "SDACs_SCAN_ENABLE_USER" (rect 0 0 158 12)(font "Arial" ))
+		(text "SDACs_SCAN_ENABLE_USER" (rect 21 299 179 311)(font "Arial" ))
+		(line (pt 0 304)(pt 16 304)(line_width 1))
+	)
+	(port
+		(pt 0 320)
+		(input)
+		(text "SDACs_NORMAL_ENABLE_USER" (rect 0 0 173 12)(font "Arial" ))
+		(text "SDACs_NORMAL_ENABLE_USER" (rect 21 315 194 327)(font "Arial" ))
+		(line (pt 0 320)(pt 16 320)(line_width 1))
+	)
+	(port
+		(pt 0 336)
+		(input)
+		(text "SDAC_0_DATA_USER[7..0]" (rect 0 0 139 12)(font "Arial" ))
+		(text "SDAC_0_DATA_USER[7..0]" (rect 21 331 160 343)(font "Arial" ))
+		(line (pt 0 336)(pt 16 336)(line_width 3))
+	)
+	(port
+		(pt 0 352)
+		(input)
+		(text "SDAC_0_RESET_USER" (rect 0 0 120 12)(font "Arial" ))
+		(text "SDAC_0_RESET_USER" (rect 21 347 141 359)(font "Arial" ))
+		(line (pt 0 352)(pt 16 352)(line_width 1))
+	)
+	(port
+		(pt 0 368)
+		(input)
+		(text "SDAC_0_DATA_ENABLE_USER" (rect 0 0 161 12)(font "Arial" ))
+		(text "SDAC_0_DATA_ENABLE_USER" (rect 21 363 182 375)(font "Arial" ))
+		(line (pt 0 368)(pt 16 368)(line_width 1))
+	)
+	(port
+		(pt 0 384)
+		(input)
+		(text "SDAC_1_DATA_USER[7..0]" (rect 0 0 139 12)(font "Arial" ))
+		(text "SDAC_1_DATA_USER[7..0]" (rect 21 379 160 391)(font "Arial" ))
+		(line (pt 0 384)(pt 16 384)(line_width 3))
+	)
+	(port
+		(pt 0 400)
+		(input)
+		(text "SDAC_1_RESET_USER" (rect 0 0 120 12)(font "Arial" ))
+		(text "SDAC_1_RESET_USER" (rect 21 395 141 407)(font "Arial" ))
+		(line (pt 0 400)(pt 16 400)(line_width 1))
+	)
+	(port
+		(pt 0 416)
+		(input)
+		(text "SDAC_1_DATA_ENABLE_USER" (rect 0 0 161 12)(font "Arial" ))
+		(text "SDAC_1_DATA_ENABLE_USER" (rect 21 411 182 423)(font "Arial" ))
+		(line (pt 0 416)(pt 16 416)(line_width 1))
+	)
+	(port
+		(pt 0 432)
+		(input)
+		(text "INT_EXT_ENABLES_FOR_UNITS_USER" (rect 0 0 202 12)(font "Arial" ))
+		(text "INT_EXT_ENABLES_FOR_UNITS_USER" (rect 21 427 223 439)(font "Arial" ))
+		(line (pt 0 432)(pt 16 432)(line_width 1))
+	)
+	(port
+		(pt 0 448)
+		(input)
+		(text "VOLTAGE_TRANSLATORS_ENAn_USER" (rect 0 0 205 12)(font "Arial" ))
+		(text "VOLTAGE_TRANSLATORS_ENAn_USER" (rect 21 443 226 455)(font "Arial" ))
+		(line (pt 0 448)(pt 16 448)(line_width 1))
+	)
+	(port
+		(pt 0 464)
+		(input)
+		(text "BIT_INPUT_MUX_USER" (rect 0 0 120 12)(font "Arial" ))
+		(text "BIT_INPUT_MUX_USER" (rect 21 459 141 471)(font "Arial" ))
+		(line (pt 0 464)(pt 16 464)(line_width 1))
+	)
+	(port
+		(pt 464 32)
+		(output)
+		(text "ADC_POWERDOWNn_CHIP" (rect 0 0 145 12)(font "Arial" ))
+		(text "ADC_POWERDOWNn_CHIP" (rect 298 27 443 39)(font "Arial" ))
+		(line (pt 464 32)(pt 448 32)(line_width 1))
+	)
+	(port
+		(pt 464 48)
+		(output)
+		(text "ADC_DATA_USER[7..0]" (rect 0 0 120 12)(font "Arial" ))
+		(text "ADC_DATA_USER[7..0]" (rect 323 43 443 55)(font "Arial" ))
+		(line (pt 464 48)(pt 448 48)(line_width 3))
+	)
+	(port
+		(pt 464 64)
+		(output)
+		(text "CLK_ADC_CHIP" (rect 0 0 83 12)(font "Arial" ))
+		(text "CLK_ADC_CHIP" (rect 360 59 443 71)(font "Arial" ))
+		(line (pt 464 64)(pt 448 64)(line_width 1))
+	)
+	(port
+		(pt 464 80)
+		(output)
+		(text "DACs_POWERDOWNn_CHIP" (rect 0 0 151 12)(font "Arial" ))
+		(text "DACs_POWERDOWNn_CHIP" (rect 292 75 443 87)(font "Arial" ))
+		(line (pt 464 80)(pt 448 80)(line_width 1))
+	)
+	(port
+		(pt 464 96)
+		(output)
+		(text "PDAC_A_DATA_CHIP[7..0]" (rect 0 0 136 12)(font "Arial" ))
+		(text "PDAC_A_DATA_CHIP[7..0]" (rect 307 91 443 103)(font "Arial" ))
+		(line (pt 464 96)(pt 448 96)(line_width 3))
+	)
+	(port
+		(pt 464 112)
+		(output)
+		(text "PDAC_B_DATA_CHIP[7..0]" (rect 0 0 136 12)(font "Arial" ))
+		(text "PDAC_B_DATA_CHIP[7..0]" (rect 307 107 443 119)(font "Arial" ))
+		(line (pt 464 112)(pt 448 112)(line_width 3))
+	)
+	(port
+		(pt 464 128)
+		(output)
+		(text "CLK_PDACs_CHIP" (rect 0 0 96 12)(font "Arial" ))
+		(text "CLK_PDACs_CHIP" (rect 347 123 443 135)(font "Arial" ))
+		(line (pt 464 128)(pt 448 128)(line_width 1))
+	)
+	(port
+		(pt 464 144)
+		(output)
+		(text "SDACs_SDATA_CHIP" (rect 0 0 110 12)(font "Arial" ))
+		(text "SDACs_SDATA_CHIP" (rect 333 139 443 151)(font "Arial" ))
+		(line (pt 464 144)(pt 448 144)(line_width 1))
+	)
+	(port
+		(pt 464 160)
+		(output)
+		(text "SDACs_SCLK_CHIP" (rect 0 0 103 12)(font "Arial" ))
+		(text "SDACs_SCLK_CHIP" (rect 340 155 443 167)(font "Arial" ))
+		(line (pt 464 160)(pt 448 160)(line_width 1))
+	)
+	(port
+		(pt 464 176)
+		(output)
+		(text "SDACs_SLATCH_CHIP" (rect 0 0 118 12)(font "Arial" ))
+		(text "SDACs_SLATCH_CHIP" (rect 325 171 443 183)(font "Arial" ))
+		(line (pt 464 176)(pt 448 176)(line_width 1))
+	)
+	(port
+		(pt 464 192)
+		(output)
+		(text "VOLTAGE_TRANSLATORS_ENAn_CHIP" (rect 0 0 201 12)(font "Arial" ))
+		(text "VOLTAGE_TRANSLATORS_ENAn_CHIP" (rect 242 187 443 199)(font "Arial" ))
+		(line (pt 464 192)(pt 448 192)(line_width 1))
+	)
+	(port
+		(pt 464 208)
+		(output)
+		(text "BIT_INPUT_MUX_CARD" (rect 0 0 121 12)(font "Arial" ))
+		(text "BIT_INPUT_MUX_CARD" (rect 322 203 443 215)(font "Arial" ))
+		(line (pt 464 208)(pt 448 208)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 448 496)(line_width 1))
+	)
+)
