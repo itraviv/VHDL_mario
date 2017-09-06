@@ -8,22 +8,26 @@ use ieee.std_logic_arith.all;
 entity mux_CASE is
 -----------------------------------------------------
 port (
-ind  : in std_logic_vector(2 downto 0) ;
+in0  : in std_logic_vector(7 downto 0) ;
+in1  : in std_logic_vector(7 downto 0) ;
+in2  : in std_logic_vector(7 downto 0) ;
+in3  : in std_logic_vector(7 downto 0) ;
 sel  : in std_logic_vector(1 downto 0) ;
-outd : out std_logic );
+outd : out std_logic_vector(7 downto 0)
+);
 END mux_CASE;
 
 
 
 architecture arch_mux_CASE of mux_CASE is
 begin
-	process(ind,sel)
+	process(in0,in1,in2,sel)
 	begin
 		case sel is 
-			when "0" => outd <= ind(0) ;
-			when "01" => outd <= ind(1) ; 
-			when "10" => outd <= ind(2) ; 
-			when others => outd <= 'X' ;
+			when "00" => outd <= in0 ;
+			when "01" => outd <= in1 ; 
+			when "10" => outd <= in2 ; 
+			when others => outd <= in3 ;
 		end case ;
 	end process ;
 end architecture ;
