@@ -34,11 +34,34 @@ signal oHitObj_sig : std_logic;
 
 begin
 
-oHitObj_sig <= '1' when idrawReqMario='1' and idrawReqObscl='1' else '0';
 oHitObj <=  oHitObj_sig;
-speed_X <= obj_speed_X when oHitObj_sig='1' else 0;
-speed_Y <= obj_speed_Y when oHitObj_sig='1' else 0;
 
-hitBottom <= '1' when oHitObj_sig='1' and idraw_mario_bottom='1' else '0';
+process(clk,resetN)
+begin
+if resetN = '0' then
+hitBottom<='0';
+speed_X<=0;
+speed_Y<=0;
+oHitObj_sig <='0';
+elsif clk'event and clk='1' then
+speed_X<=0;
+speed_Y<=0;
+hitBottom <='0';
+oHitObj_sig <='0';
+--oHitObj_sig <= '1' when idrawReqMario='1' and idrawReqObscl='1' else '0';
+if idrawReqMario='1' and idrawReqObscl='1' then
+oHitObj_sig <= '1';
+speed_X <= obj_speed_X;
+speed_Y <= obj_speed_Y;
+--hitBottom <= '1' when oHitObj_sig='1' and idraw_mario_bottom='1' else '0';
+if idraw_mario_bottom='1' then
+hitBottom <='1';
+end if;
+end if;
+end if;
+end process;
 
+	
+--speed_X <= obj_speed_X when oHitObj_sig='1' else 0;
+--speed_Y <= obj_speed_Y when oHitObj_sig='1' else 0;
 end architecture;

@@ -584,7 +584,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1024 576 1264 768)
+	(rect 1200 792 1440 984)
 	(text "obstacle_object" (rect 5 0 81 12)(font "Arial" ))
 	(text "inst8" (rect 8 176 31 188)(font "Arial" ))
 	(port
@@ -768,7 +768,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 896 648 928 664)
+	(rect 1112 872 1144 888)
 	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
 	(text "inst10" (rect 3 5 32 17)(font "Arial" )(invisible))
 	(port
@@ -783,7 +783,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 784 688 984 816)
+	(rect 784 912 984 1040)
 	(text "objectSM" (rect 5 0 49 12)(font "Arial" ))
 	(text "inst9" (rect 8 112 31 124)(font "Arial" ))
 	(port
@@ -1003,7 +1003,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1392 568 1616 728)
+	(rect 1504 976 1728 1136)
 	(text "hit" (rect 5 0 16 12)(font "Arial" ))
 	(text "inst11" (rect 8 144 37 156)(font "Arial" ))
 	(port
@@ -1085,6 +1085,70 @@ applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 208 144)(line_width 1))
+	)
+)
+(symbol
+	(rect 1232 584 1376 744)
+	(text "hit_detector" (rect 5 0 62 12)(font "Arial" ))
+	(text "inst13" (rect 8 144 37 156)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 27 42 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "RESETn" (rect 0 0 41 12)(font "Arial" ))
+		(text "RESETn" (rect 21 43 62 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "player_X[31..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "player_X[31..0]" (rect 21 59 95 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "player_Y[31..0]" (rect 0 0 76 12)(font "Arial" ))
+		(text "player_Y[31..0]" (rect 21 75 97 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "player_up" (rect 0 0 48 12)(font "Arial" ))
+		(text "player_up" (rect 21 91 69 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "step_X[31..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "step_X[31..0]" (rect 21 107 85 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "step_Y[31..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "step_Y[31..0]" (rect 21 123 88 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 144 32)
+		(output)
+		(text "hit" (rect 0 0 11 12)(font "Arial" ))
+		(text "hit" (rect 112 27 123 39)(font "Arial" ))
+		(line (pt 144 32)(pt 128 32)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 128 144)(line_width 1))
 	)
 )
 (connector
@@ -1276,49 +1340,6 @@ applicable agreement for further details.
 	(pt 1256 384)
 )
 (connector
-	(text "RESETn" (rect 992 608 1033 620)(font "Arial" ))
-	(pt 992 624)
-	(pt 1024 624)
-)
-(connector
-	(text "oCoord_X[31..0]" (rect 994 624 1073 636)(font "Arial" ))
-	(pt 984 640)
-	(pt 1024 640)
-	(bus)
-)
-(connector
-	(text "oCoord_Y[31..0]" (rect 984 640 1065 652)(font "Arial" ))
-	(pt 984 656)
-	(pt 1024 656)
-	(bus)
-)
-(connector
-	(text "CLK" (rect 986 592 1007 604)(font "Arial" ))
-	(pt 984 608)
-	(pt 1024 608)
-)
-(connector
-	(pt 984 720)
-	(pt 1024 720)
-	(bus)
-)
-(connector
-	(pt 984 736)
-	(pt 1024 736)
-	(bus)
-)
-(connector
-	(text "obstRGB[7..0]" (rect 1272 608 1342 620)(font "Arial" ))
-	(pt 1264 624)
-	(pt 1296 624)
-	(bus)
-)
-(connector
-	(text "obstReq" (rect 1267 592 1308 604)(font "Arial" ))
-	(pt 1264 608)
-	(pt 1288 608)
-)
-(connector
 	(text "obstRGB[7..0]" (rect 1272 288 1342 300)(font "Arial" ))
 	(pt 1264 304)
 	(pt 1296 304)
@@ -1362,21 +1383,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "CLK" (rect 762 704 783 716)(font "Arial" ))
-	(pt 784 720)
-	(pt 752 720)
-)
-(connector
-	(text "RESETn" (rect 762 720 803 732)(font "Arial" ))
-	(pt 784 736)
-	(pt 752 736)
-)
-(connector
-	(text "timer_done" (rect 754 736 808 748)(font "Arial" ))
-	(pt 752 752)
-	(pt 784 752)
-)
-(connector
 	(pt 1296 320)
 	(pt 1280 320)
 )
@@ -1389,14 +1395,6 @@ applicable agreement for further details.
 	(pt 1280 416)
 )
 (connector
-	(pt 1024 672)
-	(pt 912 672)
-)
-(connector
-	(pt 912 672)
-	(pt 912 664)
-)
-(connector
 	(text "CLK" (rect 82 744 103 756)(font "Arial" ))
 	(pt 136 760)
 	(pt 64 760)
@@ -1405,42 +1403,6 @@ applicable agreement for further details.
 	(text "CLK" (rect 434 648 455 660)(font "Arial" ))
 	(pt 520 664)
 	(pt 424 664)
-)
-(connector
-	(text "obstReq" (rect 1347 632 1388 644)(font "Arial" ))
-	(pt 1368 648)
-	(pt 1392 648)
-)
-(connector
-	(text "marioReq" (rect 1352 616 1399 628)(font "Arial" ))
-	(pt 1353 632)
-	(pt 1392 632)
-)
-(connector
-	(pt 992 752)
-	(pt 992 840)
-	(bus)
-)
-(connector
-	(pt 984 752)
-	(pt 992 752)
-	(bus)
-)
-(connector
-	(text "<<__$DEF_ALIAS98>>" (rect 1320 824 1432 836)(font "Arial" )(invisible))
-	(pt 992 840)
-	(pt 1344 840)
-	(bus)
-)
-(connector
-	(pt 1000 768)
-	(pt 1000 856)
-	(bus)
-)
-(connector
-	(pt 984 768)
-	(pt 1000 768)
-	(bus)
 )
 (connector
 	(text "CLK" (rect 954 240 975 252)(font "Arial" ))
@@ -1480,61 +1442,9 @@ applicable agreement for further details.
 	(pt 624 288)
 )
 (connector
-	(pt 1392 696)
-	(pt 1344 696)
-	(bus)
-)
-(connector
-	(pt 1376 680)
-	(pt 1392 680)
-	(bus)
-)
-(connector
-	(pt 1344 696)
-	(pt 1344 840)
-	(bus)
-)
-(connector
-	(pt 1376 856)
-	(pt 1376 680)
-	(bus)
-)
-(connector
-	(pt 1000 856)
-	(pt 1376 856)
-	(bus)
-)
-(connector
 	(text "bottomDraw" (rect 1224 272 1283 284)(font "Arial" ))
 	(pt 1232 288)
 	(pt 1240 288)
-)
-(connector
-	(text "bottomDraw" (rect 1344 648 1403 660)(font "Arial" ))
-	(pt 1344 664)
-	(pt 1392 664)
-)
-(connector
-	(text "hitObj" (rect 1624 584 1652 596)(font "Arial" ))
-	(pt 1616 600)
-	(pt 1648 600)
-)
-(connector
-	(text "hitbottom" (rect 1624 600 1670 612)(font "Arial" ))
-	(pt 1616 616)
-	(pt 1648 616)
-)
-(connector
-	(text "YOS[31..0]" (rect 1628 632 1683 644)(font "Arial" ))
-	(pt 1616 648)
-	(pt 1656 648)
-	(bus)
-)
-(connector
-	(text "XOS[31..0]" (rect 1624 616 1677 628)(font "Arial" ))
-	(pt 1616 632)
-	(pt 1656 632)
-	(bus)
 )
 (connector
 	(text "CLK" (rect 658 304 679 316)(font "Arial" ))
@@ -1570,16 +1480,6 @@ applicable agreement for further details.
 	(pt 680 352)
 )
 (connector
-	(pt 928 320)
-	(pt 976 320)
-	(bus)
-)
-(connector
-	(pt 928 336)
-	(pt 976 336)
-	(bus)
-)
-(connector
 	(text "YOS[31..0]" (rect 652 448 707 460)(font "Arial" ))
 	(pt 640 464)
 	(pt 680 464)
@@ -1597,10 +1497,258 @@ applicable agreement for further details.
 	(pt 680 416)
 )
 (connector
-	(text "hitbottom" (rect 648 416 694 428)(font "Arial" ))
+	(text "CLK" (rect 762 928 783 940)(font "Arial" ))
+	(pt 784 944)
+	(pt 752 944)
+)
+(connector
+	(text "RESETn" (rect 762 944 803 956)(font "Arial" ))
+	(pt 784 960)
+	(pt 752 960)
+)
+(connector
+	(text "timer_done" (rect 754 960 808 972)(font "Arial" ))
+	(pt 752 976)
+	(pt 784 976)
+)
+(connector
+	(pt 984 976)
+	(pt 992 976)
+	(bus)
+)
+(connector
+	(pt 1000 992)
+	(pt 1000 1080)
+	(bus)
+)
+(connector
+	(pt 984 992)
+	(pt 1000 992)
+	(bus)
+)
+(connector
+	(pt 1000 1080)
+	(pt 1376 1080)
+	(bus)
+)
+(connector
+	(text "RESETn" (rect 1168 824 1209 836)(font "Arial" ))
+	(pt 1168 840)
+	(pt 1200 840)
+)
+(connector
+	(text "oCoord_X[31..0]" (rect 1170 840 1249 852)(font "Arial" ))
+	(pt 1160 856)
+	(pt 1200 856)
+	(bus)
+)
+(connector
+	(text "oCoord_Y[31..0]" (rect 1160 856 1241 868)(font "Arial" ))
+	(pt 1160 872)
+	(pt 1200 872)
+	(bus)
+)
+(connector
+	(text "CLK" (rect 1162 808 1183 820)(font "Arial" ))
+	(pt 1160 824)
+	(pt 1200 824)
+)
+(connector
+	(pt 992 944)
+	(pt 992 936)
+	(bus)
+)
+(connector
+	(pt 984 944)
+	(pt 992 944)
+	(bus)
+)
+(connector
+	(pt 1000 960)
+	(pt 1000 952)
+	(bus)
+)
+(connector
+	(pt 984 960)
+	(pt 1000 960)
+	(bus)
+)
+(connector
+	(text "obstRGB[7..0]" (rect 1448 824 1518 836)(font "Arial" ))
+	(pt 1440 840)
+	(pt 1472 840)
+	(bus)
+)
+(connector
+	(text "obstReq" (rect 1443 808 1484 820)(font "Arial" ))
+	(pt 1440 824)
+	(pt 1464 824)
+)
+(connector
+	(pt 1200 888)
+	(pt 1128 888)
+)
+(connector
+	(pt 992 976)
+	(pt 992 1104)
+	(bus)
+)
+(connector
+	(text "obstReq" (rect 1459 1040 1500 1052)(font "Arial" ))
+	(pt 1480 1056)
+	(pt 1504 1056)
+)
+(connector
+	(text "marioReq" (rect 1464 1024 1511 1036)(font "Arial" ))
+	(pt 1465 1040)
+	(pt 1504 1040)
+)
+(connector
+	(pt 1376 1088)
+	(pt 1504 1088)
+	(bus)
+)
+(connector
+	(pt 1376 1080)
+	(pt 1376 1088)
+	(bus)
+)
+(connector
+	(text "bottomDraw" (rect 1456 1056 1515 1068)(font "Arial" ))
+	(pt 1456 1072)
+	(pt 1504 1072)
+)
+(connector
+	(text "YOS[31..0]" (rect 1740 1040 1795 1052)(font "Arial" ))
+	(pt 1728 1056)
+	(pt 1768 1056)
+	(bus)
+)
+(connector
+	(text "XOS[31..0]" (rect 1736 1024 1789 1036)(font "Arial" ))
+	(pt 1728 1040)
+	(pt 1768 1040)
+	(bus)
+)
+(connector
+	(text "CLK" (rect 1490 1008 1511 1020)(font "Arial" ))
+	(pt 1504 1024)
+	(pt 1480 1024)
+)
+(connector
+	(text "RESETn" (rect 1474 992 1515 1004)(font "Arial" ))
+	(pt 1504 1008)
+	(pt 1464 1008)
+)
+(connector
+	(pt 992 1104)
+	(pt 1504 1104)
+	(bus)
+)
+(connector
+	(text "hitObj" (rect 648 416 676 428)(font "Arial" ))
 	(pt 640 432)
 	(pt 680 432)
 )
+(connector
+	(pt 1048 936)
+	(pt 1048 696)
+	(bus)
+)
+(connector
+	(pt 1080 952)
+	(pt 1080 712)
+	(bus)
+)
+(connector
+	(pt 936 320)
+	(pt 936 648)
+	(bus)
+)
+(connector
+	(pt 944 336)
+	(pt 944 664)
+	(bus)
+)
+(connector
+	(text "hitObj" (rect 1384 600 1412 612)(font "Arial" ))
+	(pt 1376 616)
+	(pt 1408 616)
+)
+(connector
+	(pt 992 936)
+	(pt 1048 936)
+	(bus)
+)
+(connector
+	(pt 1048 936)
+	(pt 1200 936)
+	(bus)
+)
+(connector
+	(pt 1000 952)
+	(pt 1080 952)
+	(bus)
+)
+(connector
+	(pt 1080 952)
+	(pt 1200 952)
+	(bus)
+)
+(connector
+	(pt 928 320)
+	(pt 936 320)
+	(bus)
+)
+(connector
+	(pt 936 320)
+	(pt 976 320)
+	(bus)
+)
+(connector
+	(pt 928 336)
+	(pt 944 336)
+	(bus)
+)
+(connector
+	(pt 944 336)
+	(pt 976 336)
+	(bus)
+)
+(connector
+	(text "CLK" (rect 1218 600 1239 612)(font "Arial" ))
+	(pt 1208 616)
+	(pt 1232 616)
+)
+(connector
+	(text "RESETn" (rect 1202 616 1243 628)(font "Arial" ))
+	(pt 1192 632)
+	(pt 1232 632)
+)
+(connector
+	(pt 936 648)
+	(pt 1232 648)
+	(bus)
+)
+(connector
+	(pt 944 664)
+	(pt 1232 664)
+	(bus)
+)
+(connector
+	(pt 1048 696)
+	(pt 1232 696)
+	(bus)
+)
+(connector
+	(pt 1080 712)
+	(pt 1232 712)
+	(bus)
+)
 (junction (pt 1280 416))
 (junction (pt 1280 352))
-(text "TODO:make the object one., and make object controller block multiple objects" (rect 1016 920 1449 934)(font "Arial" (font_size 8)))
+(junction (pt 1048 936))
+(junction (pt 1080 952))
+(junction (pt 936 320))
+(junction (pt 944 336))
+(text "TODO:make the object one., and make object controller block multiple objects" (rect 1016 1144 1449 1158)(font "Arial" (font_size 8)))

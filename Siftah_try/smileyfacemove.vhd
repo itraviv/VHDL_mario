@@ -36,7 +36,7 @@ constant rightBorder : integer := 550;
 constant upBorder : integer := 5 ;
 constant downBorder : integer := 450 ;
 
-constant Y_jump_speed : integer :=10;
+constant Y_jump_speed : integer :=15;
 constant Y_gravity    : integer :=1;
 
 constant X_move_speed1 : integer := 1 ;
@@ -46,7 +46,7 @@ constant X_move_speed_max : integer := 5 ;
 
 
 --state machine
-type Y_state_t is (idle,onObject,jump);
+type Y_state_t is (idle,onObject,jump,bump_from_object);
 signal Y_state : Y_state_t;
 
 type X_state_t is (normal,onObject);
@@ -110,13 +110,18 @@ begin
 		end process;
 	
 		process ( RESETn,CLK)
+		variable update_location : std_logic;
 		begin
 			if RESETn = '0' then
 				ObjectStartY_t	<= resetObjectStartY_t ;
 				Y_state <= idle;
 				Y_speed <= 0;
+				update_location:='0';
 			elsif CLK'event  and CLK = '1' then		
-				if timer_done = '1' then			
+				if timer_done = '1' then		
+				
+				update_location:='1'; -- default
+					
 					if ObjectStartY_t <= upBorder then
 						ObjectStartY_t <= upBorder;
 						Y_state <= jump;
@@ -139,8 +144,15 @@ begin
 						when jump =>
 							Y_speed <= Y_speed-Y_gravity;
 							if hitObjBottom='1' then
-								Y_state<=onObject;
-								Y_speed<=hitObjYspeed;
+								update_location:='0';
+								--Y_state<=onObject;
+								if Y_speed > 0 then 
+									Y_speed<=0;
+									Y_state<=bump_from_object;
+								else
+									Y_speed<=0;
+									Y_state<=idle;
+								end if;
 							end if;
 							-- HEERERER
 			  
@@ -155,10 +167,17 @@ begin
 									Y_speed <= hitObjYspeed+Y_jump_speed;
 								end if;
 							end if;
-						--todo
+
+						when bump_from_object =>
+							Y_speed <= Y_speed-Y_gravity;
+							if hitObjBottom='0' then
+								Y_state<=jump;
+							end if;
 						end case;
-						-- 
-						ObjectStartY_t  <= ObjectStartY_t - Y_speed;
+						-- update location
+						if update_location='1' then --alwyas, except when hitting objects in jump mode
+							ObjectStartY_t  <= ObjectStartY_t - Y_speed;
+						end if;
 					end if;
 				end if;
 			end if;
