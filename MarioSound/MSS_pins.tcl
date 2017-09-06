@@ -41,8 +41,8 @@ if {[is_project_open]} {
    set_location_assignment PIN_N25  -to REC_Ena   ;# SW0					;#	Reserved				
    set_location_assignment PIN_N26  -to PLAY_Ena   ;# SW1					;#	Reserved
    set_location_assignment PIN_P25  -to SinEnable   ;# SW2					;#	Reserved
-#   set_location_assignment PIN_AE14 -to SW[3]   ;# SW3					;#	Reserved
-#   set_location_assignment PIN_AF14 -to SW[4]   ;# SW4					;#	SDACs normalization
+   set_location_assignment PIN_AE14 -to sound_sel[0]   ;# SW3					;#	Reserved
+   set_location_assignment PIN_AF14 -to sound_sel[1]   ;# SW4					;#	SDACs normalization
 #   set_location_assignment PIN_AD13 -to SW[5]   ;# SW5					;#	PDACs normalization
 #   set_location_assignment PIN_AC13 -to SW[6]   ;# SW6					;#	Reserved
 #   set_location_assignment PIN_C13  -to SW[7]   ;# SW7					;#	"Computer voice" effect
