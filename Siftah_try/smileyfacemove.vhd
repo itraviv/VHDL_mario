@@ -151,7 +151,7 @@ begin
 									Y_state<=bump_from_object;
 								else
 									Y_speed<=0;
-									Y_state<=idle;
+									Y_state<=onObject;
 								end if;
 							end if;
 							-- HEERERER
