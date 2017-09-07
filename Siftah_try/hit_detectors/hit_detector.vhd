@@ -42,11 +42,14 @@ constant hit_margin_Y		: integer := 4;
 		end if;
 		
 		--then, check if Y is out of bound
+
+		--mario below
 		if player_Y > step_Y + hit_margin_Y then
 			hit <= '0';
 		end if;
 		
-		if player_Y < (step_Y - player_size_Y) then
+		--mario above
+		if player_Y + player_size_Y < step_Y  then
 			hit <= '0';
 		end if;
 		
