@@ -1655,18 +1655,6 @@ applicable agreement for further details.
 	(pt 680 416)
 )
 (connector
-	(text "YOS[31..0]" (rect 652 464 707 476)(font "Arial" ))
-	(pt 640 480)
-	(pt 680 480)
-	(bus)
-)
-(connector
-	(text "XOS[31..0]" (rect 648 448 701 460)(font "Arial" ))
-	(pt 640 464)
-	(pt 680 464)
-	(bus)
-)
-(connector
 	(text "hitObj" (rect 648 432 676 444)(font "Arial" ))
 	(pt 640 448)
 	(pt 680 448)
@@ -1701,6 +1689,18 @@ applicable agreement for further details.
 (connector
 	(pt 1280 352)
 	(pt 1280 424)
+)
+(connector
+	(text "YOS[31..0]" (rect 652 448 707 460)(font "Arial" ))
+	(pt 640 464)
+	(pt 680 464)
+	(bus)
+)
+(connector
+	(text "XOS[31..0]" (rect 648 464 701 476)(font "Arial" ))
+	(pt 640 480)
+	(pt 680 480)
+	(bus)
 )
 (junction (pt 1280 352))
 (junction (pt 936 320))

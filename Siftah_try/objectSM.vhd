@@ -30,10 +30,10 @@ signal X_speed_sig : integer;
 constant resetObjectStartX_t : integer :=300;
 constant resetObjectStartY_t : integer :=420;
 
-constant leftBorder : integer := 100;
-constant rightBorder : integer := 550;
-constant upBorder : integer := 5 ;
-constant downBorder : integer := 450 ;
+constant leftBorder : integer := 120;
+constant rightBorder : integer := 500;
+constant upBorder : integer := 30;
+constant downBorder : integer := 440 ;
 
 
 begin
@@ -62,12 +62,13 @@ Y_speed <= Y_speed_sig;
 					--State machine
 				end if;
 				ObjectStartX_t	<= ObjectStartX_t + X_speed_sig ;
-				ObjectStartY_t	<= ObjectStartY_t + Y_speed_sig ;
+				ObjectStartY_t	<= ObjectStartY_t - Y_speed_sig ;
 			end if; --timer done
 		end if;
-
-
 		end process ;
+		
+		
+		
 		ObjectStartX	<= ObjectStartX_t ;
 		ObjectStartY	<= ObjectStartY_t ;
 --ObjectStartX	<= 300;

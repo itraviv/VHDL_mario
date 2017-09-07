@@ -51,7 +51,7 @@ constant X_move_speed_max : integer := 5 ;
 type Y_state_t is (idle,onObject,jump,bump_from_object);
 signal Y_state : Y_state_t;
 
-type X_state_t is (normal,onObject,bump_from_object);
+type X_state_t is (normal,bump_from_object); --onObjec? decided to remove this.
 signal X_state : X_state_t;
 
 
@@ -85,7 +85,7 @@ begin
 				else
 				-- X sm
 				case X_state is
-				when onObject => 
+				--when onObject => 
 				--todo
 				when normal =>
 					if rightKeyPressed='1' then
@@ -111,7 +111,6 @@ begin
 						X_speed <= -X_speed;
 						X_state <= bump_from_object;
 					end if;
-					
 				when bump_from_object=>
 					if hitObjMid ='0' then
 						X_state <= normal;

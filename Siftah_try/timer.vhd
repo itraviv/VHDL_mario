@@ -20,7 +20,7 @@ signal VGA_VS_pulse : std_logic;
 signal VGA_VS_d : std_logic;
 
 signal VGA_VS_pulse_cnt : integer;
-constant NUMBER_FRAMES : integer := 2;
+constant NUMBER_FRAMES : integer := 1;
 begin
 
 
