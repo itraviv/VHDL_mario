@@ -113,8 +113,6 @@ begin
 				when bump_from_object=>
 					if hitObjMid ='0' then
 						X_state <= normal;
-					else
-						update_location:='0';
 					end if;
 
 				end case;	

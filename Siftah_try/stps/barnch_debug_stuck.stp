@@ -1,0 +1,446 @@
+<session jtag_chain="USB-Blaster [USB-0]" jtag_device="@1: EP2C35 (0x020B40DD)" sof_file="../vga_game.sof" top_level_entity="TOP_SIFTACH">
+  <display_tree gui_logging_enabled="0">
+    <display_branch instance="auto_signaltap_0" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+  </display_tree>
+  <instance entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
+    <position_info>
+      <single attribute="active tab" value="1"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="1"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="8"/>
+      <single attribute="zoom offset denominator" value="8"/>
+      <single attribute="zoom offset numerator" value="130753"/>
+    </position_info>
+    <signal_set global_temp="1" name="signal_set: 2017/09/07 15:40:05  #0">
+      <clock name="timer:inst1|timer_done" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="M4K" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="4096" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="hit_detector:inst11|head_mid" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|hit" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|leg_mid" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|mario_mid" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[0]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[1]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[2]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[3]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[4]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[5]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|X_state.bump_from_object" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|X_state.normal" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|X_state.onObject" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.bump_from_object" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.idle" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.jump" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.onObject" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|hitObjBottom" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|hitObjMid" tap_mode="classic" type="combinatorial"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="hit_detector:inst11|head_mid" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|hit" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|leg_mid" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|mario_mid" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[0]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[1]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[2]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[3]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[4]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[5]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|X_state.bump_from_object" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|X_state.normal" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|X_state.onObject" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.bump_from_object" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.idle" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.jump" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.onObject" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|hitObjBottom" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|hitObjMid" tap_mode="classic" type="combinatorial"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="hit_detector:inst11|head_mid" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|hit" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|leg_mid" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|mario_mid" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_X[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|player_Y[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_X[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="hit_detector:inst11|step_Y[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartX[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[0]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[1]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[2]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[3]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[4]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|ObjectStartY_t[5]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|X_state.bump_from_object" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|X_state.normal" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|X_state.onObject" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.bump_from_object" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.idle" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.jump" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.onObject" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|hitObjBottom" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|hitObjMid" tap_mode="classic" type="combinatorial"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <data_view>
+          <net is_signal_inverted="no" name="smileyfacemove:inst3|hitObjBottom"/>
+          <net is_signal_inverted="no" name="smileyfacemove:inst3|hitObjMid"/>
+          <bus is_signal_inverted="no" link="all" name="smileyfacemove:inst3|ObjectStartX" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartX[0]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartX[1]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartX[2]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartX[3]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartX[4]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartX[5]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="smileyfacemove:inst3|ObjectStartY_t" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="register">
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartY_t[0]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartY_t[1]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartY_t[2]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartY_t[3]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartY_t[4]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartY_t[5]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" mnemonics="X_state_table" name="smileyfacemove:inst3|X_state" order="lsb_to_msb" state="collapse" type="state machine">
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|X_state.bump_from_object"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|X_state.normal"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|X_state.onObject"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" mnemonics="Y_state_table" name="smileyfacemove:inst3|Y_state" order="lsb_to_msb" state="collapse" type="state machine">
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.bump_from_object"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.idle"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.jump"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.onObject"/>
+          </bus>
+          <net is_signal_inverted="no" name="hit_detector:inst11|head_mid"/>
+          <net is_signal_inverted="no" name="hit_detector:inst11|hit"/>
+          <net is_signal_inverted="no" name="hit_detector:inst11|leg_mid"/>
+          <net is_signal_inverted="no" name="hit_detector:inst11|mario_mid"/>
+          <bus is_signal_inverted="no" link="all" name="hit_detector:inst11|player_X" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[0]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[1]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[2]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[3]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[4]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[5]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[6]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[7]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[8]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[9]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="hit_detector:inst11|player_Y" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[0]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[1]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[2]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[3]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[4]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[5]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[6]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[7]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[8]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[9]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="hit_detector:inst11|step_X" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[0]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[1]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[2]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[3]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[4]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[5]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[6]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[7]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[8]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[9]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="hit_detector:inst11|step_Y" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[0]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[1]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[2]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[3]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[4]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[5]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[6]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[7]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[8]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[9]"/>
+          </bus>
+        </data_view>
+        <setup_view>
+          <net is_signal_inverted="no" name="smileyfacemove:inst3|hitObjBottom"/>
+          <net is_signal_inverted="no" name="smileyfacemove:inst3|hitObjMid"/>
+          <bus is_signal_inverted="no" link="all" name="smileyfacemove:inst3|ObjectStartX" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartX[0]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartX[1]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartX[2]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartX[3]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartX[4]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartX[5]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="smileyfacemove:inst3|ObjectStartY_t" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="register">
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartY_t[0]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartY_t[1]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartY_t[2]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartY_t[3]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartY_t[4]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|ObjectStartY_t[5]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" mnemonics="X_state_table" name="smileyfacemove:inst3|X_state" order="lsb_to_msb" state="collapse" type="state machine">
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|X_state.bump_from_object"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|X_state.normal"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|X_state.onObject"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" mnemonics="Y_state_table" name="smileyfacemove:inst3|Y_state" order="lsb_to_msb" state="collapse" type="state machine">
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.bump_from_object"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.idle"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.jump"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.onObject"/>
+          </bus>
+          <net is_signal_inverted="no" name="hit_detector:inst11|head_mid"/>
+          <net is_signal_inverted="no" name="hit_detector:inst11|hit"/>
+          <net is_signal_inverted="no" name="hit_detector:inst11|leg_mid"/>
+          <net is_signal_inverted="no" name="hit_detector:inst11|mario_mid"/>
+          <bus is_signal_inverted="no" link="all" name="hit_detector:inst11|player_X" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[0]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[1]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[2]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[3]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[4]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[5]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[6]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[7]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[8]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_X[9]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="hit_detector:inst11|player_Y" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[0]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[1]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[2]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[3]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[4]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[5]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[6]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[7]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[8]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|player_Y[9]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="hit_detector:inst11|step_X" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[0]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[1]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[2]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[3]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[4]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[5]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[6]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[7]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[8]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_X[9]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="hit_detector:inst11|step_Y" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[0]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[1]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[2]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[3]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[4]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[5]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[6]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[7]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[8]"/>
+            <net is_signal_inverted="no" name="hit_detector:inst11|step_Y[9]"/>
+          </bus>
+        </setup_view>
+      </presentation>
+      <trigger attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2017/09/07 15:40:05  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_in="dont_care" trigger_out="active high"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>00000000000000000000000000000000000000000000000000000000000000000
+            <pwr_up_transitional>00000000000000000000000000000000000000000000000000000000000000000
+            </pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+      </trigger>
+    </signal_set>
+  </instance>
+  <mnemonics>
+    <table name="X_state_table" width="3">
+      <symbol name="bump_from_object" value="001"/>
+      <symbol name="normal" value="010"/>
+      <symbol name="onObject" value="100"/>
+    </table>
+    <table name="Y_state_table" width="4">
+      <symbol name="bump_from_object" value="0001"/>
+      <symbol name="idle" value="0010"/>
+      <symbol name="jump" value="0100"/>
+      <symbol name="onObject" value="1000"/>
+    </table>
+  </mnemonics>
+  <static_plugin_mnemonics/>
+  <global_info>
+    <single attribute="active instance" value="0"/>
+    <single attribute="lock mode" value="36110"/>
+    <multi attribute="column width" size="23" value="34,34,263,74,68,70,88,88,98,98,88,88,110,101,101,101,101,101,101,101,101,107,78"/>
+    <multi attribute="window position" size="9" value="1424,683,398,124,356,50,124,0,1"/>
+  </global_info>
+</session>

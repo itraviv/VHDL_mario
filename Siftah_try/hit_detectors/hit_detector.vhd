@@ -35,10 +35,13 @@ constant hit_margin_Y		: integer := 4;
 	variable legs_down : std_logic;
 	variable head_up : std_logic;
 	variable head_down : std_logic;
-	
+	variable hit_x : std_logic;
 	begin
 	if RESETn = '0' then
 		hit 	<= '0';
+		leg_mid  <= '0';
+		head_mid <= '0';
+		mario_mid <= '0';
 	elsif rising_edge (CLK ) then	
 		hit <= '0';
 		leg_mid  <= '0';
@@ -49,16 +52,19 @@ constant hit_margin_Y		: integer := 4;
 		head_down :='0';
 		legs_up :='0';
 		legs_down:='0';
+		hit_x :='0';
 		
 		-- ///////////// checking if the player is in the hit zone  - BEGIN//////////////
 		
 		--first, check if player is in x_range
 		if (player_X >= step_X) and (player_X < step_X + step_size) then 
 			hit <= '1';
+			hit_x:='1';
 		end if;
 		
 		if (player_X + player_size_X >= step_X) and (player_X + player_size_X < step_X + step_size) then
 			hit <= '1';
+			hit_x:='1';
 		end if;
 		
 		--then, check if Y is out of bound
@@ -84,25 +90,27 @@ constant hit_margin_Y		: integer := 4;
 			head_down:='1';
 		end if;
 				
-		if legs_up='0' and legs_down='0' then --legs are in the middle of the step
-		--TODO:
-			leg_mid <= '1';
+				
+				
+		if hit_x='1' then 
+			if legs_up='0' and legs_down='0' then --legs are in the middle of the step
+			--TODO:
+				leg_mid <= '1';
+			end if;
+			
+			if head_up='0' and head_down='0' then -- head is in the middle of the step
+				head_mid <='1';
+			end if;
+			
+			
+			if head_up='1' and legs_down='1' then --mario is in the middle of the object!
+				mario_mid <='1';
+			end if;
 		end if;
-		
-		if head_up='0' and head_down='0' then -- head is in the middle of the step
-			head_mid <='1';
-		end if;
-		
-		
-		if head_up='1' and legs_down='1' then --mario is in the middle of the object!
-			mario_mid <='1';
-		end if;
-		
 	end if ;
 	end process;
 	
 end architecture;
-
 
 
 		--EXPERIMENTAL
