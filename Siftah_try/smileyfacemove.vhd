@@ -15,7 +15,9 @@ port 	(
 		leftKeyPressed  : in std_logic;
 		rightKeyPressed : in std_logic;
 		
-		hitObj			: in std_logic;
+		hitObjMid		: in std_logic;
+		hitObjMidLegs	: in std_logic;
+
 		hitObjBottom    : in std_logic;
 		hitObjYspeed    : in integer;
 		hitObjXspeed    : in integer;
@@ -49,7 +51,7 @@ constant X_move_speed_max : integer := 5 ;
 type Y_state_t is (idle,onObject,jump,bump_from_object);
 signal Y_state : Y_state_t;
 
-type X_state_t is (normal,onObject);
+type X_state_t is (normal,onObject,bump_from_object);
 signal X_state : X_state_t;
 
 
@@ -62,12 +64,15 @@ signal ObjectStartX_t : integer range 0 to 680;
 signal ObjectStartY_t : integer range 0 to 512;
 begin
 		process ( RESETn,CLK)
+		variable update_location : std_logic;
 		begin
 		  if RESETn = '0' then
 				ObjectStartX_t	<= resetObjectStartX_t;
 				X_speed <= 0;
 				X_state <= normal;
+				update_location:='0';
 		elsif CLK'event  and CLK = '1' then
+			update_location:='1';
 			if timer_done = '1' then
 				if ObjectStartX_t <= leftBorder then
 					if X_speed < 0 then
@@ -100,10 +105,24 @@ begin
 							X_speed <= X_speed - X_inc_speed;
 						end if;
 					end if;
-				end case;
+					
+					if hitObjMid='1' then -- bump
+						update_location:='0';
+						X_speed <= -X_speed;
+						X_state <= bump_from_object;
+					end if;
+					
+				when bump_from_object=>
+					if hitObjMid ='0' then
+						X_state <= normal;
+					end if;
+
+				end case;	
+			end if;	
 				
-				end if;	
-				ObjectStartX_t  <= ObjectStartX_t + X_speed;
+				if update_location='1' then
+					ObjectStartX_t  <= ObjectStartX_t + X_speed;
+				end if;
 
 			end if;
 		end if;
@@ -152,6 +171,9 @@ begin
 								else
 									Y_speed<=0;
 									Y_state<=onObject;
+									if hitObjMid='1' then
+										Y_state<=jump;
+									end if;
 								end if;
 							end if;
 							-- HEERERER
