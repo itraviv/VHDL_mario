@@ -30,11 +30,11 @@ begin
 
 mVGA_RGB <=  mVGA_R & mVGA_G &  mVGA_B ;
 
-mVGA_R <= "111" when (oCoord_y >= 256 and oCoord_X > 156) else
-			 "110" ;	
-mVGA_G <= "111" when (oCoord_X <  356 and oCoord_Y < 100) else
+mVGA_R <= "111" when (oCoord_y >= 450) else
+			 "001" ;	
+mVGA_G <= "100" when (oCoord_Y >= 450) else
  		    "110" ;	
-mVGA_B <= "10" when (oCoord_X <  300 and oCoord_Y < 200) else
+mVGA_B <= "11" when ( oCoord_Y < 450) else
 			 "00";	 
 
 

@@ -148,5 +148,4 @@ process ( RESETn, CLK)
 end process;
 
 		
-end behav;		
-		
+end behav;
