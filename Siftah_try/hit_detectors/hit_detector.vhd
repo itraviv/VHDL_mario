@@ -19,8 +19,10 @@ end hit_detector;
 	
 architecture arch_hit_detector of hit_detector is
 constant step_size 		: integer := 40;
-constant player_size 	: integer := 26;
-constant hit_margin		: integer := 4;
+constant player_size_Y 	: integer := 26;
+constant player_size_X 	: integer := 18;
+
+constant hit_margin_Y		: integer := 4;
 		begin
 	process(CLK,RESETn)
 	begin
@@ -35,17 +37,16 @@ constant hit_margin		: integer := 4;
 			hit <= '1';
 		end if;
 		
-		if (player_X + player_size >= step_X) and (player_X + player_size < step_X + step_size) then
+		if (player_X + player_size_X >= step_X) and (player_X + player_size_X < step_X + step_size) then
 			hit <= '1';
 		end if;
 		
-		
 		--then, check if Y is out of bound
-		if player_Y > step_Y + hit_margin then
+		if player_Y > step_Y + hit_margin_Y then
 			hit <= '0';
 		end if;
 		
-		if player_Y < (step_Y - player_size - hit_margin) then
+		if player_Y < (step_Y - player_size_Y) then
 			hit <= '0';
 		end if;
 		

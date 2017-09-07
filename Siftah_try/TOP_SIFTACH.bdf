@@ -1442,7 +1442,7 @@ applicable agreement for further details.
 	(pt 624 288)
 )
 (connector
-	(text "bottomDraw" (rect 1224 272 1283 284)(font "Arial" ))
+	(text "bottomDraw" (rect 1216 288 1275 300)(font "Arial" ))
 	(pt 1232 288)
 	(pt 1240 288)
 )

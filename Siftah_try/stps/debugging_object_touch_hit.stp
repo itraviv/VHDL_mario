@@ -2,130 +2,253 @@
   <display_tree gui_logging_enabled="0">
     <display_branch instance="auto_signaltap_0" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
   </display_tree>
-  <global_info>
-    <single attribute="active instance" value="0"/>
-    <single attribute="lock mode" value="36110"/>
-    <multi attribute="window position" size="9" value="1424,683,398,124,0,50,124,0,1"/>
-    <multi attribute="column width" size="23" value="34,34,263,74,68,70,88,88,98,98,88,88,110,101,101,101,101,101,101,101,101,107,78"/>
-  </global_info>
-  <instance entity_name="sld_signaltap" is_auto_node="yes" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
+  <instance entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
     <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
     <position_info>
       <single attribute="active tab" value="0"/>
-      <single attribute="data vertical scroll position" value="1"/>
-      <single attribute="data horizontal scroll position" value="0"/>
-      <single attribute="zoom level numerator" value="1"/>
-      <single attribute="zoom level denominator" value="1"/>
-      <single attribute="zoom offset numerator" value="130558"/>
-      <single attribute="zoom offset denominator" value="1"/>
-      <single attribute="setup vertical scroll position" value="2"/>
+      <single attribute="data horizontal scroll position" value="316"/>
+      <single attribute="data vertical scroll position" value="0"/>
       <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="2"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="8"/>
+      <single attribute="zoom offset denominator" value="8"/>
+      <single attribute="zoom offset numerator" value="130753"/>
     </position_info>
-    <signal_set global_temp="1" name="signal_set: 2017/09/06 20:24:42  #0">
+    <signal_set global_temp="1" name="signal_set: 2017/09/07 10:41:46  #0">
       <clock name="timer:inst1|timer_done" polarity="posedge" tap_mode="classic"/>
-      <config ram_type="M4K" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="16384" trigger_in_enable="no" trigger_out_enable="no"/>
+      <config ram_type="M4K" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="4096" trigger_in_enable="no" trigger_out_enable="no"/>
       <top_entity/>
       <signal_vec>
         <trigger_input_vec>
-          <wire name="hit:inst11|hitBottom" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|idrawReqMario" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|idrawReqObscl" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|idraw_mario_bottom" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|oHitObj" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|oHitObj_sig" tap_mode="classic" type="combinatorial"/>
-          <wire name="obstacle_object:inst8|drawing_request" tap_mode="classic" type="combinatorial"/>
-          <wire name="obstacle_object:inst8|hit" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyface_object:inst7|drawing_down_boarder" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|Y_speed[0]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[10]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[11]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[12]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[13]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[14]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[15]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[16]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[17]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[18]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[19]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[1]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[20]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[21]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[22]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[23]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[24]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[25]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[26]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[27]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[28]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[29]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[2]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[30]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[31]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[3]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[4]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[5]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[6]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[7]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[8]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[9]" tap_mode="classic" type="register"/>
           <wire name="smileyfacemove:inst3|Y_state" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.bump_from_object" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyfacemove:inst3|Y_state.idle" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyfacemove:inst3|Y_state.jump" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyfacemove:inst3|Y_state.onObject" tap_mode="classic" type="combinatorial"/>
-          <wire name="smileyfacemove:inst3|hitObj" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyfacemove:inst3|hitObjBottom" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|update_location" tap_mode="classic" type="combinatorial"/>
         </trigger_input_vec>
         <data_input_vec>
-          <wire name="hit:inst11|hitBottom" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|idrawReqMario" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|idrawReqObscl" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|idraw_mario_bottom" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|oHitObj" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|oHitObj_sig" tap_mode="classic" type="combinatorial"/>
-          <wire name="obstacle_object:inst8|drawing_request" tap_mode="classic" type="combinatorial"/>
-          <wire name="obstacle_object:inst8|hit" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyface_object:inst7|drawing_down_boarder" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|Y_speed[0]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[10]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[11]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[12]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[13]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[14]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[15]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[16]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[17]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[18]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[19]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[1]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[20]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[21]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[22]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[23]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[24]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[25]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[26]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[27]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[28]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[29]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[2]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[30]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[31]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[3]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[4]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[5]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[6]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[7]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[8]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[9]" tap_mode="classic" type="register"/>
           <wire name="smileyfacemove:inst3|Y_state" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.bump_from_object" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyfacemove:inst3|Y_state.idle" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyfacemove:inst3|Y_state.jump" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyfacemove:inst3|Y_state.onObject" tap_mode="classic" type="combinatorial"/>
-          <wire name="smileyfacemove:inst3|hitObj" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyfacemove:inst3|hitObjBottom" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|update_location" tap_mode="classic" type="combinatorial"/>
         </data_input_vec>
         <storage_qualifier_input_vec>
-          <wire name="hit:inst11|hitBottom" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|idrawReqMario" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|idrawReqObscl" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|idraw_mario_bottom" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|oHitObj" tap_mode="classic" type="combinatorial"/>
-          <wire name="hit:inst11|oHitObj_sig" tap_mode="classic" type="combinatorial"/>
-          <wire name="obstacle_object:inst8|drawing_request" tap_mode="classic" type="combinatorial"/>
-          <wire name="obstacle_object:inst8|hit" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyface_object:inst7|drawing_down_boarder" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|Y_speed[0]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[10]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[11]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[12]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[13]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[14]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[15]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[16]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[17]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[18]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[19]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[1]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[20]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[21]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[22]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[23]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[24]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[25]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[26]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[27]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[28]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[29]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[2]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[30]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[31]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[3]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[4]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[5]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[6]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[7]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[8]" tap_mode="classic" type="register"/>
+          <wire name="smileyfacemove:inst3|Y_speed[9]" tap_mode="classic" type="register"/>
           <wire name="smileyfacemove:inst3|Y_state" tap_mode="classic" type="state machine"/>
+          <wire name="smileyfacemove:inst3|Y_state.bump_from_object" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyfacemove:inst3|Y_state.idle" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyfacemove:inst3|Y_state.jump" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyfacemove:inst3|Y_state.onObject" tap_mode="classic" type="combinatorial"/>
-          <wire name="smileyfacemove:inst3|hitObj" tap_mode="classic" type="combinatorial"/>
           <wire name="smileyfacemove:inst3|hitObjBottom" tap_mode="classic" type="combinatorial"/>
+          <wire name="smileyfacemove:inst3|update_location" tap_mode="classic" type="combinatorial"/>
         </storage_qualifier_input_vec>
       </signal_vec>
       <presentation>
         <data_view>
           <net is_signal_inverted="no" name="smileyfacemove:inst3|hitObjBottom"/>
-          <net is_signal_inverted="no" name="smileyfacemove:inst3|hitObj"/>
           <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state"/>
           <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.idle"/>
           <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.jump"/>
           <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.onObject"/>
-          <net is_signal_inverted="no" name="obstacle_object:inst8|drawing_request"/>
-          <net is_signal_inverted="no" name="obstacle_object:inst8|hit"/>
+          <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.bump_from_object"/>
           <net is_signal_inverted="no" name="smileyface_object:inst7|drawing_down_boarder"/>
-          <net is_signal_inverted="no" name="hit:inst11|hitBottom"/>
-          <net is_signal_inverted="no" name="hit:inst11|idraw_mario_bottom"/>
-          <net is_signal_inverted="no" name="hit:inst11|idrawReqMario"/>
-          <net is_signal_inverted="no" name="hit:inst11|idrawReqObscl"/>
-          <net is_signal_inverted="no" name="hit:inst11|oHitObj"/>
-          <net is_signal_inverted="no" name="hit:inst11|oHitObj_sig"/>
+          <net is_signal_inverted="no" name="smileyfacemove:inst3|update_location"/>
+          <bus is_signal_inverted="no" link="all" name="smileyfacemove:inst3|Y_speed" order="lsb_to_msb" radix="signed_dec" state="collapse" type="register">
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[0]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[1]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[2]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[3]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[4]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[5]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[6]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[7]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[8]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[9]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[10]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[11]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[12]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[13]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[14]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[15]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[16]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[17]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[18]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[19]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[20]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[21]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[22]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[23]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[24]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[25]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[26]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[27]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[28]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[29]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[30]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[31]"/>
+          </bus>
         </data_view>
         <setup_view>
           <net is_signal_inverted="no" name="smileyfacemove:inst3|hitObjBottom"/>
-          <net is_signal_inverted="no" name="smileyfacemove:inst3|hitObj"/>
           <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state"/>
           <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.idle"/>
           <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.jump"/>
           <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.onObject"/>
-          <net is_signal_inverted="no" name="obstacle_object:inst8|drawing_request"/>
-          <net is_signal_inverted="no" name="obstacle_object:inst8|hit"/>
+          <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_state.bump_from_object"/>
           <net is_signal_inverted="no" name="smileyface_object:inst7|drawing_down_boarder"/>
-          <net is_signal_inverted="no" name="hit:inst11|hitBottom"/>
-          <net is_signal_inverted="no" name="hit:inst11|idraw_mario_bottom"/>
-          <net is_signal_inverted="no" name="hit:inst11|idrawReqMario"/>
-          <net is_signal_inverted="no" name="hit:inst11|idrawReqObscl"/>
-          <net is_signal_inverted="no" name="hit:inst11|oHitObj"/>
-          <net is_signal_inverted="no" name="hit:inst11|oHitObj_sig"/>
+          <net is_signal_inverted="no" name="smileyfacemove:inst3|update_location"/>
+          <bus is_signal_inverted="no" link="all" name="smileyfacemove:inst3|Y_speed" order="lsb_to_msb" radix="signed_dec" state="collapse" type="register">
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[0]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[1]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[2]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[3]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[4]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[5]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[6]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[7]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[8]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[9]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[10]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[11]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[12]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[13]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[14]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[15]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[16]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[17]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[18]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[19]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[20]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[21]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[22]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[23]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[24]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[25]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[26]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[27]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[28]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[29]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[30]"/>
+            <net is_signal_inverted="no" name="smileyfacemove:inst3|Y_speed[31]"/>
+          </bus>
         </setup_view>
       </presentation>
-      <trigger CRC="2065A1F3" attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2017/09/06 20:24:42  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
+      <trigger CRC="E0A6B69C" attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2017/09/07 10:46:50  #0" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_in="dont_care" trigger_out="active high"/>
         <events use_custom_flow_control="no">
-          <level enabled="yes" name="condition1" type="basic">'obstacle_object:inst8|hit' == rising edge
+          <level enabled="yes" name="condition1" type="basic">'smileyfacemove:inst3|Y_state.onObject' == rising edge
             <power_up enabled="yes">
             </power_up>
             <op_node/>
           </level>
         </events>
         <storage_qualifier_events>
-          <transitional>000000000000000
-            <pwr_up_transitional>000000000000000
+          <transitional>0000000000000000000000000000000000000000
+            <pwr_up_transitional>0000000000000000000000000000000000000000
             </pwr_up_transitional>
           </transitional>
           <storage_qualifier_level type="basic">
@@ -145,12 +268,18 @@
           </storage_qualifier_level>
         </storage_qualifier_events>
         <log>
-          <data global_temp="1" name="log: 2017/09/06 20:25:24  #0" power_up_mode="false" sample_depth="514" trigger_position="-1">000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000010000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000010000000000000010000000000000010000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000010000000000000010000000000000010000000000000010000000000000010000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000001000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000000000000010000</data>
-          <extradata>1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</extradata>
+          <data global_temp="1" name="log: 2017/09/07 10:46:50  #1" power_up_mode="false" sample_depth="648" trigger_position="-1">000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100100000000001000000000010010000000100010000000000000100000000001001000000010000001000000000000000000000100100000000010000000000000000000000000010010000000001000010000000000100000000000001000000000100000000000000010000000000000100000000010000100000000000000000000000010000000001000000000000000000000000000001000000000100001000000000010000000000100000000000010000000000000001000000000010000000000001000010000000000000000000001000000000000100000000000000000000000000100000000000010000100000000001000000000000000000000001000000000000000100000000000000000000000100001000000000000000000000000000000000010000000000000000000000000000000000000001000011111111111111111111111111111111000100000111111111111111111111111111111100010000111111111110111111111111111111110001000001111111111011111111111111111111000100001111111111111111111111011111111100010000011111111111111111111101111111110001000011111111111011111111110111111111000100000111111111101111111111011111111100010000111111111111111111111111101111110001000001111111111111111111111110111111000100001111111111101111111111111011111100010000011111111110111111111111101111110001000011111111111111111111110110111111000100000111111111111111111111011011111100010000111111111110111111111101101111110001000001111111111011111111110110111111000101000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000100000000000000000000000000000000000000100001111111111111111111111111111111100010000011111111111111111111111111111110001000011111111111011111111111111111111000100000111111111101111111111111111111100010000111111111111111111111101111111110001000001111111111111111111110111111111000100001111111111101111111111011111111100010000011111111110111111111101111111110001000011111111111111111111111110111111000100000111111111111111111111111011111100010000111111111110111111111111101111110001000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000001000000000010000000000100100000000010000000000000001000000000010010000000001000010000000000000000000001001000000000101000000000000000000000000000000000001000100111111111111111111111111111111110100010001111111111111111111111111111111010001001111111111101111111111111111111101000100011111111110111111111111111111110100000011111111111111111111110111111111000100000111111111111111111111011111111100010000111111111110111111111101111111110001000001111111111011111111110111111111000100001111111111111111111111111011111100010000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000100000000001000000000010010000000001000000000000000100000000001001000000000100001000000000000000000000100100000000010000000000000000000000000010010000000001000010000000000100000000000001000000000100000000000000010000000000000100000000010000100000000000000000000000010000000001000000000000000000000000000001000000000100001000000000010000000000100000000000010000000000000001000000000010000000000001000010000000000000000000001000000000000100000000000000000000000000100000000000010000100000000001000000000000000000000001000000000000000100000000000000000000000100001000000000000000000000000000000000010000000000000000000000000000000000000001000011111111111111111111111111111111000100000111111111111111111111111111111100010000111111111110111111111111111111110001000001111111111011111111111111111111000100001111111111111111111111011111111100010000011111111111111111111101111111110001000011111111111011111111110111111111000100000111111111101111111111011111111100010000111111111111111111111111101111110001000001111111111111111111111110111111000100001111111111101111111111111011111100010000011111111110111111111111101111110001010000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000100000000000000000000000000000000000000100001111111111111111111111111111111100010000011111111111111111111111111111110001000011111111111011111111111111111111000100000111111111101111111111111111111100010000111111111111111111111101111111110001000001111111111111111111110111111111000100001111111111101111111111011111111100010000011111111110111111111101111111110001000011111111111111111111111110111111000100000111111111111111111111111011111100010000111111111110111111111111101111110001000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000010000000000100000000001001000000000100000000000000010000000000100100000000010000100000000000000000000010010000000001010000000000000000000000000000000000010001001111111111111111111111111111111101000100011111111111111111111111111111110100010011111111111011111111111111111111010001000111111111101111111111111111111101000000111111111111111111111101111111110001000001111111111111111111110111111111000100001111111111101111111111011111111100010000011111111110111111111101111111110001000011111111111111111111111110111111000100000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000100000000001000000000010010000000001000000000000000100000000001001000000000100001000000000000000000000100100000000010000000000000000000000000010010000000001000010000000000100000000000001000000000100000000000000010000000000000100000000010000100000000000000000000000010000000001000000000000000000000000000001000000000100001000000000010000000000100000000000010000000000000001000000000010000000000001000010000000000000000000001000000000000100000000000000000000000000100000000000010000100000000001000000000000000000000001000000000000000100000000000000000000000100001000000000000000000000000000000000010000000000000000000000000000000000000001000011111111111111111111111111111111000100000111111111111111111111111111111100010000111111111110111111111111111111110001000001111111111011111111111111111111000100001111111111111111111111011111111100010000011111111111111111111101111111110001000011111111111011111111110111111111000100000111111111101111111111011111111100010000111111111111111111111111101111110001000001111111111111111111111110111111000100001111111111101111111111111011111100010000011111111110111111111111101111110001010000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001000000000000000000000000000000000000001000011111111111111111111111111111111000100000111111111111111111111111111111100010000111111111110111111111111111111110001000001111111111011111111111111111111000100001111111111111111111111011111111100010000011111111111111111111101111111110001000011111111111011111111110111111111000100000111111111101111111111011111111100010100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100100000000001000000000010010000000100010000000000000100000000001001000000010001001000000000000000000000100100000001000100000000000000000000000010010000000100000010000000000100000000000001000000000100000000000000010000000000000100000000010000100000000000000000000000010000000001000000000000000000000000000001000000000100001000000000010000000000100000000000010000000000000001000000000010000000000001000010000000000000000000001000000000000100000000000000000000000000100000000000010000100000000001000000000000000000000001000000000000000100000000000000000000000100001000000000000000000000000000000000010000000000000000000000000000000000000001000011111111111111111111111111111111000100000111111111111111111111111111111100010000111111111110111111111111111111110001000001111111111011111111111111111111000100001111111111111111111111011111111100010000011111111111111111111101111111110001000011111111111011111111110111111111000100000111111111101111111111011111111100010000111111111111111111111111101111110001000001111111111111111111111110111111000100001111111111101111111111111011111100010000011111111110111111111111101111110001000011111111111111111111110110111111000100000111111111111111111111011011111100010000111111111110111111111101101111110001000001111111111011111111110110111111000100001111111111111111111111111101111100010000011111111111111111111111110111110001000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000100000000001000000000010010000000001000000000000000100000000001001000000000100001000000000000000000000100100000000010100000000000000000000000000000000000100010011111111111111111111111111111111010001000111111111111111111111111111111101000100111111111110111111111111111111110100010001111111111011111111111111111111010000001111111111111111111111011111111100010000011111111111111111111101111111110001000011111111111011111111110111111111000100000111111111101111111111011111111100010000111111111111111111111111101111110001000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000100000000001000000000010010000000001000000000000000100000000001001000000000100001000000000000000000000100100000000010100000000000000000000000000000000000100010011111111111111111111111111111111010001000111111111111111111111111111111101000100111111111110111111111111111111110100010001111111111011111111111111111111010000001111111111111111111111011111111100010000011111111111111111111101111111110001000011111111111011111111110111111111000100000111111111101111111111011111111100010000111111111111111111111111101111110001000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000001000000000010000000000100100000000010000000000000001000000000010010000000001000010000000000000000000001001000000000100000000000000000000000000100100000000010000100000000001000000000000010000000001000000000000000100000000000001000000000100001000000000000000000000000100000000010000000000000000000000000000010000000001000010000000000100000000001000000000000100000000000000010000000000100000000000010000100000000000000000000010000000000001000000000000000000000000001000000000000100001000000000010000000000000000000000010000000000000001000000000000000000000001000010000000000000000000000000000000000100000000000000000000000000000000000000010000111111111111111111111111111111110001000001111111111111111111111111111111000100001111111111101111111111111111111100010000011111111110111111111111111111110001000011111111111111111111110111111111000100000111111111111111111111011111111100010000111111111110111111111101111111110001000001111111111011111111110111111111000100001111111111111111111111111011111100010000011111111111111111111111101111110001000011111111111011111111111110111111000100000111111111101111111111111011111100010100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001000000000000000000000000000000000000001000011111111111111111111111111111111000100000111111111111111111111111111111100010000111111111110111111111111111111110001000001111111111011111111111111111111000100001111111111111111111111011111111100010000011111111111111111111101111111110001000011111111111011111111110111111111000100000111111111101111111111011111111100010000111111111111111111111111101111110001000001111111111111111111111110111111000100001111111111101111111111111011111100010000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000000000000000000000000000000000000000100000000000000000000000000000000000000010000000000000000000000000000000000000001000001000000000010000000000100100000000010000000000000001000000000010010000000001000010000000000000000000001001000000000100000000000000000000000000100100000000010000100000000001000000000000010000000001000000000000000100000000000001000000000100001000000000000000000000000100000000010000000000000000000000000000010000000001000010000000000100000000001000000000000100000000000000010000000000100000000000010000100000000000000000000010000000000001000000000000000000000000001000000000000100001000000000010000000000000000000000010000000000000001000000000000000000000001000010000000000000000000000000000000000100000000000000000000000000000000000000010000111111111111111111111111111111110001000001111111111111111111111111111111000100001111111111101111111111111111111100010000011111111110111111111111111111110001000011111111111111111111110111111111000100000111111111111111111111011111111100010000111111111110111111111101111111110001000001111111111011111111110111111111000100001111111111111111111111111011111100010000011111111111111111111111101111110001000011111111111011111111111110111111000100000111111111101111111111111011111100010100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000010000000000000000000000000000000000000010000111111111111111111111111111111110001000001111111111111111111111111111111000100001111111111101111111111111111111100010000011111111110111111111111111111110001000011111111111111111111110111111111000100000111111111111111111111011111111100010100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110000000000000000000000000000000000000011000000000000000000000000000000000000001100000000000000000000000000000000000000110</data>
+          <extradata>111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</extradata>
         </log>
       </trigger>
     </signal_set>
   </instance>
   <mnemonics/>
   <static_plugin_mnemonics/>
+  <global_info>
+    <single attribute="active instance" value="0"/>
+    <single attribute="lock mode" value="36110"/>
+    <multi attribute="column width" size="23" value="34,34,263,74,68,70,88,88,98,98,88,88,110,101,101,101,101,101,101,101,101,107,78"/>
+    <multi attribute="window position" size="9" value="1424,683,398,124,0,50,124,0,1"/>
+  </global_info>
 </session>

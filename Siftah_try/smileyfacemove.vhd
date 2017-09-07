@@ -158,12 +158,12 @@ begin
 			  
 						when onObject =>
 							if hitObjBottom='0' then
-								Y_state<=jump;
+								Y_state<=bump_from_object;
 								Y_speed<=0;
 							else
 								Y_speed<=hitObjYspeed;
 								if upKeyPressed='1' then
-									Y_state <= jump;
+									Y_state <= bump_from_object;
 									Y_speed <= hitObjYspeed+Y_jump_speed;
 								end if;
 							end if;
