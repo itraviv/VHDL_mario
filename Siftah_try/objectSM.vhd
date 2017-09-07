@@ -44,8 +44,6 @@ Y_speed <= Y_speed_sig;
 		begin
 		  if RESETn = '0' then
 			ObjectStartX_t	<= resetObjectStartX_t;			
-			ObjectStartY_t	<= resetObjectStartY_t;
-			Y_speed_sig			<= 0;
 			X_speed_sig			<= 1;
 		elsif CLK'event  and CLK = '1' then
 			if timer_done = '1' then
@@ -62,12 +60,30 @@ Y_speed <= Y_speed_sig;
 					--State machine
 				end if;
 				ObjectStartX_t	<= ObjectStartX_t + X_speed_sig ;
-				ObjectStartY_t	<= ObjectStartY_t - Y_speed_sig ;
 			end if; --timer done
 		end if;
 		end process ;
 		
-		
+		process (RESETn,CLK)
+		begin
+		if RESETn='0' then
+			ObjectStartY_t	<= resetObjectStartY_t;
+			Y_speed_sig			<= 0;
+		elsif CLK'event  and CLK = '1' then
+			if ObjectStartY_t <= upBorder then
+				if Y_speed_sig < 0 then
+						Y_speed_sig<= -Y_speed_sig ;
+					end if;
+				elsif ObjectStartY_t >= downBorder then
+					if Y_speed_sig > 0 then
+						Y_speed_sig<= -Y_speed_sig ;
+					end if;
+				-- Y sm
+				else
+			end if;
+				ObjectStartY_t	<= ObjectStartY_t - Y_speed_sig ;
+		end if;
+		end process;
 		
 		ObjectStartX	<= ObjectStartX_t ;
 		ObjectStartY	<= ObjectStartY_t ;
