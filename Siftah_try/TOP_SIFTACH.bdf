@@ -446,23 +446,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1264 416 1296 448)
-	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
-	(text "inst16" (rect 3 21 32 33)(font "Arial" )(invisible))
-	(port
-		(pt 16 0)
-		(output)
-		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
-		(line (pt 16 8)(pt 16 0)(line_width 1))
-	)
-	(drawing
-		(line (pt 8 8)(pt 16 16)(line_width 1))
-		(line (pt 16 16)(pt 24 8)(line_width 1))
-		(line (pt 8 8)(pt 24 8)(line_width 1))
-	)
-)
-(symbol
 	(rect 200 664 360 792)
 	(text "KBD" (rect 5 0 29 14)(font "Arial" (font_size 8)))
 	(text "inst12" (rect 8 112 37 124)(font "Arial" ))
@@ -1120,6 +1103,23 @@ applicable agreement for further details.
 		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36)(line_width 1))
 	)
 )
+(symbol
+	(rect 1264 424 1296 456)
+	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
+	(text "inst16" (rect 3 21 32 33)(font "Arial" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0)(line_width 1))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16)(line_width 1))
+		(line (pt 16 16)(pt 24 8)(line_width 1))
+		(line (pt 8 8)(pt 24 8)(line_width 1))
+	)
+)
 (connector
 	(pt 1536 240)
 	(pt 1568 240)
@@ -1296,10 +1296,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1280 416)
-	(pt 1280 424)
-)
-(connector
 	(pt 1280 352)
 	(pt 1296 352)
 )
@@ -1358,10 +1354,6 @@ applicable agreement for further details.
 (connector
 	(pt 1280 320)
 	(pt 1280 352)
-)
-(connector
-	(pt 1280 352)
-	(pt 1280 416)
 )
 (connector
 	(text "CLK" (rect 82 744 103 756)(font "Arial" ))
@@ -1706,7 +1698,10 @@ applicable agreement for further details.
 	(pt 680 432)
 	(pt 544 432)
 )
-(junction (pt 1280 416))
+(connector
+	(pt 1280 352)
+	(pt 1280 424)
+)
 (junction (pt 1280 352))
 (junction (pt 936 320))
 (junction (pt 944 336))
