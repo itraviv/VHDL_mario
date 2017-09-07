@@ -16,6 +16,8 @@ port 	(
 		rightKeyPressed : in std_logic;
 		
 		hitObjMid		: in std_logic;
+		hitObjMidLegs	: in std_logic;
+
 		hitObjBottom    : in std_logic;
 		hitObjYspeed    : in integer;
 		hitObjXspeed    : in integer;
