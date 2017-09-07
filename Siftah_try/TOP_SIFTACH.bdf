@@ -446,23 +446,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 1264 416 1296 448)
-	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
-	(text "inst16" (rect 3 21 32 33)(font "Arial" )(invisible))
-	(port
-		(pt 16 0)
-		(output)
-		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
-		(line (pt 16 8)(pt 16 0)(line_width 1))
-	)
-	(drawing
-		(line (pt 8 8)(pt 16 16)(line_width 1))
-		(line (pt 16 16)(pt 24 8)(line_width 1))
-		(line (pt 8 8)(pt 24 8)(line_width 1))
-	)
-)
-(symbol
 	(rect 200 664 360 792)
 	(text "KBD" (rect 5 0 29 14)(font "Arial" (font_size 8)))
 	(text "inst12" (rect 8 112 37 124)(font "Arial" ))
@@ -1066,6 +1049,23 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 128 144)(line_width 1))
 	)
 )
+(symbol
+	(rect 1264 480 1296 512)
+	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
+	(text "inst16" (rect 3 21 32 33)(font "Arial" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0)(line_width 1))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16)(line_width 1))
+		(line (pt 16 16)(pt 24 8)(line_width 1))
+		(line (pt 8 8)(pt 24 8)(line_width 1))
+	)
+)
 (connector
 	(pt 1536 240)
 	(pt 1568 240)
@@ -1242,10 +1242,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1280 416)
-	(pt 1280 424)
-)
-(connector
 	(pt 1280 352)
 	(pt 1296 352)
 )
@@ -1300,14 +1296,6 @@ applicable agreement for further details.
 (connector
 	(pt 1296 320)
 	(pt 1280 320)
-)
-(connector
-	(pt 1280 320)
-	(pt 1280 352)
-)
-(connector
-	(pt 1280 352)
-	(pt 1280 416)
 )
 (connector
 	(text "CLK" (rect 82 744 103 756)(font "Arial" ))
@@ -1393,18 +1381,6 @@ applicable agreement for further details.
 (connector
 	(pt 640 352)
 	(pt 680 352)
-)
-(connector
-	(text "YOS[31..0]" (rect 652 448 707 460)(font "Arial" ))
-	(pt 640 464)
-	(pt 680 464)
-	(bus)
-)
-(connector
-	(text "XOS[31..0]" (rect 648 432 701 444)(font "Arial" ))
-	(pt 640 448)
-	(pt 680 448)
-	(bus)
 )
 (connector
 	(text "hitObj" (rect 648 400 676 412)(font "Arial" ))
@@ -1625,7 +1601,26 @@ applicable agreement for further details.
 	(pt 1488 1088)
 	(bus)
 )
-(junction (pt 1280 416))
+(connector
+	(text "YOS[31..0]" (rect 652 432 707 444)(font "Arial" ))
+	(pt 640 448)
+	(pt 680 448)
+	(bus)
+)
+(connector
+	(text "XOS[31..0]" (rect 648 448 701 460)(font "Arial" ))
+	(pt 640 464)
+	(pt 680 464)
+	(bus)
+)
+(connector
+	(pt 1280 320)
+	(pt 1280 352)
+)
+(connector
+	(pt 1280 352)
+	(pt 1280 480)
+)
 (junction (pt 1280 352))
 (junction (pt 1048 936))
 (junction (pt 1080 952))

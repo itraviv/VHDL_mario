@@ -1,21 +1,10 @@
 <session jtag_chain="USB-Blaster [USB-0]" jtag_device="@1: EP2C35 (0x020B40DD)" sof_file="../vga_game.sof" top_level_entity="TOP_SIFTACH">
   <display_tree gui_logging_enabled="0">
-    <display_branch instance="auto_signaltap_0" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+    <display_branch instance="auto_signaltap_0" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
   </display_tree>
   <instance entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
     <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
-    <position_info>
-      <single attribute="active tab" value="1"/>
-      <single attribute="data horizontal scroll position" value="0"/>
-      <single attribute="data vertical scroll position" value="0"/>
-      <single attribute="setup horizontal scroll position" value="0"/>
-      <single attribute="setup vertical scroll position" value="0"/>
-      <single attribute="zoom level denominator" value="1"/>
-      <single attribute="zoom level numerator" value="8"/>
-      <single attribute="zoom offset denominator" value="8"/>
-      <single attribute="zoom offset numerator" value="130753"/>
-    </position_info>
-    <signal_set global_temp="1" name="signal_set: 2017/09/07 14:29:55  #0">
+    <signal_set global_temp="1" is_expanded="true" name="signal_set: 2017/09/07 14:29:55  #0">
       <clock name="timer:inst1|timer_done" polarity="posedge" tap_mode="classic"/>
       <config ram_type="M4K" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="4096" trigger_in_enable="no" trigger_out_enable="no"/>
       <top_entity/>
@@ -255,10 +244,11 @@
           </bus>
         </setup_view>
       </presentation>
-      <trigger attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2017/09/07 14:29:55  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
+      <trigger CRC="42042A59" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2017/09/07 14:29:55  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_in="dont_care" trigger_out="active high"/>
         <events use_custom_flow_control="no">
           <level enabled="yes" name="condition1" type="basic">'smileyfacemove:inst3|update_location' == falling edge
+            
             <power_up enabled="yes">
             </power_up>
             <op_node/>
@@ -266,7 +256,9 @@
         </events>
         <storage_qualifier_events>
           <transitional>000000000000000000000000000000000000000000
+            
             <pwr_up_transitional>000000000000000000000000000000000000000000
+            
             </pwr_up_transitional>
           </transitional>
           <storage_qualifier_level type="basic">
@@ -285,8 +277,23 @@
             <op_node/>
           </storage_qualifier_level>
         </storage_qualifier_events>
+        <log>
+          <data global_temp="1" name="log: 2017/09/07 19:03:20  #0" power_up_mode="false" sample_depth="31" trigger_position="-1">000011111111111011111111111111111111001010000000000000000000000000000000000000000110000010000000000000000000000000000000000110000010000000000000000000000000000000000110000010000000000000000000000000000000000100000000000000000000000000000000000000100000000011111111111111111111111111111111001000000001111111111111111111111111111111001000000011111111111011111111111111111111001010000000000000000000000000000000000000000110000010000000000000000000000000000000000110000010000000000000000000000000000000000110000010000000000000000000000000000000000100000000000000000000000000000000000000100000000011111111111111111111111111111111001000000001111111111111111111111111111111001000000011111111111011111111111111111111001010000000000000000000000000000000000000000110000011111111111111111111111111111111000110000011111111111111111111111111111111000110000011111111111111111111111111111111000110000011111111111111111111111111111111000110000011111111111111111111111111111111000110000011111111111111111111111111111111000110000011111111111111111111111111111111000110000011111111111111111111111111111111000110000011111111111111111111111111111111000110000011111111111111111111111111111111000110000011111111111111111111111111111111000110000011111111111111111111111111111111000110000011111111111111111111111111111111000110</data>
+          <extradata>1111111111111111111111111111111</extradata>
+        </log>
       </trigger>
     </signal_set>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data horizontal scroll position" value="4"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="4"/>
+      <single attribute="zoom offset denominator" value="4"/>
+      <single attribute="zoom offset numerator" value="131041"/>
+    </position_info>
   </instance>
   <mnemonics>
     <table name="X_state_table" width="3">
@@ -306,6 +313,6 @@
     <single attribute="active instance" value="0"/>
     <single attribute="lock mode" value="36110"/>
     <multi attribute="column width" size="23" value="34,34,263,74,68,70,88,88,98,98,88,88,110,101,101,101,101,101,101,101,101,107,78"/>
-    <multi attribute="window position" size="9" value="1424,683,398,124,356,50,124,0,1"/>
+    <multi attribute="window position" size="9" value="1424,683,398,124,0,50,124,0,1"/>
   </global_info>
 </session>

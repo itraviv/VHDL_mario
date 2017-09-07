@@ -173,6 +173,7 @@ begin
 							if hitObjBottom='0' then
 								Y_state<=jump;
 							end if;
+							
 						end case;
 						-- update location
 						if update_location='1' then --alwyas, except when hitting objects in jump mode
