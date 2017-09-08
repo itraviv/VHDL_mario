@@ -16,17 +16,16 @@ port 	(
 		rightKeyPressed : in std_logic;
 		
 		hitObjMid		: in std_logic;
-		hitObjMidLegs	: in std_logic;
-
-		hitObjBottom    : in std_logic;
+		hitObjWithMyBottomPixel	: in std_logic;
+		hitObjAny   	 : in std_logic;
+		
 		hitObjYspeed    : in integer;
 		hitObjXspeed    : in integer;
 		hitObjYpos		: in integer;
 		
 		
 		ObjectStartX	: out integer ;
-		ObjectStartY	: out integer;
-		FIX				: out std_logic
+		ObjectStartY	: out integer
 		
 	);
 end smileyfacemove;
@@ -136,37 +135,28 @@ begin
 		variable update_location : std_logic;
 		
 		begin
-			FIX <='0';
 			if RESETn = '0' then
 				ObjectStartY_t	<= resetObjectStartY_t ;
 				Y_state <= idle;
 				Y_speed <= 0;
 				update_location:='0';
-				
---			elsif(hitObjMid='1') then
---				if Y_speed > 0 then
---					--todo bump from low
---				elsif Y_speed<0 and Y_state=jump then 
---					Y_state <= onObject;
---					Y_speed <= hitObjYspeed;
---					ObjectStartY_t <= hitObjYpos  - hitObjYspeed - 26 ; -- mario size
---					FIX	 <= '1';
---				end if;		
 			elsif CLK'event  and CLK = '1' then		
 				if timer_done = '1' then		
 				
 				update_location:='1'; -- default	
 						-- Y sm
 						case Y_state is
+-----------------------------------------------------------------------------------------------------------						
 						when idle => 
 						Y_speed <= 0;
 						if upKeyPressed='1' then
 							Y_state <= jump;
 							Y_speed <= Y_jump_speed;
 						end if;
+-----------------------------------------------------------------------------------------------------------						
 						when jump =>
 							Y_speed <= Y_speed-Y_gravity;
-							if hitObjBottom='1' then
+							if hitObjAny='1' then
 								update_location:='0';
 								if Y_speed > 0 then --hiting object from below
 									Y_speed<=0;
@@ -180,10 +170,10 @@ begin
 --									end if;
 								end if;
 							end if;
-							-- HEERERER
+-----------------------------------------------------------------------------------------------------------
 						when onObject =>
 							Y_speed<=hitObjYspeed;
-							if hitObjBottom='0' then
+							if hitObjAny='0' then
 								Y_state<=bump_from_object;
 								Y_speed<=0;
 							else
@@ -196,12 +186,13 @@ begin
 							if hitObjMid='1' then
 								ObjectStartY_t <= hitObjYpos - mario_Y_size - hitObjYspeed;	
 							end if;
-
+-----------------------------------------------------------------------------------------------------------
 						when bump_from_object =>
 							Y_speed <= Y_speed-Y_gravity;
-							if hitObjBottom='0' then
+							if hitObjAny='0' then
 								Y_state<=jump;
 							end if;
+-----------------------------------------------------------------------------------------------------------							
 						end case;
 						-- update location
 						if update_location='1' then --alwyas, except when hitting objects in jump mode

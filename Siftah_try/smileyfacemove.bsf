@@ -20,7 +20,7 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 264 272)
+	(rect 16 16 288 272)
 	(text "smileyfacemove" (rect 5 0 88 12)(font "Arial" ))
 	(text "inst" (rect 8 240 25 252)(font "Arial" ))
 	(port
@@ -75,15 +75,15 @@ applicable agreement for further details.
 	(port
 		(pt 0 144)
 		(input)
-		(text "hitObjMidLegs" (rect 0 0 68 12)(font "Arial" ))
-		(text "hitObjMidLegs" (rect 21 139 89 151)(font "Arial" ))
+		(text "hitObjWithMyBottomPixel" (rect 0 0 125 12)(font "Arial" ))
+		(text "hitObjWithMyBottomPixel" (rect 21 139 146 151)(font "Arial" ))
 		(line (pt 0 144)(pt 16 144)(line_width 1))
 	)
 	(port
 		(pt 0 160)
 		(input)
-		(text "hitObjBottom" (rect 0 0 63 12)(font "Arial" ))
-		(text "hitObjBottom" (rect 21 155 84 167)(font "Arial" ))
+		(text "hitObjAny" (rect 0 0 48 12)(font "Arial" ))
+		(text "hitObjAny" (rect 21 155 69 167)(font "Arial" ))
 		(line (pt 0 160)(pt 16 160)(line_width 1))
 	)
 	(port
@@ -108,27 +108,20 @@ applicable agreement for further details.
 		(line (pt 0 208)(pt 16 208)(line_width 3))
 	)
 	(port
-		(pt 248 32)
+		(pt 272 32)
 		(output)
 		(text "ObjectStartX[31..0]" (rect 0 0 93 12)(font "Arial" ))
-		(text "ObjectStartX[31..0]" (rect 134 27 227 39)(font "Arial" ))
-		(line (pt 248 32)(pt 232 32)(line_width 3))
+		(text "ObjectStartX[31..0]" (rect 158 27 251 39)(font "Arial" ))
+		(line (pt 272 32)(pt 256 32)(line_width 3))
 	)
 	(port
-		(pt 248 48)
+		(pt 272 48)
 		(output)
 		(text "ObjectStartY[31..0]" (rect 0 0 95 12)(font "Arial" ))
-		(text "ObjectStartY[31..0]" (rect 132 43 227 55)(font "Arial" ))
-		(line (pt 248 48)(pt 232 48)(line_width 3))
-	)
-	(port
-		(pt 248 64)
-		(output)
-		(text "FIX" (rect 0 0 16 12)(font "Arial" ))
-		(text "FIX" (rect 211 59 227 71)(font "Arial" ))
-		(line (pt 248 64)(pt 232 64)(line_width 1))
+		(text "ObjectStartY[31..0]" (rect 156 43 251 55)(font "Arial" ))
+		(line (pt 272 48)(pt 256 48)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 232 240)(line_width 1))
+		(rectangle (rect 16 16 256 240)(line_width 1))
 	)
 )

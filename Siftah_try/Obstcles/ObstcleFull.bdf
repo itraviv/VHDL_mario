@@ -70,7 +70,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 8 384 176 400)
+	(rect -8 384 160 400)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "oCoord_X[31..0]" (rect 5 0 84 12)(font "Arial" ))
 	(pt 168 8)
@@ -118,7 +118,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 8 424 176 440)
+	(rect 0 488 168 504)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "ENABLE" (rect 5 0 47 12)(font "Arial" ))
 	(pt 168 8)
@@ -134,7 +134,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 8 480 176 496)
+	(rect 8 544 176 560)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "rand[9..0]" (rect 5 0 52 12)(font "Arial" ))
 	(pt 168 8)
@@ -147,6 +147,22 @@ applicable agreement for further details.
 		(line (pt 117 12)(pt 121 8)(line_width 1))
 	)
 	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect -8 432 168 448)
+	(text "INPUT" (rect 141 0 169 10)(font "Arial" (font_size 6)))
+	(text "oCoord_Y[31..0]" (rect 5 0 86 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 100 12)(pt 125 12)(line_width 1))
+		(line (pt 100 4)(pt 125 4)(line_width 1))
+		(line (pt 129 8)(pt 176 8)(line_width 1))
+		(line (pt 100 12)(pt 100 4)(line_width 1))
+		(line (pt 125 4)(pt 129 8)(line_width 1))
+		(line (pt 125 12)(pt 129 8)(line_width 1))
+	)
+	(text "VCC" (rect 144 7 164 17)(font "Arial" (font_size 6)))
 )
 (pin
 	(output)
@@ -265,6 +281,22 @@ applicable agreement for further details.
 	(rect 1240 152 1416 168)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "hit_head" (rect 90 0 131 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8)(line_width 1))
+		(line (pt 52 4)(pt 78 4)(line_width 1))
+		(line (pt 52 12)(pt 78 12)(line_width 1))
+		(line (pt 52 12)(pt 52 4)(line_width 1))
+		(line (pt 78 4)(pt 82 8)(line_width 1))
+		(line (pt 82 8)(pt 78 12)(line_width 1))
+		(line (pt 78 12)(pt 82 8)(line_width 1))
+	)
+)
+(pin
+	(output)
+	(rect 1224 -8 1400 8)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "step_Y[31..0]" (rect 90 0 157 12)(font "Arial" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8)(line_width 1))
@@ -503,39 +535,6 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 192 144)(line_width 1))
 	)
 )
-(symbol
-	(rect 1040 104 1104 152)
-	(text "OR2" (rect 1 0 19 10)(font "Arial" (font_size 6)))
-	(text "inst17" (rect 3 37 32 49)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
-		(text "IN2" (rect 2 23 19 35)(font "Courier New" (bold))(invisible))
-		(line (pt 0 32)(pt 15 32)(line_width 1))
-	)
-	(port
-		(pt 0 16)
-		(input)
-		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
-		(text "IN1" (rect 2 7 19 19)(font "Courier New" (bold))(invisible))
-		(line (pt 0 16)(pt 15 16)(line_width 1))
-	)
-	(port
-		(pt 64 24)
-		(output)
-		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 48 15 65 27)(font "Courier New" (bold))(invisible))
-		(line (pt 48 24)(pt 64 24)(line_width 1))
-	)
-	(drawing
-		(line (pt 14 36)(pt 25 36)(line_width 1))
-		(line (pt 14 13)(pt 25 13)(line_width 1))
-		(arc (pt 7 29)(pt 7 19)(rect -14 8 19 41)(line_width 1))
-		(arc (pt 49 24)(pt 25 13)(rect -6 13 57 76)(line_width 1))
-		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36)(line_width 1))
-	)
-)
 (connector
 	(text "CLK" (rect 338 400 359 412)(font "Arial" ))
 	(pt 360 416)
@@ -625,10 +624,6 @@ applicable agreement for further details.
 	(pt 1040 296)
 )
 (connector
-	(pt 776 360)
-	(pt 704 360)
-)
-(connector
 	(pt 568 448)
 	(pt 568 576)
 	(bus)
@@ -681,15 +676,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1016 136)
-	(pt 1040 136)
-)
-(connector
-	(text "hitObjmid" (rect 1112 112 1158 124)(font "Arial" ))
-	(pt 1104 128)
-	(pt 1144 128)
-)
-(connector
 	(pt 1112 104)
 	(pt 1112 96)
 )
@@ -724,28 +710,8 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 808 120)
-	(pt 560 120)
-	(bus)
-)
-(connector
-	(pt 808 136)
-	(pt 568 136)
-	(bus)
-)
-(connector
 	(pt 320 48)
 	(pt 408 48)
-	(bus)
-)
-(connector
-	(pt 560 16)
-	(pt 560 120)
-	(bus)
-)
-(connector
-	(pt 568 16)
-	(pt 568 136)
 	(bus)
 )
 (connector
@@ -774,18 +740,6 @@ applicable agreement for further details.
 	(pt 744 392)
 )
 (connector
-	(text "oCoord_X[31..0]" (rect 186 376 265 388)(font "Arial" ))
-	(pt 176 392)
-	(pt 216 392)
-	(bus)
-)
-(connector
-	(text "oCoord_Y[31..0]" (rect 176 328 257 340)(font "Arial" ))
-	(pt 176 344)
-	(pt 216 344)
-	(bus)
-)
-(connector
 	(text "RESETn" (rect 176 216 217 228)(font "Arial" ))
 	(pt 176 232)
 	(pt 208 232)
@@ -809,11 +763,6 @@ applicable agreement for further details.
 	(text "hitObjmid" (rect 1192 176 1238 188)(font "Arial" ))
 	(pt 1208 192)
 	(pt 1248 192)
-)
-(connector
-	(text "ohit_head" (rect 1020 104 1067 116)(font "Arial" ))
-	(pt 1016 120)
-	(pt 1040 120)
 )
 (connector
 	(text "ohit_head" (rect 1220 144 1267 156)(font "Arial" ))
@@ -854,19 +803,86 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 256 488)
-	(pt 176 488)
+	(pt 256 552)
+	(pt 176 552)
 	(bus)
 )
 (connector
 	(pt 256 376)
-	(pt 256 488)
+	(pt 256 552)
 	(bus)
 )
 (connector
-	(text "hitObj" (rect 189 416 217 428)(font "Arial" ))
-	(pt 176 432)
-	(pt 200 432)
+	(text "oCoord_Y[31..0]" (rect 168 424 249 436)(font "Arial" ))
+	(pt 168 440)
+	(pt 208 440)
+	(bus)
+)
+(connector
+	(text "oCoord_X[31..0]" (rect 162 376 241 388)(font "Arial" ))
+	(pt 160 392)
+	(pt 192 392)
+	(bus)
+)
+(connector
+	(pt 592 136)
+	(pt 808 136)
+	(bus)
+)
+(connector
+	(pt 344 120)
+	(pt 808 120)
+	(bus)
+)
+(connector
+	(pt 176 312)
+	(pt 344 312)
+	(bus)
+)
+(connector
+	(pt 344 120)
+	(pt 344 312)
+	(bus)
+)
+(connector
+	(pt 592 136)
+	(pt 592 344)
+	(bus)
+)
+(connector
+	(pt 592 344)
+	(pt 176 344)
+	(bus)
+)
+(connector
+	(pt 320 48)
+	(pt 320 0)
+	(bus)
+)
+(connector
+	(pt 320 0)
+	(pt 1224 0)
+	(bus)
+)
+(connector
+	(text "enble" (rect 181 480 206 492)(font "Arial" ))
+	(pt 168 496)
+	(pt 192 496)
+)
+(connector
+	(text "enble" (rect 717 344 742 356)(font "Arial" ))
+	(pt 704 360)
+	(pt 776 360)
+)
+(connector
+	(text "ohit_head" (rect 1028 112 1075 124)(font "Arial" ))
+	(pt 1016 120)
+	(pt 1088 120)
+)
+(connector
+	(text "hitObjmid" (rect 1096 120 1142 132)(font "Arial" ))
+	(pt 1016 136)
+	(pt 1128 136)
 )
 (junction (pt 648 408))
 (junction (pt 680 424))

@@ -105,7 +105,6 @@ constant hit_margin_Y		: integer := 10;
 				head_mid <='1';
 			end if;
 			
-			
 			if head_up='1' and legs_down='1' then --mario is in the middle of the object!
 				mario_mid <='1';
 			end if;
