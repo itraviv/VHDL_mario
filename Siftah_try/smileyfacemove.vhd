@@ -2,7 +2,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.std_logic_signed.all;
 use ieee.numeric_std.all;
--- Alex Grinshpun March 24 2017 
 
 entity smileyfacemove is
 port 	(
@@ -22,9 +21,16 @@ port 	(
 		hitObjYspeed    : in integer;
 		hitObjXspeed    : in integer;
 		
-		ObjectStartX	: out integer ;
-		ObjectStartY	: out integer
+		FIX : IN STD_LOGIC;
+		FIX_Y : IN INTEGER;
+			
 		
+		try_fix : out STD_LOGIC;
+		ObjectStartX	: out integer ;
+		ObjectStartY	: out integer ;
+		
+		YspeedFix : out integer
+
 	);
 end smileyfacemove;
 
@@ -63,10 +69,13 @@ signal X_speed : integer;
 signal ObjectStartX_t : integer range 0 to 680;
 signal ObjectStartY_t : integer range 0 to 512;
 begin
-		process ( RESETn,CLK)
+		try_fix<='1' when Y_state = jump else '0';
+		YspeedFix<=Y_speed;
+
+		process ( RESETn,CLK,FIX)
 		variable update_location : std_logic;
 		begin
-		  if RESETn = '0' then
+		if RESETn = '0' then
 				ObjectStartX_t	<= resetObjectStartX_t;
 				X_speed <= 0;
 				X_state <= normal;
@@ -130,7 +139,7 @@ begin
 		end if;
 		end process;
 	
-		process ( RESETn,CLK)
+		process ( RESETn,CLK,FIX)
 		variable update_location : std_logic;
 		begin
 			if RESETn = '0' then
@@ -138,6 +147,9 @@ begin
 				Y_state <= idle;
 				Y_speed <= 0;
 				update_location:='0';
+			ELSIF FIX='1' THEN
+				ObjectStartY_t<=FIX_Y;
+				Y_state<=onObject;
 			elsif CLK'event  and CLK = '1' then		
 				if timer_done = '1' then		
 				
