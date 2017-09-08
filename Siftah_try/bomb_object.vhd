@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 --use IEEE.std_logic_unsigned.all;
---use ieee.numeric_std.all;
+use ieee.numeric_std.all;
 --use ieee.std_logic_arith.all;
 -- Alex Grinshpun April 2017
 
@@ -12,8 +12,8 @@ port 	(
 		RESETn		: in std_logic;
 		oCoord_X	: in integer;
 		oCoord_Y	: in integer;
-		ObjectStartX	: in integer;
-		ObjectStartY 	: in integer;
+		ObjectStartX	: in std_logic_vector(8 downto 0);
+		ObjectStartY 	: in std_logic_vector(8 downto 0);
 		drawing_request	: out std_logic ;
 		mVGA_RGB 	: out std_logic_vector(7 downto 0) ;
 		drawing_down_boarder : out std_logic
@@ -97,8 +97,8 @@ constant object : object_form := (
 ("0000000000000100000000111000000"),
 ("0000000000100000000000000000000"),
 ("0000000000100000000000000000000"),
-("0000000000100000000000000000000"),
-("0000000000011100000000000000000"),
+("0000000000111000000000000000000"),
+("0000000000111100000000000000000"),
 ("0000000000000000000000000000000"),
 ("0000000000000000000000000000000")
 );
@@ -122,16 +122,16 @@ signal ObjectStartX_d : integer;
 begin
 
 -- Calculate object boundaries
-objectWestXboundary	<= object_X_size+ObjectStartX;
-objectSouthboundary	<= object_Y_size+ObjectStartY;
+objectWestXboundary	<= object_X_size+to_integer(unsigned(ObjectStartX));
+objectSouthboundary	<= object_Y_size+to_integer(unsigned(ObjectStartY));
 
 -- Signals drawing_X[Y] are active when obects coordinates are being crossed
 
-	drawing_X	<= '1' when  (oCoord_X  >= ObjectStartX) and  (oCoord_X < objectWestXboundary) else '0';
-    drawing_Y	<= '1' when  (oCoord_Y  >= ObjectStartY) and  (oCoord_Y < objectSouthboundary) else '0';
+	drawing_X	<= '1' when  (oCoord_X  >= to_integer(unsigned(ObjectStartX))) and  (oCoord_X < objectWestXboundary) else '0';
+    drawing_Y	<= '1' when  (oCoord_Y  >= to_integer(unsigned(ObjectStartY))) and  (oCoord_Y < objectSouthboundary) else '0';
 
-	bCoord_X 	<= (oCoord_X - ObjectStartX) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
-	bCoord_Y 	<= (oCoord_Y - ObjectStartY) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
+	bCoord_X 	<= (oCoord_X - to_integer(unsigned(ObjectStartX))) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
+	bCoord_Y 	<= (oCoord_Y - to_integer(unsigned(ObjectStartY))) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
 	
 
 
@@ -148,7 +148,7 @@ process ( RESETn, CLK)
 		elsif CLK'event and CLK='1' then
 			mVGA_RGB	<=  object_colors(bCoord_Y , bCoord_X);	
 			drawing_request	<= object(bCoord_Y , bCoord_X) and drawing_X and drawing_Y ;
-			ObjectStartX_d <= ObjectStartX;
+			ObjectStartX_d <= to_integer(unsigned(ObjectStartX));
 			
 			
 			if oCoord_Y=objectSouthboundary-1 or oCoord_Y=objectSouthboundary-2 then

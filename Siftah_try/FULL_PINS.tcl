@@ -10,7 +10,7 @@ if {[is_project_open]} {
    ;#################
    ;# Clock Signals #
    ;#################
-#  set_location_assignment  PIN_N2  -to CLK
+  set_location_assignment  PIN_N2  -to CLK_50
 #   set_location_assignment  PIN_N2  -to CLK							;# 	Global clock of the project
    ;# To use the 27 MHz clock,the TD_RESET pin (PIN_C4)
    ;# must be asserted to a high logic level
@@ -26,7 +26,7 @@ if {[is_project_open]} {
    ;#############################################
 
    set_location_assignment	PIN_G26  -to RESETn  ;# KEY0				;#	Global reset to FPGA
-#   set_location_assignment	PIN_N23  -to KEY[1]  ;# KEY1				;#	Reserved
+   set_location_assignment	PIN_N23  -to rand  ;# KEY1				;#	Reserved
 #   set_location_assignment	PIN_P23  -to KEY[2]  ;# KEY2				;#	Reserved
 #   set_location_assignment	PIN_W26  -to KEY[3]  ;# KEY3				;#	Reserved
 
@@ -78,7 +78,7 @@ if {[is_project_open]} {
    ;# Active High - ON wnen '1                      #
    ;#################################################
 
-#   set_location_assignment PIN_AE23  -to up   ;# LEDR0				;#	Used for indication of slide switch #0
+   set_location_assignment PIN_AE23  -to hit   ;# LEDR0				;#	Used for indication of slide switch #0
 #   set_location_assignment PIN_AF23  -to left   ;# LEDR1				;#	Used for indication of slide switch #1
 #   set_location_assignment PIN_AB21  -to right   ;# LEDR2				;#	Used for indication of slide switch #2
 #   set_location_assignment PIN_AC22  -to a[2]   ;# LEDR3				;#	Used for indication of slide switch #3

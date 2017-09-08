@@ -4,7 +4,7 @@
 -- MODULE: lpm_constant 
 
 -- ============================================================
--- File Name: MAXCOUNT.vhd
+-- File Name: lpm_constant512.vhd
 -- Megafunction Name(s):
 -- 			lpm_constant
 --
@@ -39,15 +39,15 @@ USE ieee.std_logic_1164.all;
 LIBRARY lpm;
 USE lpm.all;
 
-ENTITY MAXCOUNT IS
+ENTITY lpm_constant512 IS
 	PORT
 	(
 		result		: OUT STD_LOGIC_VECTOR (8 DOWNTO 0)
 	);
-END MAXCOUNT;
+END lpm_constant512;
 
 
-ARCHITECTURE SYN OF maxcount IS
+ARCHITECTURE SYN OF lpm_constant512 IS
 
 	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (8 DOWNTO 0);
 
@@ -86,7 +86,7 @@ END SYN;
 -- ============================================================
 -- CNX file retrieval info
 -- ============================================================
--- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Stratix II"
+-- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
 -- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 -- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 -- Retrieval info: PRIVATE: Radix NUMERIC "10"
@@ -100,9 +100,9 @@ END SYN;
 -- Retrieval info: USED_PORT: result 0 0 9 0 OUTPUT NODEFVAL result[8..0]
 -- Retrieval info: CONNECT: result 0 0 9 0 @result 0 0 9 0
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
--- Retrieval info: GEN_FILE: TYPE_NORMAL MAXCOUNT.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL MAXCOUNT.inc FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL MAXCOUNT.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL MAXCOUNT.bsf TRUE FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL MAXCOUNT_inst.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_constant512.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_constant512.inc FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_constant512.cmp TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_constant512.bsf TRUE FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_constant512_inst.vhd TRUE
 -- Retrieval info: LIB_FILE: lpm

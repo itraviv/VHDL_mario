@@ -4,7 +4,7 @@
 -- MODULE: lpm_ff 
 
 -- ============================================================
--- File Name: regout.vhd
+-- File Name: lpm_ff9bit.vhd
 -- Megafunction Name(s):
 -- 			lpm_ff
 --
@@ -39,7 +39,7 @@ USE ieee.std_logic_1164.all;
 LIBRARY lpm;
 USE lpm.all;
 
-ENTITY regout IS
+ENTITY lpm_ff9bit IS
 	PORT
 	(
 		clock		: IN STD_LOGIC ;
@@ -47,10 +47,10 @@ ENTITY regout IS
 		enable		: IN STD_LOGIC ;
 		q		: OUT STD_LOGIC_VECTOR (8 DOWNTO 0)
 	);
-END regout;
+END lpm_ff9bit;
 
 
-ARCHITECTURE SYN OF regout IS
+ARCHITECTURE SYN OF lpm_ff9bit IS
 
 	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (8 DOWNTO 0);
 
@@ -99,7 +99,7 @@ END SYN;
 -- Retrieval info: PRIVATE: ASET_ALL1 NUMERIC "1"
 -- Retrieval info: PRIVATE: CLK_EN NUMERIC "1"
 -- Retrieval info: PRIVATE: DFF NUMERIC "1"
--- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Stratix II"
+-- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
 -- Retrieval info: PRIVATE: SCLR NUMERIC "0"
 -- Retrieval info: PRIVATE: SLOAD NUMERIC "0"
 -- Retrieval info: PRIVATE: SSET NUMERIC "0"
@@ -119,9 +119,9 @@ END SYN;
 -- Retrieval info: CONNECT: @enable 0 0 0 0 enable 0 0 0 0
 -- Retrieval info: CONNECT: @data 0 0 9 0 data 0 0 9 0
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
--- Retrieval info: GEN_FILE: TYPE_NORMAL regout.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL regout.inc FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL regout.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL regout.bsf TRUE FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL regout_inst.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff9bit.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff9bit.inc FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff9bit.cmp TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff9bit.bsf TRUE FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_ff9bit_inst.vhd TRUE
 -- Retrieval info: LIB_FILE: lpm

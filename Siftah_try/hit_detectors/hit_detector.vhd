@@ -21,9 +21,9 @@ architecture arch_hit_detector of hit_detector is
 constant step_size 		: integer := 40;
 constant player_size_Y 	: integer := 26;
 constant player_size_X 	: integer := 18;
-
 constant hit_margin_Y		: integer := 4;
-		begin
+		
+	begin
 	process(CLK,RESETn)
 	begin
 	if RESETn = '0' then
