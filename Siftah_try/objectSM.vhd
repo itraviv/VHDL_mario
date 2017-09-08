@@ -32,7 +32,7 @@ constant resetObjectStartY_t : integer :=420;
 
 constant leftBorder : integer := 120;
 constant rightBorder : integer := 500;
-constant upBorder : integer := 30;
+constant upBorder : integer := 300;
 constant downBorder : integer := 440 ;
 
 

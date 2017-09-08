@@ -13,8 +13,9 @@ port 	(
 		step_Y 			: in integer;		
 		hit	    : out std_logic; --indicate any hit
 		leg_mid : out std_logic; -- indicate that mario legs are in the middle of the step. note: there must be  x speed!
-		head_mid : out std_logic; -- indicate that mario legs are in the middle of the step. note: there must be  x speed!
-		mario_mid : out std_logic
+		head_mid : out std_logic; -- indicate that mario head  is in the middle of the step. note: there must be  x speed!
+		mario_mid : out std_logic;
+		step_Y_O : out integer
 	);
 end hit_detector;	
 	
@@ -24,7 +25,7 @@ constant step_size 		: integer := 40;
 constant player_size_Y 	: integer := 26;
 constant player_size_X 	: integer := 18;
 
-constant hit_margin_Y		: integer := 4;
+constant hit_margin_Y		: integer := 10;
 		begin
 	process(CLK,RESETn)
 	--variable all_hit : std_logic:=0;
@@ -42,11 +43,13 @@ constant hit_margin_Y		: integer := 4;
 		leg_mid  <= '0';
 		head_mid <= '0';
 		mario_mid <= '0';
+		--step_Y_O <= 0;
 	elsif rising_edge (CLK ) then	
 		hit <= '0';
 		leg_mid  <= '0';
 		head_mid <= '0';
 		mario_mid <= '0';
+		--step_Y_O <= 0;
 		
 		head_up :='0';
 		head_down :='0';
@@ -108,8 +111,8 @@ constant hit_margin_Y		: integer := 4;
 			end if;
 		end if;
 	end if ;
-	end process;
-	
+	end process;	
+	step_Y_O <= step_Y;
 end architecture;
 
 
