@@ -65,7 +65,7 @@ signal drawing_Y : std_logic := '0';
 --		
 signal objectWestXboundary : integer;
 signal objectSouthboundary : integer;
-signal ObjectStartX_d : integer;
+--signal ObjectStartX_d : integer;
 
 begin
 
@@ -89,11 +89,11 @@ process ( RESETn, CLK)
 	if RESETn = '0' then
 	    mVGA_RGB	<=  (others => '0') ; 	
 		drawing_request	<=  '0' ;
-		ObjectStartX_d <= 0;
+		--ObjectStartX_d <= 0;
 		elsif CLK'event and CLK='1' then
 			mVGA_RGB	<=  object_colors(bCoord_Y , bCoord_X);	
 			drawing_request	<= object(bCoord_Y , bCoord_X) and drawing_X and drawing_Y ;
-			ObjectStartX_d <= ObjectStartX;
+			--ObjectStartX_d <= ObjectStartX;
 	end if;
 
   end process;

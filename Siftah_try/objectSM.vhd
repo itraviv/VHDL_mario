@@ -44,7 +44,7 @@ Y_speed <= Y_speed_sig;
 		begin
 		  if RESETn = '0' then
 			ObjectStartX_t	<= resetObjectStartX_t;			
-			X_speed_sig			<= 1;
+			X_speed_sig			<= 0;
 		elsif CLK'event  and CLK = '1' then
 			if timer_done = '1' then
 			--handle my own borders.
@@ -68,14 +68,15 @@ Y_speed <= Y_speed_sig;
 		begin
 		if RESETn='0' then
 			ObjectStartY_t	<= resetObjectStartY_t;
-			Y_speed_sig			<= 0;
+			Y_speed_sig			<= -1;
 		elsif CLK'event  and CLK = '1' then
+			if timer_done = '1' then
 			if ObjectStartY_t <= upBorder then
-				if Y_speed_sig < 0 then
+				if Y_speed_sig > 0 then
 						Y_speed_sig<= -Y_speed_sig ;
 					end if;
 				elsif ObjectStartY_t >= downBorder then
-					if Y_speed_sig > 0 then
+					if Y_speed_sig < 0 then
 						Y_speed_sig<= -Y_speed_sig ;
 					end if;
 				-- Y sm
@@ -83,6 +84,7 @@ Y_speed <= Y_speed_sig;
 			end if;
 				ObjectStartY_t	<= ObjectStartY_t - Y_speed_sig ;
 		end if;
+		end if; --timer_done
 		end process;
 		
 		ObjectStartX	<= ObjectStartX_t ;

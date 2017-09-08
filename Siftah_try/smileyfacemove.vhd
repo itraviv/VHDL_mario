@@ -74,15 +74,6 @@ begin
 		elsif CLK'event  and CLK = '1' then
 			update_location:='1';
 			if timer_done = '1' then
-				if ObjectStartX_t <= leftBorder then
-					if X_speed < 0 then
-						X_speed<= -X_speed ;
-					end if;
-				elsif ObjectStartX_t >= rightBorder then
-					if X_speed > 0 then
-						X_speed<= -X_speed ;
-					end if;
-				else
 				-- X sm
 				case X_state is
 				--when onObject => 
@@ -117,13 +108,25 @@ begin
 					end if;
 
 				end case;	
-			end if;	
 				
 				if update_location='1' then
-					ObjectStartX_t  <= ObjectStartX_t + X_speed;
+			--saturation in location
+					if ObjectStartX_t + X_speed > rightBorder then
+						ObjectStartX_t  <=rightBorder;
+						if X_speed > 0 then
+							X_speed<= -X_speed ;
+						end if;
+					elsif ObjectStartX_t + X_speed <  leftBorder then
+						ObjectStartX_t  <=leftBorder;
+						if X_speed < 0 then
+							X_speed<= -X_speed ;
+						end if;
+					else
+						ObjectStartX_t  <= ObjectStartX_t + X_speed;
+					end if;
 				end if;
+			end if;	-- timer_done
 
-			end if;
 		end if;
 		end process;
 	
@@ -138,19 +141,7 @@ begin
 			elsif CLK'event  and CLK = '1' then		
 				if timer_done = '1' then		
 				
-				update_location:='1'; -- default
-					
-					if ObjectStartY_t <= upBorder then
-						ObjectStartY_t <= upBorder;
-						Y_state <= jump;
-						if Y_speed > 0 then
-							Y_speed <= -Y_speed ;
-						end if;
-					elsif ObjectStartY_t >= downBorder and Y_state=jump and Y_speed < 0 then -- comming back from a fly
-						ObjectStartY_t <= downBorder;
-						Y_state <= idle;
-						Y_speed <= 0;
-					else
+				update_location:='1'; -- default	
 						-- Y sm
 						case Y_state is
 						when idle => 
@@ -176,7 +167,6 @@ begin
 								end if;
 							end if;
 							-- HEERERER
-			  
 						when onObject =>
 							if hitObjBottom='0' then
 								Y_state<=bump_from_object;
@@ -197,9 +187,22 @@ begin
 						end case;
 						-- update location
 						if update_location='1' then --alwyas, except when hitting objects in jump mode
-							ObjectStartY_t  <= ObjectStartY_t - Y_speed;
+						-- staturation in location
+							if ObjectStartY_t - Y_speed > downBorder then
+								ObjectStartY_t  <= downBorder;
+								Y_state <= idle;
+								Y_speed <= 0;
+							elsif ObjectStartY_t - Y_speed <  upBorder then
+								ObjectStartY_t  <= upBorder;
+								Y_state <= jump;
+								if Y_speed > 0 then
+									Y_speed <= -Y_speed ;
+								end if;
+							else
+								ObjectStartY_t  <= ObjectStartY_t - Y_speed;
+							end if;
+							
 						end if;
-					end if;
 				end if;
 			end if;
 		end process ;
