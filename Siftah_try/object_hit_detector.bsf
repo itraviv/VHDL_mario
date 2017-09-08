@@ -66,6 +66,13 @@ applicable agreement for further details.
 		(line (pt 0 112)(pt 16 112)(line_width 1))
 	)
 	(port
+		(pt 0 128)
+		(input)
+		(text "is_object_active" (rect 0 0 80 12)(font "Arial" ))
+		(text "is_object_active" (rect 21 123 101 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
 		(pt 152 32)
 		(output)
 		(text "hit" (rect 0 0 11 12)(font "Arial" ))

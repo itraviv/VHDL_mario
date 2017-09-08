@@ -18,6 +18,9 @@ port 	(
 		d_drawing_request : in std_logic;
 		d_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	, -- d signal 
 		
+		e_drawing_request : in std_logic;	
+		e_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- y signal 			
+		
 		y_drawing_request : in std_logic;	
 		y_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- y signal 		
 		
@@ -31,24 +34,6 @@ end objects_mux;
 
 architecture behav of objects_mux is 
 signal m_mVGA_t 	: std_logic_vector(7 downto 0); --	,  
-
-
---signal VGA_CLK_t : std_logic;
---signal not_RESETn : std_logic;
---signal RESETn_tmp : std_logic;
---signal m_mVGA_R_t 	: std_logic_vector(2 downto 0); --	,  
---signal m_mVGA_G_t 	: std_logic_vector(2 downto 0); --	, 
---signal m_mVGA_B_t 	: std_logic_vector(1 downto 0); --	,
---signal  object1_draw_req : std_logic;
---signal  object2_draw_req : std_logic;
---
---signal b_mVGA_R 	: std_logic_vector(2 downto 0); --	,  
---signal b_mVGA_G 	: std_logic_vector(2 downto 0); --	, 
---signal b_mVGA_B 	: std_logic_vector(1 downto 0); --	,
---
---signal y_mVGA_R 	: std_logic_vector(2 downto 0); --	,  
---signal y_mVGA_G 	: std_logic_vector(2 downto 0); --	, 
---signal y_mVGA_B 	: std_logic_vector(1 downto 0); --	,
 
 
 begin
@@ -67,7 +52,9 @@ begin
 		elsif (c_drawing_request = '1' ) then  
 			m_mVGA_t <= c_mVGA_RGB;
 		elsif (d_drawing_request = '1' ) then  
-			m_mVGA_t <= d_mVGA_RGB;				
+			m_mVGA_t <= d_mVGA_RGB;
+		elsif (e_drawing_request = '1' ) then  
+			m_mVGA_t <= e_mVGA_RGB;				
 		else
 			m_mVGA_t <= y_mVGA_RGB ;
 		end if; 

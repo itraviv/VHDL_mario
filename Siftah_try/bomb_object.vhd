@@ -14,9 +14,11 @@ port 	(
 		oCoord_Y	: in integer;
 		ObjectStartX	: in std_logic_vector(8 downto 0);
 		ObjectStartY 	: in std_logic_vector(8 downto 0);
+		enable			: in std_logic;
 		drawing_request	: out std_logic ;
 		mVGA_RGB 	: out std_logic_vector(7 downto 0) ;
-		drawing_down_boarder : out std_logic
+		drawing_down_boarder : out std_logic ;
+		is_active 		: out std_logic
 	);
 end bomb_object;
 
@@ -111,6 +113,8 @@ signal bCoord_Y : integer := 0;
 signal drawing_X : std_logic := '0';
 signal drawing_Y : std_logic := '0';
 
+signal obj_enabled: std_logic := '1';
+
 --		
 signal objectWestXboundary : integer;
 signal objectSouthboundary : integer;
@@ -127,15 +131,15 @@ objectSouthboundary	<= object_Y_size+to_integer(unsigned(ObjectStartY));
 
 -- Signals drawing_X[Y] are active when obects coordinates are being crossed
 
-	drawing_X	<= '1' when  (oCoord_X  >= to_integer(unsigned(ObjectStartX))) and  (oCoord_X < objectWestXboundary) else '0';
-    drawing_Y	<= '1' when  (oCoord_Y  >= to_integer(unsigned(ObjectStartY))) and  (oCoord_Y < objectSouthboundary) else '0';
+	drawing_X	<= '1' when  (oCoord_X  >= to_integer(unsigned(ObjectStartX))) and  (oCoord_X < objectWestXboundary) and (obj_enabled='1') else '0';
+    drawing_Y	<= '1' when  (oCoord_Y  >= to_integer(unsigned(ObjectStartY))) and  (oCoord_Y < objectSouthboundary) and (obj_enabled='1') else '0';
 
 	bCoord_X 	<= (oCoord_X - to_integer(unsigned(ObjectStartX))) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
 	bCoord_Y 	<= (oCoord_Y - to_integer(unsigned(ObjectStartY))) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
 	
+	is_active <= obj_enabled;
 
-
-process ( RESETn, CLK)
+process ( RESETn, CLK, enable)
 
   		
    begin
@@ -144,17 +148,19 @@ process ( RESETn, CLK)
 		drawing_request	<=  '0' ;
 		ObjectStartX_d <= 0;
 		drawing_down_boarder <='0';
-
+		obj_enabled <= '1';
 		elsif CLK'event and CLK='1' then
-			mVGA_RGB	<=  object_colors(bCoord_Y , bCoord_X);	
-			drawing_request	<= object(bCoord_Y , bCoord_X) and drawing_X and drawing_Y ;
-			ObjectStartX_d <= to_integer(unsigned(ObjectStartX));
-			
-			
-			if oCoord_Y=objectSouthboundary-1 or oCoord_Y=objectSouthboundary-2 then
-			drawing_down_boarder <= '1' ;
+			if enable='0' then
+				obj_enabled <= '0';
 			else
-			drawing_down_boarder <= '0' ;
+				mVGA_RGB	<=  object_colors(bCoord_Y , bCoord_X);	
+				drawing_request	<= object(bCoord_Y , bCoord_X) and drawing_X and drawing_Y;
+				ObjectStartX_d <= to_integer(unsigned(ObjectStartX));
+				if oCoord_Y=objectSouthboundary-1 or oCoord_Y=objectSouthboundary-2 then
+				drawing_down_boarder <= '1' ;
+				else
+					drawing_down_boarder <= '0' ;
+				end if;
 			end if;
 	end if;
 

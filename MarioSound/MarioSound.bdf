@@ -55,7 +55,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 32 240 240 256)
+	(rect -80 264 128 280)
 	(text "INPUT" (rect 173 0 201 10)(font "Arial" (font_size 6)))
 	(text "ADC_DATA_CHIP[7..0]" (rect 5 0 121 12)(font "Arial" ))
 	(pt 208 8)
@@ -68,7 +68,7 @@ applicable agreement for further details.
 		(line (pt 157 12)(pt 161 8)(line_width 1))
 	)
 	(text "VCC" (rect 176 7 196 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -24 256 32 368))
+	(annotation_block (location)(rect -136 280 -80 392))
 )
 (pin
 	(input)
@@ -120,7 +120,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12)(line_width 1))
 		(line (pt 78 12)(pt 82 8)(line_width 1))
 	)
-	(annotation_block (location)(rect 898 240 954 256))
+	(annotation_block (location)(rect 1056 216 1112 232))
 )
 (pin
 	(output)
@@ -137,7 +137,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12)(line_width 1))
 		(line (pt 78 12)(pt 82 8)(line_width 1))
 	)
-	(annotation_block (location)(rect 966 256 1022 272))
+	(annotation_block (location)(rect 1080 248 1136 264))
 )
 (pin
 	(output)
@@ -188,7 +188,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12)(line_width 1))
 		(line (pt 78 12)(pt 82 8)(line_width 1))
 	)
-	(annotation_block (location)(rect 911 304 967 320))
+	(annotation_block (location)(rect 1040 232 1096 248))
 )
 (pin
 	(output)
@@ -222,7 +222,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12)(line_width 1))
 		(line (pt 78 12)(pt 82 8)(line_width 1))
 	)
-	(annotation_block (location)(rect 936 384 992 400))
+	(annotation_block (location)(rect 1008 392 1064 408))
 )
 (pin
 	(output)
@@ -239,7 +239,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12)(line_width 1))
 		(line (pt 78 12)(pt 82 8)(line_width 1))
 	)
-	(annotation_block (location)(rect 925 320 981 336))
+	(annotation_block (location)(rect 992 312 1048 328))
 )
 (pin
 	(output)
@@ -256,7 +256,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12)(line_width 1))
 		(line (pt 78 12)(pt 82 8)(line_width 1))
 	)
-	(annotation_block (location)(rect 918 336 974 352))
+	(annotation_block (location)(rect 1000 296 1056 312))
 )
 (pin
 	(output)
@@ -273,7 +273,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12)(line_width 1))
 		(line (pt 78 12)(pt 82 8)(line_width 1))
 	)
-	(annotation_block (location)(rect 933 352 989 368))
+	(annotation_block (location)(rect 1000 336 1056 352))
 )
 (pin
 	(output)
@@ -290,7 +290,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12)(line_width 1))
 		(line (pt 78 12)(pt 82 8)(line_width 1))
 	)
-	(annotation_block (location)(rect 960 208 1016 224))
+	(annotation_block (location)(rect 1088 192 1144 208))
 )
 (symbol
 	(rect -16 384 16 416)
@@ -901,7 +901,7 @@ applicable agreement for further details.
 	(pt 64 576)
 )
 (connector
-	(text "RESETn" (rect 133 576 174 588)(font "Arial" ))
+	(text "RESETn" (rect 21 584 62 596)(font "Arial" ))
 	(pt 152 592)
 	(pt 88 592)
 )
@@ -1214,6 +1214,21 @@ applicable agreement for further details.
 	(text "SinEnable" (rect 595 1352 643 1364)(font "Arial" ))
 	(pt 760 1368)
 	(pt 520 1368)
+)
+(connector
+	(pt 240 248)
+	(pt 232 248)
+	(bus)
+)
+(connector
+	(pt 232 248)
+	(pt 232 272)
+	(bus)
+)
+(connector
+	(pt 232 272)
+	(pt 128 272)
+	(bus)
 )
 (junction (pt 0 264))
 (junction (pt 0 344))
