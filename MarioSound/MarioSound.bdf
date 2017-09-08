@@ -824,6 +824,23 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 136 112)(line_width 1))
 	)
 )
+(symbol
+	(rect 936 1336 968 1368)
+	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
+	(text "inst3" (rect 3 21 26 33)(font "Arial" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0)(line_width 1))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16)(line_width 1))
+		(line (pt 16 16)(pt 24 8)(line_width 1))
+		(line (pt 8 8)(pt 24 8)(line_width 1))
+	)
+)
 (connector
 	(pt 240 232)
 	(pt 0 232)
@@ -1175,11 +1192,6 @@ applicable agreement for further details.
 (connector
 	(pt 952 976)
 	(pt 952 1336)
-	(bus)
-)
-(connector
-	(pt 952 1336)
-	(pt 912 1336)
 	(bus)
 )
 (connector

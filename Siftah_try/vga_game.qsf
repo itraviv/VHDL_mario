@@ -155,6 +155,38 @@ set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
 set_location_assignment PIN_N23 -to rand
 set_location_assignment PIN_N2 -to CLK_50
 set_location_assignment PIN_AE23 -to hit
+set_location_assignment PIN_AE14 -to soundsel[1]
+set_location_assignment PIN_AF14 -to soundsel[0]
+set_location_assignment PIN_K25 -to PDAC_A_DATA_CHIP[0]
+set_location_assignment PIN_K26 -to PDAC_A_DATA_CHIP[1]
+set_location_assignment PIN_M22 -to PDAC_A_DATA_CHIP[2]
+set_location_assignment PIN_M23 -to PDAC_A_DATA_CHIP[3]
+set_location_assignment PIN_M19 -to PDAC_A_DATA_CHIP[4]
+set_location_assignment PIN_M20 -to PDAC_A_DATA_CHIP[5]
+set_location_assignment PIN_N20 -to PDAC_A_DATA_CHIP[6]
+set_location_assignment PIN_M21 -to PDAC_A_DATA_CHIP[7]
+set_location_assignment PIN_M24 -to PDAC_B_DATA_CHIP[0]
+set_location_assignment PIN_M25 -to PDAC_B_DATA_CHIP[1]
+set_location_assignment PIN_N24 -to PDAC_B_DATA_CHIP[2]
+set_location_assignment PIN_P24 -to PDAC_B_DATA_CHIP[3]
+set_location_assignment PIN_R25 -to PDAC_B_DATA_CHIP[4]
+set_location_assignment PIN_R24 -to PDAC_B_DATA_CHIP[5]
+set_location_assignment PIN_R20 -to PDAC_B_DATA_CHIP[6]
+set_location_assignment PIN_T22 -to PDAC_B_DATA_CHIP[7]
+set_location_assignment PIN_T23 -to ADC_DATA_CHIP[0]
+set_location_assignment PIN_T24 -to ADC_DATA_CHIP[1]
+set_location_assignment PIN_T25 -to ADC_DATA_CHIP[2]
+set_location_assignment PIN_T18 -to ADC_DATA_CHIP[3]
+set_location_assignment PIN_T21 -to ADC_DATA_CHIP[4]
+set_location_assignment PIN_T20 -to ADC_DATA_CHIP[5]
+set_location_assignment PIN_U26 -to ADC_DATA_CHIP[6]
+set_location_assignment PIN_U25 -to ADC_DATA_CHIP[7]
+set_location_assignment PIN_U23 -to CLK_ADC_CHIP
+set_location_assignment PIN_R19 -to CLK_PDACs_CHIP
+set_location_assignment PIN_U20 -to SDACs_SDATA_CHIP
+set_location_assignment PIN_U21 -to SDACs_SCLK_CHIP
+set_location_assignment PIN_V26 -to SDACs_SLATCH_CHIP
+set_global_assignment -name VHDL_FILE ../sec_counter.vhd
 set_global_assignment -name EDIF_FILE ../MarioSound/MSS_Core.edf
 set_global_assignment -name BDF_FILE ../MarioSound/MarioSound.bdf
 set_global_assignment -name BDF_FILE ../MarioSound/MSS_BASIC.bdf
@@ -278,39 +310,9 @@ set_global_assignment -name BDF_FILE score_module.bdf
 set_global_assignment -name QIP_FILE lpm_counter0.qip
 set_global_assignment -name QIP_FILE ../score_counter.qip
 set_global_assignment -name QIP_FILE ../life_counter.qip
-set_location_assignment PIN_AE14 -to soundsel[1]
-set_location_assignment PIN_AF14 -to soundsel[0]
-set_location_assignment PIN_K25 -to PDAC_A_DATA_CHIP[0]
-set_location_assignment PIN_K26 -to PDAC_A_DATA_CHIP[1]
-set_location_assignment PIN_M22 -to PDAC_A_DATA_CHIP[2]
-set_location_assignment PIN_M23 -to PDAC_A_DATA_CHIP[3]
-set_location_assignment PIN_M19 -to PDAC_A_DATA_CHIP[4]
-set_location_assignment PIN_M20 -to PDAC_A_DATA_CHIP[5]
-set_location_assignment PIN_N20 -to PDAC_A_DATA_CHIP[6]
-set_location_assignment PIN_M21 -to PDAC_A_DATA_CHIP[7]
-set_location_assignment PIN_M24 -to PDAC_B_DATA_CHIP[0]
-set_location_assignment PIN_M25 -to PDAC_B_DATA_CHIP[1]
-set_location_assignment PIN_N24 -to PDAC_B_DATA_CHIP[2]
-set_location_assignment PIN_P24 -to PDAC_B_DATA_CHIP[3]
-set_location_assignment PIN_R25 -to PDAC_B_DATA_CHIP[4]
-set_location_assignment PIN_R24 -to PDAC_B_DATA_CHIP[5]
-set_location_assignment PIN_R20 -to PDAC_B_DATA_CHIP[6]
-set_location_assignment PIN_T22 -to PDAC_B_DATA_CHIP[7]
-set_location_assignment PIN_T23 -to ADC_DATA_CHIP[0]
-set_location_assignment PIN_T24 -to ADC_DATA_CHIP[1]
-set_location_assignment PIN_T25 -to ADC_DATA_CHIP[2]
-set_location_assignment PIN_T18 -to ADC_DATA_CHIP[3]
-set_location_assignment PIN_T21 -to ADC_DATA_CHIP[4]
-set_location_assignment PIN_T20 -to ADC_DATA_CHIP[5]
-set_location_assignment PIN_U26 -to ADC_DATA_CHIP[6]
-set_location_assignment PIN_U25 -to ADC_DATA_CHIP[7]
-set_location_assignment PIN_U23 -to CLK_ADC_CHIP
-set_location_assignment PIN_R19 -to CLK_PDACs_CHIP
-set_location_assignment PIN_U20 -to SDACs_SDATA_CHIP
-set_location_assignment PIN_U21 -to SDACs_SCLK_CHIP
-set_location_assignment PIN_V26 -to SDACs_SLATCH_CHIP
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name MISC_FILE "C:/Users/itama/Desktop/lab/project/Repository/Siftah_try/vga_game.dpf"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
