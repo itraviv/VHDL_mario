@@ -42,15 +42,15 @@ begin
 				one_sec_flag <= '0';
         end if;
         
-		if (gold_hit='1') then
+		if ((gold_hit='1') and (jump='1')) or (gold_hit='1') then
 			sound_choice <= "01";
 			sound_active <= '1';
 			one_sec:= 0;
-		elsif (bomb_hit='1') then
+		elsif ((bomb_hit='1') and (jump='1')) or (bomb_hit='1') then
 			sound_choice <= "00";
 			sound_active <= '1';
 			one_sec:= 0;
-		elsif (jump='1') then
+		elsif (jump='1') and (sound_active='0') then
 			sound_choice <= "10";
 			sound_active <= '1';
 			one_sec:= 0;

@@ -11,7 +11,7 @@ for x in content:
 		if i==0:
 			sys.stdout.write( "(x\""+x_R[1]+"\", ")
 		else:
-			if i%19==0:
+			if i%25==0:
 				sys.stdout.write( "x\""+x_R[1]+"\"),\n")
 				i=0
 				continue
