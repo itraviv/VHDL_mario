@@ -35,11 +35,11 @@ if {[is_project_open]} {
    ;# Slide Switches ('1' when up) #
    ;################################
 
-   set_location_assignment PIN_N25  -to mux[0]   ;# SW0					;#	Reserved				
-   set_location_assignment PIN_N26  -to mux[1]   ;# SW1					;#	Reserved
-#   set_location_assignment PIN_P25  -to SinEnable   ;# SW2					;#	Reserved
-    set_location_assignment PIN_AE14 -to soundsel[1]   ;# SW3					;#	Reserved
-   set_location_assignment PIN_AF14 -to soundsel[0]   ;# SW4					;#	SDACs normalization
+ #  set_location_assignment PIN_N25  -to mux[0]   ;# SW0					;#	Reserved				
+ #  set_location_assignment PIN_N26  -to mux[1]   ;# SW1					;#	Reserved
+   set_location_assignment PIN_P25  -to ThemeEnable   ;# SW2					;#	Reserved
+ #   set_location_assignment PIN_AE14 -to sound_sel[1]   ;# SW3					;#	Reserved
+  # set_location_assignment PIN_AF14 -to sound_sel[0]   ;# SW4					;#	SDACs normalization
 #   set_location_assignment PIN_AD13 -to SW[5]   ;# SW5					;#	PDACs normalization
 #   set_location_assignment PIN_AC13 -to SW[6]   ;# SW6					;#	Reserved
 #   set_location_assignment PIN_C13  -to SW[7]   ;# SW7					;#	"Computer voice" effect

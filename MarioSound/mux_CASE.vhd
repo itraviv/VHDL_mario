@@ -27,7 +27,7 @@ begin
 			when "00" => outd <= in0 ;
 			when "01" => outd <= in1 ; 
 			when "10" => outd <= in2 ; 
-			when others => outd <= in3 ;
+			when "11" => outd <= in3 ;
 		end case ;
 	end process ;
 end architecture ;

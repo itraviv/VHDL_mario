@@ -103,9 +103,9 @@ set_global_assignment -name QIP_FILE counter_4096.qip
 set_global_assignment -name BDF_FILE MarioSound.bdf
 set_location_assignment PIN_AE14 -to sound_sel[0]
 set_location_assignment PIN_AF14 -to sound_sel[1]
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_location_assignment PIN_AD13 -to ThemeEnable
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

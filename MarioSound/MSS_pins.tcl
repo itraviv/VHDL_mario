@@ -43,7 +43,7 @@ if {[is_project_open]} {
    set_location_assignment PIN_P25  -to SinEnable   ;# SW2					;#	Reserved
    set_location_assignment PIN_AE14 -to sound_sel[0]   ;# SW3					;#	Reserved
    set_location_assignment PIN_AF14 -to sound_sel[1]   ;# SW4					;#	SDACs normalization
-#   set_location_assignment PIN_AD13 -to SW[5]   ;# SW5					;#	PDACs normalization
+   set_location_assignment PIN_AD13 -to ThemeEnable   ;# SW5					;#	PDACs normalization
 #   set_location_assignment PIN_AC13 -to SW[6]   ;# SW6					;#	Reserved
 #   set_location_assignment PIN_C13  -to SW[7]   ;# SW7					;#	"Computer voice" effect
 #   set_location_assignment PIN_B13  -to SW[8]   ;# SW8					;#	Phase shift of 180 degrees

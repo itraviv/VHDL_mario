@@ -19,7 +19,7 @@ END Clk_Divider;
 
 --  Architecture Body
 
-ARCHITECTURE Clk_Divider_architecture OF Clk_Divider IS
+ARCHITECTURE Clk_Divider_architecture OF Clk_Divider1 IS
 	
 	signal clk_in_sig	:	std_logic;
 	signal clk_out_sig	:	std_logic;
