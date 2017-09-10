@@ -1519,4 +1519,3 @@ applicable agreement for further details.
 	(bus)
 )
 (junction (pt 1464 344))
-(text "TODO:make the object one., and make object controller block multiple objects" (rect 1016 1144 1449 1158)(font "Arial" (font_size 8)))

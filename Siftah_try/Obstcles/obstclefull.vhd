@@ -33,6 +33,13 @@ ENTITY obstclefull IS
 		player_X :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		player_Y :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		rand :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		
+				 		 
+		InSpeedX		: in std_logic_vector(1 downto 0);	-- initial X sppeed
+		InSpeedY		: in std_logic_vector(1 downto 0); --initial Y spped
+		resetObjectStartX_t : in integer;  -- initial X position
+		resetObjectStartY_t : in integer; -- initial X position
+		
 		drawing_request :  OUT  STD_LOGIC;
 		hit_mid :  OUT  STD_LOGIC;
 		hit :  OUT  STD_LOGIC;
@@ -81,8 +88,24 @@ COMPONENT objectsm
 	PORT(CLK : IN STD_LOGIC;
 		 RESETn : IN STD_LOGIC;
 		 timer_done : IN STD_LOGIC;
+		 
+		 
+		 		 
+		InSpeedX		: in std_logic_vector(1 downto 0);	-- initial X sppeed
+		InSpeedY		: in std_logic_vector(1 downto 0); --initial Y spped
+		
+		resetObjectStartX_t : in integer;  -- initial X position
+		resetObjectStartY_t : in integer; -- initial X position
+		
+		
+		 
 		 ObjectStartX : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 ObjectStartY : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 
+
+		
+		 
+		 
 		 X_speed : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 Y_speed : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 	);
@@ -124,6 +147,8 @@ PORT MAP(CLK => CLK,
 		 RESETn => RESETn,
 		 ENABLE => enble,
 		 hit => hitObj,
+
+		 
 		 ObjectStartX => SYNTHESIZED_WIRE_4,
 		 ObjectStartY => SYNTHESIZED_WIRE_5,
 		 oCoord_X => oCoord_X,
@@ -137,6 +162,12 @@ b2v_inst9 : objectsm
 PORT MAP(CLK => CLK,
 		 RESETn => RESETn,
 		 timer_done => timer_done,
+		 
+		 InSpeedX => InSpeedX,
+		 InSpeedY => InSpeedY,
+		 resetObjectStartX_t => resetObjectStartX_t,
+		 resetObjectStartY_t => resetObjectStartY_t,
+		 
 		 ObjectStartX => SYNTHESIZED_WIRE_4,
 		 ObjectStartY => SYNTHESIZED_WIRE_5,
 		 X_speed => XOS,
