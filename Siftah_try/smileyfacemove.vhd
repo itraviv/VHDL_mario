@@ -42,6 +42,7 @@ constant downBorder : integer := 450 ;
 
 constant Y_jump_speed : integer :=15;
 constant Y_gravity    : integer :=1;
+constant Y_move_speed_min : integer := -15 ;
 
 constant X_move_speed1 : integer := 1 ;
 constant X_inc_speed : integer := 1 ;
@@ -98,7 +99,6 @@ begin
 							X_speed <= X_speed - X_inc_speed;
 						end if;
 					end if;
-					
 					if hitObjMid='1' then -- bump
 						update_location:='0';
 						X_speed <= -X_speed;
@@ -155,39 +155,40 @@ begin
 						end if;
 -----------------------------------------------------------------------------------------------------------						
 						when jump =>
-							Y_speed <= Y_speed-Y_gravity;
+							if Y_speed-Y_gravity <= Y_move_speed_min then -- saturation in Y speed.
+								Y_speed <= Y_move_speed_min;
+							else
+								Y_speed <= Y_speed-Y_gravity;
+							end if;
 							if hitObjAny='1' then
 								update_location:='0';
 								if Y_speed > 0 then --hiting object from below
 									Y_speed<=0;
 									Y_state<=bump_from_object;
 								elsif Y_speed <= 0 then --hitting object from above
-									Y_speed<=0;
+									Y_speed<=hitObjYspeed;
 									Y_state<=onObject;
-									ObjectStartY_t <= hitObjYpos - mario_Y_size - hitObjYspeed;
---									if hitObjMid='1' then
---										Y_state<=jump;
---									end if;
+									ObjectStartY_t <= hitObjYpos - mario_Y_size - hitObjYspeed; -- stand on object
 								end if;
 							end if;
 -----------------------------------------------------------------------------------------------------------
 						when onObject =>
 							Y_speed<=hitObjYspeed;
-							if hitObjAny='0' then
+							if hitObjAny='0' then 		-- no more contact
 								Y_state<=bump_from_object;
 								Y_speed<=0;
-							else
-								Y_speed<=hitObjYspeed;
+							else						--contact
+								Y_speed<=hitObjYspeed; -- move with object
 								if upKeyPressed='1' then
 									Y_state <= bump_from_object;
 									Y_speed <= hitObjYspeed+Y_jump_speed;
 								end if;
 							end if;
-							if hitObjMid='1' then
+							if hitObjMid='1' then		--object is in the middle of mario! fix
 								ObjectStartY_t <= hitObjYpos - mario_Y_size - hitObjYspeed;	
 							end if;
 -----------------------------------------------------------------------------------------------------------
-						when bump_from_object =>
+						when bump_from_object => 
 							Y_speed <= Y_speed-Y_gravity;
 							if hitObjAny='0' then
 								Y_state<=jump;

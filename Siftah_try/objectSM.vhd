@@ -10,6 +10,13 @@ port 	(
 		CLK				: in std_logic; --						//	27 MHz
 		RESETn			: in std_logic; --			//	50 MHz
 		timer_done		: in std_logic;
+		
+		InSpeedX		: in std_logic_vector(1 downto 0);	-- initial X sppeed
+		InSpeedY		: in std_logic_vector(1 downto 0); --initial Y spped
+		
+		resetObjectStartX_t : in integer;  -- initial X position
+		resetObjectStartY_t : in integer; -- initial X position
+		
 		ObjectStartX	: out integer ;
 		ObjectStartY	: out integer;
 		Y_speed			: out integer;
@@ -26,9 +33,8 @@ signal ObjectStartY_t : integer;
 signal Y_speed_sig : integer;
 signal X_speed_sig : integer;
 
-
-constant resetObjectStartX_t : integer :=300;
-constant resetObjectStartY_t : integer :=420;
+--constant resetObjectStartX_t : integer :=300;
+--constant resetObjectStartY_t : integer :=420;
 
 constant leftBorder : integer := 120;
 constant rightBorder : integer := 500;
@@ -44,7 +50,7 @@ Y_speed <= Y_speed_sig;
 		begin
 		  if RESETn = '0' then
 			ObjectStartX_t	<= resetObjectStartX_t;			
-			X_speed_sig			<= 0;
+			X_speed_sig			<= conv_integer(InSpeedX);
 		elsif CLK'event  and CLK = '1' then
 			if timer_done = '1' then
 			--handle my own borders.
@@ -57,7 +63,7 @@ Y_speed <= Y_speed_sig;
 						X_speed_sig<= -X_speed_sig ;
 					end if;
 				else
-					--State machine
+					--State machine , TODO
 				end if;
 				ObjectStartX_t	<= ObjectStartX_t + X_speed_sig ;
 			end if; --timer done
@@ -68,7 +74,7 @@ Y_speed <= Y_speed_sig;
 		begin
 		if RESETn='0' then
 			ObjectStartY_t	<= resetObjectStartY_t;
-			Y_speed_sig			<= -1;
+			Y_speed_sig			<= conv_integer(InSpeedY);
 		elsif CLK'event  and CLK = '1' then
 			if timer_done = '1' then
 			if ObjectStartY_t <= upBorder then
