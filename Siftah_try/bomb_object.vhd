@@ -17,7 +17,6 @@ port 	(
 		enable			: in std_logic;
 		drawing_request	: out std_logic ;
 		mVGA_RGB 	: out std_logic_vector(7 downto 0) ;
-		drawing_down_boarder : out std_logic ;
 		is_active 		: out std_logic
 	);
 end bomb_object;
@@ -147,7 +146,6 @@ process ( RESETn, CLK, enable)
 	    mVGA_RGB	<=  (others => '0') ; 	
 		drawing_request	<=  '0' ;
 		ObjectStartX_d <= 0;
-		drawing_down_boarder <='0';
 		obj_enabled <= '1';
 		elsif CLK'event and CLK='1' then
 			if enable='0' then
@@ -156,11 +154,6 @@ process ( RESETn, CLK, enable)
 				mVGA_RGB	<=  object_colors(bCoord_Y , bCoord_X);	
 				drawing_request	<= object(bCoord_Y , bCoord_X) and drawing_X and drawing_Y;
 				ObjectStartX_d <= to_integer(unsigned(ObjectStartX));
-				if oCoord_Y=objectSouthboundary-1 or oCoord_Y=objectSouthboundary-2 then
-				drawing_down_boarder <= '1' ;
-				else
-					drawing_down_boarder <= '0' ;
-				end if;
 			end if;
 	end if;
 

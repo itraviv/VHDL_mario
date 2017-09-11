@@ -54,7 +54,7 @@ begin
 			sound_choice <= "10";
 			sound_active <= '1';
 			one_sec:= 0;
-		elsif (sound_active='0')
+		elsif (sound_active='0') then
 			sound_choice <= "11";
 			one_sec:= 0;
 		end if;
