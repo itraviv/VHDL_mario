@@ -1,7 +1,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.std_logic_signed.all;
-use ieee.numeric_std.all;
+use ieee.std_logic_arith.all;
+
 
 entity BombSM is
 port 	(
@@ -15,8 +16,8 @@ port 	(
 		hit				: in std_logic;
 		IENABLE			: in std_logic;
 		
-		ObjectStartX	: out integer ;
-		ObjectStartY	: out integer;
+		ObjectStartX	: out std_logic_vector(8 downto 0) ;
+		ObjectStartY	: out std_logic_vector(8 downto 0);
 		enable 			: out std_logic
 	);
 end BombSM;
@@ -93,6 +94,6 @@ begin
 		end if; --CLK'event
 		end process ;
 		
-		ObjectStartX	<= ObjectStartX_t ;
-		ObjectStartY	<= ObjectStartY_t ;
+		ObjectStartX	<= conv_std_logic_vector(ObjectStartX_t,9) ;
+		ObjectStartY	<= conv_std_logic_vector(ObjectStartY_t,9) ;
 end arch_BombSM;
