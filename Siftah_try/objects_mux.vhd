@@ -24,6 +24,9 @@ port 	(
 		y_drawing_request : in std_logic;	
 		y_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- y signal 		
 		
+		f_drawing_request : in std_logic;	
+		f_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- y signal
+		
 		m_mVGA_R 	: out std_logic_vector(9 downto 0); --	,  
 		m_mVGA_G 	: out std_logic_vector(9 downto 0); --	, 
 		m_mVGA_B 	: out std_logic_vector(9 downto 0); --	, 
@@ -55,6 +58,8 @@ begin
 			m_mVGA_t <= d_mVGA_RGB;
 		elsif (e_drawing_request = '1' ) then  
 			m_mVGA_t <= e_mVGA_RGB;				
+		elsif (f_drawing_request = '1' ) then
+			m_mVGA_t <= f_mVGA_RGB;
 		else
 			m_mVGA_t <= y_mVGA_RGB ;
 		end if; 

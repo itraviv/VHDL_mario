@@ -29,12 +29,12 @@ end smileyfacemove;
 architecture behav of smileyfacemove is 
 --constants 
 constant resetObjectStartX_t : integer :=512;
-constant resetObjectStartY_t : integer :=450;
+constant resetObjectStartY_t : integer :=417;
 
 constant leftBorder : integer := 100;
 constant rightBorder : integer := 550;
 constant upBorder : integer := 5 ;
-constant downBorder : integer := 450 ;
+constant downBorder : integer := 417 ;
 
 constant Y_jump_speed : integer :=15;
 constant Y_gravity    : integer :=1;
