@@ -326,18 +326,31 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=00
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=197" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_LOWORD=30274" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_HIWORD=60034" -section_id auto_signaltap_0
+set_global_assignment -name VHDL_FILE Score/hexSS.vhd
+set_global_assignment -name VHDL_FILE Score/life_counter.vhd
+set_global_assignment -name VHDL_FILE Score/score_counter.vhd
+set_global_assignment -name BDF_FILE Score/score_module.bdf
+set_global_assignment -name VHDL_FILE Random/count8.vhd
+set_global_assignment -name VHDL_FILE Random/detect_0.vhd
+set_global_assignment -name VHDL_FILE Random/lpm_constant512.vhd
+set_global_assignment -name VHDL_FILE Random/lpm_ff9bit.vhd
+set_global_assignment -name BDF_FILE Random/random512.bdf
+set_global_assignment -name VHDL_FILE Random/vrise.vhd
+set_global_assignment -name VHDL_FILE GoldBomb/bomb_object.vhd
+set_global_assignment -name VHDL_FILE GoldBomb/bombfull.vhd
+set_global_assignment -name VHDL_FILE GoldBomb/BombSM.vhd
+set_global_assignment -name VHDL_FILE GoldBomb/coin_object.vhd
+set_global_assignment -name BSF_FILE GoldBomb/object_hit_detector.bsf
+set_global_assignment -name VHDL_FILE GoldBomb/object_hit_detector.vhd
 set_global_assignment -name VHDL_FILE Obstcles/Obstcles_mgr.vhd
 set_global_assignment -name VHDL_FILE Obstcles/obstclefull.vhd
 set_global_assignment -name VHDL_FILE KeyDetector/kbd_translate.vhd
 set_global_assignment -name TEXT_FILE KeyDetector/bitrec.txt
 set_global_assignment -name VHDL_FILE KeyDetector/bitrec.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE KeyDetector/BITREC_SIM.vwf
 set_global_assignment -name BSF_FILE KeyDetector/byterec.bsf
 set_global_assignment -name VHDL_FILE KeyDetector/byterec.vhd
 set_global_assignment -name BSF_FILE KeyDetector/Clk_Divider.bsf
 set_global_assignment -name VHDL_FILE KeyDetector/Clk_Divider.vhd
-set_global_assignment -name BSF_FILE KeyDetector/hexss.bsf
-set_global_assignment -name VHDL_FILE KeyDetector/hexss.vhd
 set_global_assignment -name BSF_FILE KeyDetector/IInsert.bsf
 set_global_assignment -name VHDL_FILE KeyDetector/IInsert.vhd
 set_global_assignment -name SOURCE_FILE KeyDetector/IInsert.vhd.bak
