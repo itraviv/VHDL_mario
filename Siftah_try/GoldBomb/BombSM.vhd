@@ -49,6 +49,7 @@ begin
 			ObjectStartY_t <=0;
 			ObjectStartX_t <=0;
 			state<=start;
+			enable <='1';
 		elsif IENABLE ='0' then 
 			state<=dead;
 		elsif CLK'event  and CLK = '1' then
