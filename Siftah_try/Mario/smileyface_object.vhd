@@ -1,9 +1,5 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
---use IEEE.std_logic_unsigned.all;
---use ieee.numeric_std.all;
---use ieee.std_logic_arith.all;
--- Alex Grinshpun April 2017
 
 entity smileyface_object is
 port 	(
@@ -15,8 +11,7 @@ port 	(
 		ObjectStartX	: in integer;
 		ObjectStartY 	: in integer;
 		drawing_request	: out std_logic ;
-		mVGA_RGB 	: out std_logic_vector(7 downto 0) ;
-		drawing_down_boarder : out std_logic
+		mVGA_RGB 	: out std_logic_vector(7 downto 0) 
 	);
 end smileyface_object;
 
@@ -120,7 +115,6 @@ signal objectWestXboundary : integer;
 signal objectSouthboundary : integer;
 signal objectXboundariesTrue : boolean;
 signal objectYboundariesTrue : boolean;
-signal ObjectStartX_d : integer;
 
 ---
 begin
@@ -146,20 +140,12 @@ process ( RESETn, CLK)
 	if RESETn = '0' then
 	    mVGA_RGB	<=  (others => '0') ; 	
 		drawing_request	<=  '0' ;
-		ObjectStartX_d <= 0;
-		drawing_down_boarder <='0';
 
 		elsif CLK'event and CLK='1' then
 			mVGA_RGB	<=  object_colors(bCoord_Y , bCoord_X);	
 			drawing_request	<= (not object(bCoord_Y , bCoord_X)) and drawing_X and drawing_Y ;
-			ObjectStartX_d <= ObjectStartX;
 			
-			
-			if oCoord_Y=objectSouthboundary-1 or oCoord_Y=objectSouthboundary-2 then
-			drawing_down_boarder <= '1' ;
-			else
-			drawing_down_boarder <= '0' ;
-			end if;
+
 	end if;
 
 end process;
