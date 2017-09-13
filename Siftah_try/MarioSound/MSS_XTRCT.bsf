@@ -1,0 +1,183 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 496 272)
+	(text "MSS_XTRCT" (rect 5 0 76 14)(font "Arial" (font_size 8)))
+	(text "inst" (rect 8 240 25 252)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK_IN" (rect 0 0 41 14)(font "Arial" (font_size 8)))
+		(text "CLK_IN" (rect 21 27 62 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "RESETn" (rect 0 0 44 14)(font "Arial" (font_size 8)))
+		(text "RESETn" (rect 21 43 65 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "ADC_PART_EXT_ENABLE_USER" (rect 0 0 187 14)(font "Arial" (font_size 8)))
+		(text "ADC_PART_EXT_ENABLE_USER" (rect 21 59 208 73)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "ADC_DATA_CHIP[7..0]" (rect 0 0 128 14)(font "Arial" (font_size 8)))
+		(text "ADC_DATA_CHIP[7..0]" (rect 21 75 149 89)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "PDACs_PART_EXT_ENABLE_USER" (rect 0 0 201 14)(font "Arial" (font_size 8)))
+		(text "PDACs_PART_EXT_ENABLE_USER" (rect 21 91 222 105)(font "Arial" (font_size 8)))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "PDAC_A_DATA_USER[7..0]" (rect 0 0 158 14)(font "Arial" (font_size 8)))
+		(text "PDAC_A_DATA_USER[7..0]" (rect 21 107 179 121)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "PDAC_B_DATA_USER[7..0]" (rect 0 0 156 14)(font "Arial" (font_size 8)))
+		(text "PDAC_B_DATA_USER[7..0]" (rect 21 123 177 137)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "SDAC_A_DATA_USER[7..0]" (rect 0 0 159 14)(font "Arial" (font_size 8)))
+		(text "SDAC_A_DATA_USER[7..0]" (rect 21 139 180 153)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "SDAC_B_DATA_USER[7..0]" (rect 0 0 158 14)(font "Arial" (font_size 8)))
+		(text "SDAC_B_DATA_USER[7..0]" (rect 21 155 179 169)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "INT_EXT_ENABLE_USER" (rect 0 0 140 14)(font "Arial" (font_size 8)))
+		(text "INT_EXT_ENABLE_USER" (rect 21 171 161 185)(font "Arial" (font_size 8)))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
+		(pt 480 32)
+		(output)
+		(text "ADC_POWERDOWNn_CHIP" (rect 0 0 154 14)(font "Arial" (font_size 8)))
+		(text "ADC_POWERDOWNn_CHIP" (rect 305 27 459 41)(font "Arial" (font_size 8)))
+		(line (pt 480 32)(pt 464 32)(line_width 1))
+	)
+	(port
+		(pt 480 48)
+		(output)
+		(text "ADC_DATA_USER[7..0]" (rect 0 0 134 14)(font "Arial" (font_size 8)))
+		(text "ADC_DATA_USER[7..0]" (rect 325 43 459 57)(font "Arial" (font_size 8)))
+		(line (pt 480 48)(pt 464 48)(line_width 3))
+	)
+	(port
+		(pt 480 64)
+		(output)
+		(text "CLK_ADC_CHIP" (rect 0 0 89 14)(font "Arial" (font_size 8)))
+		(text "CLK_ADC_CHIP" (rect 370 59 459 73)(font "Arial" (font_size 8)))
+		(line (pt 480 64)(pt 464 64)(line_width 1))
+	)
+	(port
+		(pt 480 80)
+		(output)
+		(text "DACs_POWERDOWNn_CHIP" (rect 0 0 161 14)(font "Arial" (font_size 8)))
+		(text "DACs_POWERDOWNn_CHIP" (rect 298 75 459 89)(font "Arial" (font_size 8)))
+		(line (pt 480 80)(pt 464 80)(line_width 1))
+	)
+	(port
+		(pt 480 96)
+		(output)
+		(text "PDAC_A_DATA_CHIP[7..0]" (rect 0 0 152 14)(font "Arial" (font_size 8)))
+		(text "PDAC_A_DATA_CHIP[7..0]" (rect 307 91 459 105)(font "Arial" (font_size 8)))
+		(line (pt 480 96)(pt 464 96)(line_width 3))
+	)
+	(port
+		(pt 480 112)
+		(output)
+		(text "PDAC_B_DATA_CHIP[7..0]" (rect 0 0 151 14)(font "Arial" (font_size 8)))
+		(text "PDAC_B_DATA_CHIP[7..0]" (rect 308 107 459 121)(font "Arial" (font_size 8)))
+		(line (pt 480 112)(pt 464 112)(line_width 3))
+	)
+	(port
+		(pt 480 128)
+		(output)
+		(text "CLK_PDACs_CHIP" (rect 0 0 103 14)(font "Arial" (font_size 8)))
+		(text "CLK_PDACs_CHIP" (rect 356 123 459 137)(font "Arial" (font_size 8)))
+		(line (pt 480 128)(pt 464 128)(line_width 1))
+	)
+	(port
+		(pt 480 144)
+		(output)
+		(text "SDACs_SDATA_CHIP" (rect 0 0 123 14)(font "Arial" (font_size 8)))
+		(text "SDACs_SDATA_CHIP" (rect 336 139 459 153)(font "Arial" (font_size 8)))
+		(line (pt 480 144)(pt 464 144)(line_width 1))
+	)
+	(port
+		(pt 480 160)
+		(output)
+		(text "SDACs_SCLK_CHIP" (rect 0 0 113 14)(font "Arial" (font_size 8)))
+		(text "SDACs_SCLK_CHIP" (rect 346 155 459 169)(font "Arial" (font_size 8)))
+		(line (pt 480 160)(pt 464 160)(line_width 1))
+	)
+	(port
+		(pt 480 176)
+		(output)
+		(text "SDACs_SLATCH_CHIP" (rect 0 0 129 14)(font "Arial" (font_size 8)))
+		(text "SDACs_SLATCH_CHIP" (rect 330 171 459 185)(font "Arial" (font_size 8)))
+		(line (pt 480 176)(pt 464 176)(line_width 1))
+	)
+	(port
+		(pt 480 192)
+		(output)
+		(text "VOLTAGE_TRANSLATORS_ENAn_CHIP" (rect 0 0 228 14)(font "Arial" (font_size 8)))
+		(text "VOLTAGE_TRANSLATORS_ENAn_CHIP" (rect 231 187 459 201)(font "Arial" (font_size 8)))
+		(line (pt 480 192)(pt 464 192)(line_width 1))
+	)
+	(port
+		(pt 480 208)
+		(output)
+		(text "BIT_INPUT_MUX_CARD" (rect 0 0 132 14)(font "Arial" (font_size 8)))
+		(text "BIT_INPUT_MUX_CARD" (rect 327 203 459 217)(font "Arial" (font_size 8)))
+		(line (pt 480 208)(pt 464 208)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 464 240)(line_width 1))
+	)
+)

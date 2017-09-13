@@ -1,0 +1,116 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2010 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+# Date created = 22:15:47  August 30, 2017
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		MarioSound_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C35F672C6
+set_global_assignment -name TOP_LEVEL_ENTITY MarioSound
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:15:47  AUGUST 30, 2017"
+set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 672
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
+set_location_assignment PIN_N2 -to CLK_IN
+set_location_assignment PIN_G26 -to RESETn
+set_location_assignment PIN_N25 -to REC_Ena
+set_location_assignment PIN_N26 -to PLAY_Ena
+set_location_assignment PIN_P25 -to SinEnable
+set_location_assignment PIN_U4 -to MODE[0]
+set_location_assignment PIN_V1 -to MODE[1]
+set_location_assignment PIN_V2 -to MODE[2]
+set_location_assignment PIN_K25 -to PDAC_A_DATA_CHIP[0]
+set_location_assignment PIN_K26 -to PDAC_A_DATA_CHIP[1]
+set_location_assignment PIN_M22 -to PDAC_A_DATA_CHIP[2]
+set_location_assignment PIN_M23 -to PDAC_A_DATA_CHIP[3]
+set_location_assignment PIN_M19 -to PDAC_A_DATA_CHIP[4]
+set_location_assignment PIN_M20 -to PDAC_A_DATA_CHIP[5]
+set_location_assignment PIN_N20 -to PDAC_A_DATA_CHIP[6]
+set_location_assignment PIN_M21 -to PDAC_A_DATA_CHIP[7]
+set_location_assignment PIN_M24 -to PDAC_B_DATA_CHIP[0]
+set_location_assignment PIN_M25 -to PDAC_B_DATA_CHIP[1]
+set_location_assignment PIN_N24 -to PDAC_B_DATA_CHIP[2]
+set_location_assignment PIN_P24 -to PDAC_B_DATA_CHIP[3]
+set_location_assignment PIN_R25 -to PDAC_B_DATA_CHIP[4]
+set_location_assignment PIN_R24 -to PDAC_B_DATA_CHIP[5]
+set_location_assignment PIN_R20 -to PDAC_B_DATA_CHIP[6]
+set_location_assignment PIN_T22 -to PDAC_B_DATA_CHIP[7]
+set_location_assignment PIN_T23 -to ADC_DATA_CHIP[0]
+set_location_assignment PIN_T24 -to ADC_DATA_CHIP[1]
+set_location_assignment PIN_T25 -to ADC_DATA_CHIP[2]
+set_location_assignment PIN_T18 -to ADC_DATA_CHIP[3]
+set_location_assignment PIN_T21 -to ADC_DATA_CHIP[4]
+set_location_assignment PIN_T20 -to ADC_DATA_CHIP[5]
+set_location_assignment PIN_U26 -to ADC_DATA_CHIP[6]
+set_location_assignment PIN_U25 -to ADC_DATA_CHIP[7]
+set_location_assignment PIN_U23 -to CLK_ADC_CHIP
+set_location_assignment PIN_U24 -to ADC_POWERDOWNn_CHIP
+set_location_assignment PIN_R19 -to CLK_PDACs_CHIP
+set_location_assignment PIN_T19 -to DACs_POWERDOWNn_CHIP
+set_location_assignment PIN_U20 -to SDACs_SDATA_CHIP
+set_location_assignment PIN_U21 -to SDACs_SCLK_CHIP
+set_location_assignment PIN_V26 -to SDACs_SLATCH_CHIP
+set_location_assignment PIN_V25 -to VOLTAGE_TRANSLATORS_ENAn_CHIP
+set_location_assignment PIN_V24 -to BIT_INPUT_MUX_CARD
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name VHDL_FILE ThemeSoundTable.vhd
+set_global_assignment -name VHDL_FILE JumpSoundTable.vhd
+set_global_assignment -name VHDL_FILE mux_CASE.vhd
+set_global_assignment -name TCL_SCRIPT_FILE MSS_pins.tcl
+set_global_assignment -name VHDL_FILE BombSoundTable.vhd
+set_global_assignment -name VHDL_FILE goldSoundTable.vhd
+set_global_assignment -name VHDL_FILE TCtoOB.vhd
+set_global_assignment -name VHDL_FILE Clk_Divider.vhd
+set_global_assignment -name VHDL_FILE DPRAM.vhd
+set_global_assignment -name EDIF_FILE MSS_Core.edf
+set_global_assignment -name BDF_FILE MSS_dr.bdf
+set_global_assignment -name BDF_FILE MSS_XTRCT.bdf
+set_global_assignment -name QIP_FILE counter_4096.qip
+set_global_assignment -name BDF_FILE MarioSound.bdf
+set_location_assignment PIN_AE14 -to sound_sel[0]
+set_location_assignment PIN_AF14 -to sound_sel[1]
+set_location_assignment PIN_AD13 -to ThemeEnable
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_global_assignment -name QIP_FILE themeRAM.qip
+set_global_assignment -name QIP_FILE bombRAM.qip
+set_global_assignment -name QIP_FILE goldRam.qip
+set_global_assignment -name QIP_FILE jumpRAM.qip
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
