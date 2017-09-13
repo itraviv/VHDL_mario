@@ -9,13 +9,18 @@ port 	(
 		RESETn	: in std_logic;
 		player_X 		: in integer;
 		player_Y 		: in integer;
+		player_up		: in std_logic;
 		step_X 			: in integer;
 		step_Y 			: in integer;		
+<<<<<<< HEAD
 		hit	    : out std_logic; --indicate any hit
 		leg_mid : out std_logic; -- indicate that mario legs are in the middle of the step. note: there must be  x speed!
 		head_mid : out std_logic; -- indicate that mario head  is in the middle of the step. note: there must be  x speed!
 		mario_mid : out std_logic;
 		step_Y_O : out integer
+=======
+		hit	    : out std_logic
+>>>>>>> origin/master
 	);
 end hit_detector;	
 	
@@ -28,18 +33,10 @@ constant player_size_X 	: integer := 18;
 constant hit_margin_Y		: integer := 10;
 		begin
 	process(CLK,RESETn)
-	--variable all_hit : std_logic:=0;
-	--variable falling_hit : std_logic:=0;
-	--variable rising_hit : std_logic:=0;
-	
-	variable legs_up : std_logic;
-	variable legs_down : std_logic;
-	variable head_up : std_logic;
-	variable head_down : std_logic;
-	variable hit_x : std_logic;
 	begin
 	if RESETn = '0' then
 		hit 	<= '0';
+<<<<<<< HEAD
 		leg_mid  <= '0';
 		head_mid <= '0';
 		mario_mid <= '0';
@@ -57,31 +54,36 @@ constant hit_margin_Y		: integer := 10;
 		legs_down:='0';
 		hit_x :='0';
 		
+=======
+	elsif rising_edge (CLK ) then	
+		hit <= '0';
+>>>>>>> origin/master
 		-- ///////////// checking if the player is in the hit zone  - BEGIN//////////////
 		
 		--first, check if player is in x_range
 		if (player_X >= step_X) and (player_X < step_X + step_size) then 
 			hit <= '1';
-			hit_x:='1';
 		end if;
 		
 		if (player_X + player_size_X >= step_X) and (player_X + player_size_X < step_X + step_size) then
 			hit <= '1';
-			hit_x:='1';
 		end if;
 		
 		--then, check if Y is out of bound
-		if player_Y > step_Y + hit_margin_Y then -- below step
+
+		--mario below
+		if player_Y > step_Y + hit_margin_Y then
 			hit <= '0';
 		end if;
 		
-		if player_Y < (step_Y - player_size_Y) then -- above step
+		--mario above
+		if player_Y + player_size_Y < step_Y  then
 			hit <= '0';
-			legs_up:='1';
 		end if;
 		
 		-- ///////////// checking if the player is in the hit zone  - END//////////////
 		
+<<<<<<< HEAD
 		
 		if player_Y + player_size_Y >= step_Y + hit_margin_Y then
 			legs_down:='1' ; -- mario legs are bellow the Y margin of the step
@@ -121,3 +123,9 @@ end architecture;
 		--end if;
 		
 		
+=======
+	end if ;
+	end process;
+	
+end architecture;
+>>>>>>> origin/master
