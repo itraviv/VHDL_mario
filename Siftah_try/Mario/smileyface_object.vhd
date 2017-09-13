@@ -69,6 +69,7 @@ constant object_colors: ram_array := (
 
 type object_form is array (0 to object_Y_size - 1 , 0 to object_X_size - 1) of std_logic;
 constant object : object_form := (
+
 ("11111111111111111111111111"),
 ("11111110000000000111111111"),
 ("11111110000000000011111111"),
