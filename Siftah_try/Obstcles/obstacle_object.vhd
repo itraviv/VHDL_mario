@@ -26,8 +26,8 @@ end obstacle_object;
 
 architecture behav of obstacle_object is 
 
-constant object_X_size : integer :=40;
-constant object_Y_size : integer := 4;
+constant object_X_size : integer :=10;
+constant object_Y_size : integer := 10;
 constant R_high		: integer := 7;
 constant R_low		: integer := 5;
 constant G_high		: integer := 4;
@@ -39,20 +39,31 @@ type ram_array is array(0 to object_Y_size - 1 , 0 to object_X_size - 1) of std_
 
 -- 8 bit - color definition : "RRRGGGBB"  
 constant object_colors: ram_array := ( 
-(x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0"),
-(x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0"),
-(x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0"),
-(x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0",x"E0", x"E0", x"E0", x"E0")
-);
+(x"B1", x"D2", x"D2", x"D2", x"D2", x"D2", x"D2", x"D2", x"D2", x"8D"),
+(x"A8", x"AD", x"D2", x"D5", x"D5", x"D5", x"D5", x"D2", x"8C", x"20"),
+(x"AC", x"A8", x"AC", x"AC", x"AC", x"AC", x"AC", x"88", x"20", x"20"),
+(x"AC", x"A8", x"A8", x"A4", x"A4", x"A4", x"A4", x"64", x"20", x"20"),
+(x"AC", x"AC", x"A8", x"A4", x"A4", x"A4", x"A4", x"64", x"20", x"20"),
+(x"AC", x"AC", x"A8", x"A4", x"A4", x"A4", x"A4", x"64", x"20", x"20"),
+(x"AC", x"A8", x"A8", x"A4", x"A4", x"A4", x"A4", x"64", x"20", x"20"),
+(x"AC", x"AC", x"84", x"64", x"64", x"64", x"64", x"44", x"20", x"20"),
+(x"AC", x"68", x"20", x"20", x"20", x"20", x"20", x"20", x"20", x"20"),
+(x"68", x"20", x"20", x"20", x"20", x"20", x"20", x"20", x"20", x"20"));
 
 --
 --
 type object_form is array (0 to object_Y_size - 1 , 0 to object_X_size - 1) of std_logic;
 constant object : object_form := (
-("1111111111111111111111111111111111111111"),
-("1111111111111111111111111111111111111111"),
-("1111111111111111111111111111111111111111"),
-("1111111111111111111111111111111111111111")
+("1111111111"),
+("1111111111"),
+("1111111111"),
+("1111111111"),
+("1111111111"),
+("1111111111"),
+("1111111111"),
+("1111111111"),
+("1111111111"),
+("1111111111")
 );
 --
 
@@ -70,7 +81,7 @@ signal objectSouthboundary : integer;
 begin
 
 -- Calculate object boundaries
-objectWestXboundary	<= object_X_size+ObjectStartX;
+objectWestXboundary	<= 40+ObjectStartX;
 objectSouthboundary	<= object_Y_size+ObjectStartY;
 
 -- Signals drawing_X[Y] are active when obects coordinates are being crossed
@@ -91,7 +102,7 @@ process ( RESETn, CLK)
 		drawing_request	<=  '0' ;
 		--ObjectStartX_d <= 0;
 		elsif CLK'event and CLK='1' then
-			mVGA_RGB	<=  object_colors(bCoord_Y , bCoord_X);	
+			mVGA_RGB	<=  object_colors(bCoord_Y mod 10, bCoord_X mod 10);	
 			drawing_request	<= object(bCoord_Y , bCoord_X) and drawing_X and drawing_Y ;
 			--ObjectStartX_d <= ObjectStartX;
 	end if;
