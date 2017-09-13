@@ -19,8 +19,8 @@ end object_hit_detector;
 		
 architecture arch_hit_detector of object_hit_detector is
 constant object_size_x	: integer := 31;
-constant player_size_Y 	: integer := 26;
-constant player_size_X 	: integer := 18;
+constant player_size_Y 	: integer := 33;
+constant player_size_X 	: integer := 26;
 constant object_size_y	: integer := 31;
 		
 signal is_hit : std_logic;
@@ -64,8 +64,6 @@ signal is_hit : std_logic;
 	end process;
 	
 end architecture;
-		
-		
 		
 		
 		

@@ -4,7 +4,7 @@ use IEEE.std_logic_signed.all;
 use ieee.numeric_std.all;
 -- Alex Grinshpun March 24 2017 
 
-entity smileyfacemove is
+entity mario_move is
 port 	(
 		--////////////////////	Clock Input	 	////////////////////	 
 		CLK				: in std_logic; --						//	27 MHz
@@ -28,9 +28,9 @@ port 	(
 		ObjectStartY	: out integer
 		
 	);
-end smileyfacemove;
+end mario_move;
 
-architecture behav of smileyfacemove is 
+architecture arch_mario_move of mario_move is 
 --constants 
 constant resetObjectStartX_t : integer :=512;
 constant resetObjectStartY_t : integer :=417;
@@ -47,7 +47,7 @@ constant Y_move_speed_min : integer := -15 ;
 constant X_move_speed1 : integer := 1 ;
 constant X_inc_speed : integer := 1 ;
 constant X_move_speed_max : integer := 5 ;
-constant mario_Y_size :integer :=26;
+constant mario_Y_size :integer :=33;
 
 
 --state machine
@@ -220,4 +220,4 @@ begin
 ObjectStartX	<= ObjectStartX_t;			
 ObjectStartY	<= ObjectStartY_t;	
 
-end behav;
+end architecture;

@@ -37,7 +37,7 @@ if {[is_project_open]} {
 
  #  set_location_assignment PIN_N25  -to mux[0]   ;# SW0					;#	Reserved				
  #  set_location_assignment PIN_N26  -to mux[1]   ;# SW1					;#	Reserved
-   set_location_assignment PIN_P25  -to ThemeEnable   ;# SW2					;#	Reserved
+#   set_location_assignment PIN_P25  -to ThemeEnable   ;# SW2					;#	Reserved
  #   set_location_assignment PIN_AE14 -to sound_sel[1]   ;# SW3					;#	Reserved
   # set_location_assignment PIN_AF14 -to sound_sel[0]   ;# SW4					;#	SDACs normalization
 #   set_location_assignment PIN_AD13 -to SW[5]   ;# SW5					;#	PDACs normalization
@@ -51,8 +51,8 @@ if {[is_project_open]} {
 #   set_location_assignment PIN_T7   -to SW[13]  ;# SW13					;#	Reserved
 #   set_location_assignment PIN_U3   -to state[0]  ;# SW14					;#	Reserved
 #   set_location_assignment PIN_U4   -to state[1]  ;# SW15					;#	Reserved
-   set_location_assignment PIN_V1   -to Vol[0]  ;# SW16					;#	Reserved
-   set_location_assignment PIN_V2   -to Vol[1]  ;# SW17					;#	Serial DACs scan disable
+#   set_location_assignment PIN_V1   -to Vol[0]  ;# SW16					;#	Reserved
+#   set_location_assignment PIN_V2   -to Vol[1]  ;# SW17					;#	Serial DACs scan disable
 
    ;#########################################################
    ;# 8 + 1 Green LEDs                                      #
@@ -68,7 +68,7 @@ if {[is_project_open]} {
 #   set_location_assignment PIN_U18   -to LEDG[4] ;# LEDG4				;#	Reserved
 #   set_location_assignment PIN_U17   -to LEDG[5] ;# LEDG5				;#	Reserved
 #   set_location_assignment PIN_AA20  -to LEDG[6] ;# LEDG6				;#	Reserved
-   set_location_assignment PIN_Y18   -to rec_over ;# LEDG7				;#	Reserved
+#   set_location_assignment PIN_Y18   -to rec_over ;# LEDG7				;#	Reserved
 ##   set_location_assignment PIN_Y12   -to Play_over ;# LEDG8				;#	Reserved
 
 
@@ -78,7 +78,7 @@ if {[is_project_open]} {
    ;# Active High - ON wnen '1                      #
    ;#################################################
 
-   set_location_assignment PIN_AE23  -to hit   ;# LEDR0				;#	Used for indication of slide switch #0
+#  set_location_assignment PIN_AE23  -to hit   ;# LEDR0				;#	Used for indication of slide switch #0
 #   set_location_assignment PIN_AF23  -to left   ;# LEDR1				;#	Used for indication of slide switch #1
 #   set_location_assignment PIN_AB21  -to right   ;# LEDR2				;#	Used for indication of slide switch #2
 #   set_location_assignment PIN_AC22  -to a[2]   ;# LEDR3				;#	Used for indication of slide switch #3
@@ -95,7 +95,7 @@ if {[is_project_open]} {
 #   set_location_assignment PIN_AF13  -to LEDR[14]  ;# LEDR14			;#	Used for indication of slide switch #14
 ##   set_location_assignment PIN_AE13  -to listen  ;# LEDR15			;#	Used for indication of slide switch #15
 ##   set_location_assignment PIN_AE12  -to AC_recorded  ;# LEDR16			;#	Used for indication of slide switch #16
-   set_location_assignment PIN_AD12  -to AC  ;# LEDR17			;#	Used for indication of slide switch #17
+#   set_location_assignment PIN_AD12  -to AC  ;# LEDR17			;#	Used for indication of slide switch #17
 
 
    ;###############################

@@ -22,8 +22,8 @@ end hit_detector;
 	
 architecture arch_hit_detector of hit_detector is
 constant step_size 		: integer := 40;
-constant player_size_Y 	: integer := 26;
-constant player_size_X 	: integer := 18;
+constant player_size_Y 	: integer := 33;
+constant player_size_X 	: integer := 26;
 
 constant hit_margin_Y		: integer := 10;
 		begin

@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 
-entity smileyface_object is
+entity mario_object is
 port 	(
 		--////////////////////	Clock Input	 	////////////////////	
 	   	CLK  		: in std_logic;
@@ -13,9 +13,9 @@ port 	(
 		drawing_request	: out std_logic ;
 		mVGA_RGB 	: out std_logic_vector(7 downto 0) 
 	);
-end smileyface_object;
+end mario_object;
 
-architecture behav of smileyface_object is 
+architecture arch_mario_object of mario_object is 
 
 constant object_X_size : integer := 26;
 constant object_Y_size : integer := 33;
@@ -152,4 +152,4 @@ process ( RESETn, CLK)
 end process;
 
 		
-end behav;
+end architecture;
