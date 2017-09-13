@@ -1,7 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use ieee.numeric_std.all;
--- Alex Grinshpun April 2017
 
 entity coin_object is
 port 	(
@@ -102,7 +101,6 @@ signal objectWestXboundary : integer;
 signal objectSouthboundary : integer;
 signal objectXboundariesTrue : boolean;
 signal objectYboundariesTrue : boolean;
-signal ObjectStartX_d : integer;
 
 ---
 begin
@@ -128,7 +126,6 @@ process ( RESETn, CLK)
 	if RESETn = '0' then
 	    mVGA_RGB	<=  (others => '0') ; 	
 		drawing_request	<=  '0' ;
-		ObjectStartX_d <= 0;
 		obj_enabled <= '1';
 		elsif CLK'event and CLK='1' then
 			if enable='0' then
@@ -136,7 +133,6 @@ process ( RESETn, CLK)
 			else
 				mVGA_RGB	<=  object_colors(bCoord_Y , bCoord_X);	
 				drawing_request	<= (not object(bCoord_Y , bCoord_X)) and drawing_X and drawing_Y ;
-				ObjectStartX_d <= to_integer(unsigned(ObjectStartX));
 			end if;
 	end if;
 
