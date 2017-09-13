@@ -273,7 +273,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12)(line_width 1))
 		(line (pt 78 12)(pt 82 8)(line_width 1))
 	)
-	(annotation_block (location)(rect 3464 600 3528 704))
+	(annotation_block (location)(rect 2352 1112 2416 1216))
 )
 (pin
 	(output)
@@ -290,7 +290,7 @@ applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12)(line_width 1))
 		(line (pt 78 12)(pt 82 8)(line_width 1))
 	)
-	(annotation_block (location)(rect 3456 464 3520 568))
+	(annotation_block (location)(rect 2344 976 2408 1080))
 )
 (symbol
 	(rect 280 256 408 352)
@@ -1077,106 +1077,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 232 1120 448 1248)
-	(text "random512" (rect 5 0 68 14)(font "Arial" (font_size 8)))
-	(text "inst15" (rect 8 112 37 124)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 15 14)(font "Arial" (font_size 8)))
-		(text "clk" (rect 21 27 36 41)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 1))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "Randomize" (rect 0 0 62 14)(font "Arial" (font_size 8)))
-		(text "Randomize" (rect 21 43 83 57)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 1))
-	)
-	(port
-		(pt 216 32)
-		(output)
-		(text "COUNT[8..0]" (rect 0 0 69 14)(font "Arial" (font_size 8)))
-		(text "COUNT[8..0]" (rect 126 27 195 41)(font "Arial" (font_size 8)))
-		(line (pt 216 32)(pt 200 32)(line_width 3))
-	)
-	(port
-		(pt 216 48)
-		(output)
-		(text "RANDOM512[8..0]" (rect 0 0 102 14)(font "Arial" (font_size 8)))
-		(text "RANDOM512[8..0]" (rect 93 43 195 57)(font "Arial" (font_size 8)))
-		(line (pt 216 48)(pt 200 48)(line_width 3))
-	)
-	(port
-		(pt 216 64)
-		(output)
-		(text "rise" (rect 0 0 21 14)(font "Arial" (font_size 8)))
-		(text "rise" (rect 174 59 195 73)(font "Arial" (font_size 8)))
-		(line (pt 216 64)(pt 200 64)(line_width 1))
-	)
-	(port
-		(pt 216 80)
-		(output)
-		(text "pulse" (rect 0 0 30 14)(font "Arial" (font_size 8)))
-		(text "pulse" (rect 165 75 195 89)(font "Arial" (font_size 8)))
-		(line (pt 216 80)(pt 200 80)(line_width 1))
-	)
-	(drawing
-		(rectangle (rect 16 16 200 112)(line_width 1))
-	)
-)
-(symbol
-	(rect 232 1264 448 1392)
-	(text "random512" (rect 5 0 68 14)(font "Arial" (font_size 8)))
-	(text "inst17" (rect 8 112 37 124)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 15 14)(font "Arial" (font_size 8)))
-		(text "clk" (rect 21 27 36 41)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 1))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "Randomize" (rect 0 0 62 14)(font "Arial" (font_size 8)))
-		(text "Randomize" (rect 21 43 83 57)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 1))
-	)
-	(port
-		(pt 216 32)
-		(output)
-		(text "COUNT[8..0]" (rect 0 0 69 14)(font "Arial" (font_size 8)))
-		(text "COUNT[8..0]" (rect 126 27 195 41)(font "Arial" (font_size 8)))
-		(line (pt 216 32)(pt 200 32)(line_width 3))
-	)
-	(port
-		(pt 216 48)
-		(output)
-		(text "RANDOM512[8..0]" (rect 0 0 102 14)(font "Arial" (font_size 8)))
-		(text "RANDOM512[8..0]" (rect 93 43 195 57)(font "Arial" (font_size 8)))
-		(line (pt 216 48)(pt 200 48)(line_width 3))
-	)
-	(port
-		(pt 216 64)
-		(output)
-		(text "rise" (rect 0 0 21 14)(font "Arial" (font_size 8)))
-		(text "rise" (rect 174 59 195 73)(font "Arial" (font_size 8)))
-		(line (pt 216 64)(pt 200 64)(line_width 1))
-	)
-	(port
-		(pt 216 80)
-		(output)
-		(text "pulse" (rect 0 0 30 14)(font "Arial" (font_size 8)))
-		(text "pulse" (rect 165 75 195 89)(font "Arial" (font_size 8)))
-		(line (pt 216 80)(pt 200 80)(line_width 1))
-	)
-	(drawing
-		(rectangle (rect 16 16 200 112)(line_width 1))
-	)
-)
-(symbol
 	(rect 1040 1152 1264 1376)
 	(text "bombfull" (rect 5 0 47 12)(font "Arial" ))
 	(text "inst22" (rect 8 208 37 220)(font "Arial" ))
@@ -1365,22 +1265,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 72 1144 104 1160)
-	(text "VCC" (rect 7 0 27 10)(font "Arial" (font_size 6)))
-	(text "inst24" (rect 3 5 32 17)(font "Arial" )(invisible))
-	(port
-		(pt 16 16)
-		(output)
-		(text "1" (rect 19 7 24 19)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 19 7 24 19)(font "Courier New" (bold))(invisible))
-		(line (pt 16 16)(pt 16 8)(line_width 1))
-	)
-	(drawing
-		(line (pt 8 8)(pt 24 8)(line_width 1))
-	)
-)
-(symbol
-	(rect 424 984 568 1064)
+	(rect 376 1144 520 1224)
 	(text "lpm_counter_CYCLIC" (rect 10 1 156 17)(font "Arial" (font_size 10)))
 	(text "inst10" (rect 8 64 37 76)(font "Arial" ))
 	(port
@@ -1409,7 +1294,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 472 1440 616 1520)
+	(rect 376 1288 520 1368)
 	(text "lpm_counter_CYCLIC" (rect 10 1 156 17)(font "Arial" (font_size 10)))
 	(text "inst11" (rect 8 64 37 76)(font "Arial" ))
 	(port
@@ -1436,6 +1321,41 @@ applicable agreement for further details.
 		(line (pt 16 26)(pt 22 32)(line_width 1))
 		(line (pt 22 32)(pt 16 38)(line_width 1))
 	)
+)
+(symbol
+	(rect 216 1288 344 1384)
+	(text "Clk_Divider" (rect 5 0 62 12)(font "Arial" ))
+	(text "inst9" (rect 8 80 31 92)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "Clk_in" (rect 0 0 30 12)(font "Arial" ))
+		(text "Clk_in" (rect 21 27 51 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "Resetn" (rect 0 0 35 12)(font "Arial" ))
+		(text "Resetn" (rect 21 43 56 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 128 32)
+		(output)
+		(text "Clk_out" (rect 0 0 37 12)(font "Arial" ))
+		(text "Clk_out" (rect 70 27 107 39)(font "Arial" ))
+		(line (pt 128 32)(pt 112 32)(line_width 1))
+	)
+	(parameter
+		"Div"
+		"100"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 112 80)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 376 1256 544 1288))
 )
 (connector
 	(text "CLK" (rect 418 272 439 284)(font "Arial" ))
@@ -1851,24 +1771,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 160 1152)
-	(pt 160 1136)
-)
-(connector
-	(text "CLK" (rect 184 1136 205 1148)(font "Arial" ))
-	(pt 232 1152)
-	(pt 160 1152)
-)
-(connector
-	(text "CLK_50" (rect 193 1280 231 1292)(font "Arial" ))
-	(pt 232 1296)
-	(pt 184 1296)
-)
-(connector
-	(pt 112 1168)
-	(pt 112 1192)
-)
-(connector
 	(text "CLK" (rect 1016 1168 1037 1180)(font "Arial" ))
 	(pt 1040 1184)
 	(pt 1008 1184)
@@ -2006,54 +1908,6 @@ applicable agreement for further details.
 	(pt 1768 1168)
 )
 (connector
-	(pt 88 1160)
-	(pt 88 1192)
-)
-(connector
-	(pt 96 1192)
-	(pt 96 1312)
-)
-(connector
-	(pt 88 1192)
-	(pt 96 1192)
-)
-(connector
-	(pt 96 1192)
-	(pt 112 1192)
-)
-(connector
-	(text "<<__$DEF_ALIAS905>>" (rect 184 1152 302 1164)(font "Arial" )(invisible))
-	(pt 232 1168)
-	(pt 112 1168)
-)
-(connector
-	(text "<<__$DEF_ALIAS907>>" (rect 182 1296 300 1308)(font "Arial" )(invisible))
-	(pt 96 1312)
-	(pt 232 1312)
-)
-(connector
-	(text "ObjectStartY[8..0]" (rect 581 1024 670 1036)(font "Arial" ))
-	(pt 568 1040)
-	(pt 680 1040)
-	(bus)
-)
-(connector
-	(text "CLK" (rect 376 1000 397 1012)(font "Arial" ))
-	(pt 424 1016)
-	(pt 352 1016)
-)
-(connector
-	(text "CLK" (rect 424 1456 445 1468)(font "Arial" ))
-	(pt 472 1472)
-	(pt 400 1472)
-)
-(connector
-	(text "ObjectStartX[8..0]" (rect 624 1480 711 1492)(font "Arial" ))
-	(pt 616 1496)
-	(pt 752 1496)
-	(bus)
-)
-(connector
 	(text "d_drawing_request" (rect 1492 304 1582 316)(font "Arial" ))
 	(pt 1480 320)
 	(pt 1504 320)
@@ -2150,4 +2004,34 @@ applicable agreement for further details.
 	(pt 1480 432)
 	(bus)
 )
-(junction (pt 96 1192))
+(connector
+	(text "ObjectStartX[8..0]" (rect 528 1328 615 1340)(font "Arial" ))
+	(pt 520 1344)
+	(pt 656 1344)
+	(bus)
+)
+(connector
+	(text "CLK" (rect 168 1304 189 1316)(font "Arial" ))
+	(pt 216 1320)
+	(pt 144 1320)
+)
+(connector
+	(pt 344 1320)
+	(pt 376 1320)
+)
+(connector
+	(text "RESETn" (rect 176 1320 217 1332)(font "Arial" ))
+	(pt 216 1336)
+	(pt 168 1336)
+)
+(connector
+	(text "ObjectStartY[8..0]" (rect 533 1184 622 1196)(font "Arial" ))
+	(pt 520 1200)
+	(pt 632 1200)
+	(bus)
+)
+(connector
+	(text "CLK" (rect 328 1160 349 1172)(font "Arial" ))
+	(pt 304 1176)
+	(pt 376 1176)
+)
