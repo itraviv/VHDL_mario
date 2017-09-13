@@ -4,7 +4,7 @@
 -- MODULE: lpm_counter 
 
 -- ============================================================
--- File Name: life_counter.vhd
+-- File Name: new_score_counter.vhd
 -- Megafunction Name(s):
 -- 			lpm_counter
 --
@@ -39,18 +39,18 @@ USE ieee.std_logic_1164.all;
 LIBRARY lpm;
 USE lpm.all;
 
-ENTITY life_counter IS
+ENTITY new_score_counter IS
 	PORT
 	(
-		aset		: IN STD_LOGIC ;
+		aclr		: IN STD_LOGIC ;
 		clock		: IN STD_LOGIC ;
 		cnt_en		: IN STD_LOGIC ;
 		q		: OUT STD_LOGIC_VECTOR (3 DOWNTO 0)
 	);
-END life_counter;
+END new_score_counter;
 
 
-ARCHITECTURE SYN OF life_counter IS
+ARCHITECTURE SYN OF new_score_counter IS
 
 	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (3 DOWNTO 0);
 
@@ -58,16 +58,15 @@ ARCHITECTURE SYN OF life_counter IS
 
 	COMPONENT lpm_counter
 	GENERIC (
-		lpm_avalue		: STRING;
 		lpm_direction		: STRING;
 		lpm_port_updown		: STRING;
 		lpm_type		: STRING;
 		lpm_width		: NATURAL
 	);
 	PORT (
+			aclr	: IN STD_LOGIC ;
 			clock	: IN STD_LOGIC ;
 			q	: OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
-			aset	: IN STD_LOGIC ;
 			cnt_en	: IN STD_LOGIC 
 	);
 	END COMPONENT;
@@ -77,15 +76,14 @@ BEGIN
 
 	lpm_counter_component : lpm_counter
 	GENERIC MAP (
-		lpm_avalue => "3",
 		lpm_direction => "DOWN",
 		lpm_port_updown => "PORT_UNUSED",
 		lpm_type => "LPM_COUNTER",
 		lpm_width => 4
 	)
 	PORT MAP (
+		aclr => aclr,
 		clock => clock,
-		aset => aset,
 		cnt_en => cnt_en,
 		q => sub_wire0
 	);
@@ -97,10 +95,10 @@ END SYN;
 -- ============================================================
 -- CNX file retrieval info
 -- ============================================================
--- Retrieval info: PRIVATE: ACLR NUMERIC "0"
+-- Retrieval info: PRIVATE: ACLR NUMERIC "1"
 -- Retrieval info: PRIVATE: ALOAD NUMERIC "0"
--- Retrieval info: PRIVATE: ASET NUMERIC "1"
--- Retrieval info: PRIVATE: ASET_ALL1 NUMERIC "0"
+-- Retrieval info: PRIVATE: ASET NUMERIC "0"
+-- Retrieval info: PRIVATE: ASET_ALL1 NUMERIC "1"
 -- Retrieval info: PRIVATE: CLK_EN NUMERIC "0"
 -- Retrieval info: PRIVATE: CNT_EN NUMERIC "1"
 -- Retrieval info: PRIVATE: CarryIn NUMERIC "0"
@@ -115,25 +113,24 @@ END SYN;
 -- Retrieval info: PRIVATE: SSET_ALL1 NUMERIC "1"
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 -- Retrieval info: PRIVATE: nBit NUMERIC "4"
--- Retrieval info: CONSTANT: LPM_AVALUE STRING "3"
 -- Retrieval info: CONSTANT: LPM_DIRECTION STRING "DOWN"
 -- Retrieval info: CONSTANT: LPM_PORT_UPDOWN STRING "PORT_UNUSED"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_COUNTER"
 -- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "4"
--- Retrieval info: USED_PORT: aset 0 0 0 0 INPUT NODEFVAL aset
+-- Retrieval info: USED_PORT: aclr 0 0 0 0 INPUT NODEFVAL aclr
 -- Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL clock
 -- Retrieval info: USED_PORT: cnt_en 0 0 0 0 INPUT NODEFVAL cnt_en
 -- Retrieval info: USED_PORT: q 0 0 4 0 OUTPUT NODEFVAL q[3..0]
 -- Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
 -- Retrieval info: CONNECT: q 0 0 4 0 @q 0 0 4 0
 -- Retrieval info: CONNECT: @cnt_en 0 0 0 0 cnt_en 0 0 0 0
--- Retrieval info: CONNECT: @aset 0 0 0 0 aset 0 0 0 0
+-- Retrieval info: CONNECT: @aclr 0 0 0 0 aclr 0 0 0 0
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
--- Retrieval info: GEN_FILE: TYPE_NORMAL life_counter.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL life_counter.inc FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL life_counter.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL life_counter.bsf TRUE FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL life_counter_inst.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL life_counter_waveforms.html TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL life_counter_wave*.jpg FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL new_score_counter.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL new_score_counter.inc FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL new_score_counter.cmp TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL new_score_counter.bsf TRUE FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL new_score_counter_inst.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL new_score_counter_waveforms.html TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL new_score_counter_wave*.jpg FALSE
 -- Retrieval info: LIB_FILE: lpm

@@ -4,7 +4,7 @@
 -- MODULE: lpm_counter 
 
 -- ============================================================
--- File Name: life_counter.vhd
+-- File Name: new_life_counter.vhd
 -- Megafunction Name(s):
 -- 			lpm_counter
 --
@@ -39,7 +39,7 @@ USE ieee.std_logic_1164.all;
 LIBRARY lpm;
 USE lpm.all;
 
-ENTITY life_counter IS
+ENTITY new_life_counter IS
 	PORT
 	(
 		aset		: IN STD_LOGIC ;
@@ -47,10 +47,10 @@ ENTITY life_counter IS
 		cnt_en		: IN STD_LOGIC ;
 		q		: OUT STD_LOGIC_VECTOR (3 DOWNTO 0)
 	);
-END life_counter;
+END new_life_counter;
 
 
-ARCHITECTURE SYN OF life_counter IS
+ARCHITECTURE SYN OF new_life_counter IS
 
 	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (3 DOWNTO 0);
 
@@ -78,7 +78,7 @@ BEGIN
 	lpm_counter_component : lpm_counter
 	GENERIC MAP (
 		lpm_avalue => "3",
-		lpm_direction => "DOWN",
+		lpm_direction => "UP",
 		lpm_port_updown => "PORT_UNUSED",
 		lpm_type => "LPM_COUNTER",
 		lpm_width => 4
@@ -105,7 +105,7 @@ END SYN;
 -- Retrieval info: PRIVATE: CNT_EN NUMERIC "1"
 -- Retrieval info: PRIVATE: CarryIn NUMERIC "0"
 -- Retrieval info: PRIVATE: CarryOut NUMERIC "0"
--- Retrieval info: PRIVATE: Direction NUMERIC "1"
+-- Retrieval info: PRIVATE: Direction NUMERIC "0"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
 -- Retrieval info: PRIVATE: ModulusCounter NUMERIC "0"
 -- Retrieval info: PRIVATE: ModulusValue NUMERIC "0"
@@ -116,7 +116,7 @@ END SYN;
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
 -- Retrieval info: PRIVATE: nBit NUMERIC "4"
 -- Retrieval info: CONSTANT: LPM_AVALUE STRING "3"
--- Retrieval info: CONSTANT: LPM_DIRECTION STRING "DOWN"
+-- Retrieval info: CONSTANT: LPM_DIRECTION STRING "UP"
 -- Retrieval info: CONSTANT: LPM_PORT_UPDOWN STRING "PORT_UNUSED"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_COUNTER"
 -- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "4"
@@ -129,11 +129,11 @@ END SYN;
 -- Retrieval info: CONNECT: @cnt_en 0 0 0 0 cnt_en 0 0 0 0
 -- Retrieval info: CONNECT: @aset 0 0 0 0 aset 0 0 0 0
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
--- Retrieval info: GEN_FILE: TYPE_NORMAL life_counter.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL life_counter.inc FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL life_counter.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL life_counter.bsf TRUE FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL life_counter_inst.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL life_counter_waveforms.html TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL life_counter_wave*.jpg FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL new_life_counter.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL new_life_counter.inc FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL new_life_counter.cmp TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL new_life_counter.bsf TRUE FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL new_life_counter_inst.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL new_life_counter_waveforms.html TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL new_life_counter_wave*.jpg FALSE
 -- Retrieval info: LIB_FILE: lpm

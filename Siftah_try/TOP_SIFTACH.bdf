@@ -1365,7 +1365,7 @@ applicable agreement for further details.
 (symbol
 	(rect 1800 824 1968 952)
 	(text "score_module" (rect 5 0 85 14)(font "Arial" (font_size 8)))
-	(text "inst20" (rect 8 112 37 124)(font "Arial" ))
+	(text "inst25" (rect 8 112 37 124)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
