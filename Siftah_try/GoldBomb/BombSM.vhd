@@ -28,8 +28,11 @@ type bomb_state_t is (start,idle,rand_speeds,move,dead);
 signal state : bomb_state_t;
 
 
-signal ObjectStartX_t : integer;
-signal ObjectStartY_t : integer;
+--signal ObjectStartX_t : integer;
+--signal ObjectStartY_t : integer;
+
+ signal ObjectStartX_t : std_logic_vector(8 downto 0);
+ signal ObjectStartY_t : std_logic_vector(8 downto 0);
 
 signal Y_speed_sig : std_logic_vector(2 downto 0);
 signal X_speed_sig : std_logic_vector(2 downto 0);
@@ -42,12 +45,15 @@ constant downBorder : integer := 440 ;
 
 begin
 	process ( RESETn,CLK,IENABLE)
+		variable helper : std_logic_Vector( 8 downto 0);
 		begin
 		  if RESETn = '0' then
 			Y_speed_sig <= (others => '0');
 			X_speed_sig <=(others => '0');
-			ObjectStartY_t <=0;
-			ObjectStartX_t <=0;
+			--ObjectStartY_t <=0;
+			--ObjectStartX_t <=0;
+			ObjectStartY_t <= (others => '0');
+			ObjectStartX_t <= (others => '0');
 			state<=start;
 			enable <='1';
 		elsif IENABLE ='0' then 
@@ -59,19 +65,19 @@ begin
 					state <= dead;
 					enable <= '0';
 					
-				elsif ((ObjectStartX_t <= leftBorder or ObjectStartX_t >= rightBorder or ObjectStartY_t <= upBorder or ObjectStartY_t >= downBorder) and state=move )then
-					if allowedToMove='1' then 
-					state <= rand_speeds;
-					ObjectStartX_t <=200 ;
-					ObjectStartY_t <= 200;
-					else
-						state <= start;
-					end if;
+				--elsif ((ObjectStartX_t <= leftBorder or ObjectStartX_t >= rightBorder or ObjectStartY_t <= upBorder or ObjectStartY_t >= downBorder) and state=move )then
+				--	if allowedToMove='1' then 
+				--	state <= rand_speeds;
+				--	ObjectStartX_t <=200 ;
+				--	ObjectStartY_t <= 200;
+				--	else
+					--	state <= start;
+					--end if;
 				else
 					case state is
 					when start =>
-						ObjectStartX_t <= conv_integer(random);
-						ObjectStartY_t <= conv_integer(random2);
+						ObjectStartX_t <= random ; --conv_integer(random);
+						ObjectStartY_t <= random2 ; --conv_integer(random2);
 						if allowedToMove='1' then 
 							state <= rand_speeds;
 						else
@@ -89,7 +95,7 @@ begin
 						--TODO: add conditions on when the speed should be positive or negative according to borders.
 					when move =>
 						ObjectStartX_t	<= ObjectStartX_t + conv_integer(X_speed_sig) ;
-						ObjectStartY_t	<= ObjectStartY_t - conv_integer(Y_speed_sig) ;
+						ObjectStartY_t	<= ObjectStartY_t - conv_integer(Y_speed_sig)  ;
 					when dead =>
 						enable <='0';
 					end case;
@@ -98,6 +104,10 @@ begin
 		end if; --CLK'event
 		end process ;
 		
-		ObjectStartX	<= conv_std_logic_vector(ObjectStartX_t,9) ;
-		ObjectStartY	<= conv_std_logic_vector(ObjectStartY_t,9) ;
+		--ObjectStartX	<= conv_std_logic_vector(ObjectStartX_t,9) ;
+		--ObjectStartY	<= conv_std_logic_vector(ObjectStartY_t,9) ;
+		ObjectStartY<=ObjectStartY_t;
+		ObjectStartX<=ObjectStartX_t;
+
+		
 end arch_BombSM;

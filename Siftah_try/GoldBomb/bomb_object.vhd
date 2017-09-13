@@ -119,7 +119,6 @@ signal objectWestXboundary : integer;
 signal objectSouthboundary : integer;
 signal objectXboundariesTrue : boolean;
 signal objectYboundariesTrue : boolean;
-signal ObjectStartX_d : integer;
 
 ---
 begin
@@ -145,7 +144,6 @@ process ( RESETn, CLK, enable)
 	if RESETn = '0' then
 	    mVGA_RGB	<=  (others => '0') ; 	
 		drawing_request	<=  '0' ;
-		ObjectStartX_d <= 0;
 		obj_enabled <= '1';
 		elsif CLK'event and CLK='1' then
 			if enable='0' then
@@ -153,7 +151,6 @@ process ( RESETn, CLK, enable)
 			else
 				mVGA_RGB	<=  object_colors(bCoord_Y , bCoord_X);	
 				drawing_request	<= object(bCoord_Y , bCoord_X) and drawing_X and drawing_Y;
-				ObjectStartX_d <= to_integer(unsigned(ObjectStartX));
 			end if;
 	end if;
 
