@@ -20,11 +20,7 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-<<<<<<< HEAD
 	(rect 16 16 224 176)
-=======
-	(rect 16 16 160 176)
->>>>>>> origin/master
 	(text "hit_detector" (rect 5 0 62 12)(font "Arial" ))
 	(text "inst" (rect 8 144 25 156)(font "Arial" ))
 	(port
@@ -58,19 +54,18 @@ applicable agreement for further details.
 	(port
 		(pt 0 96)
 		(input)
-		(text "player_up" (rect 0 0 48 12)(font "Arial" ))
-		(text "player_up" (rect 21 91 69 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 1))
+		(text "step_X[31..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "step_X[31..0]" (rect 21 91 85 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
 		(pt 0 112)
 		(input)
-		(text "step_X[31..0]" (rect 0 0 64 12)(font "Arial" ))
-		(text "step_X[31..0]" (rect 21 107 85 119)(font "Arial" ))
+		(text "step_Y[31..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "step_Y[31..0]" (rect 21 107 88 119)(font "Arial" ))
 		(line (pt 0 112)(pt 16 112)(line_width 3))
 	)
 	(port
-<<<<<<< HEAD
 		(pt 208 32)
 		(output)
 		(text "hit" (rect 0 0 11 12)(font "Arial" ))
@@ -107,22 +102,5 @@ applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 192 144)(line_width 1))
-=======
-		(pt 0 128)
-		(input)
-		(text "step_Y[31..0]" (rect 0 0 67 12)(font "Arial" ))
-		(text "step_Y[31..0]" (rect 21 123 88 135)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128)(line_width 3))
-	)
-	(port
-		(pt 144 32)
-		(output)
-		(text "hit" (rect 0 0 11 12)(font "Arial" ))
-		(text "hit" (rect 112 27 123 39)(font "Arial" ))
-		(line (pt 144 32)(pt 128 32)(line_width 1))
-	)
-	(drawing
-		(rectangle (rect 16 16 128 144)(line_width 1))
->>>>>>> origin/master
 	)
 )

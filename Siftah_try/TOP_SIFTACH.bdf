@@ -1026,7 +1026,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-<<<<<<< HEAD
 	(rect 1072 840 1296 1032)
 	(text "Bombs_mgr" (rect 5 0 64 12)(font "Arial" ))
 	(text "inst14" (rect 8 176 37 188)(font "Arial" ))
@@ -1137,11 +1136,6 @@ applicable agreement for further details.
 	(rect 1072 1056 1296 1248)
 	(text "Golds_mgr" (rect 5 0 58 12)(font "Arial" ))
 	(text "inst17" (rect 8 176 37 188)(font "Arial" ))
-=======
-	(rect 680 288 928 512)
-	(text "smileyfacemove" (rect 5 0 88 12)(font "Arial" ))
-	(text "inst3" (rect 8 208 31 220)(font "Arial" ))
->>>>>>> origin/master
 	(port
 		(pt 0 32)
 		(input)
@@ -1279,32 +1273,20 @@ applicable agreement for further details.
 	(port
 		(pt 0 128)
 		(input)
-<<<<<<< HEAD
 		(text "d_mVGA_RGB[7..0]" (rect 0 0 99 12)(font "Arial" ))
 		(text "d_mVGA_RGB[7..0]" (rect 21 123 120 135)(font "Arial" ))
 		(line (pt 0 128)(pt 16 128)(line_width 3))
-=======
-		(text "hitObj" (rect 0 0 28 12)(font "Arial" ))
-		(text "hitObj" (rect 21 123 49 135)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128)(line_width 1))
->>>>>>> origin/master
 	)
 	(port
 		(pt 0 144)
 		(input)
-<<<<<<< HEAD
 		(text "e_drawing_request" (rect 0 0 90 12)(font "Arial" ))
 		(text "e_drawing_request" (rect 21 139 111 151)(font "Arial" ))
-=======
-		(text "hitObjBottom" (rect 0 0 63 12)(font "Arial" ))
-		(text "hitObjBottom" (rect 21 139 84 151)(font "Arial" ))
->>>>>>> origin/master
 		(line (pt 0 144)(pt 16 144)(line_width 1))
 	)
 	(port
 		(pt 0 160)
 		(input)
-<<<<<<< HEAD
 		(text "e_mVGA_RGB[7..0]" (rect 0 0 99 12)(font "Arial" ))
 		(text "e_mVGA_RGB[7..0]" (rect 21 155 120 167)(font "Arial" ))
 		(line (pt 0 160)(pt 16 160)(line_width 3))
@@ -1456,18 +1438,6 @@ applicable agreement for further details.
 		(text "m_mVGA_G[9..0]" (rect 0 0 87 12)(font "Arial" ))
 		(text "m_mVGA_G[9..0]" (rect 132 43 219 55)(font "Arial" ))
 		(line (pt 240 48)(pt 224 48)(line_width 3))
-=======
-		(text "hitObjYspeed[31..0]" (rect 0 0 97 12)(font "Arial" ))
-		(text "hitObjYspeed[31..0]" (rect 21 155 118 167)(font "Arial" ))
-		(line (pt 0 160)(pt 16 160)(line_width 3))
-	)
-	(port
-		(pt 0 176)
-		(input)
-		(text "hitObjXspeed[31..0]" (rect 0 0 95 12)(font "Arial" ))
-		(text "hitObjXspeed[31..0]" (rect 21 171 116 183)(font "Arial" ))
-		(line (pt 0 176)(pt 16 176)(line_width 3))
->>>>>>> origin/master
 	)
 	(port
 		(pt 240 64)
@@ -1499,15 +1469,9 @@ applicable agreement for further details.
 	(rotate180)
 )
 (symbol
-<<<<<<< HEAD
 	(rect 1088 48 1312 176)
 	(text "cloud_background_object" (rect 5 0 128 12)(font "Arial" ))
 	(text "inst22" (rect 8 112 37 124)(font "Arial" ))
-=======
-	(rect 1232 584 1376 744)
-	(text "hit_detector" (rect 5 0 62 12)(font "Arial" ))
-	(text "inst13" (rect 8 144 37 156)(font "Arial" ))
->>>>>>> origin/master
 	(port
 		(pt 0 32)
 		(input)
@@ -1525,7 +1489,6 @@ applicable agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-<<<<<<< HEAD
 		(text "oCoord_X[31..0]" (rect 0 0 79 12)(font "Arial" ))
 		(text "oCoord_X[31..0]" (rect 21 59 100 71)(font "Arial" ))
 		(line (pt 0 64)(pt 16 64)(line_width 3))
@@ -1553,66 +1516,6 @@ applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 208 112)(line_width 1))
-=======
-		(text "player_X[31..0]" (rect 0 0 74 12)(font "Arial" ))
-		(text "player_X[31..0]" (rect 21 59 95 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "player_Y[31..0]" (rect 0 0 76 12)(font "Arial" ))
-		(text "player_Y[31..0]" (rect 21 75 97 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "player_up" (rect 0 0 48 12)(font "Arial" ))
-		(text "player_up" (rect 21 91 69 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 1))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "step_X[31..0]" (rect 0 0 64 12)(font "Arial" ))
-		(text "step_X[31..0]" (rect 21 107 85 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112)(line_width 3))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "step_Y[31..0]" (rect 0 0 67 12)(font "Arial" ))
-		(text "step_Y[31..0]" (rect 21 123 88 135)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128)(line_width 3))
-	)
-	(port
-		(pt 144 32)
-		(output)
-		(text "hit" (rect 0 0 11 12)(font "Arial" ))
-		(text "hit" (rect 112 27 123 39)(font "Arial" ))
-		(line (pt 144 32)(pt 128 32)(line_width 1))
-	)
-	(drawing
-		(rectangle (rect 16 16 128 144)(line_width 1))
-	)
-)
-(symbol
-	(rect 1264 480 1296 512)
-	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
-	(text "inst16" (rect 3 21 32 33)(font "Arial" )(invisible))
-	(port
-		(pt 16 0)
-		(output)
-		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
-		(line (pt 16 8)(pt 16 0)(line_width 1))
-	)
-	(drawing
-		(line (pt 8 8)(pt 16 16)(line_width 1))
-		(line (pt 16 16)(pt 24 8)(line_width 1))
-		(line (pt 8 8)(pt 24 8)(line_width 1))
->>>>>>> origin/master
 	)
 )
 (connector
@@ -1708,7 +1611,6 @@ applicable agreement for further details.
 	(pt 424 648)
 )
 (connector
-<<<<<<< HEAD
 	(text "CLK" (rect 82 744 103 756)(font "Arial" ))
 	(pt 136 760)
 	(pt 64 760)
@@ -1717,15 +1619,6 @@ applicable agreement for further details.
 	(text "CLK" (rect 434 648 455 660)(font "Arial" ))
 	(pt 520 664)
 	(pt 424 664)
-=======
-	(pt 1264 368)
-	(pt 1296 368)
-	(bus)
-)
-(connector
-	(pt 1280 352)
-	(pt 1296 352)
->>>>>>> origin/master
 )
 (connector
 	(text "timer_done" (rect 633 272 687 284)(font "Arial" ))
@@ -1775,7 +1668,6 @@ applicable agreement for further details.
 	(pt 2032 320)
 )
 (connector
-<<<<<<< HEAD
 	(pt 1960 304)
 	(pt 2032 304)
 )
@@ -1786,11 +1678,6 @@ applicable agreement for further details.
 (connector
 	(pt 1960 352)
 	(pt 2032 352)
-=======
-	(text "CLK" (rect 82 744 103 756)(font "Arial" ))
-	(pt 136 760)
-	(pt 64 760)
->>>>>>> origin/master
 )
 (connector
 	(pt 1960 368)
@@ -1871,20 +1758,9 @@ applicable agreement for further details.
 	(pt 680 432)
 )
 (connector
-<<<<<<< HEAD
 	(text "hitObj" (rect 648 432 676 444)(font "Arial" ))
 	(pt 640 448)
 	(pt 680 448)
-=======
-	(text "hitObj" (rect 648 400 676 412)(font "Arial" ))
-	(pt 640 416)
-	(pt 680 416)
-)
-(connector
-	(text "CLK" (rect 762 928 783 940)(font "Arial" ))
-	(pt 784 944)
-	(pt 752 944)
->>>>>>> origin/master
 )
 (connector
 	(text "YOS[31..0]" (rect 652 448 707 460)(font "Arial" ))
@@ -2058,29 +1934,9 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-<<<<<<< HEAD
 	(text "YOS[31..0]" (rect 1388 776 1443 788)(font "Arial" ))
 	(pt 1320 792)
 	(pt 1416 792)
-=======
-	(text "hitObj" (rect 648 416 676 428)(font "Arial" ))
-	(pt 640 432)
-	(pt 680 432)
-)
-(connector
-	(pt 1048 936)
-	(pt 1048 696)
-	(bus)
-)
-(connector
-	(pt 1080 952)
-	(pt 1080 712)
-	(bus)
-)
-(connector
-	(pt 936 320)
-	(pt 936 648)
->>>>>>> origin/master
 	(bus)
 )
 (connector
@@ -2090,7 +1946,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-<<<<<<< HEAD
 	(text "oCoord_X[31..0]" (rect 1037 712 1116 724)(font "Arial" ))
 	(pt 1027 728)
 	(pt 1072 728)
@@ -2154,50 +2009,6 @@ applicable agreement for further details.
 	(text "d_mVGA_RGB[7..0]" (rect 1339 888 1438 900)(font "Arial" ))
 	(pt 1296 904)
 	(pt 1376 904)
-=======
-	(text "hitObj" (rect 1384 600 1412 612)(font "Arial" ))
-	(pt 1376 616)
-	(pt 1408 616)
-)
-(connector
-	(pt 992 936)
-	(pt 1048 936)
-	(bus)
-)
-(connector
-	(pt 1048 936)
-	(pt 1200 936)
-	(bus)
-)
-(connector
-	(pt 1000 952)
-	(pt 1080 952)
-	(bus)
-)
-(connector
-	(pt 1080 952)
-	(pt 1200 952)
-	(bus)
-)
-(connector
-	(pt 928 320)
-	(pt 936 320)
-	(bus)
-)
-(connector
-	(pt 936 320)
-	(pt 976 320)
-	(bus)
-)
-(connector
-	(pt 928 336)
-	(pt 944 336)
-	(bus)
-)
-(connector
-	(pt 944 336)
-	(pt 976 336)
->>>>>>> origin/master
 	(bus)
 )
 (connector
@@ -2210,7 +2021,6 @@ applicable agreement for further details.
 	(pt 720 920)
 )
 (connector
-<<<<<<< HEAD
 	(pt 616 928)
 	(pt 616 936)
 )
@@ -2353,43 +2163,6 @@ applicable agreement for further details.
 	(text "oCoord_X[31..0]" (rect 1008 96 1087 108)(font "Arial" ))
 	(pt 1088 112)
 	(pt 1000 112)
-=======
-	(pt 936 648)
-	(pt 1232 648)
-	(bus)
-)
-(connector
-	(pt 944 664)
-	(pt 1232 664)
-	(bus)
-)
-(connector
-	(pt 1048 696)
-	(pt 1232 696)
-	(bus)
-)
-(connector
-	(pt 1080 712)
-	(pt 1232 712)
-	(bus)
-)
-(connector
-	(text "YOS[31..0]" (rect 1460 1088 1515 1100)(font "Arial" ))
-	(pt 992 1104)
-	(pt 1488 1104)
-	(bus)
-)
-(connector
-	(text "XOS[31..0]" (rect 1456 1072 1509 1084)(font "Arial" ))
-	(pt 1376 1088)
-	(pt 1488 1088)
-	(bus)
-)
-(connector
-	(text "YOS[31..0]" (rect 652 432 707 444)(font "Arial" ))
-	(pt 640 448)
-	(pt 680 448)
->>>>>>> origin/master
 	(bus)
 )
 (connector
@@ -2399,7 +2172,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-<<<<<<< HEAD
 	(text "RESETn" (rect 1472 456 1513 468)(font "Arial" ))
 	(pt 1472 448)
 	(pt 1504 448)
@@ -2465,18 +2237,3 @@ applicable agreement for further details.
 	(pt 1504 416)
 	(pt 1360 416)
 )
-=======
-	(pt 1280 320)
-	(pt 1280 352)
-)
-(connector
-	(pt 1280 352)
-	(pt 1280 480)
-)
-(junction (pt 1280 352))
-(junction (pt 1048 936))
-(junction (pt 1080 952))
-(junction (pt 936 320))
-(junction (pt 944 336))
-(text "TODO:make the object one., and make object controller block multiple objects" (rect 1016 1144 1449 1158)(font "Arial" (font_size 8)))
->>>>>>> origin/master

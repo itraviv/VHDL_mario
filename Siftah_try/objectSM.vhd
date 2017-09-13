@@ -33,7 +33,6 @@ signal ObjectStartY_t : integer;
 signal Y_speed_sig : integer;
 signal X_speed_sig : integer;
 
-<<<<<<< HEAD
 --constant resetObjectStartX_t : integer :=300;
 --constant resetObjectStartY_t : integer :=420;
 
@@ -43,18 +42,6 @@ constant upBorder : integer := 300;
 constant downBorder : integer := 440 ;
 
 
-=======
-
-constant resetObjectStartX_t : integer :=300;
-constant resetObjectStartY_t : integer :=420;
-
-constant leftBorder : integer := 100;
-constant rightBorder : integer := 550;
-constant upBorder : integer := 5 ;
-constant downBorder : integer := 450 ;
-
-
->>>>>>> origin/master
 begin
 --X_speed_sig<=0;
 X_speed <= X_speed_sig;
@@ -63,13 +50,7 @@ Y_speed <= Y_speed_sig;
 		begin
 		  if RESETn = '0' then
 			ObjectStartX_t	<= resetObjectStartX_t;			
-<<<<<<< HEAD
 			X_speed_sig			<= conv_integer(InSpeedX);
-=======
-			ObjectStartY_t	<= resetObjectStartY_t;
-			Y_speed_sig			<= 0;
-			X_speed_sig			<= 1;
->>>>>>> origin/master
 		elsif CLK'event  and CLK = '1' then
 			if timer_done = '1' then
 			--handle my own borders.
@@ -82,7 +63,6 @@ Y_speed <= Y_speed_sig;
 						X_speed_sig<= -X_speed_sig ;
 					end if;
 				else
-<<<<<<< HEAD
 					--State machine , TODO
 				end if;
 				ObjectStartX_t	<= ObjectStartX_t + X_speed_sig ;
@@ -113,17 +93,6 @@ Y_speed <= Y_speed_sig;
 		end if; --timer_done
 		end process;
 		
-=======
-					--State machine
-				end if;
-				ObjectStartX_t	<= ObjectStartX_t + X_speed_sig ;
-				ObjectStartY_t	<= ObjectStartY_t + Y_speed_sig ;
-			end if; --timer done
-		end if;
-
-
-		end process ;
->>>>>>> origin/master
 		ObjectStartX	<= ObjectStartX_t ;
 		ObjectStartY	<= ObjectStartY_t ;
 --ObjectStartX	<= 300;

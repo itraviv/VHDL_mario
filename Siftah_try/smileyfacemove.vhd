@@ -15,15 +15,10 @@ port 	(
 		leftKeyPressed  : in std_logic;
 		rightKeyPressed : in std_logic;
 		
-<<<<<<< HEAD
 		hitObjMid		: in std_logic;
 		hitObjWithMyBottomPixel	: in std_logic;
 		hitObjAny   	 : in std_logic;
 		
-=======
-		hitObj			: in std_logic;
-		hitObjBottom    : in std_logic;
->>>>>>> origin/master
 		hitObjYspeed    : in integer;
 		hitObjXspeed    : in integer;
 		hitObjYpos		: in integer;
@@ -59,11 +54,7 @@ constant mario_Y_size :integer :=26;
 type Y_state_t is (idle,onObject,jump,bump_from_object);
 signal Y_state : Y_state_t;
 
-<<<<<<< HEAD
 type X_state_t is (normal,bump_from_object); --onObjec? decided to remove this.
-=======
-type X_state_t is (normal,onObject);
->>>>>>> origin/master
 signal X_state : X_state_t;
 
 
@@ -76,12 +67,15 @@ signal ObjectStartX_t : integer range 0 to 680;
 signal ObjectStartY_t : integer range 0 to 512;
 begin
 		process ( RESETn,CLK)
+		variable update_location : std_logic;
 		begin
 		  if RESETn = '0' then
 				ObjectStartX_t	<= resetObjectStartX_t;
 				X_speed <= 0;
 				X_state <= normal;
+				update_location:='0';
 		elsif CLK'event  and CLK = '1' then
+			update_location:='1';
 			if timer_done = '1' then
 				-- X sm
 				case X_state is
@@ -105,7 +99,6 @@ begin
 							X_speed <= X_speed - X_inc_speed;
 						end if;
 					end if;
-<<<<<<< HEAD
 					if hitObjMid='1' then -- bump
 						update_location:='0';
 						X_speed <= -X_speed;
@@ -134,12 +127,6 @@ begin
 					end if;
 				end if;
 			end if;	-- timer_done
-=======
-				end case;
-				
-				end if;	
-				ObjectStartX_t  <= ObjectStartX_t + X_speed;
->>>>>>> origin/master
 
 		end if;
 		end process;
@@ -181,10 +168,7 @@ begin
 								elsif Y_speed <= 0 then --hitting object from above
 									Y_speed<=hitObjYspeed;
 									Y_state<=onObject;
-<<<<<<< HEAD
 									ObjectStartY_t <= hitObjYpos - mario_Y_size - hitObjYspeed; -- stand on object
-=======
->>>>>>> origin/master
 								end if;
 							end if;
 -----------------------------------------------------------------------------------------------------------
@@ -209,11 +193,7 @@ begin
 							if hitObjAny='0' then
 								Y_state<=jump;
 							end if;
-<<<<<<< HEAD
 -----------------------------------------------------------------------------------------------------------							
-=======
-							
->>>>>>> origin/master
 						end case;
 						-- update location
 						if update_location='1' then --alwyas, except when hitting objects in jump mode
