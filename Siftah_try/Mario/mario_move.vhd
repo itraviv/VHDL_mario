@@ -35,8 +35,8 @@ architecture arch_mario_move of mario_move is
 constant resetObjectStartX_t : integer :=512;
 constant resetObjectStartY_t : integer :=417;
 
-constant leftBorder : integer := 100;
-constant rightBorder : integer := 550;
+constant leftBorder : integer := 10;
+constant rightBorder : integer := 600;
 constant upBorder : integer := 5 ;
 constant downBorder : integer := 417 ;
 
@@ -66,71 +66,10 @@ signal X_speed : integer;
 signal ObjectStartX_t : integer range 0 to 680;
 signal ObjectStartY_t : integer range 0 to 512;
 begin
-		process ( RESETn,CLK)
-		variable update_location : std_logic;
-		begin
-		  if RESETn = '0' then
-				ObjectStartX_t	<= resetObjectStartX_t;
-				X_speed <= 0;
-				X_state <= normal;
-				update_location:='0';
-		elsif CLK'event  and CLK = '1' then
-			update_location:='1';
-			if timer_done = '1' then
-				-- X sm
-				case X_state is
-				--when onObject => 
-				--todo
-				when normal =>
-					if rightKeyPressed='1' then
-						if X_speed = 0 then
-							X_speed <= X_move_speed1;
-						elsif X_speed < 0 then
-							X_speed <=0 ;
-						elsif X_speed < X_move_speed_max then
-							X_speed <= X_speed + X_inc_speed;
-						end if;
-					elsif leftKeyPressed='1' then
-						if X_speed = 0 then
-							X_speed <= -X_move_speed1;
-						elsif X_speed > 0 then
-							X_speed <= 0;
-						elsif X_speed > -X_move_speed_max then
-							X_speed <= X_speed - X_inc_speed;
-						end if;
-					end if;
-					if hitObjMid='1' then -- bump
-						update_location:='0';
-						X_speed <= -X_speed;
-						X_state <= bump_from_object;
-					end if;
-				when bump_from_object=>
-					if hitObjMid ='0' then
-						X_state <= normal;
-					end if;
-				end case;	
-				
-				if update_location='1' then
-			--saturation in location
-					if ObjectStartX_t + X_speed > rightBorder then
-						ObjectStartX_t  <=rightBorder;
-						if X_speed > 0 then
-							X_speed<= -X_speed ;
-						end if;
-					elsif ObjectStartX_t + X_speed <  leftBorder then
-						ObjectStartX_t  <=leftBorder;
-						if X_speed < 0 then
-							X_speed<= -X_speed ;
-						end if;
-					else
-						ObjectStartX_t  <= ObjectStartX_t + X_speed;
-					end if;
-				end if;
-			end if;	-- timer_done
 
-		end if;
-		end process;
-	
+-----------------------------
+-- This proccess is for Y ---
+-----------------------------
 		process ( RESETn,CLK,hitObjMid)
 		variable update_location : std_logic;
 		
@@ -216,6 +155,77 @@ begin
 				end if;
 			end if;
 		end process ;
+
+
+-----------------------------
+-- This proccess is for X ---
+-----------------------------
+		process ( RESETn,CLK)
+		variable update_location : std_logic;
+		begin
+		  if RESETn = '0' then
+				ObjectStartX_t	<= resetObjectStartX_t;
+				X_speed <= 0;
+				X_state <= normal;
+				update_location:='0';
+		elsif CLK'event  and CLK = '1' then
+			update_location:='1';
+			if timer_done = '1' then
+				-- X sm
+				case X_state is
+				--when onObject => 
+				--todo
+				when normal =>
+					if rightKeyPressed='1' then
+						if X_speed = 0 then
+							X_speed <= X_move_speed1;
+						elsif X_speed < 0 then
+							X_speed <=0 ;
+						elsif X_speed < X_move_speed_max then
+							X_speed <= X_speed + X_inc_speed;
+						end if;
+					elsif leftKeyPressed='1' then
+						if X_speed = 0 then
+							X_speed <= -X_move_speed1;
+						elsif X_speed > 0 then
+							X_speed <= 0;
+						elsif X_speed > -X_move_speed_max then
+							X_speed <= X_speed - X_inc_speed;
+						end if;
+					end if;
+					if hitObjMid='1' then -- bump
+						update_location:='0';
+						X_speed <= -X_speed;
+						X_state <= bump_from_object;
+					end if;
+				when bump_from_object=>
+					if hitObjMid ='0' then
+						X_state <= normal;
+					end if;
+				end case;	
+				
+				if update_location='1' then
+			--saturation in location
+					if ObjectStartX_t + X_speed > rightBorder then
+						ObjectStartX_t  <=rightBorder;
+						if X_speed > 0 then
+							X_speed<= -X_speed ;
+						end if;
+					elsif ObjectStartX_t + X_speed <  leftBorder then
+						ObjectStartX_t  <=leftBorder;
+						if X_speed < 0 then
+							X_speed<= -X_speed ;
+						end if;
+					else
+						ObjectStartX_t  <= ObjectStartX_t + X_speed;
+					end if;
+				end if;
+			end if;	-- timer_done
+
+		end if;
+		end process;
+	
+
 		
 ObjectStartX	<= ObjectStartX_t;			
 ObjectStartY	<= ObjectStartY_t;	

@@ -27,21 +27,11 @@ architecture arch_BombSM of BombSM is
 type bomb_state_t is (start,idle,rand_speeds,move,dead);
 signal state : bomb_state_t;
 
-
---signal ObjectStartX_t : integer;
---signal ObjectStartY_t : integer;
-
- signal ObjectStartX_t : std_logic_vector(8 downto 0);
- signal ObjectStartY_t : std_logic_vector(8 downto 0);
+signal ObjectStartX_t : std_logic_vector(8 downto 0);
+signal ObjectStartY_t : std_logic_vector(8 downto 0);
 
 signal Y_speed_sig : std_logic_vector(2 downto 0);
 signal X_speed_sig : std_logic_vector(2 downto 0);
-
-constant leftBorder : integer := 120;
-constant rightBorder : integer := 500;
-constant upBorder : integer := 300;
-constant downBorder : integer := 440 ;
-
 
 begin
 	process ( RESETn,CLK,IENABLE)
@@ -50,8 +40,6 @@ begin
 		  if RESETn = '0' then
 			Y_speed_sig <= (others => '0');
 			X_speed_sig <=(others => '0');
-			--ObjectStartY_t <=0;
-			--ObjectStartX_t <=0;
 			ObjectStartY_t <= (others => '0');
 			ObjectStartX_t <= (others => '0');
 			state<=start;
@@ -60,24 +48,14 @@ begin
 			state<=dead;
 		elsif CLK'event  and CLK = '1' then
 			if timer_done = '1' then
-			--handle object reaching borders
 				if hit='1' then
 					state <= dead;
 					enable <= '0';
-					
-				--elsif ((ObjectStartX_t <= leftBorder or ObjectStartX_t >= rightBorder or ObjectStartY_t <= upBorder or ObjectStartY_t >= downBorder) and state=move )then
-				--	if allowedToMove='1' then 
-				--	state <= rand_speeds;
-				--	ObjectStartX_t <=200 ;
-				--	ObjectStartY_t <= 200;
-				--	else
-					--	state <= start;
-					--end if;
 				else
 					case state is
 					when start =>
-						ObjectStartX_t <= random ; --conv_integer(random);
-						ObjectStartY_t <= random2 ; --conv_integer(random2);
+						ObjectStartX_t <= random ; 
+						ObjectStartY_t <= random2 ; 
 						if allowedToMove='1' then 
 							state <= rand_speeds;
 						else
@@ -92,7 +70,6 @@ begin
 						X_speed_sig(2 downto 0) <= random2(2 downto 0);
 						state <= move;
 						
-						--TODO: add conditions on when the speed should be positive or negative according to borders.
 					when move =>
 						ObjectStartX_t	<= ObjectStartX_t + conv_integer(X_speed_sig) ;
 						ObjectStartY_t	<= ObjectStartY_t - conv_integer(Y_speed_sig)  ;

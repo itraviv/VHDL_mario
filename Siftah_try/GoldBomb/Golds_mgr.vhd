@@ -64,7 +64,6 @@ END COMPONENT;
 -------------
 --for every out of a component, make sig
 
-
 signal d_1_out : std_logic;
 signal d_2_out : std_logic;
 signal d_3_out : std_logic;
@@ -411,41 +410,6 @@ PORT MAP(CLK => CLK,
 		 mVGA_RGB => b_8_mVGA_RGB);
 		 
 		 
-		 
---b_6_F : goldfull
---PORT MAP(CLK => CLK,
---		 RESETn => RESETn,
---		 timer_done => timer_done,
---		 allowed_to_move => '1',
---		 enable => '1',
---		 oCoord_X => oCoord_X,
---		 oCoord_Y => oCoord_Y,
---		 Player_X => player_X,
---		 Player_Y => player_Y,
---		 Random1 => c_3_q,
---		 Random2 => c_4_q,
---		 drawing_request => b_6_drawing_request,
---		 hit => b_6_hit,
---		 mVGA_RGB => b_6_mVGA_RGB);
---
---		 
---b_7_F : bombfull
---PORT MAP(CLK => CLK,
---		 RESETn => RESETn,
---		 timer_done => timer_done,
---		 allowed_to_move => '1',
---		 enable => '1',
---		 oCoord_X => oCoord_X,
---		 oCoord_Y => oCoord_Y,
---		 Player_X => player_X,
---		 Player_Y => player_Y,
---		 Random1 => c_3_q,
---		 Random2 => c_4_q,
---		 drawing_request => b_7_drawing_request,
---		 hit => b_7_hit,
---		 mVGA_RGB => b_7_mVGA_RGB);
-
-
 ---------------------------
 --    Drawing_requests   --
 ---------------------------		

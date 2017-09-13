@@ -38,8 +38,8 @@ signal X_speed_sig : integer;
 
 constant leftBorder : integer := 120;
 constant rightBorder : integer := 500;
-constant upBorder : integer := 300;
-constant downBorder : integer := 440 ;
+constant upBorder : integer := 120;
+constant downBorder : integer := 317 ;
 
 
 begin
