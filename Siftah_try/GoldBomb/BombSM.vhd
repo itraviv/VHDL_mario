@@ -58,9 +58,12 @@ begin
 				if hit='1' then
 					state <= dead;
 					enable <= '0';
-				elsif ObjectStartX_t <= leftBorder or ObjectStartX_t >= rightBorder or ObjectStartY_t <= upBorder or ObjectStartY_t >= downBorder then
+					
+				elsif ((ObjectStartX_t <= leftBorder or ObjectStartX_t >= rightBorder or ObjectStartY_t <= upBorder or ObjectStartY_t >= downBorder) and state=move )then
 					if allowedToMove='1' then 
 					state <= rand_speeds;
+					ObjectStartX_t <=200 ;
+					ObjectStartY_t <= 200;
 					else
 						state <= start;
 					end if;

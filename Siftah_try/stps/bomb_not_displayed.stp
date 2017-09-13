@@ -1,0 +1,441 @@
+<session jtag_chain="USB-Blaster [USB-0]" jtag_device="@1: EP2C35 (0x020B40DD)" sof_file="../vga_game.sof" top_level_entity="TOP_SIFTACH">
+  <display_tree gui_logging_enabled="0">
+    <display_branch instance="auto_signaltap_0" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+  </display_tree>
+  <global_info>
+    <single attribute="sof manager hidden" value="1"/>
+    <multi attribute="column width" size="23" value="34,34,265,74,68,70,88,88,98,98,88,88,110,101,101,101,101,101,101,101,101,107,78"/>
+    <single attribute="active instance" value="0"/>
+    <single attribute="lock mode" value="36110"/>
+    <multi attribute="window position" size="9" value="1920,979,398,126,0,50,124,0,0"/>
+  </global_info>
+  <instance entity_name="sld_signaltap" is_auto_node="yes" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="zoom level numerator" value="8"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="16368"/>
+      <single attribute="zoom offset denominator" value="1"/>
+    </position_info>
+    <signal_set global_temp="1" name="signal_set: 2017/09/13 08:47:06  #0">
+      <clock name="timer_done" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="M4K" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="4096" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[0]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[10]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[11]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[12]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[13]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[14]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[15]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[16]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[17]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[18]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[19]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[1]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[20]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[21]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[22]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[23]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[24]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[25]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[26]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[27]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[28]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[29]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[2]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[30]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[31]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[3]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[4]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[5]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[6]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[7]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[8]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[9]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|enable" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.dead" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.idle" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.move" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.rand_speeds" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.start" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|ObjectStartX" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|ObjectStartY" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|drawing_request" tap_mode="classic" type="combinatorial"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[0]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[10]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[11]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[12]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[13]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[14]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[15]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[16]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[17]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[18]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[19]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[1]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[20]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[21]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[22]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[23]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[24]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[25]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[26]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[27]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[28]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[29]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[2]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[30]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[31]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[3]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[4]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[5]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[6]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[7]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[8]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[9]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|enable" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.dead" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.idle" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.move" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.rand_speeds" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.start" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|ObjectStartX" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|ObjectStartY" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|drawing_request" tap_mode="classic" type="combinatorial"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[0]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[10]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[11]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[12]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[13]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[14]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[15]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[16]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[17]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[18]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[19]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[1]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[20]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[21]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[22]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[23]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[24]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[25]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[26]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[27]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[28]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[29]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[2]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[30]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[31]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[3]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[4]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[5]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[6]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[7]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[8]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[9]" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|enable" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random2[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|random[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.dead" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.idle" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.move" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.rand_speeds" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|BombSM:b2v_inst|state.start" tap_mode="classic" type="register"/>
+          <wire name="bombfull:inst22|ObjectStartX" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|ObjectStartY" tap_mode="classic" type="combinatorial"/>
+          <wire name="bombfull:inst22|drawing_request" tap_mode="classic" type="combinatorial"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <data_view>
+          <net is_signal_inverted="no" name="bombfull:inst22|drawing_request"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|ObjectStartX"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|ObjectStartY"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|enable"/>
+          <bus is_signal_inverted="no" link="all" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t" order="lsb_to_msb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[0]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[1]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[2]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[3]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[4]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[5]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[6]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[7]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[8]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[9]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[10]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[11]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[12]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[13]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[14]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[15]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[16]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[17]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[18]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[19]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[20]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[21]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[22]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[23]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[24]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[25]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[26]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[27]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[28]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[29]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[30]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[31]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY" order="lsb_to_msb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[0]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[1]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[2]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[3]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[4]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[5]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[6]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[7]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[8]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="bombfull:inst22|BombSM:b2v_inst|random" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[0]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[1]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[2]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[3]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[4]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[5]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[6]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[7]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[8]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="bombfull:inst22|BombSM:b2v_inst|random2" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[0]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[1]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[2]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[3]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[4]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[5]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[6]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[7]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[8]"/>
+          </bus>
+          <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|state"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|state.dead"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|state.idle"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|state.move"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|state.rand_speeds"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|state.start"/>
+        </data_view>
+        <setup_view>
+          <net is_signal_inverted="no" name="bombfull:inst22|drawing_request"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|ObjectStartX"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|ObjectStartY"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|enable"/>
+          <bus is_signal_inverted="no" link="all" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t" order="lsb_to_msb" radix="hex" state="collapse" type="register">
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[0]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[1]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[2]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[3]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[4]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[5]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[6]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[7]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[8]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[9]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[10]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[11]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[12]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[13]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[14]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[15]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[16]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[17]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[18]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[19]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[20]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[21]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[22]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[23]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[24]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[25]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[26]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[27]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[28]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[29]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[30]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartX_t[31]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY" order="lsb_to_msb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[0]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[1]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[2]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[3]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[4]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[5]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[6]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[7]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|ObjectStartY[8]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="bombfull:inst22|BombSM:b2v_inst|random" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[0]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[1]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[2]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[3]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[4]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[5]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[6]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[7]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random[8]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="bombfull:inst22|BombSM:b2v_inst|random2" order="lsb_to_msb" radix="unsigned_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[0]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[1]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[2]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[3]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[4]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[5]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[6]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[7]"/>
+            <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|random2[8]"/>
+          </bus>
+          <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|state"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|state.dead"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|state.idle"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|state.move"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|state.rand_speeds"/>
+          <net is_signal_inverted="no" name="bombfull:inst22|BombSM:b2v_inst|state.start"/>
+        </setup_view>
+      </presentation>
+      <trigger CRC="25A8076" attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2017/09/13 08:47:06  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_in="dont_care" trigger_out="active high"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'bombfull:inst22|BombSM:b2v_inst|state.start' == falling edge
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>000000000000000000000000000000000000000000000000000000000000000000000
+            <pwr_up_transitional>000000000000000000000000000000000000000000000000000000000000000000000
+            </pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+        <log>
+          <data global_temp="1" name="log: 2017/09/13 08:56:20  #0" power_up_mode="false" sample_depth="49" trigger_position="-1">000000000001000000000010010000000111000001011011010011011010000100000000000000001000000000010010000000111000001110000110110000110000010000000000000001000000000010010000000111000001000010110000010110000100000000000000001000000000010010000000111000001101110110101110110000010000000000000001000000000010010000000111000001010101110010101110000100000000000000001000000000010010000000111000001111011110111011110000010000000000000001000000000010010000000111000001001000001001000001000100000000000000001000000000010010000000111000001100010001100010001000010000000000000001000000000010010000000111000001011110001011110001000100000000000000001000000000010010000000111000001110101001110101001000010000000000000001000000000010010000000111000001000111001000111001000100000000000000001000000000010010000000111000001101000101101000101000010000000000000001000000000010010000000111000001010010101010010101000100000000000000001000000000010010000000111000001111110101111110101000010000000000000001000000000010010000000111000001001101101001101101000100000000000000001000000000010010000000111000001100111101100111101000010000000000000001000000000010010000000111000001011000011011000011000100000000000000001000000000010010000000111000001110010011110010011000010000000000000001000000000010010000000111000001000001011000001011000100000000000000001000000000010010000000111000001101101011101101011000010000000000000001000000000010010000000111000001010111011010111011000100000000000000001000000000010010000000111000001111000111111000111000010000000000000001000000000010010000000111000001001010111001010111000100000000000000001000000000010010000000111000001100001111100001111000010000000000000001000000000010010000000111000001011101111011101111000100000000000000001000000000010010000000111000001110111111110111111000010000000000000001000000000010010000000111000001100100000100100000000100000000000000001000000000010010000000111000001011010000011010000000010000000000000001000000000010010000000111000001110001000110001000000100000000000000001000000000010010000000111000001000011000000011000000010000000000000001000000000010010000000111000001101111000101111000000100000000000000001000000000010010000000111000001010100100010100100000010000000000000001000000000010010000000111000001111010100111010100000100000000000000001000000000010010000000111000001001001100001001100000010000000000000001000000000010010000000111000001100011100100011100000100000000000000001000000000010010000000111000001011111100011111100000010000000000000001000000000010010000000111000001110100010110100010000100000000000000001000000000010010000000111000001000110010000110010000010000000000000001000000000010010000000111000001101001010101001010000100000000000000001000000000010010000000111000001010011010010011010000010000000000000001000000000010010000000111000001111111010111111010000100000000000000001000000000010010000000111000001001100110001100110000010000000000000001000000000010010000000111000001100110110100110110000100000000000000001000000000010010000000111000001011001110011001110000010000000000000001000000000010010000000111000001110011110110011110000100000000000000001000000000010010000000111000001000000001000000001000010000000000000001000000000010010000000111000001101100001101100001000100000000000000001000000000010010000000111000001010110001010110001000010000000000000001000000000010010000000111000001111001001111001001000100000</data>
+          <extradata>1111111111111111111111111111111111111111111111111</extradata>
+        </log>
+      </trigger>
+    </signal_set>
+  </instance>
+  <mnemonics/>
+  <static_plugin_mnemonics/>
+</session>
