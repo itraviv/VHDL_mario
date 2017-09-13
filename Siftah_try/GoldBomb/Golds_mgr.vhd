@@ -145,6 +145,13 @@ PORT MAP(Clk_in => CLK,
 		 Resetn => RESETn,
 		 Clk_out => d_1_out);
 		 
+d_2 : clk_divider
+GENERIC MAP(Div => 109
+			)
+PORT MAP(Clk_in => CLK,
+		 Resetn => RESETn,
+		 Clk_out => d_2_out);
+		 
 d_3 : clk_divider
 GENERIC MAP(Div => 195
 			)
