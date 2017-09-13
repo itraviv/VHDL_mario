@@ -15,8 +15,6 @@ ENTITY Bombs_mgr IS
 		oCoord_Y :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		Player_X :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		Player_Y :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		Random1 :  IN  STD_LOGIC_VECTOR(8 DOWNTO 0);
-		Random2 :  IN  STD_LOGIC_VECTOR(8 DOWNTO 0);
 		drawing_request :  OUT  STD_LOGIC;
 		hit :  OUT  STD_LOGIC;
 		mVGA_RGB :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)	
@@ -186,16 +184,16 @@ PORT MAP(Clk_in => CLK,
 --cyclic counters--
 -------------------
 		 
-c_1 : lpm_counter_cyclic PORT MAP(clock => CLK , q=> c_1_q );		 
-c_2 : lpm_counter_cyclic PORT MAP(clock => CLK , q=> c_2_q );		 
-c_3 : lpm_counter_cyclic PORT MAP(clock => CLK , q=> c_3_q );		 
-c_4 : lpm_counter_cyclic PORT MAP(clock => CLK , q=> c_4_q );		 
-c_5 : lpm_counter_cyclic PORT MAP(clock => CLK , q=> c_5_q );		 
-c_6 : lpm_counter_cyclic PORT MAP(clock => CLK , q=> c_6_q );		 
-c_7 : lpm_counter_cyclic PORT MAP(clock => CLK , q=> c_7_q );		 
-c_8 : lpm_counter_cyclic PORT MAP(clock => CLK , q=> c_8_q );		 
-c_9 : lpm_counter_cyclic PORT MAP(clock => CLK , q=> c_9_q );		 
-c_10 : lpm_counter_cyclic PORT MAP(clock => CLK , q=> c_10_q );		 
+c_1 : lpm_counter_cyclic PORT MAP(clock => d_1_out , q=> c_1_q );		 
+c_2 : lpm_counter_cyclic PORT MAP(clock => d_2_out , q=> c_2_q );		 
+c_3 : lpm_counter_cyclic PORT MAP(clock => d_3_out , q=> c_3_q );		 
+c_4 : lpm_counter_cyclic PORT MAP(clock => d_4_out , q=> c_4_q );		 
+c_5 : lpm_counter_cyclic PORT MAP(clock => d_5_out , q=> c_5_q );		 
+c_6 : lpm_counter_cyclic PORT MAP(clock => d_6_out , q=> c_6_q );		 
+c_7 : lpm_counter_cyclic PORT MAP(clock => d_7_out , q=> c_7_q );		 
+c_8 : lpm_counter_cyclic PORT MAP(clock => d_8_out , q=> c_8_q );		 
+c_9 : lpm_counter_cyclic PORT MAP(clock => d_9_out , q=> c_9_q );		 
+c_10 : lpm_counter_cyclic PORT MAP(clock => d_10_out , q=> c_10_q );		 
 
 -----------------
 --bomb fulls-- --
