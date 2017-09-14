@@ -56,7 +56,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 0 704 168 720)
+	(rect -384 776 -216 792)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "KBD_CLK" (rect 9 0 58 12)(font "Arial" ))
 	(pt 168 8)
@@ -73,7 +73,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 0 720 168 736)
+	(rect -384 792 -216 808)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "KBD_DAT" (rect 9 0 58 12)(font "Arial" ))
 	(pt 168 8)
@@ -385,7 +385,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 200 664 360 792)
+	(rect -184 736 -24 864)
 	(text "KBD" (rect 5 0 29 14)(font "Arial" (font_size 8)))
 	(text "inst12" (rect 8 112 37 124)(font "Arial" ))
 	(port
@@ -442,7 +442,7 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 520 616 672 744)
+	(rect 136 688 288 816)
 	(text "kbd_translate" (rect 5 0 71 12)(font "Arial" ))
 	(text "inst4" (rect 8 112 31 124)(font "Arial" ))
 	(port
@@ -548,133 +548,6 @@ applicable agreement for further details.
 	)
 	(drawing
 		(line (pt 8 8)(pt 24 8)(line_width 1))
-	)
-)
-(symbol
-	(rect 1504 208 1744 496)
-	(text "objects_mux" (rect 5 0 67 12)(font "Arial" ))
-	(text "inst8" (rect 8 272 31 284)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
-		(text "CLK" (rect 21 27 42 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 1))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "b_drawing_request" (rect 0 0 90 12)(font "Arial" ))
-		(text "b_drawing_request" (rect 21 43 111 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 1))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "b_mVGA_RGB[7..0]" (rect 0 0 99 12)(font "Arial" ))
-		(text "b_mVGA_RGB[7..0]" (rect 21 59 120 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "c_drawing_request" (rect 0 0 90 12)(font "Arial" ))
-		(text "c_drawing_request" (rect 21 75 111 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 1))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "c_mVGA_RGB[7..0]" (rect 0 0 99 12)(font "Arial" ))
-		(text "c_mVGA_RGB[7..0]" (rect 21 91 120 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "d_drawing_request" (rect 0 0 90 12)(font "Arial" ))
-		(text "d_drawing_request" (rect 21 107 111 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112)(line_width 1))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "d_mVGA_RGB[7..0]" (rect 0 0 99 12)(font "Arial" ))
-		(text "d_mVGA_RGB[7..0]" (rect 21 123 120 135)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128)(line_width 3))
-	)
-	(port
-		(pt 0 144)
-		(input)
-		(text "e_drawing_request" (rect 0 0 90 12)(font "Arial" ))
-		(text "e_drawing_request" (rect 21 139 111 151)(font "Arial" ))
-		(line (pt 0 144)(pt 16 144)(line_width 1))
-	)
-	(port
-		(pt 0 160)
-		(input)
-		(text "e_mVGA_RGB[7..0]" (rect 0 0 99 12)(font "Arial" ))
-		(text "e_mVGA_RGB[7..0]" (rect 21 155 120 167)(font "Arial" ))
-		(line (pt 0 160)(pt 16 160)(line_width 3))
-	)
-	(port
-		(pt 0 176)
-		(input)
-		(text "f_drawing_request" (rect 0 0 89 12)(font "Arial" ))
-		(text "f_drawing_request" (rect 21 171 110 183)(font "Arial" ))
-		(line (pt 0 176)(pt 16 176)(line_width 1))
-	)
-	(port
-		(pt 0 192)
-		(input)
-		(text "f_mVGA_RGB[7..0]" (rect 0 0 97 12)(font "Arial" ))
-		(text "f_mVGA_RGB[7..0]" (rect 21 187 118 199)(font "Arial" ))
-		(line (pt 0 192)(pt 16 192)(line_width 3))
-	)
-	(port
-		(pt 0 208)
-		(input)
-		(text "y_drawing_request" (rect 0 0 92 12)(font "Arial" ))
-		(text "y_drawing_request" (rect 21 203 113 215)(font "Arial" ))
-		(line (pt 0 208)(pt 16 208)(line_width 1))
-	)
-	(port
-		(pt 0 224)
-		(input)
-		(text "y_mVGA_RGB[7..0]" (rect 0 0 100 12)(font "Arial" ))
-		(text "y_mVGA_RGB[7..0]" (rect 21 219 121 231)(font "Arial" ))
-		(line (pt 0 224)(pt 16 224)(line_width 3))
-	)
-	(port
-		(pt 0 240)
-		(input)
-		(text "RESETn" (rect 0 0 41 12)(font "Arial" ))
-		(text "RESETn" (rect 21 235 62 247)(font "Arial" ))
-		(line (pt 0 240)(pt 16 240)(line_width 1))
-	)
-	(port
-		(pt 240 32)
-		(output)
-		(text "m_mVGA_R[9..0]" (rect 0 0 87 12)(font "Arial" ))
-		(text "m_mVGA_R[9..0]" (rect 132 27 219 39)(font "Arial" ))
-		(line (pt 240 32)(pt 224 32)(line_width 3))
-	)
-	(port
-		(pt 240 48)
-		(output)
-		(text "m_mVGA_G[9..0]" (rect 0 0 87 12)(font "Arial" ))
-		(text "m_mVGA_G[9..0]" (rect 132 43 219 55)(font "Arial" ))
-		(line (pt 240 48)(pt 224 48)(line_width 3))
-	)
-	(port
-		(pt 240 64)
-		(output)
-		(text "m_mVGA_B[9..0]" (rect 0 0 86 12)(font "Arial" ))
-		(text "m_mVGA_B[9..0]" (rect 133 59 219 71)(font "Arial" ))
-		(line (pt 240 64)(pt 224 64)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 224 272)(line_width 1))
 	)
 )
 (symbol
@@ -1453,6 +1326,245 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 208 208)(line_width 1))
 	)
 )
+(symbol
+	(rect 520 632 752 792)
+	(text "luigi_move" (rect 5 0 58 12)(font "Arial" ))
+	(text "inst5" (rect 8 144 31 156)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 27 42 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "RESETn" (rect 0 0 41 12)(font "Arial" ))
+		(text "RESETn" (rect 21 43 62 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "oCoord_X[9..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "oCoord_X[9..0]" (rect 21 59 94 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "oCoord_Y[9..0]" (rect 0 0 75 12)(font "Arial" ))
+		(text "oCoord_Y[9..0]" (rect 21 75 96 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "ObjectStartX[9..0]" (rect 0 0 87 12)(font "Arial" ))
+		(text "ObjectStartX[9..0]" (rect 21 91 108 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "ObjectStartY[9..0]" (rect 0 0 89 12)(font "Arial" ))
+		(text "ObjectStartY[9..0]" (rect 21 107 110 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "drawing_request" (rect 0 0 79 12)(font "Arial" ))
+		(text "drawing_request" (rect 132 27 211 39)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32)(line_width 1))
+	)
+	(port
+		(pt 232 48)
+		(output)
+		(text "mVGA_RGB[7..0]" (rect 0 0 87 12)(font "Arial" ))
+		(text "mVGA_RGB[7..0]" (rect 124 43 211 55)(font "Arial" ))
+		(line (pt 232 48)(pt 216 48)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 216 144)(line_width 1))
+	)
+)
+(symbol
+	(rect 1504 208 1744 528)
+	(text "objects_mux" (rect 5 0 67 12)(font "Arial" ))
+	(text "inst8" (rect 8 304 31 316)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 27 42 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "a_drawing_request" (rect 0 0 90 12)(font "Arial" ))
+		(text "a_drawing_request" (rect 21 43 111 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "a_mVGA_RGB[7..0]" (rect 0 0 99 12)(font "Arial" ))
+		(text "a_mVGA_RGB[7..0]" (rect 21 59 120 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "b_drawing_request" (rect 0 0 90 12)(font "Arial" ))
+		(text "b_drawing_request" (rect 21 75 111 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "b_mVGA_RGB[7..0]" (rect 0 0 99 12)(font "Arial" ))
+		(text "b_mVGA_RGB[7..0]" (rect 21 91 120 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "c_drawing_request" (rect 0 0 90 12)(font "Arial" ))
+		(text "c_drawing_request" (rect 21 107 111 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "c_mVGA_RGB[7..0]" (rect 0 0 99 12)(font "Arial" ))
+		(text "c_mVGA_RGB[7..0]" (rect 21 123 120 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "d_drawing_request" (rect 0 0 90 12)(font "Arial" ))
+		(text "d_drawing_request" (rect 21 139 111 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "d_mVGA_RGB[7..0]" (rect 0 0 99 12)(font "Arial" ))
+		(text "d_mVGA_RGB[7..0]" (rect 21 155 120 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "e_drawing_request" (rect 0 0 90 12)(font "Arial" ))
+		(text "e_drawing_request" (rect 21 171 111 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "e_mVGA_RGB[7..0]" (rect 0 0 99 12)(font "Arial" ))
+		(text "e_mVGA_RGB[7..0]" (rect 21 187 120 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 3))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "f_drawing_request" (rect 0 0 89 12)(font "Arial" ))
+		(text "f_drawing_request" (rect 21 203 110 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 1))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "f_mVGA_RGB[7..0]" (rect 0 0 97 12)(font "Arial" ))
+		(text "f_mVGA_RGB[7..0]" (rect 21 219 118 231)(font "Arial" ))
+		(line (pt 0 224)(pt 16 224)(line_width 3))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "y_drawing_request" (rect 0 0 92 12)(font "Arial" ))
+		(text "y_drawing_request" (rect 21 235 113 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240)(line_width 1))
+	)
+	(port
+		(pt 0 256)
+		(input)
+		(text "y_mVGA_RGB[7..0]" (rect 0 0 100 12)(font "Arial" ))
+		(text "y_mVGA_RGB[7..0]" (rect 21 251 121 263)(font "Arial" ))
+		(line (pt 0 256)(pt 16 256)(line_width 3))
+	)
+	(port
+		(pt 0 272)
+		(input)
+		(text "RESETn" (rect 0 0 41 12)(font "Arial" ))
+		(text "RESETn" (rect 21 267 62 279)(font "Arial" ))
+		(line (pt 0 272)(pt 16 272)(line_width 1))
+	)
+	(port
+		(pt 240 32)
+		(output)
+		(text "m_mVGA_R[9..0]" (rect 0 0 87 12)(font "Arial" ))
+		(text "m_mVGA_R[9..0]" (rect 132 27 219 39)(font "Arial" ))
+		(line (pt 240 32)(pt 224 32)(line_width 3))
+	)
+	(port
+		(pt 240 48)
+		(output)
+		(text "m_mVGA_G[9..0]" (rect 0 0 87 12)(font "Arial" ))
+		(text "m_mVGA_G[9..0]" (rect 132 43 219 55)(font "Arial" ))
+		(line (pt 240 48)(pt 224 48)(line_width 3))
+	)
+	(port
+		(pt 240 64)
+		(output)
+		(text "m_mVGA_B[9..0]" (rect 0 0 86 12)(font "Arial" ))
+		(text "m_mVGA_B[9..0]" (rect 133 59 219 71)(font "Arial" ))
+		(line (pt 240 64)(pt 224 64)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 224 304)(line_width 1))
+	)
+)
+(symbol
+	(rect 392 752 424 784)
+	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
+	(text "inst7" (rect 3 21 26 33)(font "Arial" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0)(line_width 1))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16)(line_width 1))
+		(line (pt 16 16)(pt 24 8)(line_width 1))
+		(line (pt 8 8)(pt 24 8)(line_width 1))
+	)
+)
+(symbol
+	(rect 432 792 464 824)
+	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
+	(text "inst9" (rect 3 21 26 33)(font "Arial" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0)(line_width 1))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16)(line_width 1))
+		(line (pt 16 16)(pt 24 8)(line_width 1))
+		(line (pt 8 8)(pt 24 8)(line_width 1))
+	)
+)
 (connector
 	(text "CLK" (rect 418 272 439 284)(font "Arial" ))
 	(pt 408 288)
@@ -1477,83 +1589,6 @@ applicable agreement for further details.
 	(text "RESETn" (rect 224 304 265 316)(font "Arial" ))
 	(pt 224 320)
 	(pt 256 320)
-)
-(connector
-	(text "make" (rect 394 680 421 692)(font "Arial" ))
-	(pt 360 696)
-	(pt 520 696)
-)
-(connector
-	(text "break" (rect 398 696 425 708)(font "Arial" ))
-	(pt 360 712)
-	(pt 520 712)
-)
-(connector
-	(pt 456 680)
-	(pt 456 728)
-	(bus)
-)
-(connector
-	(text "dout[8..0]" (rect 370 712 417 724)(font "Arial" ))
-	(pt 360 728)
-	(pt 456 728)
-	(bus)
-)
-(connector
-	(pt 456 680)
-	(pt 520 680)
-	(bus)
-)
-(connector
-	(pt 136 744)
-	(pt 136 760)
-)
-(connector
-	(pt 200 744)
-	(pt 136 744)
-)
-(connector
-	(text "RESETn" (rect 114 680 155 692)(font "Arial" ))
-	(pt 200 696)
-	(pt 104 696)
-)
-(connector
-	(pt 168 712)
-	(pt 200 712)
-)
-(connector
-	(pt 168 728)
-	(pt 200 728)
-)
-(connector
-	(text "left" (rect 704 632 720 644)(font "Arial" ))
-	(pt 672 648)
-	(pt 720 648)
-)
-(connector
-	(text "right" (rect 704 648 725 660)(font "Arial" ))
-	(pt 672 664)
-	(pt 720 664)
-)
-(connector
-	(text "up" (rect 704 664 715 676)(font "Arial" ))
-	(pt 672 680)
-	(pt 720 680)
-)
-(connector
-	(text "RESETn" (rect 434 632 475 644)(font "Arial" ))
-	(pt 520 648)
-	(pt 424 648)
-)
-(connector
-	(text "CLK" (rect 82 744 103 756)(font "Arial" ))
-	(pt 136 760)
-	(pt 64 760)
-)
-(connector
-	(text "CLK" (rect 434 648 455 660)(font "Arial" ))
-	(pt 520 664)
-	(pt 424 664)
 )
 (connector
 	(text "timer_done" (rect 633 272 687 284)(font "Arial" ))
@@ -1605,22 +1640,6 @@ applicable agreement for further details.
 (connector
 	(pt 1960 368)
 	(pt 2032 368)
-)
-(connector
-	(text "CLK" (rect 1498 224 1519 236)(font "Arial" ))
-	(pt 1488 240)
-	(pt 1504 240)
-)
-(connector
-	(text "obstReq" (rect 1475 272 1516 284)(font "Arial" ))
-	(pt 1488 288)
-	(pt 1504 288)
-)
-(connector
-	(text "obstRGB[7..0]" (rect 1488 288 1558 300)(font "Arial" ))
-	(pt 1480 304)
-	(pt 1504 304)
-	(bus)
 )
 (connector
 	(pt 1744 240)
@@ -1688,27 +1707,6 @@ applicable agreement for further details.
 (connector
 	(pt 584 496)
 	(pt 680 496)
-	(bus)
-)
-(connector
-	(pt 584 576)
-	(pt 584 496)
-	(bus)
-)
-(connector
-	(text "d_drawing_request" (rect 1492 304 1582 316)(font "Arial" ))
-	(pt 1480 320)
-	(pt 1504 320)
-)
-(connector
-	(pt 1448 336)
-	(pt 1448 344)
-	(bus)
-)
-(connector
-	(text "d_mVGA_RGB[7..0]" (rect 1451 320 1550 332)(font "Arial" ))
-	(pt 1504 336)
-	(pt 1448 336)
 	(bus)
 )
 (connector
@@ -1844,6 +1842,7 @@ applicable agreement for further details.
 	(pt 1000 96)
 )
 (connector
+<<<<<<< Updated upstream
 	(text "RESETn" (rect 1472 456 1513 468)(font "Arial" ))
 	(pt 1472 448)
 	(pt 1504 448)
@@ -1857,26 +1856,16 @@ applicable agreement for further details.
 	(pt 1456 400)
 	(pt 1504 400)
 	(bus)
+=======
+	(text "e_drawing_request" (rect 1332 1072 1422 1084)(font "Arial" ))
+	(pt 1296 1088)
+	(pt 1344 1088)
+>>>>>>> Stashed changes
 )
 (connector
 	(text "f_drawing_request" (rect 1424 368 1513 380)(font "Arial" ))
 	(pt 1456 384)
 	(pt 1504 384)
-)
-(connector
-	(text "e_mVGA_RGB[7..0]" (rect 1467 352 1566 364)(font "Arial" ))
-	(pt 1424 368)
-	(pt 1504 368)
-	(bus)
-)
-(connector
-	(text "e_drawing_request" (rect 1452 336 1542 348)(font "Arial" ))
-	(pt 1456 352)
-	(pt 1504 352)
-)
-(connector
-	(pt 1504 416)
-	(pt 1360 416)
 )
 (connector
 	(text "Randomize" (rect 32 1224 86 1236)(font "Arial" ))
@@ -1965,11 +1954,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 584 576)
-	(pt 1384 576)
-	(bus)
-)
-(connector
 	(text "hitObj" (rect 1312 680 1340 692)(font "Arial" ))
 	(pt 1304 696)
 	(pt 1336 696)
@@ -1996,6 +1980,7 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
+<<<<<<< Updated upstream
 	(pt 1384 576)
 	(pt 1384 760)
 	(bus)
@@ -2021,6 +2006,8 @@ applicable agreement for further details.
 	(pt 1304 80)
 )
 (connector
+=======
+>>>>>>> Stashed changes
 	(text "YOS[6..0]" (rect 652 448 701 460)(font "Arial" ))
 	(pt 640 464)
 	(pt 680 464)
@@ -2087,6 +2074,7 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
+<<<<<<< Updated upstream
 	(text "CLK" (rect 1048 1112 1069 1124)(font "Arial" ))
 	(pt 1072 1128)
 	(pt 1040 1128)
@@ -2182,11 +2170,262 @@ applicable agreement for further details.
 	(text "chase_vec[4..0]" (rect 40 992 120 1004)(font "Arial" ))
 	(pt 120 1008)
 	(pt 32 1008)
+=======
+	(pt 1392 80)
+	(pt 1304 80)
+)
+(connector
+	(pt 1376 96)
+	(pt 1304 96)
 	(bus)
 )
 (connector
 	(text "oCoord_Y[9..0]" (rect 1008 112 1083 124)(font "Arial" ))
 	(pt 1088 128)
 	(pt 1000 128)
+	(bus)
+)
+(connector
+	(pt 584 496)
+	(pt 584 576)
+	(bus)
+)
+(connector
+	(pt 584 576)
+	(pt 1384 576)
+	(bus)
+)
+(connector
+	(pt 1384 760)
+	(pt 1384 576)
+	(bus)
+)
+(connector
+	(text "make" (rect 10 752 37 764)(font "Arial" ))
+	(pt -24 768)
+	(pt 136 768)
+)
+(connector
+	(text "break" (rect 14 768 41 780)(font "Arial" ))
+	(pt -24 784)
+	(pt 136 784)
+)
+(connector
+	(pt 72 752)
+	(pt 72 800)
+	(bus)
+)
+(connector
+	(text "dout[8..0]" (rect -14 784 33 796)(font "Arial" ))
+	(pt -24 800)
+	(pt 72 800)
+	(bus)
+)
+(connector
+	(pt 72 752)
+	(pt 136 752)
+	(bus)
+)
+(connector
+	(pt -248 816)
+	(pt -248 832)
+)
+(connector
+	(pt -184 816)
+	(pt -248 816)
+)
+(connector
+	(text "RESETn" (rect -270 752 -229 764)(font "Arial" ))
+	(pt -184 768)
+	(pt -280 768)
+)
+(connector
+	(pt -216 784)
+	(pt -184 784)
+)
+(connector
+	(pt -216 800)
+	(pt -184 800)
+)
+(connector
+	(text "left" (rect 320 704 336 716)(font "Arial" ))
+	(pt 288 720)
+	(pt 336 720)
+)
+(connector
+	(text "right" (rect 320 720 341 732)(font "Arial" ))
+	(pt 288 736)
+	(pt 336 736)
+)
+(connector
+	(text "up" (rect 320 736 331 748)(font "Arial" ))
+	(pt 288 752)
+	(pt 336 752)
+)
+(connector
+	(text "RESETn" (rect 50 704 91 716)(font "Arial" ))
+	(pt 136 720)
+	(pt 40 720)
+)
+(connector
+	(text "CLK" (rect -302 816 -281 828)(font "Arial" ))
+	(pt -248 832)
+	(pt -320 832)
+)
+(connector
+	(text "CLK" (rect 50 720 71 732)(font "Arial" ))
+	(pt 136 736)
+	(pt 40 736)
+)
+(connector
+	(pt 1424 536)
+	(pt 1424 480)
+)
+(connector
+	(text "RESETn" (rect 1448 488 1489 500)(font "Arial" ))
+	(pt 1504 480)
+	(pt 1424 480)
+)
+(connector
+	(pt 1504 464)
+	(pt 1328 464)
+	(bus)
+)
+(connector
+	(pt 1328 464)
+	(pt 1328 432)
+	(bus)
+)
+(connector
+	(pt 1504 448)
+	(pt 1360 448)
+)
+(connector
+	(pt 1360 448)
+	(pt 1360 416)
+)
+(connector
+	(pt 1376 432)
+	(pt 1504 432)
+	(bus)
+)
+(connector
+	(pt 1376 96)
+	(pt 1376 432)
+	(bus)
+)
+(connector
+	(pt 1392 416)
+	(pt 1504 416)
+)
+(connector
+	(pt 1392 80)
+	(pt 1392 416)
+)
+(connector
+	(text "e_mVGA_RGB[7..0]" (rect 1443 384 1542 396)(font "Arial" ))
+	(pt 1504 400)
+	(pt 1400 400)
+	(bus)
+)
+(connector
+	(text "e_drawing_request" (rect 1400 368 1490 380)(font "Arial" ))
+	(pt 1404 384)
+	(pt 1504 384)
+)
+(connector
+	(text "d_mVGA_RGB[7..0]" (rect 1384 352 1483 364)(font "Arial" ))
+	(pt 1416 368)
+	(pt 1504 368)
+	(bus)
+)
+(connector
+	(text "d_drawing_request" (rect 1420 336 1510 348)(font "Arial" ))
+	(pt 1408 352)
+	(pt 1504 352)
+)
+(connector
+	(text "obstRGB[7..0]" (rect 1408 320 1478 332)(font "Arial" ))
+	(pt 1432 336)
+	(pt 1504 336)
+>>>>>>> Stashed changes
+	(bus)
+)
+(connector
+	(text "obstReq" (rect 1416 304 1457 316)(font "Arial" ))
+	(pt 1429 320)
+	(pt 1504 320)
+)
+(connector
+	(text "Luigi_req" (rect 1424 272 1467 284)(font "Arial" ))
+	(pt 1504 288)
+	(pt 1416 288)
+)
+(connector
+	(pt 816 664)
+	(pt 816 640)
+)
+(connector
+	(text "Luigi_req" (rect 760 648 803 660)(font "Arial" ))
+	(pt 752 664)
+	(pt 816 664)
+)
+(connector
+	(text "oCoord_X[9..0]" (rect 424 680 497 692)(font "Arial" ))
+	(pt 520 696)
+	(pt 416 696)
+	(bus)
+)
+(connector
+	(text "oCoord_Y[9..0]" (rect 408 696 483 708)(font "Arial" ))
+	(pt 520 712)
+	(pt 400 712)
+	(bus)
+)
+(connector
+	(pt 520 728)
+	(pt 408 728)
+	(bus)
+)
+(connector
+	(pt 408 728)
+	(pt 408 752)
+	(bus)
+)
+(connector
+	(pt 520 744)
+	(pt 448 744)
+	(bus)
+)
+(connector
+	(pt 448 744)
+	(pt 448 792)
+	(bus)
+)
+(connector
+	(text "CLK" (rect 448 648 469 660)(font "Arial" ))
+	(pt 520 664)
+	(pt 432 664)
+)
+(connector
+	(text "RESETn" (rect 493 664 534 676)(font "Arial" ))
+	(pt 520 680)
+	(pt 416 680)
+)
+(connector
+	(text "CLK" (rect 1474 224 1495 236)(font "Arial" ))
+	(pt 1504 240)
+	(pt 1464 240)
+)
+(connector
+	(text "Luigi_draw[7..0]" (rect 760 664 836 676)(font "Arial" ))
+	(pt 752 680)
+	(pt 840 680)
+	(bus)
+)
+(connector
+	(text "Luigi_draw[7..0]" (rect 1440 288 1516 300)(font "Arial" ))
+	(pt 1504 304)
+	(pt 1432 304)
 	(bus)
 )

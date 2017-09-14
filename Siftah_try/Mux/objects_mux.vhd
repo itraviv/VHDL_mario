@@ -7,6 +7,10 @@ entity objects_mux is
 port 	(
 		--////////////////////	Clock Input	 	////////////////////	 
 		CLK	: in std_logic; --						//	27 MHz
+		
+		a_drawing_request : in std_logic;
+		a_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	, -- b signal 
+		
 		b_drawing_request : in std_logic;
 		b_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	, -- b signal 
 		
@@ -51,7 +55,9 @@ begin
 			m_mVGA_t	<=  (others => '0') ; 	
 
 	elsif CLK'event and CLK='1' then
-		if (b_drawing_request = '1' ) then  
+		if (a_drawing_request = '1' ) then  
+			m_mVGA_t <= a_mVGA_RGB;
+		elsif (b_drawing_request = '1' ) then  
 			m_mVGA_t <= b_mVGA_RGB;
 		elsif (c_drawing_request = '1' ) then  
 			m_mVGA_t <= c_mVGA_RGB;
