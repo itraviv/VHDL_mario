@@ -48,11 +48,11 @@ if {[is_project_open]} {
 #   set_location_assignment PIN_N1   -to SW[10]  ;# SW10					;#	Reserved
 #   set_location_assignment PIN_P1   -to SW[11]  ;# SW11					;#	Reserved
 #   set_location_assignment PIN_P2   -to SW[12]  ;# SW12					;#	Reserved
-#   set_location_assignment PIN_T7   -to SW[13]  ;# SW13					;#	Reserved
-#   set_location_assignment PIN_U3   -to state[0]  ;# SW14					;#	Reserved
-#   set_location_assignment PIN_U4   -to state[1]  ;# SW15					;#	Reserved
-#   set_location_assignment PIN_V1   -to Vol[0]  ;# SW16					;#	Reserved
-#   set_location_assignment PIN_V2   -to Vol[1]  ;# SW17					;#	Serial DACs scan disable
+   set_location_assignment PIN_T7   -to chase_vec[4]  ;# SW13					;#	Reserved
+   set_location_assignment PIN_U3   -to chase_vec[3]  ;# SW14					;#	Reserved
+   set_location_assignment PIN_U4   -to chase_vec[2]  ;# SW15					;#	Reserved
+   set_location_assignment PIN_V1   -to chase_vec[1]  ;# SW16					;#	Reserved
+   set_location_assignment PIN_V2   -to chase_vec[0]  ;# SW17					;#	Serial DACs scan disable
 
    ;#########################################################
    ;# 8 + 1 Green LEDs                                      #
@@ -91,11 +91,11 @@ if {[is_project_open]} {
 #   set_location_assignment PIN_AA13  -to c[2]  ;# LEDR10			;#	Used for indication of slide switch #10
 #   set_location_assignment PIN_AC14  -to c[3]  ;# LEDR11			;#	Used for indication of slide switch #11
 #   set_location_assignment PIN_AD15  -to LEDR[12]  ;# LEDR12			;#	Used for indication of slide switch #12
-#   set_location_assignment PIN_AE15  -to LEDR[13]  ;# LEDR13			;#	Used for indication of slide switch #13
-#   set_location_assignment PIN_AF13  -to LEDR[14]  ;# LEDR14			;#	Used for indication of slide switch #14
-##   set_location_assignment PIN_AE13  -to listen  ;# LEDR15			;#	Used for indication of slide switch #15
-##   set_location_assignment PIN_AE12  -to AC_recorded  ;# LEDR16			;#	Used for indication of slide switch #16
-#   set_location_assignment PIN_AD12  -to AC  ;# LEDR17			;#	Used for indication of slide switch #17
+   set_location_assignment PIN_AE15  -to chase_leds[4]  ;# LEDR13			;#	Used for indication of slide switch #13
+   set_location_assignment PIN_AF13  -to chase_leds[3]  ;# LEDR14			;#	Used for indication of slide switch #14
+   set_location_assignment PIN_AE13  -to chase_leds[2]  ;# LEDR15			;#	Used for indication of slide switch #15
+   set_location_assignment PIN_AE12  -to chase_leds[1]  ;# LEDR16			;#	Used for indication of slide switch #16
+   set_location_assignment PIN_AD12  -to  chase_leds[0]   ;# LEDR17			;#	Used for indication of slide switch #17
 
 
    ;###############################

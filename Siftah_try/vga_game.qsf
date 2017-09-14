@@ -46,10 +46,6 @@ set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 set_global_assignment -name DEVICE_FILTER_PIN_COUNT 672
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
 set_location_assignment PIN_G26 -to RESETn
-set_location_assignment PIN_V1 -to Vol[0]
-set_location_assignment PIN_V2 -to Vol[1]
-set_location_assignment PIN_Y18 -to rec_over
-set_location_assignment PIN_AD12 -to AC
 set_location_assignment PIN_AF10 -to HEX0S[6]
 set_location_assignment PIN_AB12 -to HEX0S[5]
 set_location_assignment PIN_AC12 -to HEX0S[4]
@@ -150,11 +146,8 @@ set_location_assignment PIN_T19 -to DACs_POWERDOWNn_CHIP
 set_location_assignment PIN_V25 -to VOLTAGE_TRANSLATORS_ENAn_CHIP
 set_location_assignment PIN_V24 -to BIT_INPUT_MUX_CARD
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
-set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS OUTPUT DRIVING AN UNSPECIFIED SIGNAL"
 set_location_assignment PIN_N2 -to CLK_50
 set_location_assignment PIN_N23 -to rand
-set_location_assignment PIN_P25 -to ThemeEnable
-set_location_assignment PIN_AE23 -to hit
 set_location_assignment PIN_K25 -to PDAC_A_DATA_CHIP[0]
 set_location_assignment PIN_K26 -to PDAC_A_DATA_CHIP[1]
 set_location_assignment PIN_M22 -to PDAC_A_DATA_CHIP[2]
@@ -185,42 +178,6 @@ set_location_assignment PIN_U20 -to SDACs_SDATA_CHIP
 set_location_assignment PIN_U21 -to SDACs_SCLK_CHIP
 set_location_assignment PIN_V26 -to SDACs_SLATCH_CHIP
 set_global_assignment -name MISC_FILE "C:/Users/spa3/Documents/GitHub/lab1h_project/Siftah_try/vga_game.dpf"
-set_global_assignment -name ENABLE_SIGNALTAP ON
-set_global_assignment -name USE_SIGNALTAP_FILE stps/DEBUGGING_SCORE_MODULE.stp
-set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to "score_module:inst20|CLK" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "score_module:inst20|bomb_hit" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "score_module:inst20|gold_hit" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "score_module:inst20|life[0]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "score_module:inst20|life[1]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "score_module:inst20|life[2]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "score_module:inst20|life[3]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "score_module:inst20|life[4]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[7] -to "score_module:inst20|life[5]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[8] -to "score_module:inst20|life[6]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[9] -to "score_module:inst20|score[0]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[10] -to "score_module:inst20|score[1]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[11] -to "score_module:inst20|score[2]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[12] -to "score_module:inst20|score[3]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[13] -to "score_module:inst20|score[4]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[14] -to "score_module:inst20|score[5]" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[15] -to "score_module:inst20|score[6]" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=16" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334528" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_LOWORD=51635" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id auto_signaltap_0
 set_global_assignment -name VHDL_FILE Mario/mario_move.vhd
 set_global_assignment -name VHDL_FILE Mario/mario_object.vhd
 set_global_assignment -name VHDL_FILE counters/lpm_counter_CYCLIC.vhd
@@ -259,13 +216,17 @@ set_global_assignment -name TCL_SCRIPT_FILE FULL_PINS.tcl
 set_global_assignment -name VHDL_FILE VGA_Audio_PLL.vhd
 set_global_assignment -name QIP_FILE Score/new_score_counter.qip
 set_global_assignment -name QIP_FILE Score/new_life_counter.qip
-set_global_assignment -name TCL_SCRIPT_FILE Score/Tcl_script1.tcl
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=1" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=000000000000000000000000000000000000000000000000000000000000000" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=63" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=1" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_HIWORD=54902" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=0" -section_id auto_signaltap_0
+set_global_assignment -name VHDL_FILE counters/stage_counter.vhd
+set_location_assignment PIN_T7 -to chase_vec[4]
+set_location_assignment PIN_U3 -to chase_vec[3]
+set_location_assignment PIN_U4 -to chase_vec[2]
+set_location_assignment PIN_V1 -to chase_vec[1]
+set_location_assignment PIN_V2 -to chase_vec[0]
+set_location_assignment PIN_AE15 -to chase_leds[4]
+set_location_assignment PIN_AF13 -to chase_leds[3]
+set_location_assignment PIN_AE13 -to chase_leds[2]
+set_location_assignment PIN_AD12 -to chase_leds[0]
+set_location_assignment PIN_AE12 -to chase_leds[1]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"

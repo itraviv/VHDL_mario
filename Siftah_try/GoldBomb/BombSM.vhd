@@ -92,29 +92,37 @@ begin
 						end if;
 						
 					when move =>
+					if chase='0' then
 						ObjectStartX_t	<= ObjectStartX_t + conv_integer(X_speed_sig)  ;
 						ObjectStartY_t	<= ObjectStartY_t - conv_integer(Y_speed_sig)  ;
+					else
+						state <= rand_speeds;
+					end if;
 					when chase_mario=>
-						helperPos := "00" & ObjectStartX_t;
-						helperM   := "0" & marioX;
-					
-						if helperPos > helperM then
-							ObjectStartX_t	<= ObjectStartX_t - abs(conv_integer(X_speed_sig));
-						elsif  helperPos < helperM then
-							ObjectStartX_t	<= ObjectStartX_t + abs(conv_integer(X_speed_sig));
+						if chase = '1' then
+							helperPos := "00" & ObjectStartX_t;
+							helperM   := "0" & marioX;
+						
+							if helperPos > helperM then
+								ObjectStartX_t	<= ObjectStartX_t - abs(conv_integer(X_speed_sig));
+							elsif  helperPos < helperM then
+								ObjectStartX_t	<= ObjectStartX_t + abs(conv_integer(X_speed_sig));
+							end if;
+							
+							
+							helperPos := "00" & ObjectStartY_t;
+							helperM   := "0" & marioY;
+							
+							
+							if helperPos > helperM then
+								ObjectStartY_t	<= ObjectStartY_t - abs(conv_integer(Y_speed_sig));
+								elsif  helperPos < helperM then
+								ObjectStartY_t	<= ObjectStartY_t + abs(conv_integer(Y_speed_sig));
+							end if;			
+						else -- chase = '0'
+							state <= rand_speeds;
 						end if;
 						
-						
-						helperPos := "00" & ObjectStartY_t;
-						helperM   := "0" & marioY;
-						
-						
-						if helperPos > helperM then
-							ObjectStartY_t	<= ObjectStartY_t - abs(conv_integer(Y_speed_sig));
-							elsif  helperPos < helperM then
-							ObjectStartY_t	<= ObjectStartY_t + abs(conv_integer(Y_speed_sig));
-						end if;						
-					
 					when dead =>
 						enable <='0';
 					end case;
