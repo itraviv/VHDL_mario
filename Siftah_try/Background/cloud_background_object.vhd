@@ -2,7 +2,9 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.std_logic_unsigned.all;
 use ieee.numeric_std.all;
---use ieee.std_logic_arith.all;
+
+
+-- Alex Grinshpun April 2017
 
 entity cloud_background_object is
 port 	(
@@ -10,10 +12,9 @@ port 	(
 	   	CLK  		: in std_logic;
 		RESETn		: in std_logic;
 		oCoord_X	: in std_logic_vector(9 downto 0);
-		oCoord_Y	: in  std_logic_vector(9 downto 0);
+		oCoord_Y	: in std_logic_vector(9 downto 0);
 		drawing_request	: out std_logic ;
 		mVGA_RGB 	: out std_logic_vector(7 downto 0)
-
 	);
 end cloud_background_object;
 
@@ -24,12 +25,6 @@ constant cloud_object_Y_size : integer := 45;
 constant grass_object_X_size : integer := 50;
 constant grass_object_y_size : integer := 76;
 
-constant R_high		: integer := 7;
-constant R_low		: integer := 5;
-constant G_high		: integer := 4;
-constant G_low		: integer := 2;
-constant B_high		: integer := 1;
-constant B_low		: integer := 0;
 
 type cloud_ram_array is array(0 to cloud_object_Y_size - 1 , 0 to cloud_object_X_size - 1) of std_logic_vector(7 downto 0);  
 
@@ -289,7 +284,8 @@ constant grass : grass_form := (
 ("10000000000000000000000000000000000000000000000000"),
 ("00000000000000000000000000000000000000000000000000"),
 ("00000000000000000000000000000000000000000000000000"),
-("00000000000000000000000000000000000000000000000000"));
+("00000000000000000000000000000000000000000000000000")
+);
 
 signal bCoord_X : integer := 0;
 signal bCoord_Y : integer := 0;
@@ -328,17 +324,17 @@ constant ObjectStart3Y : integer := 100;
 constant ObjectStart4X : integer := 500;
 constant ObjectStart4Y : integer := 374;
 --
-signal objectSouthboundary : integer;
-signal objectWestXboundary : integer;
+constant objectSouthboundary : integer := cloud_object_Y_size+ObjectStartY;
+constant objectWestXboundary : integer :=cloud_object_X_size+ObjectStartX;
 
-signal object2Southboundary : integer;
-signal object2WestXboundary : integer;
+constant object2Southboundary : integer := cloud_object_Y_size+ObjectStart2Y;
+constant object2WestXboundary : integer := cloud_object_X_size+ObjectStart2X;
 
-signal object3Southboundary : integer;
-signal object3WestXboundary : integer;
+constant object3Southboundary : integer := cloud_object_Y_size+ObjectStart3Y;
+constant object3WestXboundary : integer := cloud_object_X_size+ObjectStart3X;
 
-signal object4Southboundary : integer;
-signal object4WestXboundary : integer;
+constant object4Southboundary : integer := grass_object_Y_size+ObjectStart4Y;
+constant object4WestXboundary : integer := grass_object_X_size+ObjectStart4X;
 
 
 signal drawing_request1 : std_logic;
@@ -357,17 +353,17 @@ signal mVGA_RGB4 	:  std_logic_vector(7 downto 0);
 begin
 
 -- Calculate object boundaries
-objectWestXboundary	<= cloud_object_X_size+ObjectStartX;
-objectSouthboundary	<= cloud_object_Y_size+ObjectStartY;
+--objectWestXboundary	<= cloud_object_X_size+ObjectStartX;
+--objectSouthboundary	<= cloud_object_Y_size+ObjectStartY;
 
-object2WestXboundary	<= cloud_object_X_size+ObjectStart2X;
-object2Southboundary	<= cloud_object_Y_size+ObjectStart2Y;
+--object2WestXboundary	<= cloud_object_X_size+ObjectStart2X;
+--object2Southboundary	<= cloud_object_Y_size+ObjectStart2Y;
 
-object3WestXboundary	<= cloud_object_X_size+ObjectStart3X;
-object3Southboundary	<= cloud_object_Y_size+ObjectStart3Y;
+--object3WestXboundary	<= cloud_object_X_size+ObjectStart3X;
+--object3Southboundary	<= cloud_object_Y_size+ObjectStart3Y;
 
-object4WestXboundary	<= grass_object_X_size+ObjectStart4X;
-object4Southboundary	<= grass_object_Y_size+ObjectStart4Y;
+--object4WestXboundary	<= grass_object_X_size+ObjectStart4X;
+--object4Southboundary	<= grass_object_Y_size+ObjectStart4Y;
 
 -- Signals drawing_X[Y] are active when obects coordinates are being crossed
 
@@ -387,17 +383,17 @@ object4Southboundary	<= grass_object_Y_size+ObjectStart4Y;
     
     drawing_Y4	<= '1' when  ((conv_integer(oCoord_Y)  >= ObjectStart4Y) and  (conv_integer(oCoord_Y) < object4Southboundary)) else '0';
 
-	bCoord_X 	<= conv_integer(oCoord_X - ObjectStartX) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
-	bCoord_Y 	<= conv_integer(oCoord_Y - ObjectStartY) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
+	bCoord_X 	<= (conv_integer(oCoord_X) - ObjectStartX) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
+	bCoord_Y 	<= (conv_integer(oCoord_Y) - ObjectStartY) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
 	
-	bCoord_X2 	<= conv_integer(oCoord_X - ObjectStart2X) when ( drawing_X2 = '1' and  drawing_Y2 = '1'  ) else 0 ; 
-	bCoord_Y2 	<= conv_integer(oCoord_Y - ObjectStart2Y) when ( drawing_X2 = '1' and  drawing_Y2 = '1'  ) else 0 ; 
+	bCoord_X2 	<= (conv_integer(oCoord_X) - ObjectStart2X) when ( drawing_X2 = '1' and  drawing_Y2 = '1'  ) else 0 ; 
+	bCoord_Y2 	<= (conv_integer(oCoord_Y) - ObjectStart2Y) when ( drawing_X2 = '1' and  drawing_Y2 = '1'  ) else 0 ; 
 	
-	bCoord_X3 	<= conv_integer(oCoord_X - ObjectStart3X) when ( drawing_X3 = '1' and  drawing_Y3 = '1'  ) else 0 ; 
-	bCoord_Y3 	<= conv_integer(oCoord_Y - ObjectStart3Y) when ( drawing_X3 = '1' and  drawing_Y3 = '1'  ) else 0 ; 
+	bCoord_X3 	<= (conv_integer(oCoord_X) - ObjectStart3X) when ( drawing_X3 = '1' and  drawing_Y3 = '1'  ) else 0 ; 
+	bCoord_Y3 	<= (conv_integer(oCoord_Y) - ObjectStart3Y) when ( drawing_X3 = '1' and  drawing_Y3 = '1'  ) else 0 ; 
 	
-	bCoord_X4 	<= conv_integer(oCoord_X - ObjectStart4X) when ( drawing_X4 = '1' and  drawing_Y4 = '1'  ) else 0 ; 
-	bCoord_Y4 	<= conv_integer(oCoord_Y - ObjectStart4Y) when ( drawing_X4 = '1' and  drawing_Y4 = '1'  ) else 0 ; 
+	bCoord_X4 	<= (conv_integer(oCoord_X) - ObjectStart4X) when ( drawing_X4 = '1' and  drawing_Y4 = '1'  ) else 0 ; 
+	bCoord_Y4 	<= (conv_integer(oCoord_Y) - ObjectStart4Y) when ( drawing_X4 = '1' and  drawing_Y4 = '1'  ) else 0 ; 
 
 process ( RESETn, CLK)
 
@@ -412,9 +408,7 @@ process ( RESETn, CLK)
 			mVGA_RGB2   <=  cloud1_colors(bCoord_Y2 , bCoord_X2);
 			mVGA_RGB3   <=  cloud1_colors(bCoord_Y3 , bCoord_X3);
 			mVGA_RGB4   <=  grass_colors(bCoord_Y4 , bCoord_X4);
-			
-			mVGA_RGB <= mVGA_RGB1 or mVGA_RGB2 or mVGA_RGB3 or mVGA_RGB4;
-			
+						
 			drawing_request1	<= (not cloud(bCoord_Y , bCoord_X)) and drawing_X and drawing_Y ;
 			
 			drawing_request2	<= (not cloud(bCoord_Y2 , bCoord_X2)) and drawing_X2 and drawing_Y2 ;
