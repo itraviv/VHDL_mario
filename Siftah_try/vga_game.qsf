@@ -178,6 +178,18 @@ set_location_assignment PIN_U20 -to SDACs_SDATA_CHIP
 set_location_assignment PIN_U21 -to SDACs_SCLK_CHIP
 set_location_assignment PIN_V26 -to SDACs_SLATCH_CHIP
 set_global_assignment -name MISC_FILE "C:/Users/spa3/Documents/GitHub/lab1h_project/Siftah_try/vga_game.dpf"
+set_location_assignment PIN_T7 -to chase_vec[4]
+set_location_assignment PIN_U3 -to chase_vec[3]
+set_location_assignment PIN_U4 -to chase_vec[2]
+set_location_assignment PIN_V1 -to chase_vec[1]
+set_location_assignment PIN_V2 -to chase_vec[0]
+set_location_assignment PIN_AE15 -to chase_leds[4]
+set_location_assignment PIN_AF13 -to chase_leds[3]
+set_location_assignment PIN_AE13 -to chase_leds[2]
+set_location_assignment PIN_AD12 -to chase_leds[0]
+set_location_assignment PIN_AE12 -to chase_leds[1]
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS OUTPUT DRIVING AN UNSPECIFIED SIGNAL"
+set_global_assignment -name VHDL_FILE Mario/luigi_object.vhd
 set_global_assignment -name VHDL_FILE Mario/mario_move.vhd
 set_global_assignment -name VHDL_FILE Mario/mario_object.vhd
 set_global_assignment -name VHDL_FILE counters/lpm_counter_CYCLIC.vhd
@@ -217,16 +229,6 @@ set_global_assignment -name VHDL_FILE VGA_Audio_PLL.vhd
 set_global_assignment -name QIP_FILE Score/new_score_counter.qip
 set_global_assignment -name QIP_FILE Score/new_life_counter.qip
 set_global_assignment -name VHDL_FILE counters/stage_counter.vhd
-set_location_assignment PIN_T7 -to chase_vec[4]
-set_location_assignment PIN_U3 -to chase_vec[3]
-set_location_assignment PIN_U4 -to chase_vec[2]
-set_location_assignment PIN_V1 -to chase_vec[1]
-set_location_assignment PIN_V2 -to chase_vec[0]
-set_location_assignment PIN_AE15 -to chase_leds[4]
-set_location_assignment PIN_AF13 -to chase_leds[3]
-set_location_assignment PIN_AE13 -to chase_leds[2]
-set_location_assignment PIN_AD12 -to chase_leds[0]
-set_location_assignment PIN_AE12 -to chase_leds[1]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
