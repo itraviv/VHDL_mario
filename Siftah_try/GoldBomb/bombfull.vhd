@@ -35,6 +35,7 @@ ENTITY bombfull IS
 		Player_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		Random1 :  IN  STD_LOGIC_VECTOR(8 DOWNTO 0);
 		Random2 :  IN  STD_LOGIC_VECTOR(8 DOWNTO 0);
+		chase	: IN  STD_LOGIC;
 		drawing_request :  OUT  STD_LOGIC;
 		hit :  OUT  STD_LOGIC;
 		mVGA_RGB :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)
@@ -51,7 +52,10 @@ COMPONENT bombsm
 		 hit : IN STD_LOGIC;
 		 IENABLE : IN STD_LOGIC;
 		 random : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
-		 random2 : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
+		 random2 : IN STD_LOGIC_VECTOR(8 DOWNTO 0); 
+		marioX			: in std_logic_vector ( 9 downto 0);
+		marioY			: in std_logic_vector ( 9 downto 0);
+		chase			: in std_logic; -- determined if a bomb will chase mario
 		 enable : OUT STD_LOGIC;
 		 ObjectStartX : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 ObjectStartY : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
@@ -107,9 +111,13 @@ PORT MAP(CLK => CLK,
 		 IENABLE => en,
 		 random => Random1,
 		 random2 => Random2,
-		 enable => bomb_enable,
-		 ObjectStartX => ObjectStartX,
-		 ObjectStartY => ObjectStartY);
+		 
+		marioX	=> Player_X,
+		marioY	=> Player_Y,
+		chase	=> 		chase,
+		enable => bomb_enable,
+		ObjectStartX => ObjectStartX,
+		ObjectStartY => ObjectStartY);
 
 
 b2v_inst14 : bomb_object

@@ -44,6 +44,7 @@ COMPONENT bombfull
 		 Player_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 Random1 : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 Random2 : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
+		 chase 	 : IN STD_LOGIC;
 		 drawing_request : OUT STD_LOGIC;
 		 hit : OUT STD_LOGIC;
 		 mVGA_RGB : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
@@ -211,6 +212,7 @@ PORT MAP(CLK => CLK,
 		 Player_Y => player_Y,
 		 Random1 => c_1_q,
 		 Random2 => c_2_q,
+		 chase => '1',
 		 drawing_request => b_1_drawing_request,
 		 hit => b_1_hit,
 		 mVGA_RGB => b_1_mVGA_RGB);
@@ -227,6 +229,7 @@ PORT MAP(CLK => CLK,
 		 Player_Y => player_Y,
 		 Random1 => c_3_q,
 		 Random2 => c_4_q,
+		 chase => '1',
 		 drawing_request => b_2_drawing_request,
 		 hit => b_2_hit,
 		 mVGA_RGB => b_2_mVGA_RGB);
@@ -243,6 +246,7 @@ PORT MAP(CLK => CLK,
 		 Player_Y => player_Y,
 		 Random1 => c_5_q,
 		 Random2 => c_6_q,
+		 chase => '1',		 
 		 drawing_request => b_3_drawing_request,
 		 hit => b_3_hit,
 		 mVGA_RGB => b_3_mVGA_RGB);
@@ -260,6 +264,7 @@ PORT MAP(CLK => CLK,
 		 Player_Y => player_Y,
 		 Random1 => c_7_q,
 		 Random2 => c_8_q,
+		 chase => '1',		 
 		 drawing_request => b_4_drawing_request,
 		 hit => b_4_hit,
 		 mVGA_RGB => b_4_mVGA_RGB);
@@ -278,6 +283,7 @@ PORT MAP(CLK => CLK,
 		 Player_Y => player_Y,
 		 Random1 => c_9_q,
 		 Random2 => c_10_q,
+		 chase => '1',		 
 		 drawing_request => b_5_drawing_request,
 		 hit => b_5_hit,
 		 mVGA_RGB => b_5_mVGA_RGB);
