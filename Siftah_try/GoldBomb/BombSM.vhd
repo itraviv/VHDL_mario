@@ -40,6 +40,7 @@ signal ObjectStartY_t : std_logic_vector(8 downto 0);
 signal Y_speed_sig : std_logic_vector(2 downto 0);
 signal X_speed_sig : std_logic_vector(2 downto 0);
 
+
 begin
 	process ( RESETn,CLK,IENABLE)
 		variable helperM : std_logic_Vector( 10 downto 0);
@@ -75,12 +76,18 @@ begin
 						ObjectStartX_t	<= ObjectStartX_t;
 						ObjectStartY_t	<= ObjectStartY_t;
 					when rand_speeds =>
-						Y_speed_sig(2 downto 0) <= random(2 downto 0);
-						X_speed_sig(2 downto 0) <= random2(2 downto 0);
+						Y_speed_sig(1 downto 0) <= random(1 downto 0);
+						X_speed_sig(1 downto 0) <= random2(1 downto 0);
 						
 						if chase='0' then
 							state <= move;
+							--allow higher speeds
+							X_speed_sig(2) <= random(2);
+							Y_speed_sig(2) <= random2(2);
 						else
+						-- allow lower speeds
+							X_speed_sig(2) <= random(1);
+							Y_speed_sig(2) <= random2(1);
 							state <= chase_mario;
 						end if;
 						
@@ -101,13 +108,13 @@ begin
 						helperPos := "00" & ObjectStartY_t;
 						helperM   := "0" & marioY;
 						
+						
 						if helperPos > helperM then
 							ObjectStartY_t	<= ObjectStartY_t - abs(conv_integer(Y_speed_sig));
-						elsif  helperPos < helperM then
+							elsif  helperPos < helperM then
 							ObjectStartY_t	<= ObjectStartY_t + abs(conv_integer(Y_speed_sig));
-						end if;
-						
-						
+						end if;						
+					
 					when dead =>
 						enable <='0';
 					end case;

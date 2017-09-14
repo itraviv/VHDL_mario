@@ -32,7 +32,7 @@ end mario_move;
 
 architecture arch_mario_move of mario_move is 
 --constants 
-constant resetObjectStartX_t : integer :=512;
+constant resetObjectStartX_t : integer :=550; -- reset x : in the safe zone!
 constant resetObjectStartY_t : integer :=417;
 
 constant leftBorder : integer := 10;
