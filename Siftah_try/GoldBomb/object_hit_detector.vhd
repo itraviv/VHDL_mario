@@ -3,6 +3,11 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 use ieee.std_logic_arith.all;
 
+
+
+------------------------------------------------
+--  Detect hits between mario and Gold/Bomb  ---
+------------------------------------------------
 entity object_hit_detector is 
 	port( 
 		ObjectStartX	: in std_logic_vector(8 downto 0);
@@ -42,16 +47,16 @@ signal is_hit : std_logic;
 		-- ///////////// checking if the player is in the hit zone  - BEGIN//////////////
 		
 		--first, check if player is in x_range
-		if (MarioStartX >= ObjectStartX) and (MarioStartX < ObjectStartX + object_size_x) and (is_object_active='1') and (is_hit='0') then 
+		if (MarioStartX >= ObjectStartX) and (MarioStartX < conv_integer(ObjectStartX) + object_size_x) and (is_object_active='1') and (is_hit='0') then 
 			is_hit <= '1';
 		end if;
 		
-		if (MarioStartX + player_size_X >= ObjectStartX) and (MarioStartX + player_size_X < ObjectStartX + object_size_x) and (is_object_active='1') and (is_hit='0') then
+		if (MarioStartX + player_size_X >= ObjectStartX) and (MarioStartX + player_size_X < conv_integer(ObjectStartX) + object_size_x) and (is_object_active='1') and (is_hit='0') then
 			is_hit <= '1';
 		end if;
 		
 		--then, check if Y is out of bound
-		if MarioStartY > ObjectStartY + object_size_y then
+		if MarioStartY > conv_integer(ObjectStartY) + object_size_y then
 			is_hit <= '0';
 		end if;
 		
