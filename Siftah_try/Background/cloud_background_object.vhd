@@ -3,9 +3,6 @@ use IEEE.STD_LOGIC_1164.all;
 use IEEE.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
-
--- Alex Grinshpun April 2017
-
 entity cloud_background_object is
 port 	(
 		--////////////////////	Clock Input	 	////////////////////	
