@@ -4,6 +4,10 @@ use IEEE.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 use ieee.std_logic_arith.all;
 
+
+------------------------------------------------
+--  Detect hits between mario and obstacles   --
+------------------------------------------------
 entity hit_detector is
 port 	(
 		CLK  : in std_logic;
@@ -15,7 +19,7 @@ port 	(
 		hit	    : out std_logic; --indicate any hit
 		leg_mid : out std_logic; -- indicate that mario legs are in the middle of the step. note: there must be  x speed!
 		head_mid : out std_logic; -- indicate that mario head  is in the middle of the step. note: there must be  x speed!
-		mario_mid : out std_logic;
+		mario_mid : out std_logic; 
 		step_Y_O : out std_logic_vector(9 downto 0)
 	);
 end hit_detector;	
@@ -26,12 +30,9 @@ constant step_size 		: integer := 40;
 constant player_size_Y 	: integer := 33;
 constant player_size_X 	: integer := 26;
 
-constant hit_margin_Y		: integer := 10;
+constant hit_margin_Y		: integer := 12; --orginal is 10. the lower this is, the bigger the accuracy demand.
 		begin
 	process(CLK,RESETn)
-	--variable all_hit : std_logic:=0;
-	--variable falling_hit : std_logic:=0;
-	--variable rising_hit : std_logic:=0;
 	
 	variable legs_up : std_logic;
 	variable legs_down : std_logic;
@@ -97,12 +98,12 @@ constant hit_margin_Y		: integer := 10;
 				
 				
 		if hit_x='1' then 
-			if legs_up='0' and legs_down='0' then --legs are in the middle of the step
+			if legs_up='0' and legs_down='0' then --legs are in the middle of the step!
 			--TODO:
 				leg_mid <= '1';
 			end if;
 			
-			if head_up='0' and head_down='0' then -- head is in the middle of the step
+			if head_up='0' and head_down='0' then -- head is in the middle of the step!
 				head_mid <='1';
 			end if;
 			
@@ -114,11 +115,5 @@ constant hit_margin_Y		: integer := 10;
 	end process;	
 	step_Y_O <= step_Y;
 end architecture;
-
-
-		--EXPERIMENTAL
-		--if player_Y + player_size_Y > step_Y + hit_margin_Y and (player_Y <= step_Y or (player_Y <= step_Y+hit_margin_Y ) )  then
-			--hit <= '0';
-		--end if;
 		
 		
