@@ -11,10 +11,10 @@ ENTITY Golds_mgr IS
 		timer_done :  IN  STD_LOGIC;
 		allowed_to_move :  IN  STD_LOGIC;
 		enable :  IN  STD_LOGIC;
-		oCoord_X :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		oCoord_Y :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		Player_X :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		Player_Y :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
+		oCoord_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		oCoord_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		Player_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		Player_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		drawing_request :  OUT  STD_LOGIC;
 		hit :  OUT  STD_LOGIC;
 		mVGA_RGB :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)	
@@ -38,10 +38,10 @@ COMPONENT goldfull
 		 timer_done : IN STD_LOGIC;
 		 allowed_to_move : IN STD_LOGIC;
 		 enable : IN STD_LOGIC;
-		 oCoord_X : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 oCoord_Y : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 Player_X : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 Player_Y : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 oCoord_X : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 oCoord_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 Player_X : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 Player_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 Random1 : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 Random2 : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 drawing_request : OUT STD_LOGIC;

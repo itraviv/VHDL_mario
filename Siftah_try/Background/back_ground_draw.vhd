@@ -2,7 +2,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.std_logic_unsigned.all;
 use ieee.numeric_std.all;
--- Alex Grinshpun July 24 2017 
 
 
 entity back_ground_draw is
@@ -10,8 +9,8 @@ port 	(
 		--////////////////////	Clock Input	 	////////////////////	
 	   CLK  : in std_logic;
 		RESETn	: in std_logic;
-		oCoord_X 		: in integer;
-		oCoord_Y 		: in integer;
+		oCoord_X 		: in std_logic_vector(9 downto 0);
+		oCoord_Y 		: in std_logic_vector(9 downto 0);
 		mVGA_RGB	      : out std_logic_vector(7 downto 0) --	,   						//	VGA Red[9:0]
 
 
@@ -78,7 +77,7 @@ mVGA_G <= "101" when (oCoord_Y >= 450) else
 mVGA_B <= "11" when ( oCoord_Y < 450) else
 			 "00";	 
 			 
-  mVGA_RGB <= floor_colors(oCoord_y mod floor_object_Y_size ,oCoord_X mod floor_object_X_size ) when (oCoord_Y>450)
+  mVGA_RGB <= floor_colors(conv_integer(oCoord_y) mod floor_object_Y_size ,conv_integer(oCoord_X) mod floor_object_X_size ) when (conv_integer(oCoord_Y)>450)
    else  (mVGA_R & mVGA_G &  mVGA_B );
 
 

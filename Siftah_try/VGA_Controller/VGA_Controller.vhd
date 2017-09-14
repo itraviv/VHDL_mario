@@ -10,8 +10,8 @@ port
 	iCLK 			: in std_logic;
 	iRST_N 			: in std_logic;
 	oAddress 		: out std_logic_vector(19 downto 0);
-	oCoord_X 		: out integer;
-	oCoord_Y 		: out integer;
+	oCoord_X 		: out std_logic_vector(9 downto 0);
+	oCoord_Y 		: out std_logic_vector(9 downto 0);
 
 	iRed 			: in std_logic_vector(9 downto 0);
 	iGreen 			: in std_logic_vector(9 downto 0);
@@ -85,11 +85,8 @@ iCursor_R		<= "0000000000";
 iCursor_G 		<= "0000000000";
 iCursor_B		<= "0000000000";
 
-oCoord_X <= conv_integer(oCoord_X_t);
-oCoord_Y <= conv_integer(oCoord_Y_t);
-
---oCoord_X <= oCoord_X_t;
---oCoord_Y <= oCoord_Y_t;
+oCoord_X <= oCoord_X_t;
+oCoord_Y <= oCoord_Y_t;
 oVGA_H_SYNC	<= oVGA_H_SYNC_t;
 oVGA_V_SYNC	<= oVGA_V_SYNC_t;
 

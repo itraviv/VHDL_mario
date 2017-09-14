@@ -1,24 +1,23 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
---use IEEE.std_logic_unsigned.all;
---use ieee.numeric_std.all;
---use ieee.std_logic_arith.all;
--- Alex Grinshpun April 2017
+use IEEE.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_arith.all;
 
 entity obstacle_object is
 port 	(
 		--////////////////////	Clock Input	 	////////////////////	
 	   	CLK  		: in std_logic;
 		RESETn		: in std_logic;
-		oCoord_X	: in integer;
-		oCoord_Y	: in integer;
+		oCoord_X	: in std_logic_vector(9 downto 0);
+		oCoord_Y	: in std_logic_vector(9 downto 0);
 		
 		ENABLE : in std_logic;
 		rand : in std_logic_vector ( 9 downto 0);
 		hit : in std_logic;
 		
-		ObjectStartX	: in integer;
-		ObjectStartY 	: in integer;
+		ObjectStartX	: in std_logic_vector(9 downto 0);
+		ObjectStartY 	: in std_logic_vector(9 downto 0);
 		drawing_request	: out std_logic ;
 		mVGA_RGB 	: out std_logic_vector(7 downto 0) 
 	);
@@ -81,16 +80,16 @@ signal objectSouthboundary : integer;
 begin
 
 -- Calculate object boundaries
-objectWestXboundary	<= 40+ObjectStartX;
-objectSouthboundary	<= object_Y_size+ObjectStartY;
+objectWestXboundary	<= 40+conv_integer(ObjectStartX);
+objectSouthboundary	<= object_Y_size+conv_integer(ObjectStartY);
 
 -- Signals drawing_X[Y] are active when obects coordinates are being crossed
 
 	drawing_X	<= '1' when  (oCoord_X  >= ObjectStartX) and  (oCoord_X < objectWestXboundary) and ENABLE='1' else '0';
     drawing_Y	<= '1' when  (oCoord_Y  >= ObjectStartY) and  (oCoord_Y < objectSouthboundary) and ENABLE='1' else '0';
 
-	bCoord_X 	<= (oCoord_X - ObjectStartX) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
-	bCoord_Y 	<= (oCoord_Y - ObjectStartY) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
+	bCoord_X 	<= conv_integer(oCoord_X - ObjectStartX) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
+	bCoord_Y 	<= conv_integer(oCoord_Y - ObjectStartY) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
 
 
 process ( RESETn, CLK)

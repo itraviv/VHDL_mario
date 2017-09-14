@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.std_logic_signed.all;
 use ieee.numeric_std.all;
--- Alex Grinshpun March 24 2017 
+use ieee.STD_LOGIC_ARITH.all;
 
 entity mario_move is
 port 	(
@@ -19,13 +19,13 @@ port 	(
 		hitObjWithMyBottomPixel	: in std_logic;
 		hitObjAny   	 : in std_logic;
 		
-		hitObjYspeed    : in integer;
-		hitObjXspeed    : in integer;
-		hitObjYpos		: in integer;
+		hitObjYspeed    : in std_logic_vector(6 downto 0);
+		hitObjXspeed    : in std_logic_vector(6 downto 0);
+		hitObjYpos		: in std_logic_vector(9 downto 0);
 		
 		
-		ObjectStartX	: out integer ;
-		ObjectStartY	: out integer
+		ObjectStartX	: out std_logic_vector(9 downto 0) ;
+		ObjectStartY	: out std_logic_vector(9 downto 0)
 		
 	);
 end mario_move;
@@ -105,26 +105,26 @@ begin
 									Y_speed<=0;
 									Y_state<=bump_from_object;
 								elsif Y_speed <= 0 then --hitting object from above
-									Y_speed<=hitObjYspeed;
+									Y_speed<=conv_integer(hitObjYspeed);
 									Y_state<=onObject;
-									ObjectStartY_t <= hitObjYpos - mario_Y_size - hitObjYspeed; -- stand on object
+									ObjectStartY_t <= conv_integer(hitObjYpos) - mario_Y_size - conv_integer(hitObjYspeed); -- stand on object
 								end if;
 							end if;
 -----------------------------------------------------------------------------------------------------------
 						when onObject =>
-							Y_speed<=hitObjYspeed;
+							Y_speed<=conv_integer(hitObjYspeed);
 							if hitObjAny='0' then 		-- no more contact
 								Y_state<=bump_from_object;
 								Y_speed<=0;
 							else						--contact
-								Y_speed<=hitObjYspeed; -- move with object
+								Y_speed<=conv_integer(hitObjYspeed); -- move with object
 								if upKeyPressed='1' then
 									Y_state <= bump_from_object;
-									Y_speed <= hitObjYspeed+Y_jump_speed;
+									Y_speed <= conv_integer(hitObjYspeed)+Y_jump_speed;
 								end if;
 							end if;
 							if hitObjMid='1' then		--object is in the middle of mario! fix
-								ObjectStartY_t <= hitObjYpos - mario_Y_size - hitObjYspeed;	
+								ObjectStartY_t <= conv_integer(hitObjYpos) - mario_Y_size - conv_integer(hitObjYspeed);	
 							end if;
 -----------------------------------------------------------------------------------------------------------
 						when bump_from_object => 
@@ -227,7 +227,7 @@ begin
 	
 
 		
-ObjectStartX	<= ObjectStartX_t;			
-ObjectStartY	<= ObjectStartY_t;	
+ObjectStartX	<= conv_std_logic_vector(ObjectStartX_t,10);			
+ObjectStartY	<= conv_std_logic_vector(ObjectStartY_t,10);	
 
 end architecture;

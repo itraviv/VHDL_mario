@@ -1,13 +1,14 @@
 library ieee ;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
 
 entity object_hit_detector is 
 	port( 
 		ObjectStartX	: in std_logic_vector(8 downto 0);
 		ObjectStartY 	: in std_logic_vector(8 downto 0);
-		MarioStartX		: in integer;
-		MarioStartY		: in integer;
+		MarioStartX		: in std_logic_vector(9 downto 0);
+		MarioStartY		: in std_logic_vector(9 downto 0);
 		CLK				: in std_logic;
 		RESETn			: in std_logic;
 		is_object_active: in std_logic;

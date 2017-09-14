@@ -68,15 +68,15 @@ applicable agreement for further details.
 	(port
 		(pt 192 48)
 		(output)
-		(text "oCoord_X[31..0]" (rect 0 0 79 12)(font "Arial" ))
-		(text "oCoord_X[31..0]" (rect 92 43 171 55)(font "Arial" ))
+		(text "oCoord_X[9..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "oCoord_X[9..0]" (rect 98 43 171 55)(font "Arial" ))
 		(line (pt 192 48)(pt 176 48)(line_width 3))
 	)
 	(port
 		(pt 192 64)
 		(output)
-		(text "oCoord_Y[31..0]" (rect 0 0 81 12)(font "Arial" ))
-		(text "oCoord_Y[31..0]" (rect 90 59 171 71)(font "Arial" ))
+		(text "oCoord_Y[9..0]" (rect 0 0 75 12)(font "Arial" ))
+		(text "oCoord_Y[9..0]" (rect 96 59 171 71)(font "Arial" ))
 		(line (pt 192 64)(pt 176 64)(line_width 3))
 	)
 	(port

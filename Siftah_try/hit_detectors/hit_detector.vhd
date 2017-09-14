@@ -2,20 +2,21 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.std_logic_unsigned.all;
 use ieee.numeric_std.all;
+use ieee.std_logic_arith.all;
 
 entity hit_detector is
 port 	(
 		CLK  : in std_logic;
 		RESETn	: in std_logic;
-		player_X 		: in integer;
-		player_Y 		: in integer;
-		step_X 			: in integer;
-		step_Y 			: in integer;		
+		player_X 		: in std_logic_vector(9 downto 0);
+		player_Y 		: in std_logic_vector(9 downto 0);
+		step_X 			: in std_logic_vector(9 downto 0);
+		step_Y 			: in std_logic_vector(9 downto 0);		
 		hit	    : out std_logic; --indicate any hit
 		leg_mid : out std_logic; -- indicate that mario legs are in the middle of the step. note: there must be  x speed!
 		head_mid : out std_logic; -- indicate that mario head  is in the middle of the step. note: there must be  x speed!
 		mario_mid : out std_logic;
-		step_Y_O : out integer
+		step_Y_O : out std_logic_vector(9 downto 0)
 	);
 end hit_detector;	
 	

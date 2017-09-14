@@ -28,17 +28,17 @@ ENTITY obstclefull IS
 		RESETn :  IN  STD_LOGIC;
 		timer_done :  IN  STD_LOGIC;
 		ENABLE :  IN  STD_LOGIC;
-		oCoord_X :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		oCoord_Y :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		player_X :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		player_Y :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
+		oCoord_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		oCoord_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		player_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		player_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		rand :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		
 				 		 
 		InSpeedX		: in std_logic_vector(1 downto 0);	-- initial X sppeed
 		InSpeedY		: in std_logic_vector(1 downto 0); --initial Y spped
-		resetObjectStartX_t : in integer;  -- initial X position
-		resetObjectStartY_t : in integer; -- initial X position
+		resetObjectStartX_t : in STD_LOGIC_VECTOR(9 DOWNTO 0);  -- initial X position
+		resetObjectStartY_t : in STD_LOGIC_VECTOR(9 DOWNTO 0); -- initial X position
 		
 		drawing_request :  OUT  STD_LOGIC;
 		hit_mid :  OUT  STD_LOGIC;
@@ -46,9 +46,9 @@ ENTITY obstclefull IS
 		hit_leg :  OUT  STD_LOGIC;
 		hit_head :  OUT  STD_LOGIC;
 		mVGA_RGB :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-		step_Y :  OUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		X_object_speed :  OUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		Y_object_speed :  OUT  STD_LOGIC_VECTOR(31 DOWNTO 0)
+		step_Y :  OUT  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		X_object_speed :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		Y_object_speed :  OUT  STD_LOGIC_VECTOR( 6 DOWNTO 0)
 	);
 END obstclefull;
 
@@ -57,15 +57,15 @@ ARCHITECTURE bdf_type OF obstclefull IS
 COMPONENT hit_detector
 	PORT(CLK : IN STD_LOGIC;
 		 RESETn : IN STD_LOGIC;
-		 player_X : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 player_Y : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 step_X : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 step_Y : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 player_X : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 player_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 step_X : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 step_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 hit : OUT STD_LOGIC;
 		 leg_mid : OUT STD_LOGIC;
 		 head_mid : OUT STD_LOGIC;
 		 mario_mid : OUT STD_LOGIC;
-		 step_Y_O : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+		 step_Y_O : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
 	);
 END COMPONENT;
 
@@ -74,10 +74,10 @@ COMPONENT obstacle_object
 		 RESETn : IN STD_LOGIC;
 		 ENABLE : IN STD_LOGIC;
 		 hit : IN STD_LOGIC;
-		 ObjectStartX : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 ObjectStartY : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 oCoord_X : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 oCoord_Y : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 ObjectStartX : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 ObjectStartY : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 oCoord_X : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 oCoord_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 rand : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 drawing_request : OUT STD_LOGIC;
 		 mVGA_RGB : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
@@ -94,20 +94,20 @@ COMPONENT objectsm
 		InSpeedX		: in std_logic_vector(1 downto 0);	-- initial X sppeed
 		InSpeedY		: in std_logic_vector(1 downto 0); --initial Y spped
 		
-		resetObjectStartX_t : in integer;  -- initial X position
-		resetObjectStartY_t : in integer; -- initial X position
+		resetObjectStartX_t : in STD_LOGIC_VECTOR(9 DOWNTO 0);  -- initial X position
+		resetObjectStartY_t : in STD_LOGIC_VECTOR(9 DOWNTO 0); -- initial X position
 		
 		
 		 
-		 ObjectStartX : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 ObjectStartY : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 ObjectStartX : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 ObjectStartY : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 
 
 		
 		 
 		 
-		 X_speed : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 Y_speed : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+		 X_speed : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+		 Y_speed : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
 	);
 END COMPONENT;
 
@@ -118,10 +118,10 @@ SIGNAL	midLeg :  STD_LOGIC;
 SIGNAL	obstReq :  STD_LOGIC;
 SIGNAL	obstRGB :  STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL	ohit_head :  STD_LOGIC;
-SIGNAL	XOS :  STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL	YOS :  STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL	SYNTHESIZED_WIRE_4 :  STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL	SYNTHESIZED_WIRE_5 :  STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL	XOS :  STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL	YOS :  STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_4 :  STD_LOGIC_VECTOR(9 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_5 :  STD_LOGIC_VECTOR(9 DOWNTO 0);
 
 
 BEGIN 

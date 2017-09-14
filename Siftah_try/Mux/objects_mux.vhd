@@ -2,7 +2,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.std_logic_unsigned.all;
 use ieee.numeric_std.all;
--- Alex Grinshpun Apr 2017
 
 entity objects_mux is
 port 	(
@@ -19,11 +18,11 @@ port 	(
 		d_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	, -- d signal 
 		
 		e_drawing_request : in std_logic;	
-		e_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- y signal 			
+		e_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- r signal 			
 		
 		
 		f_drawing_request : in std_logic;	
-		f_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- y signal
+		f_mVGA_RGB 	: in std_logic_vector(7 downto 0); --	,  -- f signal
 		
 		
 		y_drawing_request : in std_logic;	

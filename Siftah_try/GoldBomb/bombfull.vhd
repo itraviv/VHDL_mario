@@ -29,10 +29,10 @@ ENTITY bombfull IS
 		timer_done :  IN  STD_LOGIC;
 		allowed_to_move :  IN  STD_LOGIC;
 		enable :  IN  STD_LOGIC;
-		oCoord_X :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		oCoord_Y :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		Player_X :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		Player_Y :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
+		oCoord_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		oCoord_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		Player_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		Player_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		Random1 :  IN  STD_LOGIC_VECTOR(8 DOWNTO 0);
 		Random2 :  IN  STD_LOGIC_VECTOR(8 DOWNTO 0);
 		drawing_request :  OUT  STD_LOGIC;
@@ -64,8 +64,8 @@ COMPONENT bomb_object
 		 enable : IN STD_LOGIC;
 		 ObjectStartX : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 ObjectStartY : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
-		 oCoord_X : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 oCoord_Y : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 oCoord_X : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 oCoord_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 drawing_request : OUT STD_LOGIC;
 		 is_active : OUT STD_LOGIC;
 		 mVGA_RGB : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
@@ -76,8 +76,8 @@ COMPONENT object_hit_detector
 	PORT(CLK : IN STD_LOGIC;
 		 RESETn : IN STD_LOGIC;
 		 is_object_active : IN STD_LOGIC;
-		 MarioStartX : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 MarioStartY : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 MarioStartX : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 MarioStartY : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 ObjectStartX : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 ObjectStartY : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 hit : OUT STD_LOGIC

@@ -1,14 +1,16 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use ieee.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
 
 entity coin_object is
 port 	(
 		--////////////////////	Clock Input	 	////////////////////	
 	   	CLK  		: in std_logic;
 		RESETn		: in std_logic;
-		oCoord_X	: in integer;
-		oCoord_Y	: in integer;
+		oCoord_X	: in std_logic_vector(9 downto 0);
+		oCoord_Y	: in std_logic_vector(9 downto 0);
 		ObjectStartX	: in std_logic_vector(8 downto 0);
 		ObjectStartY 	: in std_logic_vector(8 downto 0);
 		enable			: in std_logic;
@@ -106,16 +108,16 @@ signal objectYboundariesTrue : boolean;
 begin
 
 -- Calculate object boundaries
-objectWestXboundary	<= object_X_size+to_integer(unsigned(ObjectStartX));
-objectSouthboundary	<= object_Y_size+to_integer(unsigned(ObjectStartY));
+objectWestXboundary	<= object_X_size+conv_integer(ObjectStartX);
+objectSouthboundary	<= object_Y_size+conv_integer(ObjectStartY);
 
 -- Signals drawing_X[Y] are active when obects coordinates are being crossed
 
-	drawing_X	<= '1' when  (oCoord_X  >= to_integer(unsigned(ObjectStartX))) and  (oCoord_X < objectWestXboundary) and (obj_enabled='1') else '0';
-    drawing_Y	<= '1' when  (oCoord_Y  >= to_integer(unsigned(ObjectStartY))) and  (oCoord_Y < objectSouthboundary) and (obj_enabled='1') else '0';
+	drawing_X	<= '1' when  (oCoord_X  >= ObjectStartX) and  (oCoord_X < objectWestXboundary) and (obj_enabled='1') else '0';
+    drawing_Y	<= '1' when  (oCoord_Y  >= ObjectStartY) and  (oCoord_Y < objectSouthboundary) and (obj_enabled='1') else '0';
 
-	bCoord_X 	<= (oCoord_X - to_integer(unsigned(ObjectStartX))) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
-	bCoord_Y 	<= (oCoord_Y - to_integer(unsigned(ObjectStartY))) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
+	bCoord_X 	<= conv_integer(oCoord_X - ObjectStartX) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
+	bCoord_Y 	<= conv_integer(oCoord_Y - ObjectStartY) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
 	
 	is_active <= obj_enabled;
 

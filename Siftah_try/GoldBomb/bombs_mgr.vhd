@@ -11,10 +11,10 @@ ENTITY Bombs_mgr IS
 		timer_done :  IN  STD_LOGIC;
 		allowed_to_move :  IN  STD_LOGIC;
 		enable :  IN  STD_LOGIC;
-		oCoord_X :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		oCoord_Y :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		Player_X :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		Player_Y :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
+		oCoord_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		oCoord_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		Player_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		Player_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		drawing_request :  OUT  STD_LOGIC;
 		hit :  OUT  STD_LOGIC;
 		mVGA_RGB :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)	
@@ -38,10 +38,10 @@ COMPONENT bombfull
 		 timer_done : IN STD_LOGIC;
 		 allowed_to_move : IN STD_LOGIC;
 		 enable : IN STD_LOGIC;
-		 oCoord_X : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 oCoord_Y : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 Player_X : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 Player_Y : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 oCoord_X : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 oCoord_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 Player_X : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 Player_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 Random1 : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 Random2 : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 drawing_request : OUT STD_LOGIC;
@@ -281,42 +281,6 @@ PORT MAP(CLK => CLK,
 		 drawing_request => b_5_drawing_request,
 		 hit => b_5_hit,
 		 mVGA_RGB => b_5_mVGA_RGB);
-
-		 
-		 
---b_6_F : bombfull
---PORT MAP(CLK => CLK,
---		 RESETn => RESETn,
---		 timer_done => timer_done,
---		 allowed_to_move => '1',
---		 enable => '1',
---		 oCoord_X => oCoord_X,
---		 oCoord_Y => oCoord_Y,
---		 Player_X => player_X,
---		 Player_Y => player_Y,
---		 Random1 => c_3_q,
---		 Random2 => c_4_q,
---		 drawing_request => b_6_drawing_request,
---		 hit => b_6_hit,
---		 mVGA_RGB => b_6_mVGA_RGB);
---
---		 
---b_7_F : bombfull
---PORT MAP(CLK => CLK,
---		 RESETn => RESETn,
---		 timer_done => timer_done,
---		 allowed_to_move => '1',
---		 enable => '1',
---		 oCoord_X => oCoord_X,
---		 oCoord_Y => oCoord_Y,
---		 Player_X => player_X,
---		 Player_Y => player_Y,
---		 Random1 => c_3_q,
---		 Random2 => c_4_q,
---		 drawing_request => b_7_drawing_request,
---		 hit => b_7_hit,
---		 mVGA_RGB => b_7_mVGA_RGB);
-
 
 ---------------------------
 --    Drawing_requests   --

@@ -1,17 +1,16 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
---use IEEE.std_logic_unsigned.all;
---use ieee.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
+use ieee.numeric_std.all;
 --use ieee.std_logic_arith.all;
--- Alex Grinshpun April 2017
 
 entity cloud_background_object is
 port 	(
 		--////////////////////	Clock Input	 	////////////////////	
 	   	CLK  		: in std_logic;
 		RESETn		: in std_logic;
-		oCoord_X	: in integer;
-		oCoord_Y	: in integer;
+		oCoord_X	: in std_logic_vector(9 downto 0);
+		oCoord_Y	: in  std_logic_vector(9 downto 0);
 		drawing_request	: out std_logic ;
 		mVGA_RGB 	: out std_logic_vector(7 downto 0)
 
@@ -317,17 +316,17 @@ signal drawing_X4 : std_logic := '0';
 signal drawing_Y4 : std_logic := '0';
 
 --		
-signal ObjectStartX : integer := 150;
-signal ObjectStartY : integer := 80;
+constant ObjectStartX : integer := 150;
+constant ObjectStartY : integer := 80;
 
-signal ObjectStart2X : integer := 280;
-signal ObjectStart2Y : integer := 90;
+constant ObjectStart2X : integer := 280;
+constant ObjectStart2Y : integer := 90;
 
-signal ObjectStart3X : integer := 400;
-signal ObjectStart3Y : integer := 100;
+constant ObjectStart3X : integer := 400;
+constant ObjectStart3Y : integer := 100;
 
-signal ObjectStart4X : integer := 500;
-signal ObjectStart4Y : integer := 374;
+constant ObjectStart4X : integer := 500;
+constant ObjectStart4Y : integer := 374;
 --
 signal objectSouthboundary : integer;
 signal objectWestXboundary : integer;
@@ -372,33 +371,33 @@ object4Southboundary	<= grass_object_Y_size+ObjectStart4Y;
 
 -- Signals drawing_X[Y] are active when obects coordinates are being crossed
 
-	drawing_X	<= '1' when  ((oCoord_X  >= ObjectStartX) and  (oCoord_X < objectWestXboundary)) else '0';
+	drawing_X	<= '1' when  ((conv_integer(oCoord_X)  >= ObjectStartX) and  (conv_integer(oCoord_X) < objectWestXboundary)) else '0';
 					
-	drawing_X2	<= '1' when  ((oCoord_X  >= ObjectStart2X) and  (oCoord_X < object2WestXboundary)) else '0';
+	drawing_X2	<= '1' when  ((conv_integer(oCoord_X)  >= ObjectStart2X) and  (conv_integer(oCoord_X) < object2WestXboundary)) else '0';
 	
-	drawing_X3	<= '1' when  ((oCoord_X  >= ObjectStart3X) and  (oCoord_X < object3WestXboundary)) else '0';
+	drawing_X3	<= '1' when  ((conv_integer(oCoord_X)  >= ObjectStart3X) and  (conv_integer(oCoord_X) < object3WestXboundary)) else '0';
 	
-	drawing_X4	<= '1' when  ((oCoord_X  >= ObjectStart4X) and  (oCoord_X < object4WestXboundary)) else '0';
+	drawing_X4	<= '1' when  ((conv_integer(oCoord_X)  >= ObjectStart4X) and  (conv_integer(oCoord_X) < object4WestXboundary)) else '0';
 	
-    drawing_Y	<= '1' when  ((oCoord_Y  >= ObjectStartY) and  (oCoord_Y < objectSouthboundary)) else '0';
+    drawing_Y	<= '1' when  ((conv_integer(oCoord_Y)  >= ObjectStartY) and  (conv_integer(oCoord_Y) < objectSouthboundary)) else '0';
     
-    drawing_Y2	<= '1' when  ((oCoord_Y  >= ObjectStart2Y) and  (oCoord_Y < object2Southboundary)) else '0';
+    drawing_Y2	<= '1' when  ((conv_integer(oCoord_Y)  >= ObjectStart2Y) and  (conv_integer(oCoord_Y) < object2Southboundary)) else '0';
         
-    drawing_Y3	<= '1' when  ((oCoord_Y  >= ObjectStart3Y) and  (oCoord_Y < object3Southboundary)) else '0';
+    drawing_Y3	<= '1' when  ((conv_integer(oCoord_Y)  >= ObjectStart3Y) and  (conv_integer(oCoord_Y) < object3Southboundary)) else '0';
     
-    drawing_Y4	<= '1' when  ((oCoord_Y  >= ObjectStart4Y) and  (oCoord_Y < object4Southboundary)) else '0';
+    drawing_Y4	<= '1' when  ((conv_integer(oCoord_Y)  >= ObjectStart4Y) and  (conv_integer(oCoord_Y) < object4Southboundary)) else '0';
 
-	bCoord_X 	<= (oCoord_X - ObjectStartX) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
-	bCoord_Y 	<= (oCoord_Y - ObjectStartY) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
+	bCoord_X 	<= conv_integer(oCoord_X - ObjectStartX) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
+	bCoord_Y 	<= conv_integer(oCoord_Y - ObjectStartY) when ( drawing_X = '1' and  drawing_Y = '1'  ) else 0 ; 
 	
-	bCoord_X2 	<= (oCoord_X - ObjectStart2X) when ( drawing_X2 = '1' and  drawing_Y2 = '1'  ) else 0 ; 
-	bCoord_Y2 	<= (oCoord_Y - ObjectStart2Y) when ( drawing_X2 = '1' and  drawing_Y2 = '1'  ) else 0 ; 
+	bCoord_X2 	<= conv_integer(oCoord_X - ObjectStart2X) when ( drawing_X2 = '1' and  drawing_Y2 = '1'  ) else 0 ; 
+	bCoord_Y2 	<= conv_integer(oCoord_Y - ObjectStart2Y) when ( drawing_X2 = '1' and  drawing_Y2 = '1'  ) else 0 ; 
 	
-	bCoord_X3 	<= (oCoord_X - ObjectStart3X) when ( drawing_X3 = '1' and  drawing_Y3 = '1'  ) else 0 ; 
-	bCoord_Y3 	<= (oCoord_Y - ObjectStart3Y) when ( drawing_X3 = '1' and  drawing_Y3 = '1'  ) else 0 ; 
+	bCoord_X3 	<= conv_integer(oCoord_X - ObjectStart3X) when ( drawing_X3 = '1' and  drawing_Y3 = '1'  ) else 0 ; 
+	bCoord_Y3 	<= conv_integer(oCoord_Y - ObjectStart3Y) when ( drawing_X3 = '1' and  drawing_Y3 = '1'  ) else 0 ; 
 	
-	bCoord_X4 	<= (oCoord_X - ObjectStart4X) when ( drawing_X4 = '1' and  drawing_Y4 = '1'  ) else 0 ; 
-	bCoord_Y4 	<= (oCoord_Y - ObjectStart4Y) when ( drawing_X4 = '1' and  drawing_Y4 = '1'  ) else 0 ; 
+	bCoord_X4 	<= conv_integer(oCoord_X - ObjectStart4X) when ( drawing_X4 = '1' and  drawing_Y4 = '1'  ) else 0 ; 
+	bCoord_Y4 	<= conv_integer(oCoord_Y - ObjectStart4Y) when ( drawing_X4 = '1' and  drawing_Y4 = '1'  ) else 0 ; 
 
 process ( RESETn, CLK)
 
