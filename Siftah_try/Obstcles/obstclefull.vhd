@@ -32,8 +32,14 @@ ENTITY obstclefull IS
 		oCoord_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		player_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		player_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
-		rand :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		
+		-- ins for player 2 BEGIN
+		player2_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		player2_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		-- ins for player 2 END
+				 		 
+		rand :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+
 				 		 
 		InSpeedX		: in std_logic_vector(1 downto 0);	-- initial X sppeed
 		InSpeedY		: in std_logic_vector(1 downto 0); --initial Y spped
@@ -45,10 +51,23 @@ ENTITY obstclefull IS
 		hit :  OUT  STD_LOGIC;
 		hit_leg :  OUT  STD_LOGIC;
 		hit_head :  OUT  STD_LOGIC;
+		
+		-- outs for player 2 BEGIN
+		hit_mid2 :  OUT  STD_LOGIC;
+		hit2 :  OUT  STD_LOGIC;
+		hit_leg2 :  OUT  STD_LOGIC;
+		hit_head2 :  OUT  STD_LOGIC;
+		-- outs for player 2 END
+
+		
 		mVGA_RGB :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		
 		step_Y :  OUT  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		X_object_speed :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
-		Y_object_speed :  OUT  STD_LOGIC_VECTOR( 6 DOWNTO 0)
+		Y_object_speed :  OUT  STD_LOGIC_VECTOR( 6 DOWNTO 0);
+		
+		step_Y2 :  OUT  STD_LOGIC_VECTOR(9 DOWNTO 0)
+		
 	);
 END obstclefull;
 
@@ -88,24 +107,13 @@ COMPONENT objectsm
 	PORT(CLK : IN STD_LOGIC;
 		 RESETn : IN STD_LOGIC;
 		 timer_done : IN STD_LOGIC;
-		 
-		 
-		 		 
 		InSpeedX		: in std_logic_vector(1 downto 0);	-- initial X sppeed
 		InSpeedY		: in std_logic_vector(1 downto 0); --initial Y spped
-		
 		resetObjectStartX_t : in STD_LOGIC_VECTOR(9 DOWNTO 0);  -- initial X position
-		resetObjectStartY_t : in STD_LOGIC_VECTOR(9 DOWNTO 0); -- initial X position
-		
-		
-		 
+		resetObjectStartY_t : in STD_LOGIC_VECTOR(9 DOWNTO 0); -- initial X position		 
 		 ObjectStartX : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 ObjectStartY : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
-		 
 
-		
-		 
-		 
 		 X_speed : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 		 Y_speed : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
 	);
@@ -123,12 +131,20 @@ SIGNAL	YOS :  STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL	SYNTHESIZED_WIRE_4 :  STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL	SYNTHESIZED_WIRE_5 :  STD_LOGIC_VECTOR(9 DOWNTO 0);
 
+-- for player 2
+SIGNAL	hitObj2 :  STD_LOGIC;
+SIGNAL	hitObjmid2 :  STD_LOGIC;
+SIGNAL	midLeg2 :  STD_LOGIC;
+SIGNAL	ohit_head2 :  STD_LOGIC;
+
+signal HIT_ANY : std_logic ;
+
 
 BEGIN 
 
+HIT_ANY <= hitObj2 or hitObj ;
 
-
-b2v_inst11 : hit_detector
+hit_det1 : hit_detector
 PORT MAP(CLK => CLK,
 		 RESETn => RESETn,
 		 player_X => player_X,
@@ -142,12 +158,26 @@ PORT MAP(CLK => CLK,
 		 step_Y_O => step_Y);
 
 
+hit_det2 : hit_detector
+PORT MAP(CLK => CLK,
+		 RESETn => RESETn,
+		 player_X => player2_X,
+		 player_Y => player2_Y,
+		 step_X => SYNTHESIZED_WIRE_4,
+		 step_Y => SYNTHESIZED_WIRE_5,
+		 hit => hitObj2,
+		 leg_mid => midLeg2,
+		 head_mid => ohit_head2,
+		 mario_mid => hitObjmid2,
+		 step_Y_O => step_Y2);
+
+
 b2v_inst8 : obstacle_object
 PORT MAP(CLK => CLK,
 		 RESETn => RESETn,
 		 ENABLE => enble,
-		 hit => hitObj,
-
+		 
+		 hit => HIT_ANY, 
 		 
 		 ObjectStartX => SYNTHESIZED_WIRE_4,
 		 ObjectStartY => SYNTHESIZED_WIRE_5,
@@ -182,5 +212,12 @@ hit_head <= ohit_head;
 mVGA_RGB <= obstRGB;
 X_object_speed <= XOS;
 Y_object_speed <= YOS;
+
+--player 2
+hit_mid2 <= hitObjmid2;
+hit2 <= hitObj2;
+hit_leg2 <= midLeg2;
+hit_head2 <= ohit_head2;
+
 
 END bdf_type;

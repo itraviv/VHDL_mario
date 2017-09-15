@@ -16,11 +16,14 @@ ENTITY Bombs_mgr IS
 		Player_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		Player_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		
+		Player2_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		Player2_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		
 		chase_vec : IN STD_LOGIC_VECTOR(4 downto 0) ; -- (numBombs-1) to 0 . 
 											-- a vector conationg 1 according to the number of chasing bombs.
-		
 		drawing_request :  OUT  STD_LOGIC;
 		hit :  OUT  STD_LOGIC;
+		hit2 : OUT STD_LOGIC; -- player 2
 		mVGA_RGB :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)	
 	);
 	
@@ -46,11 +49,14 @@ COMPONENT bombfull
 		 oCoord_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 Player_X : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 Player_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 Player2_X : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 Player2_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 Random1 : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 Random2 : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 chase 	 : IN STD_LOGIC;
 		 drawing_request : OUT STD_LOGIC;
 		 hit : OUT STD_LOGIC;
+		 hit2 : OUT STD_LOGIC;
 		 mVGA_RGB : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 END COMPONENT;
@@ -94,22 +100,27 @@ signal c_10_q : STD_LOGIC_VECTOR(8 DOWNTO 0);
 
 signal b_1_drawing_request : std_logic;
 signal b_1_hit : std_logic;
+signal b_1_hit2 : std_logic;
 signal b_1_mVGA_RGB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 signal b_2_drawing_request : std_logic;
 signal b_2_hit : std_logic;
+signal b_2_hit2 : std_logic;
 signal b_2_mVGA_RGB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 signal b_3_drawing_request : std_logic;
 signal b_3_hit : std_logic;
+signal b_3_hit2 : std_logic;
 signal b_3_mVGA_RGB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 signal b_4_drawing_request : std_logic;
 signal b_4_hit : std_logic;
+signal b_4_hit2 : std_logic;
 signal b_4_mVGA_RGB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 signal b_5_drawing_request : std_logic;
 signal b_5_hit : std_logic;
+signal b_5_hit2 : std_logic;
 signal b_5_mVGA_RGB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 -----------------
@@ -123,6 +134,14 @@ PORT MAP(Clk_in => CLK,
 		 Resetn => RESETn,
 		 Clk_out => d_1_out);
 		 
+d_2 : clk_divider
+GENERIC MAP(Div => 31
+			)
+PORT MAP(Clk_in => CLK,
+		 Resetn => RESETn,
+		 Clk_out => d_2_out);
+
+
 d_3 : clk_divider
 GENERIC MAP(Div => 105
 			)
@@ -214,11 +233,14 @@ PORT MAP(CLK => CLK,
 		 oCoord_Y => oCoord_Y,
 		 Player_X => player_X,
 		 Player_Y => player_Y,
+		 Player2_X => player2_X,
+		 Player2_Y => player2_Y,
 		 Random1 => c_1_q,
 		 Random2 => c_2_q,
 		 chase => chase_vec(0),
 		 drawing_request => b_1_drawing_request,
 		 hit => b_1_hit,
+		 hit2 => b_1_hit2,		 
 		 mVGA_RGB => b_1_mVGA_RGB);
 		 
 b_2_F : bombfull
@@ -231,11 +253,14 @@ PORT MAP(CLK => CLK,
 		 oCoord_Y => oCoord_Y,
 		 Player_X => player_X,
 		 Player_Y => player_Y,
+		 Player2_X => player2_X,
+		 Player2_Y => player2_Y,		 
 		 Random1 => c_3_q,
 		 Random2 => c_4_q,
 		 chase => chase_vec(1),
 		 drawing_request => b_2_drawing_request,
 		 hit => b_2_hit,
+		 hit2 => b_2_hit2,		 
 		 mVGA_RGB => b_2_mVGA_RGB);
 
 b_3_F : bombfull
@@ -248,11 +273,14 @@ PORT MAP(CLK => CLK,
 		 oCoord_Y => oCoord_Y,
 		 Player_X => player_X,
 		 Player_Y => player_Y,
+		 Player2_X => player2_X,
+		 Player2_Y => player2_Y,		 
 		 Random1 => c_5_q,
 		 Random2 => c_6_q,
 		 chase => chase_vec(2),		 
 		 drawing_request => b_3_drawing_request,
 		 hit => b_3_hit,
+		 hit2 => b_3_hit2,
 		 mVGA_RGB => b_3_mVGA_RGB);
 
 		 
@@ -266,11 +294,14 @@ PORT MAP(CLK => CLK,
 		 oCoord_Y => oCoord_Y,
 		 Player_X => player_X,
 		 Player_Y => player_Y,
+		 Player2_X => player2_X,
+		 Player2_Y => player2_Y,		 
 		 Random1 => c_7_q,
 		 Random2 => c_8_q,
 		 chase => chase_vec(3),		 
 		 drawing_request => b_4_drawing_request,
 		 hit => b_4_hit,
+		 hit2 => b_4_hit2,
 		 mVGA_RGB => b_4_mVGA_RGB);
 
 		 
@@ -285,11 +316,14 @@ PORT MAP(CLK => CLK,
 		 oCoord_Y => oCoord_Y,
 		 Player_X => player_X,
 		 Player_Y => player_Y,
+		 Player2_X => player2_X,
+		 Player2_Y => player2_Y,		 
 		 Random1 => c_9_q,
 		 Random2 => c_10_q,
 		 chase => chase_vec(4),		 
 		 drawing_request => b_5_drawing_request,
 		 hit => b_5_hit,
+		 hit2 => b_5_hit2,
 		 mVGA_RGB => b_5_mVGA_RGB);
 
 ---------------------------
@@ -320,6 +354,12 @@ hit <= '1' when b_1_hit = '1' else
 			'1' when b_3_hit = '1' else
 			'1' when b_4_hit = '1' else
 			'1' when b_5_hit = '1' else
+			'0';
+hit2 <= '1' when b_1_hit2 = '1' else
+			'1' when b_2_hit2 = '1' else
+			'1' when b_3_hit2 = '1' else
+			'1' when b_4_hit2 = '1' else
+			'1' when b_5_hit2 = '1' else
 			'0';
 
 
