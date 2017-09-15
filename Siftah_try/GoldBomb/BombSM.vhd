@@ -21,6 +21,11 @@ port 	(
 		-- chase
 		marioX			: in std_logic_vector ( 9 downto 0);
 		marioY			: in std_logic_vector ( 9 downto 0);
+		
+		
+		luigiX			: in std_logic_vector ( 9 downto 0);
+		luigiY			: in std_logic_vector ( 9 downto 0);
+		
 		chase			: in std_logic; -- determined if a bomb will chase mario
 		
 		ObjectStartX	: out std_logic_vector(8 downto 0) ;
@@ -31,7 +36,7 @@ end BombSM;
 
 architecture arch_BombSM of BombSM is 
 --state machine
-type bomb_state_t is (start,idle,rand_speeds,move,chase_mario,dead);
+type bomb_state_t is (start,idle,rand_speeds,move,chase_mario,chase_luigi,dead);
 signal state : bomb_state_t;
 
 signal ObjectStartX_t : std_logic_vector(8 downto 0);
@@ -85,10 +90,15 @@ begin
 							X_speed_sig(2) <= random(2);
 							Y_speed_sig(2) <= random2(2);
 						else
-						-- allow lower speeds
+						-- allow lower speeds only
 							X_speed_sig(2) <= random(1);
 							Y_speed_sig(2) <= random2(1);
-							state <= chase_mario;
+							
+							if random(4) = '0' then 
+								state <= chase_mario;
+							else
+								state <= chase_luigi;
+							end if;
 						end if;
 						
 					when move =>
@@ -98,10 +108,16 @@ begin
 					else
 						state <= rand_speeds;
 					end if;
-					when chase_mario=>
+					when chase_mario | chase_luigi =>
 						if chase = '1' then
 							helperPos := "00" & ObjectStartX_t;
+							
+							if state = chase_mario then
 							helperM   := "0" & marioX;
+							else 
+							helperM   := "0" & luigiX;
+							end if;
+
 						
 							if helperPos > helperM then
 								ObjectStartX_t	<= ObjectStartX_t - abs(conv_integer(X_speed_sig));
@@ -109,10 +125,14 @@ begin
 								ObjectStartX_t	<= ObjectStartX_t + abs(conv_integer(X_speed_sig));
 							end if;
 							
-							
 							helperPos := "00" & ObjectStartY_t;
-							helperM   := "0" & marioY;
 							
+							if state = chase_mario then
+							helperM   := "0" & marioY;
+							else 
+							helperM   := "0" & luigiY;
+							end if;
+														
 							
 							if helperPos > helperM then
 								ObjectStartY_t	<= ObjectStartY_t - abs(conv_integer(Y_speed_sig));

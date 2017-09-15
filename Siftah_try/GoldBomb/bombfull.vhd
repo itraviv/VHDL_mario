@@ -58,6 +58,8 @@ COMPONENT bombsm
 		 random2 : IN STD_LOGIC_VECTOR(8 DOWNTO 0); 
 		marioX			: in std_logic_vector ( 9 downto 0);
 		marioY			: in std_logic_vector ( 9 downto 0);
+		luigiX			: in std_logic_vector ( 9 downto 0);
+		luigiY			: in std_logic_vector ( 9 downto 0);		
 		chase			: in std_logic; -- determined if a bomb will chase mario
 		 enable : OUT STD_LOGIC;
 		 ObjectStartX : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
@@ -119,6 +121,8 @@ PORT MAP(CLK => CLK,
 		 
 		marioX	=> Player_X,
 		marioY	=> Player_Y,
+		luigiX  => Player2_X,
+		luigiY  => Player2_Y,
 		chase	=> 		chase,
 		enable => bomb_enable,
 		ObjectStartX => ObjectStartX,

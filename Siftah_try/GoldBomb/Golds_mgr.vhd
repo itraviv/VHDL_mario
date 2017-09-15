@@ -15,8 +15,12 @@ ENTITY Golds_mgr IS
 		oCoord_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		Player_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		Player_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		Player2_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		Player2_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		drawing_request :  OUT  STD_LOGIC;
 		hit :  OUT  STD_LOGIC;
+		hit2 :  OUT  STD_LOGIC;
+
 		mVGA_RGB :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)	
 	);
 	
@@ -42,10 +46,13 @@ COMPONENT goldfull
 		 oCoord_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 Player_X : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 Player_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 Player2_X : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+		 Player2_Y : IN STD_LOGIC_VECTOR(9 DOWNTO 0);		 
 		 Random1 : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 Random2 : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 drawing_request : OUT STD_LOGIC;
 		 hit : OUT STD_LOGIC;
+		 hit2 : OUT STD_LOGIC; 
 		 mVGA_RGB : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 END COMPONENT;
@@ -80,6 +87,8 @@ signal d_13_out : std_logic;
 signal d_14_out : std_logic;
 signal d_15_out : std_logic;
 signal d_16_out : std_logic;
+signal d_17_out : std_logic;
+signal d_18_out : std_logic;
 
 signal c_1_q : STD_LOGIC_VECTOR(8 DOWNTO 0);
 signal c_2_q : STD_LOGIC_VECTOR(8 DOWNTO 0);
@@ -97,40 +106,55 @@ signal c_13_q : STD_LOGIC_VECTOR(8 DOWNTO 0);
 signal c_14_q : STD_LOGIC_VECTOR(8 DOWNTO 0);
 signal c_15_q : STD_LOGIC_VECTOR(8 DOWNTO 0);
 signal c_16_q : STD_LOGIC_VECTOR(8 DOWNTO 0);
+signal c_17_q : STD_LOGIC_VECTOR(8 DOWNTO 0);
+signal c_18_q : STD_LOGIC_VECTOR(8 DOWNTO 0);
 
 
 signal b_1_drawing_request : std_logic;
 signal b_1_hit : std_logic;
+signal b_1_hit2 : std_logic;
 signal b_1_mVGA_RGB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 signal b_2_drawing_request : std_logic;
 signal b_2_hit : std_logic;
+signal b_2_hit2 : std_logic;
 signal b_2_mVGA_RGB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 signal b_3_drawing_request : std_logic;
 signal b_3_hit : std_logic;
+signal b_3_hit2 : std_logic;
 signal b_3_mVGA_RGB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 signal b_4_drawing_request : std_logic;
 signal b_4_hit : std_logic;
+signal b_4_hit2 : std_logic;
 signal b_4_mVGA_RGB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 signal b_5_drawing_request : std_logic;
 signal b_5_hit : std_logic;
+signal b_5_hit2 : std_logic;
 signal b_5_mVGA_RGB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 signal b_6_drawing_request : std_logic;
 signal b_6_hit : std_logic;
+signal b_6_hit2 : std_logic;
 signal b_6_mVGA_RGB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 signal b_7_drawing_request : std_logic;
 signal b_7_hit : std_logic;
+signal b_7_hit2 : std_logic;
 signal b_7_mVGA_RGB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 signal b_8_drawing_request : std_logic;
 signal b_8_hit : std_logic;
+signal b_8_hit2 : std_logic;
 signal b_8_mVGA_RGB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
+
+signal b_9_drawing_request : std_logic;
+signal b_9_hit : std_logic;
+signal b_9_hit2 : std_logic;
+signal b_9_mVGA_RGB : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 
 -----------------
@@ -145,7 +169,7 @@ PORT MAP(Clk_in => CLK,
 		 Clk_out => d_1_out);
 		 
 d_2 : clk_divider
-GENERIC MAP(Div => 109
+GENERIC MAP(Div => 711
 			)
 PORT MAP(Clk_in => CLK,
 		 Resetn => RESETn,
@@ -253,6 +277,18 @@ PORT MAP(Clk_in => CLK,
 		 Resetn => RESETn,
 		 Clk_out => d_16_out);
 
+d_17 : clk_divider
+GENERIC MAP(Div => 62			)
+PORT MAP(Clk_in => CLK,
+		 Resetn => RESETn,
+		 Clk_out => d_17_out);
+
+d_18 : clk_divider
+GENERIC MAP(Div => 34			)
+PORT MAP(Clk_in => CLK,
+		 Resetn => RESETn,
+		 Clk_out => d_18_out);
+
 
 -------------------
 --cyclic counters--
@@ -274,6 +310,8 @@ c_13 : lpm_counter_cyclic PORT MAP(clock => d_13_out , q=> c_13_q );
 c_14 : lpm_counter_cyclic PORT MAP(clock => d_14_out , q=> c_14_q );		 
 c_15 : lpm_counter_cyclic PORT MAP(clock => d_15_out , q=> c_15_q );		 
 c_16 : lpm_counter_cyclic PORT MAP(clock => d_16_out , q=> c_16_q );		 
+c_17 : lpm_counter_cyclic PORT MAP(clock => d_17_out , q=> c_17_q );		 
+c_18 : lpm_counter_cyclic PORT MAP(clock => d_18_out , q=> c_18_q );
 
 -----------------
 --golds fulls-- --
@@ -289,10 +327,13 @@ PORT MAP(CLK => CLK,
 		 oCoord_Y => oCoord_Y,
 		 Player_X => player_X,
 		 Player_Y => player_Y,
+		 Player2_X => player2_X,
+		 Player2_Y => player2_Y,	 
 		 Random1 => c_1_q,
 		 Random2 => c_2_q,
 		 drawing_request => b_1_drawing_request,
 		 hit => b_1_hit,
+		 hit2 => b_1_hit2,		 
 		 mVGA_RGB => b_1_mVGA_RGB);
 		 
 b_2_F : goldfull
@@ -305,10 +346,13 @@ PORT MAP(CLK => CLK,
 		 oCoord_Y => oCoord_Y,
 		 Player_X => player_X,
 		 Player_Y => player_Y,
+		 Player2_X => player2_X,
+		 Player2_Y => player2_Y,		 
 		 Random1 => c_3_q,
 		 Random2 => c_4_q,
 		 drawing_request => b_2_drawing_request,
 		 hit => b_2_hit,
+		 hit2 => b_2_hit2,
 		 mVGA_RGB => b_2_mVGA_RGB);
 
 b_3_F : goldfull
@@ -321,13 +365,15 @@ PORT MAP(CLK => CLK,
 		 oCoord_Y => oCoord_Y,
 		 Player_X => player_X,
 		 Player_Y => player_Y,
+		 Player2_X => player2_X,
+		 Player2_Y => player2_Y,		 
 		 Random1 => c_5_q,
 		 Random2 => c_6_q,
 		 drawing_request => b_3_drawing_request,
 		 hit => b_3_hit,
+		 hit2 => b_3_hit2,
 		 mVGA_RGB => b_3_mVGA_RGB);
 
-		 
 b_4_F : goldfull
 PORT MAP(CLK => CLK,
 		 RESETn => RESETn,
@@ -338,14 +384,15 @@ PORT MAP(CLK => CLK,
 		 oCoord_Y => oCoord_Y,
 		 Player_X => player_X,
 		 Player_Y => player_Y,
+		 Player2_X => player2_X,
+		 Player2_Y => player2_Y,		 
 		 Random1 => c_7_q,
 		 Random2 => c_8_q,
 		 drawing_request => b_4_drawing_request,
 		 hit => b_4_hit,
+		 hit2 => b_4_hit2,
 		 mVGA_RGB => b_4_mVGA_RGB);
 
-		 
-		 
 b_5_F : goldfull
 PORT MAP(CLK => CLK,
 		 RESETn => RESETn,
@@ -356,10 +403,13 @@ PORT MAP(CLK => CLK,
 		 oCoord_Y => oCoord_Y,
 		 Player_X => player_X,
 		 Player_Y => player_Y,
+		 Player2_X => player2_X,
+		 Player2_Y => player2_Y,		 
 		 Random1 => c_9_q,
 		 Random2 => c_10_q,
 		 drawing_request => b_5_drawing_request,
 		 hit => b_5_hit,
+		 hit2 => b_5_hit2,
 		 mVGA_RGB => b_5_mVGA_RGB);
 		 
 b_6_F : goldfull
@@ -372,10 +422,13 @@ PORT MAP(CLK => CLK,
 		 oCoord_Y => oCoord_Y,
 		 Player_X => player_X,
 		 Player_Y => player_Y,
+		 Player2_X => player2_X,
+		 Player2_Y => player2_Y,		 
 		 Random1 => c_11_q,
 		 Random2 => c_12_q,
 		 drawing_request => b_6_drawing_request,
 		 hit => b_6_hit,
+		 hit2 => b_6_hit2,
 		 mVGA_RGB => b_6_mVGA_RGB);
 		 
 b_7_F : goldfull
@@ -388,11 +441,15 @@ PORT MAP(CLK => CLK,
 		 oCoord_Y => oCoord_Y,
 		 Player_X => player_X,
 		 Player_Y => player_Y,
+		 Player2_X => player2_X,
+		 Player2_Y => player2_Y,		 
 		 Random1 => c_13_q,
 		 Random2 => c_14_q,
 		 drawing_request => b_7_drawing_request,
 		 hit => b_7_hit,
+		 hit2 => b_7_hit2,
 		 mVGA_RGB => b_7_mVGA_RGB);
+
 b_8_F : goldfull
 PORT MAP(CLK => CLK,
 		 RESETn => RESETn,
@@ -403,12 +460,33 @@ PORT MAP(CLK => CLK,
 		 oCoord_Y => oCoord_Y,
 		 Player_X => player_X,
 		 Player_Y => player_Y,
+		 Player2_X => player2_X,
+		 Player2_Y => player2_Y,		 
 		 Random1 => c_15_q,
 		 Random2 => c_16_q,
 		 drawing_request => b_8_drawing_request,
 		 hit => b_8_hit,
+		 hit2 => b_8_hit2,
 		 mVGA_RGB => b_8_mVGA_RGB);
 		 
+b_9_F : goldfull
+PORT MAP(CLK => CLK,
+		 RESETn => RESETn,
+		 timer_done => timer_done,
+		 allowed_to_move => '1',
+		 enable => '1',
+		 oCoord_X => oCoord_X,
+		 oCoord_Y => oCoord_Y,
+		 Player_X => player_X,
+		 Player_Y => player_Y,
+		 Player2_X => player2_X,
+		 Player2_Y => player2_Y,		 
+		 Random1 => c_17_q,
+		 Random2 => c_18_q,
+		 drawing_request => b_9_drawing_request,
+		 hit => b_9_hit,
+		 hit2 => b_9_hit2,
+		 mVGA_RGB => b_9_mVGA_RGB);
 		 
 ---------------------------
 --    Drawing_requests   --
@@ -421,6 +499,7 @@ drawing_request <= '1' when b_1_drawing_request = '1' else
 			'1' when b_6_drawing_request = '1' else
 			'1' when b_7_drawing_request = '1' else
 			'1' when b_8_drawing_request = '1' else
+			'1' when b_9_drawing_request = '1' else
 			'0';
 			
 
@@ -434,11 +513,12 @@ mVGA_RGB   <= b_1_mVGA_RGB when b_1_drawing_request = '1' else
 				 b_5_mVGA_RGB when b_5_drawing_request = '1' else
 				 b_6_mVGA_RGB when b_6_drawing_request = '1' else
 				 b_7_mVGA_RGB when b_7_drawing_request = '1' else
-			     b_8_mVGA_RGB;
+				 b_8_mVGA_RGB when b_8_drawing_request = '1' else
+			     b_9_mVGA_RGB;
 				 
----------------
---    Hits   --
----------------
+-----------------------
+--    Hits  Player 1 --
+-----------------------
 hit <= '1' when b_1_hit = '1' else
 			'1' when b_2_hit = '1' else
 			'1' when b_3_hit = '1' else
@@ -447,6 +527,21 @@ hit <= '1' when b_1_hit = '1' else
 			'1' when b_6_hit = '1' else
 			'1' when b_7_hit = '1' else
 			'1' when b_8_hit = '1' else
+			'1' when b_9_hit = '1' else
 			'0';
-
+			
+-----------------------
+--    Hits  Player 2 --
+-----------------------
+hit2 <= '1' when b_1_hit2 = '1' else
+			'1' when b_2_hit2 = '1' else
+			'1' when b_3_hit2 = '1' else
+			'1' when b_4_hit2 = '1' else
+			'1' when b_5_hit2 = '1' else
+			'1' when b_6_hit2 = '1' else
+			'1' when b_7_hit2 = '1' else
+			'1' when b_8_hit2 = '1' else
+			'1' when b_9_hit2 = '1' else
+			'0';
+			
 end architecture;

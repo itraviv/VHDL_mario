@@ -33,10 +33,13 @@ ENTITY goldfull IS
 		oCoord_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		Player_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		Player_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		Player2_X :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
+		Player2_Y :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		Random1 :  IN  STD_LOGIC_VECTOR(8 DOWNTO 0);
 		Random2 :  IN  STD_LOGIC_VECTOR(8 DOWNTO 0);
 		drawing_request :  OUT  STD_LOGIC;
 		hit :  OUT  STD_LOGIC;
+		hit2 :  OUT  STD_LOGIC;
 		mVGA_RGB :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 END goldfull;
@@ -54,6 +57,8 @@ COMPONENT bombsm
 		 random2 : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 marioX			: in std_logic_vector ( 9 downto 0);
 		 marioY			: in std_logic_vector ( 9 downto 0);
+		luigiX			: in std_logic_vector ( 9 downto 0);
+		luigiY			: in std_logic_vector ( 9 downto 0);			
 		 chase			: in std_logic; -- determined if a bomb will chase mario
 		 enable : OUT STD_LOGIC;
 		 ObjectStartX : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
@@ -95,10 +100,11 @@ SIGNAL	en :  STD_LOGIC;
 SIGNAL	is_obj_active :  STD_LOGIC;
 SIGNAL	ObjectStartX :  STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL	ObjectStartY :  STD_LOGIC_VECTOR(8 DOWNTO 0);
-
+SIGNAL	bomb_hit2 :  STD_LOGIC;
+SIGNAL	bomb_hit_ANY :  STD_LOGIC;
 
 BEGIN 
-
+bomb_hit_ANY <= bomb_hit or bomb_hit2;
 
 
 b2v_inst : bombsm
@@ -106,12 +112,14 @@ PORT MAP(CLK => CLK,
 		 RESETn => RESETn,
 		 timer_done => timer_done,
 		 allowedToMove => allowed_to_move,
-		 hit => bomb_hit,
+		 hit => bomb_hit_ANY,
 		 IENABLE => en,
 		 random => Random1,
 		 random2 => Random2,
 		 marioX	=> Player_X,
 		marioY	=> Player_Y,
+		luigiX  => Player2_X,
+		luigiY  => Player2_Y,
 		chase	=> 	'0', --note : this is intentinally disconnected. Golds do not chase.
 		 enable => bomb_enable,
 		 ObjectStartX => ObjectStartX,
@@ -131,7 +139,7 @@ PORT MAP(CLK => CLK,
 		 mVGA_RGB => d_mVGA_RGB);
 
 
-b2v_inst18 : object_hit_detector
+p1_hit_Detector : object_hit_detector
 PORT MAP(CLK => CLK,
 		 RESETn => RESETn,
 		 is_object_active => is_obj_active,
@@ -141,9 +149,21 @@ PORT MAP(CLK => CLK,
 		 ObjectStartY => ObjectStartY,
 		 hit => bomb_hit);
 
+p2_hit_Detector : object_hit_detector
+PORT MAP(CLK => CLK,
+		 RESETn => RESETn,
+		 is_object_active => is_obj_active,
+		 MarioStartX => Player2_X,
+		 MarioStartY => Player2_Y,
+		 ObjectStartX => ObjectStartX,
+		 ObjectStartY => ObjectStartY,
+		 hit => bomb_hit2);
+
+
 drawing_request <= d_drawing_request;
 en <= enable;
 hit <= bomb_hit;
+hit2 <= bomb_hit2;
 mVGA_RGB <= d_mVGA_RGB;
 
 END bdf_type;
