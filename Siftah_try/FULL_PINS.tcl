@@ -35,7 +35,7 @@ if {[is_project_open]} {
    ;# Slide Switches ('1' when up) #
    ;################################
 
- #  set_location_assignment PIN_N25  -to mux[0]   ;# SW0					;#	Reserved				
+  set_location_assignment PIN_N25  -to ThemeEnable   ;# SW0					;#	Reserved				
  #  set_location_assignment PIN_N26  -to mux[1]   ;# SW1					;#	Reserved
 #   set_location_assignment PIN_P25  -to ThemeEnable   ;# SW2					;#	Reserved
  #   set_location_assignment PIN_AE14 -to sound_sel[1]   ;# SW3					;#	Reserved

@@ -5,7 +5,7 @@ USE ieee.std_logic_1164.all;
 
 --  Entity Declaration
 
-ENTITY Clk_Divider IS
+ENTITY Clk_Divider1 IS
 	GENERIC(Div : integer range 0 to 50000000 := 5);
 	PORT
 	(
@@ -14,7 +14,7 @@ ENTITY Clk_Divider IS
 		Clk_out : OUT STD_LOGIC
 	);
 	
-END Clk_Divider;
+END Clk_Divider1;
 
 
 --  Architecture Body
