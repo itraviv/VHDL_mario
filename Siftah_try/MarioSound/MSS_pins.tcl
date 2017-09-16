@@ -38,8 +38,8 @@ if {[is_project_open]} {
    ;# Slide Switches ('1' when up) #
    ;################################
 
-   set_location_assignment PIN_N25  -to REC_Ena   ;# SW0					;#	Reserved				
-   set_location_assignment PIN_N26  -to PLAY_Ena   ;# SW1					;#	Reserved
+#   set_location_assignment PIN_N25  -to REC_Ena   ;# SW0					;#	Reserved				
+#   set_location_assignment PIN_N26  -to PLAY_Ena   ;# SW1					;#	Reserved
    set_location_assignment PIN_P25  -to SinEnable   ;# SW2					;#	Reserved
    set_location_assignment PIN_AE14 -to sound_sel[0]   ;# SW3					;#	Reserved
    set_location_assignment PIN_AF14 -to sound_sel[1]   ;# SW4					;#	SDACs normalization
@@ -53,9 +53,9 @@ if {[is_project_open]} {
 #   set_location_assignment PIN_P2   -to SW[12]  ;# SW12					;#	Reserved
 #   set_location_assignment PIN_T7   -to SW[13]  ;# SW13					;#	Reserved
 #   set_location_assignment PIN_U3   -to SW[14]  ;# SW14					;#	Reserved
-   set_location_assignment PIN_U4   -to MODE[0]  ;# SW15					;#	Reserved
-   set_location_assignment PIN_V1   -to MODE[1]  ;# SW16					;#	Reserved
-   set_location_assignment PIN_V2   -to MODE[2]  ;# SW17					;#	Serial DACs scan disable
+#   set_location_assignment PIN_U4   -to MODE[0]  ;# SW15					;#	Reserved
+#   set_location_assignment PIN_V1   -to MODE[1]  ;# SW16					;#	Reserved
+#   set_location_assignment PIN_V2   -to MODE[2]  ;# SW17					;#	Serial DACs scan disable
 
    ;#########################################################
    ;# 8 + 1 Green LEDs                                      #

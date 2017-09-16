@@ -21,7 +21,7 @@ END mux_CASE;
 
 architecture arch_mux_CASE of mux_CASE is
 begin
-	process(in0,in1,in2,sel)
+	process(in0,in1,in2,in3,sel)
 	begin
 		case sel is 
 			when "00" => outd <= in0 ;
