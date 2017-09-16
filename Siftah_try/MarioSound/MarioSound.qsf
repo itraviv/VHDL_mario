@@ -47,12 +47,7 @@ set_global_assignment -name DEVICE_FILTER_PIN_COUNT 672
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
 set_location_assignment PIN_N2 -to CLK_IN
 set_location_assignment PIN_G26 -to RESETn
-set_location_assignment PIN_N25 -to REC_Ena
-set_location_assignment PIN_N26 -to PLAY_Ena
 set_location_assignment PIN_P25 -to SinEnable
-set_location_assignment PIN_U4 -to MODE[0]
-set_location_assignment PIN_V1 -to MODE[1]
-set_location_assignment PIN_V2 -to MODE[2]
 set_location_assignment PIN_K25 -to PDAC_A_DATA_CHIP[0]
 set_location_assignment PIN_K26 -to PDAC_A_DATA_CHIP[1]
 set_location_assignment PIN_M22 -to PDAC_A_DATA_CHIP[2]
@@ -87,6 +82,15 @@ set_location_assignment PIN_V26 -to SDACs_SLATCH_CHIP
 set_location_assignment PIN_V25 -to VOLTAGE_TRANSLATORS_ENAn_CHIP
 set_location_assignment PIN_V24 -to BIT_INPUT_MUX_CARD
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_location_assignment PIN_AE14 -to sound_sel[0]
+set_location_assignment PIN_AF14 -to sound_sel[1]
+set_location_assignment PIN_AD13 -to ThemeEnable
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS OUTPUT DRIVING AN UNSPECIFIED SIGNAL"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name VHDL_FILE Clk_Divider1.vhd
 set_global_assignment -name VHDL_FILE ThemeSoundTable.vhd
 set_global_assignment -name VHDL_FILE JumpSoundTable.vhd
 set_global_assignment -name VHDL_FILE mux_CASE.vhd
@@ -101,14 +105,6 @@ set_global_assignment -name BDF_FILE MSS_dr.bdf
 set_global_assignment -name BDF_FILE MSS_XTRCT.bdf
 set_global_assignment -name QIP_FILE counter_4096.qip
 set_global_assignment -name BDF_FILE MarioSound.bdf
-set_location_assignment PIN_AE14 -to sound_sel[0]
-set_location_assignment PIN_AF14 -to sound_sel[1]
-set_location_assignment PIN_AD13 -to ThemeEnable
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
 set_global_assignment -name QIP_FILE themeRAM.qip
 set_global_assignment -name QIP_FILE bombRAM.qip
 set_global_assignment -name QIP_FILE goldRam.qip
