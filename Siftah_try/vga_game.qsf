@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C35F672C6
-set_global_assignment -name TOP_LEVEL_ENTITY TOP_SIFTACH
+set_global_assignment -name TOP_LEVEL_ENTITY bomb_sm_for_sim
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:02:01  AUGUST 23, 2017"
 set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
@@ -189,10 +189,6 @@ set_global_assignment -name QIP_FILE Score/new_life_counter.qip
 set_global_assignment -name VHDL_FILE counters/stage_counter.vhd
 set_global_assignment -name VHDL_FILE KeyDetector/kbd_translate_player_2.vhd
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_location_assignment PIN_N2 -to CLK_50
 set_location_assignment PIN_N23 -to rand
 set_location_assignment PIN_T7 -to chase_vec[4]
@@ -300,4 +296,13 @@ set_location_assignment PIN_D8 -to VGA_VS
 set_location_assignment PIN_B7 -to VGA_SYNC
 set_location_assignment PIN_D26 -to KBD_CLK
 set_location_assignment PIN_C24 -to KBD_DAT
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name VECTOR_WAVEFORM_FILE simulations/mario_move.vwf
+set_global_assignment -name BDF_FILE simulations/bomb_sm_for_sim.bdf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name VECTOR_WAVEFORM_FILE simulations/bomb_sm.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE simulations/bomb_sm.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
